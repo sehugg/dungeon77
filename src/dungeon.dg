@@ -1,6 +1,15 @@
 (scoring enabled)
 
-%% A thing can be non-flaming or flaming.  A thing is usually non-flaming. A thing can be non-inflammable or inflammable. A thing is usually non-inflammable.
+(style class @headline)
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+    font-style: bold;
+(style class @para)
+	margin-top: 1em;
+	margin-bottom: 1em;
+    text-indent: 2em;
+	text-align: left;
 
 (interface ($<Thing is flaming))
 (interface ($<Thing is flammable))
@@ -52,28 +61,37 @@
 (size *)        2
 (readable *)
 (descr *)
-                        WELCOME TO DUNGEON
-
+    (div @headline) { WELCOME TO DUNGEON }
+    (par)
+    (div @para) {
         DUNGEON is a game of adventure, danger, and low cunning.  In it
     you will explore some of the most amazing territory ever seen by
     mortal man. Hardened adventurers have run screaming from the terrors
     contained within!
-
+    }
+    (par)
+    (div @para) {
         In DUNGEON the intrepid explorer delves into the forgotten
     secrets of a lost labyrinth deep in the bowels of the earth,
     searching for vast treasures long hidden from prying eyes, treasures
     guarded by fearsome monsters and diabolical traps!
-
+    }
+    (par)
+    (div @para) {
         No PDP-10 should be without one!
-
+    }
+    (par)
+    (div @para) {
         DUNGEON was created at the Programming Technology Division of the
     MIT Laboratory for Computer Science, by Tim Anderson, Marc Blank,
     Bruce Daniels, and Dave Lebling.  It was inspired by the ADVENTURE
     game of Crowther and Woods, and Dungeons and Dragons, by Gygax and
     Arneson.  DUNGEON is written in MDL \(alias MUDDLE\).
-
+    }
+    (par)
+    (div @para) {
     Direct inquiries by Net mail to DUNGEON\@MIT-DMS.
-    Welcome to Zork!
+    }
 
 %% A portable supporter called a rubber welcome mat is here. "A rubber mat saying 'Welcome to Zork' lies by the door." The description of the mat is "The mat says 'Welcome to Zork'."
 %% The size of the rubber welcome mat is  12.
@@ -242,6 +260,7 @@
 #water
 (* is #in #bottle)
 (name *)        quantity of water
+(potable *)
 
 #attic
 (name *)        Attic
@@ -413,9 +432,13 @@
 (appearance *)  There is a broken brass lantern here.
 
 %% Readable objects print their description when you read them.
+(unlikely [read $thing])
+    ~(readable $thing)
 (perform [read $thing])
     (readable $thing)
-    (try [take $thing])
+    (if) (item $thing) (player can reach $thing) ~($thing is #heldby #player) (then)
+        (first try [take $thing])
+    (endif)
     It reads:
     (par)
     (look $thing)
