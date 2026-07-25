@@ -1,5 +1,8 @@
 (scoring enabled)
 
+%% 1 14 6 20 0
+%% light case-score score size capacity
+
 (style class @headline)
 	margin-top: 1em;
 	margin-bottom: 1em;
@@ -11,19 +14,41 @@
     text-indent: 2em;
 	text-align: left;
 
-(interface ($<Thing is flaming))
-(interface ($<Thing is flammable))
+(interface (flammable $<Thing))
+(interface (tool $<Thing))
+(interface (sacred $<Thing))
+(interface (weapon $<Thing))
+(interface (villain $<Thing))
 
-(interface (capacity $<Thing))
-(interface (size $<Thing))
+(interface ($<Thing is on fire))
+(interface ($<Thing can be turned))
+(interface ($<Thing can be tied))
+(interface ($<Thing is in melee))
+%%(interface ($<Thing is stunned))
+(interface ($<Thing is asleep))
+
+(interface ($<Thing capacity is $<Capacity))
+(interface ($<Thing size is $<Size))
+(interface ($<Thing awards $<Points case points))
+(interface ($<Thing awards $<Points on first take))
+(interface ($<Thing combat strength is $<Strength))
 
 (interface (outdoors $<Room))
+(interface ($<Room is on land))
+(interface ($<Room is on water))
+(interface ($<Room is in mid-air))
+(interface (can fill bottle in $<Room))
+(interface ($<Room has been munged))
+(interface ($<Room is a bucket))
+(interface ($<Room is in the house))
 
 #player
 (current player *)
 (descr *)
     You are here.
 (* is #in #west-of-house)
+(* combat strength is 2)
+%% https://blog.zarfhome.com/2026/02/to-fight-a-troll
 
 (narrate door is locked)
     The door is locked, and there is evidently no key.
@@ -51,15 +76,16 @@
 (container *)
 (openable *)
 (dict *)       mail-box mail box
-(capacity *)      10
+(* capacity is 10)
 (appearance *)  There is a small mailbox here. (list contents of *)
 
 #leaflet
 (* is #in #mailbox)
 (name *)        leaflet
 (item *)
-(size *)        2
+(flammable *)
 (readable *)
+(* size is 2)
 (descr *)
     (div @headline) { WELCOME TO DUNGEON }
     (par)
@@ -92,20 +118,6 @@
     (div @para) {
     Direct inquiries by Net mail to DUNGEON\@MIT-DMS.
     }
-
-%% A portable supporter called a rubber welcome mat is here. "A rubber mat saying 'Welcome to Zork' lies by the door." The description of the mat is "The mat says 'Welcome to Zork'."
-%% The size of the rubber welcome mat is  12.
-#welcome-mat
-(name *)        rubber welcome mat
-%%(* is #in #west-of-house)
-(supporter *)
-(size 12)
-(descr *)       The mat says 'Welcome to Zork'.
-(appearance *)  A rubber mat saying 'Welcome to Zork' lies by the door. (list contents of *)
-(readable *)
-
-(global variable (mat-under 0))
-%% TODO
 
 #front-door
 (name *)        front door
@@ -188,6 +200,7 @@
 #kitchen
 (name *)        Kitchen
 (room *)
+(* is in the house)
 (from * go #west to #living-room)
 (from * go #up to #attic)
 (look *)
@@ -214,9 +227,9 @@
 (item *)
 (container *)
 (openable *)
-(capacity *) 15
-(size *) 3
-(dict *)      bag sack
+(* capacity is 15)
+(* size is 3)
+(dict *)      bag sack baggie brown
 (appearance *)
     (if)(* is pristine)(then)
         On the table is an enlongated brown sack, smelling of hot peppers.
@@ -250,7 +263,7 @@
 (container *)
 (openable *)
 ~(opaque *)
-(capacity *) 4
+(* capacity is 4)
 (appearance *)  A bottle is sitting on the table. (list contents of *)
 
 %% Check destroying the bottle:
@@ -265,6 +278,8 @@
 #attic
 (name *)        Attic
 (room *)
+(* is in the house)
+(inherently dark *)
 (look *)        You are in the attic.  The only exit is stairs that lead down.
 (from * go #down to #kitchen)
 
@@ -283,12 +298,31 @@
 (* is #in #attic)
 (name *)        knife
 (item *)
+(weapon *)
+(dict *)        nasty blade
 (appearance *)
     (if)(* is pristine)(then)
         On a table is a nasty-looking knife.
     (else)
         There is a nasty-looking knife lying here.
     (endif)
+
+#rusty-knife
+(name *)        rusty knife
+(item *)
+(weapon *)
+(dict *)        blade
+(after [take *])
+    (#sword is in scope)
+    As you pick up the rusty knife, your sword gives a single pulse
+    of blinding blue light.
+(instead of [attack $victim with *])
+    (villain $victim)
+    As the knife approaches its victim, your mind is submerged by an
+    overmastering will.  Slowly, your hand turns, until the rusty blade
+    is an inch from your neck.  The knife seems to sing as it savagely
+    slits your throat.
+    (jigs up)
 
 #brick
 (* is #in #attic)
@@ -300,6 +334,7 @@
 #living-room
 (name *)        Living Room
 (room *)
+(* is in the house)
 (from * go #east to #kitchen)
 (look *)
     (if)(#wooden-door is closed)(then)
@@ -387,7 +422,7 @@
 (container *)
 (openable *)
 ~(opaque *)
-(capacity *)    32767
+(* capacity is 16383)
 (appearance *)
     There is a trophy case here.
     (list contents of *)
@@ -400,30 +435,46 @@
 (* is #in #living-room)
 (name *)        elvish sword
 (item *)
-(dict *)        glamdring orcrist
-(size *)        30
+(weapon *)
+(dict *)        glamdring orcrist blade
+(* size is 30)
 (appearance *)
     (if)(* is pristine)(then)
         On hooks above the mantelpiece hangs an elvish sword of great antiquity.
     (else)
         There is an elvish sword here.
     (endif)
+%% TODO: sword glow
 
 #lamp
 (* is #on #trophy-case)
 (name *)        battery-powered brass lantern
 (item *)
-(size *)        15
+(* size is 15)
 (dict *)        lamp
 (switchable *)
-(* provides light)
-    (* is on)
 (appearance *)
     (if)(* is pristine)(then)
         A battery powered brass lantern is on the trophy case.
     (else)
         There is a brass lantern \(battery-powered\) here.
     (endif)
+(global variable (lamp charge level is 325))
+(* provides light)
+    (* is on)
+(on every tick)
+    (* is on)
+    (lamp charge level is $level)
+    ($level minus 1 into $newlevel)
+    (now)(lamp charge level is $newlevel)
+    %% TODO: narrate dimmer
+    ~($newlevel > 0)
+    (now)(* is off)
+    (par)I hope you have more light than from (a *).
+(prevent [switch on *])
+    (lamp charge level is $level)
+    ~($level > 0)
+    The battery has died.
 
 #broken-lamp
 (name *)        broken lamp
@@ -447,8 +498,9 @@
 (* is #in #living-room)
 (name *)        newspaper
 (item *)
-(size *)        2
+(flammable *)
 (readable *)
+(* size is 2)
 (dict *)        news paper issue report magazine
 (appearance *)
     There is an issue of US NEWS & DUNGEON REPORT dated 7/25/2026 here.
@@ -541,6 +593,7 @@
 #pile-of-leaves
 (name *)    pile of leaves
 (item *)
+(flammable *)
 (appearance *)
     There is a pile of leaves on the ground.
 (* is #in #clearing)
@@ -642,10 +695,53 @@
     You are in a dark and damp cellar with a narrow passageway leading
     east, and a crawlway to the south.  On the west is the bottom of a
     steep metal ramp which is unclimbable.
+(from * go #east to #troll-room)
+(from * go #south to #chasm2)
 (narrate failing to leave * #up)
     The trap door has been barred from the other side.
 (narrate failing to leave * #west)
     You try to ascend the ramp, but it is impossible, and you slide back down.
+
+#troll-room
+(name *)        The Troll Room
+(room *)
+(inherently dark *)
+(look *)
+    You are in a small room with passages off in all directions. 
+    Bloodstains and deep scratches \(perhaps made by an axe\) mar the
+    walls.
+(from * go #west to #cellar)
+(from * go #east to #crawl4)
+(from * go #north to #passage1)
+(from * go #south to #maze1)
+
+#troll
+(* is #in #troll-room)
+(name *)        troll
+(animate *)
+(villain *)
+(* combat strength is 2)
+(appearance *)
+    (if)~(* is asleep)(then)
+        A nasty-looking troll, brandishing a bloody axe, blocks all passages
+        out of the room.
+    (else)
+        An unconscious troll is sprawled on the floor.  All passages out of
+        the room are open.
+    (endif)
+(descr *)
+    (appearance *)
+(prevent [leave #troll-room #east/#north/#south])
+    (#troll is #in #troll-room)
+    ~(#troll is asleep)
+    The troll fends you off with a menacing gesture.
+
+#axe
+(name *)        bloody axe
+(item *)
+(weapon *)
+(appearance *)  There is a bloody axe here.
+(* is #heldby #troll)
 
 %%%
 
@@ -666,6 +762,15 @@
     There is no grue here, but I'm sure there is at least one lurking
     in the darkness nearby.  I wouldn't let my light go out if I were
     you!
+
+%% TODO: can't get stuff if dark
+
+%% Look at room after turning on light
+(after [switch on $thing])
+    ($thing provides light)
+    (tick)
+    (par)
+    (try [look])
 
 %%%
 
@@ -688,3 +793,23 @@
     (openable $thing)
     (The $thing) is (if)($thing is open)(then)open(else)closed(endif).
     (list contents of $thing)
+
+%% Melee
+
+(instead of [attack $victim])
+    (villain $victim)
+    Attack with what?
+	(asking for object in [attack $victim with []])
+
+(perform [attack $victim with $weapon])
+%%TODO
+    You slash at (the $victim) with (the $weapon).
+
+(jigs up)
+    (game over { You have died })
+    %%TODO
+
+%% default item sizes
+
+($thing size is 5)
+    (item $thing)
