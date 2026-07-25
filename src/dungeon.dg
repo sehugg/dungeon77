@@ -1,0 +1,667 @@
+(scoring enabled)
+
+%% A thing can be non-flaming or flaming.  A thing is usually non-flaming. A thing can be non-inflammable or inflammable. A thing is usually non-inflammable.
+
+(interface ($<Thing is flaming))
+(interface ($<Thing is flammable))
+
+(interface (capacity $<Thing))
+(interface (size $<Thing))
+
+(interface (outdoors $<Room))
+
+#player
+(current player *)
+(descr *)
+    You are here.
+(* is #in #west-of-house)
+
+(narrate door is locked)
+    The door is locked, and there is evidently no key.
+(narrate windows are barred)
+    The windows are all barred.
+
+%% A room called West of House is an outdoors room. "You are in an open field on the west side of a white house with a boarded front door."
+#west-of-house
+(name *)        West of House
+(room *)
+(outdoors *)
+(look *)        You are in an open field west of a big white house, with a boarded front door.
+(notice #front-door)
+(from * go #north to #north-of-house)
+(from * go #south to #south-of-house)
+(from * go #west to #forest1)
+%% TODO: merge with front-door
+(narrate failing to leave * #east)
+    (narrate door is locked)
+
+#mailbox
+(* is #in #west-of-house)
+(* is #in #mailbox)
+(name *)        small mailbox
+(container *)
+(openable *)
+(dict *)       mail-box mail box
+(capacity *)      10
+(appearance *)  There is a small mailbox here. (list contents of *)
+
+#leaflet
+(* is #in #mailbox)
+(name *)        leaflet
+(item *)
+(size *)        2
+(readable *)
+(descr *)
+                        WELCOME TO DUNGEON
+
+        DUNGEON is a game of adventure, danger, and low cunning.  In it
+    you will explore some of the most amazing territory ever seen by
+    mortal man. Hardened adventurers have run screaming from the terrors
+    contained within!
+
+        In DUNGEON the intrepid explorer delves into the forgotten
+    secrets of a lost labyrinth deep in the bowels of the earth,
+    searching for vast treasures long hidden from prying eyes, treasures
+    guarded by fearsome monsters and diabolical traps!
+
+        No PDP-10 should be without one!
+
+        DUNGEON was created at the Programming Technology Division of the
+    MIT Laboratory for Computer Science, by Tim Anderson, Marc Blank,
+    Bruce Daniels, and Dave Lebling.  It was inspired by the ADVENTURE
+    game of Crowther and Woods, and Dungeons and Dragons, by Gygax and
+    Arneson.  DUNGEON is written in MDL \(alias MUDDLE\).
+
+    Direct inquiries by Net mail to DUNGEON\@MIT-DMS.
+    Welcome to Zork!
+
+%% A portable supporter called a rubber welcome mat is here. "A rubber mat saying 'Welcome to Zork' lies by the door." The description of the mat is "The mat says 'Welcome to Zork'."
+%% The size of the rubber welcome mat is  12.
+#welcome-mat
+(name *)        rubber welcome mat
+%%(* is #in #west-of-house)
+(supporter *)
+(size 12)
+(descr *)       The mat says 'Welcome to Zork'.
+(appearance *)  A rubber mat saying 'Welcome to Zork' lies by the door. (list contents of *)
+(readable *)
+
+(global variable (mat-under 0))
+%% TODO
+
+#front-door
+(name *)        front door
+(* is #in #west-of-house)
+(prevent [enter *])
+    (narrate door is locked)
+(prevent [open *])
+    The door cannot be opened.
+(prevent [unlock *])
+    It doesn't seem to work.
+%% Check going east from West of House: say "The door is locked, and there is evidently no key." instead.
+
+#white-house
+(name *)        white house
+(#west-of-house attracts *)
+(#north-of-house attracts *)
+(#south-of-house attracts *)
+(#east-of-house attracts *)
+(descr *)
+    The house is a beautiful colonial house which is painted white.
+    It is clear that the owners must have been extremely wealthy.
+
+#north-of-house
+(name *)        North of House
+(room *)
+(outdoors *)
+(from * go #west to #west-of-house)
+(from * go #east to #east-of-house)
+(from * go #north to #forest3)
+(narrate failing to leave * #south)
+    (narrate windows are barred)
+(look *)
+    You are facing the north side of a white house.
+    There is no door here, and all the windows are barred.
+
+#south-of-house
+(name *)        South of House
+(room *)
+(outdoors *)
+(from * go #west to #west-of-house)
+(from * go #east to #east-of-house)
+(from * go #south to #forest2)
+(narrate failing to leave * #north)
+    (narrate windows are barred)
+(look *)
+    You are facing the south side of a white house.
+    There is no door here, and all the windows are barred.
+
+#east-of-house
+(name *)        Behind House
+(room *)
+(outdoors *)
+(from * go #north to #north-of-house)
+(from * go #south to #south-of-house)
+(from * go #east to #clearing)
+(look *)
+    You are behind the white house.
+    In one corner of the house is a window that is
+    (if)(#window is open)(then)
+        slightly ajar.
+    (else)
+        open.
+    (endif)
+
+#window
+(name *)        window
+(door *)
+(openable *)
+(from #east-of-house go #west through #window to #kitchen)
+(from #kitchen go #east through #window to #east-of-house)
+(* blocks passage)
+	(* is closed)
+(perform [climb *])
+    (try [enter *])
+(narrate opening *)
+    With great effort, you open the window far enough to allow entry.
+(narrate closing *)
+    The window closes \(more easily than it opened\).
+
+#kitchen
+(name *)        Kitchen
+(room *)
+(from * go #west to #living-room)
+(from * go #up to #attic)
+(look *)
+    This is the kitchen of the white house.
+    A table seems to have been used recently for the preparation of food.
+    A passage leads to the west and a dark staircase can be seen leading upward.
+    A dark chimney leads down and to the east is a small window which is
+    (if)(#window is open)(then)
+        open.
+    (else)
+        closed.
+    (endif)
+(prevent [go #down])
+    (current room *)
+    Only Santa Claus climbs down chimneys.
+(move player to #in *)
+    (* is unvisited)
+    (increase score by 10)
+    (fail)
+
+#sack
+(* is #in #kitchen)
+(name *)      sandwich bag
+(item *)
+(container *)
+(openable *)
+(capacity *) 15
+(size *) 3
+(dict *)      bag sack
+(appearance *)
+    (if)(* is pristine)(then)
+        On the table is an enlongated brown sack, smelling of hot peppers.
+    (else)
+        A sandwich bag is here.
+    (endif)
+    (list contents of *)
+
+#lunch
+(* is #in #sack)
+(name *)        lunch
+(item *)
+(edible *)
+(appearance *)  A hot pepper sandwich is here.
+(dict *)        sandwich pepper dinner snack food
+
+#garlic
+(* is #in #sack)
+(name *)        clove of garlic
+(item *)
+(edible *)
+(appearance *)  There is a clove of garlic here.
+
+(narrate eating $)
+    Thank you very much.  That reallly hit the spot.
+
+#bottle
+(* is #in #kitchen)
+(name *)        glass bottle
+(item *)
+(container *)
+(openable *)
+~(opaque *)
+(capacity *) 4
+(appearance *)  A bottle is sitting on the table. (list contents of *)
+
+%% Check destroying the bottle:
+%%  say "A brilliant maneuver destroys the bottle.";
+%%  remove the bottle from play instead.
+
+#water
+(* is #in #bottle)
+(name *)        quantity of water
+
+#attic
+(name *)        Attic
+(room *)
+(look *)        You are in the attic.  The only exit is stairs that lead down.
+(from * go #down to #kitchen)
+
+#rope
+(* is #in #attic)
+(name *)        rope
+(item *)
+(appearance *)
+    (if)(* is pristine)(then)
+        A large coil of rope is lying in the corner.
+    (else)
+        There is a large coil of rope here.
+    (endif)
+
+#knife
+(* is #in #attic)
+(name *)        knife
+(item *)
+(appearance *)
+    (if)(* is pristine)(then)
+        On a table is a nasty-looking knife.
+    (else)
+        There is a nasty-looking knife lying here.
+    (endif)
+
+#brick
+(* is #in #attic)
+(name *)        brick
+(item *)
+(appearance *)
+    There is a square brick here which feels like clay.
+
+#living-room
+(name *)        Living Room
+(room *)
+(from * go #east to #kitchen)
+(look *)
+    (if)(#wooden-door is closed)(then)
+    You are in the living room.  There is a door to the east, a wooden
+    door with strange gothic lettering to the west, which appears to be
+    nailed shut,
+    (else)
+    You are in the living room.  There is a door to the east.  To the
+    west is a cyclops-shaped hole in an old wooden door, above which is
+    some strange gothic lettering
+    (endif)
+    (if) ~(#trapdoor is #in #living-room) (then)
+        and a large oriental rug in the center of the room.
+    (else)
+        (if) (#trapdoor is open) (then)
+            and a rug lying beside an open trap-door.
+        (else)
+            and a closed trap-door at your feet.
+        (endif)
+    (endif)
+(narrate failing to leave * #west)
+    The door is nailed shut.
+
+#wooden-door
+(* is #in #living-room)
+(name *)        wooden door
+(door *)
+(* is closed)
+(descr *)
+    The engravings translate to 'This space intentionally left blank.'
+    (if)(* is open)(then)
+        The door has a cyclops-sized hole in it.
+    (endif)
+
+#rug
+(* is #in #living-room)
+(name *)        oriental rug
+(dict *)        carpet
+(perform [look #under *])
+    (if) ~(#trapdoor is #in #living-room) (then)
+        Underneath the rug is a closed trap door.
+        (now) (#trapdoor is #under #rug)
+        (notice #trapdoor)
+    (else)
+        You already moved the rug.
+    (endif)
+(prevent [take *])
+    The rug is too heavy to lift, but in trying to take it you have 
+    noticed an irregularity beneath it.
+(prevent [push/pull *])
+    (#trapdoor is #in #living-room)
+    Having moved the carpet previously, you find it impossible to move it again.
+(perform [push/pull *])
+    With a great effort, the rug is moved to one side of the room.
+    With the rug moved, the dusty cover of a closed trap-door appears.
+    (now) (#trapdoor is #in #living-room)
+    (notice #trapdoor)
+
+#trapdoor
+(name *)    trap door
+(door *)
+(openable *)
+(* is closed)
+(* is hidden)
+(from #living-room go #down through #trapdoor to #cellar)
+    (#trapdoor is revealed)
+    ~(#trapdoor is #under #rug)
+(#cellar attracts *)
+(prevent [open *])
+    (current room #cellar)
+    The door is locked from above.
+(narrate opening *)
+    The door reluctantly opens to reveal a rickety staircase ...
+(narrate closing *)
+    The door swings shut and closes.
+(after [leave #living-room #down])
+    (par)
+    The trap door crashes shut, and you hear someone barring it.
+    (now) (* is closed)
+    (notice *)
+
+#trophy-case
+(* is #in #living-room)
+(name *)        trophy case
+(container *)
+(openable *)
+~(opaque *)
+(capacity *)    32767
+(appearance *)
+    There is a trophy case here.
+    (list contents of *)
+(prevent [take *])
+    The trophy case is securely fastened to the wall \(perhaps to foil any attempt by robbers to remove it\).
+
+%% TODO: WINNER.score = RAW_SCORE + sum(OTVAL(x) for x in contents of trophy case)
+
+#sword
+(* is #in #living-room)
+(name *)        elvish sword
+(item *)
+(dict *)        glamdring orcrist
+(size *)        30
+(appearance *)
+    (if)(* is pristine)(then)
+        On hooks above the mantelpiece hangs an elvish sword of great antiquity.
+    (else)
+        There is an elvish sword here.
+    (endif)
+
+#lamp
+(* is #on #trophy-case)
+(name *)        battery-powered brass lantern
+(item *)
+(size *)        15
+(dict *)        lamp
+(switchable *)
+(* provides light)
+    (* is on)
+(appearance *)
+    (if)(* is pristine)(then)
+        A battery powered brass lantern is on the trophy case.
+    (else)
+        There is a brass lantern \(battery-powered\) here.
+    (endif)
+
+#broken-lamp
+(name *)        broken lamp
+(item *)
+(dict *)        lantern
+(appearance *)  There is a broken brass lantern here.
+
+%% Readable objects print their description when you read them.
+(perform [read $thing])
+    (readable $thing)
+    (try [take $thing])
+    It reads:
+    (par)
+    (look $thing)
+
+#newspaper
+(* is #in #living-room)
+(name *)        newspaper
+(item *)
+(size *)        2
+(readable *)
+(dict *)        news paper issue report magazine
+(appearance *)
+    There is an issue of US NEWS & DUNGEON REPORT dated 7/25/2026 here.
+(descr *)
+    (line)            US NEWS & DUNGEON REPORT
+    (line)7/25/2026                                     Late Dungeon Edition
+    (line)
+    (line)FLASH!
+    (line)    We'll let you know about bugs as they are discovered or squashed.
+
+%%%
+
+(forest name)   Forest
+(forest look)
+    You are in a forest, with trees in all directions around you.
+(forest look east)
+    You are in a dimly lit forest, with large trees all around.  To the
+    east, there appears to be sunlight.
+
+#forest1
+(room *)
+(outdoors *)
+(name *)    (forest name)
+(look *)   (forest look)
+(from * go #north to #forest1)
+(from * go #east to #forest3)
+(from * go #south to #forest2)
+(from * go #west to #forest1)
+
+#forest2
+(room *)
+(outdoors *)
+(name *)    (forest name)
+(look *)   (forest look east)
+(from * go #north to #south-of-house)
+(from * go #east to #clearing)
+(from * go #south to #forest4)
+(from * go #west to #forest1)
+
+#forest3
+(room *)
+(outdoors *)
+(name *)    (forest name)
+(look *)   (forest look east)
+(from * go #north to #forest2)
+(from * go #east to #clearing)
+(from * go #south to #clearing)
+(from * go #west to #north-of-house)
+
+#forest4
+(room *)
+(outdoors *)
+(name *)    (forest name)
+(look *)
+    You are in a large forest, with trees obstructing all views except
+    to the east, where a small clearing may be seen through the trees.
+(from * go #north to #forest5)
+(from * go #east to #cliff-top)
+(from * go #south to #forest4)
+(from * go #west to #forest2)
+
+#forest5
+(room *)
+(outdoors *)
+(name *)    (forest name)
+(look *)   (forest look)
+(from * go #north to #forest5)
+(from * go #southeast to #cliff-top)
+(from * go #south to #forest4)
+(from * go #west to #forest2)
+
+#clearing
+(room *)
+(outdoors *)
+(name *)    Clearing
+(look *)
+    You are in a clearing, with a forest surrounding you on the west
+    and south.
+(from * go #southwest to #east-of-house)
+(from * go #southeast to #forest5)
+(from * go #north to #clearing)
+(from * go #east to #clearing)
+(from * go #west to #forest3)
+(from * go #south to #forest2)
+(from * go #down through #grating to #grating-room)
+    ~(#grating is #under #pile-of-leaves)
+(narrate failing to leave * #down)
+    The grating is locked.
+
+#pile-of-leaves
+(name *)    pile of leaves
+(item *)
+(appearance *)
+    There is a pile of leaves on the ground.
+(* is #in #clearing)
+(after [take *])
+    (#grating is #under #pile-of-leaves)
+    A grating appears on the ground.
+    (now)(#grating is #in #clearing)
+    (notice #grating)
+(after [look #under *])
+    (#grating is #under #pile-of-leaves)
+    (now)(#grating is #in #clearing)
+    (notice #grating)
+
+#grating
+(name *)    grating
+(openable *)
+(lockable *)
+(* is hidden)
+(* is #under #pile-of-leaves)
+(appearance *)
+    (if)(* is open)(then)
+        There is an open grating, descending into darkness.
+    (else)
+        There is a grating securely fastened into the ground.
+    (endif)
+
+#cliff-top
+(room *)
+(outdoors *)
+(name *)        Canyon View
+(look *)
+    You are at the top of the Great Canyon on its south wall.  From here
+    there is a marvelous view of the Canyon and parts of the Frigid River
+    upstream.  Across the canyon, the walls of the White Cliffs still
+    appear to loom far above.  Following the Canyon upstream \(north and
+    northwest\), Aragain Falls may be seen, complete with rainbow. 
+    Fortunately, my vision is better than average and I can discern the
+    top of the Flood Control Dam \#3 far to the distant north.  To the
+    west and south can be seen an immense forest, stretching for miles
+    around.  It is possible to climb down into the canyon from here.
+(from * go #down to #cliff-mid)
+(from * go #south to #forest4)
+(from * go #west to #forest5)
+
+#cliff-mid
+(room *)
+(outdoors *)
+(name *)        Rocky Ledge
+(look *)
+    You are on a ledge about halfway up the wall of the river canyon.
+    You can see from here that the main flow from Aragain Falls twists
+    along a passage which it is impossible to enter.  Below you is the
+    canyon bottom.  Above you is more cliff, which still appears
+    climbable.
+(from * go #up to #cliff-top)
+(from * go #down to #cliff-bottom)
+
+#cliff-bottom
+(room *)
+(outdoors *)
+(name *)        Canyon Bottom
+(look *)
+    You are beneath the walls of the river canyon which may be climbable
+    here.  There is a small stream here, which is the lesser part of the
+    runoff of Aragain Falls. To the north is a narrow path.
+(from * go #up to #cliff-mid)
+(from * go #north to #end-of-rainbow)
+
+#end-of-rainbow
+(room *)
+(outdoors *)
+(name *)        End of Rainbow
+(look *)
+    You are on a small beach on the continuation of the Frigid River
+    past the Falls.  The beach is narrow due to the presence of the White
+    Cliffs.  The river canyon opens here and sunlight shines in from
+    above. A rainbow crosses over the falls to the west and a narrow path
+    continues to the southeast.
+(from * go #southeast to #cliff-bottom)
+
+#rainbow
+(room *)
+(outdoors *)
+(name *)        Rainbow Room
+(look *)
+    You are on top of a rainbow \(I bet you never thought you would walk
+    on a rainbow\), with a magnificent view of the Falls.  The rainbow
+    travels east-west here.  There is an NBC Commissary here.
+(from * go #east to #end-of-rainbow)
+(from * go #west to #falls)
+
+%%%
+
+#cellar
+(name *)        Cellar
+(room *)
+(inherently dark *)
+(look *)
+    You are in a dark and damp cellar with a narrow passageway leading
+    east, and a crawlway to the south.  On the west is the bottom of a
+    steep metal ramp which is unclimbable.
+(narrate failing to leave * #up)
+    The trap door has been barred from the other side.
+(narrate failing to leave * #west)
+    You try to ascend the ramp, but it is impossible, and you slide back down.
+
+%%%
+
+(narrate darkness)
+    It is pitch black.  You are likely to be eaten by a grue.
+    (notice #grue)
+
+#grue
+(name *)    lurking grue
+%%TODO
+(descr *)
+    The grue is a sinister, lurking presence in the dark places of the
+    earth.  Its favorite diet is adventurers, but its insatiable
+    appetite is tempered by its fear of light.  No grue has ever been
+    seen by the light of day, and few have survived its fearsome jaws
+    to tell the tale.
+(prevent [find *])
+    There is no grue here, but I'm sure there is at least one lurking
+    in the darkness nearby.  I wouldn't let my light go out if I were
+    you!
+
+%%%
+
+(understand [repent] as [repent])
+(refuse [repent])
+    It could very well be too late!
+
+%% Not exactly like Zork
+(list contents of $thing)
+    (if){ ($thing is open) (or) ~(opaque $thing) }(then)
+        (line)
+        (list objects #in $thing)
+        (list objects #on $thing)
+        (list objects #under $thing)
+    (endif)
+
+%% Default rule - Look at a thing that is an openable container
+(descr $thing)
+    (container $thing)
+    (openable $thing)
+    (The $thing) is (if)($thing is open)(then)open(else)closed(endif).
+    (list contents of $thing)

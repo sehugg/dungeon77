@@ -1,0 +1,11 @@
+{:name   "dungeon"
+ :target :zblorb
+ :build
+ {:zblorb
+  {:options ["--cover"     "cover.png"
+             "--cover-alt" "Dungeon"]}}
+ :sources
+ {:main    ["src"]
+  :test    ["test" "lib/dialog/test"]
+  :debug   ["lib/dialog/debug"]
+  :library ["lib/dialog"]}}
