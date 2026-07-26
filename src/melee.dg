@@ -12,7 +12,7 @@
 
 %% Global variables (for efficiency)
 
-(global variable (player combat strength is 2))
+(global variable (player combat strength is 3)) %% Dungeon has 2
 (global variable (troll combat strength is 2))
 
 (global variable (player wields $weapon))   %% last weapon wielded
@@ -23,7 +23,7 @@
     (now)(player combat strength is $value)
 (#player maximum strength is $result)
     (current score $score)
-    ($score divided by 70 into $adjust)
+    ($score divided by 70 into $adjust) %% TODO: performance
     (2 plus $adjust into $result)
 (#player wields $weapon)
     (player wields $weapon)
@@ -96,7 +96,8 @@
     (endif)
     (random from 1 to 9 into $roll)
     (compute outcome of $attacker-strength vs $defender-strength roll $roll into $outcome)
-    (if)($defender is asleep)(then)
+    %% if player is knocked out, NPCs might hesitate or deliver a killing blow
+    (if) ($defender is asleep) ~($attacker = #player) (then)
         (if)($outcome = 5)(then)
             (narrate $attacker attacking $defender with outcome 7) %% hesitate
         (else)
@@ -104,6 +105,7 @@
             (damage $defender with outcome 2) %% killed
         (endif)
     (else)
+        %% there's a 25% chance of defender losing their weapon
         (random from 1 to 4 into $lose)
         (if)($outcome = 5)($lose = 1)(then)
             (narrate $attacker attacking $defender with outcome 6) %% lose weapon
@@ -146,6 +148,12 @@
     of sinister black fog envelops (them $defender), and when the fog lifts, the
     carcass has disappeared.
     (set $defender combat strength to 0)
+    %% TODO: move all items to current room
+    ($defender is #in $room)
+    (exhaust) {
+        *($item is #heldby $defender)
+        (now)($item is #in $room)
+    }
     (now)($defender is nowhere)
 
 ($defender loses $delta strength)
@@ -165,10 +173,10 @@
     %% troll can't lose weapon, but the narration makes it seem like they did
 
 ($defender loses weapon)
-    ($defender wields $weapon)
     ($weapon is #heldby $defender)
     ($defender is $Rel $Loc)
     (now) ($weapon is $Rel $Loc)
+    %% TODO: unwield weapon
 
 %% Tables
 %% TODO: not efficient?
@@ -399,7 +407,9 @@
 
 (narrate #player attacking $victim with outcome 6)
     (The $victim)(no space)'s weapon is knocked to the floor, leaving (them $victim) unarmed.
-    The troll, now worried about this encounter, recovers his bloody axe.
+
+(narrate #player attacking $ with outcome 8)
+    %% already handled in (#player attacks $defender with $)
 
 (narrate #player attacking $victim with outcome $outcome)
     %%TODO

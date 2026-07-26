@@ -1,5 +1,5 @@
 {:name   "dungeon"
- :target :z5
+ :target [:zblorb :z5 :aa]
  :build
  {:zblorb
   {:options ["--cover"     "cover.png"

@@ -48,7 +48,6 @@
 (descr *)
     You are here.
 (* is #in #west-of-house)
-(* combat strength is 2)
 %% https://blog.zarfhome.com/2026/02/to-fight-a-troll
 
 (narrate door is locked)
@@ -458,15 +457,15 @@
 (on every tick)
     (* is on)
     (lamp charge level is $level)
+    ($level > 0)
     ($level minus 1 into $newlevel)
     (now)(lamp charge level is $newlevel)
     %% TODO: narrate dimmer
-    ~($newlevel > 0)
+    ($newlevel = 0)
     (now)(* is off)
     (par)I hope you have more light than from (a *).
 (prevent [switch on *])
-    (lamp charge level is $level)
-    ~($level > 0)
+    (lamp charge level is 0)
     The battery has died.
 
 #broken-lamp
@@ -704,7 +703,6 @@
 (animate *)
 (male *)
 (villain *)
-(* combat strength is 2)
 (* weakness is #sword)
 (appearance *)
     (if)~(* is asleep)(then)
@@ -728,7 +726,7 @@
 (appearance *)  There is a bloody axe here.
 (* is #heldby #troll)
 
-%%%
+%%% Darkness
 
 (narrate darkness)
     It is pitch black.  You are likely to be eaten by a grue.
@@ -802,28 +800,38 @@
 (#sword provides light)
     ~(new glow level is 0)
 
-(late on every tick)
+($object is adjacent to $room)
+    *(from $room go $ to $dest)
+    ($object is #in $dest)
+
+(update glow level)
     (now)(new glow level is 0)
     (current room $room)
     (exhaust) {
         *(villain $villain)
-        (if)($villain is #in $room)(then)
+        (if) ($villain is #in $room) (then)
             (now)(new glow level is 2)
-        (elseif)(new glow level is 0)($villain is in scope)(then)
-            (now)(new glow level is 1) %% TODO: scope requires light
+        (elseif) ($villain is adjacent to $room) (then)
+            (now)(new glow level is 1)
         (endif)
     }
     (current glow level is $current)
     (new glow level is $new)
     (now)(current glow level is $new)
-    (narrate glow level changing from $current to $new)
+    (if) ~($new = $current) (then)
+        (narrate glow level changing from $current to $new)
+    (endif)
 
-(narrate glow level changing from 0/1 to 2)
+(narrate glow level changing from $ to 2)
     Your sword has begun to glow very brightly.
-(narrate glow level changing from 0/2 to 1)
+(narrate glow level changing from $ to 1)
     Your sword is glowing with a faint blue glow.
-(narrate glow level changing from 1/2 to 0)
+(narrate glow level changing from $ to 0)
     Your sword is no longer glowing.
+(narrate glow level changing from $ to $)
+
+(late on every tick)
+    (update glow level)
 
 %% Death
 

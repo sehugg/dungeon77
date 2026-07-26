@@ -1,0 +1,16 @@
+
+#glow-level-test
+(test *)
+(run *)
+    (#troll is #in #troll-room)
+    (#troll is adjacent to #cellar)
+    (move player to #in #cellar)
+    (current room #cellar)
+    (current glow level is 0)
+    (update glow level)
+    (current glow level is 1)
+    (move player to #in #troll-room)
+    (current room #troll-room)
+    (update glow level)
+    (current glow level is 2)
+

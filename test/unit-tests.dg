@@ -1,12 +1,3 @@
-%% This is a sample unit test which can be run with `dgt test`.
-
-%% You may have any number of unit test sources.
-%% Refer to the Dialog Manual for more information.
-
-#sample-unit-test
-(test *)
-(run *)
-    (42 = 42)
 
 #melee-outcome-test
 (test *)
@@ -25,22 +16,3 @@
     ~(compute outcome of 3 vs 2 roll 0 into $outcome)
     ~(compute outcome of 1 vs 0 roll 1 into $outcome)
 
-#melee-troll-test
-(test *)
-(run *)
-    (damage #troll with outcome 0)
-    (#troll combat strength is 2)
-    (damage #troll with outcome 3)
-    (#troll combat strength is 1)
-    (damage #troll with outcome 5)
-    (#troll is stunned)
-    (damage #troll with outcome 4)
-    (#troll combat strength is 0)
-    (#troll is nowhere)
-
-#melee-player-test
-(test *)
-(run *)
-    (damage #player with outcome 0)
-    (#player combat strength is 2)
-    (#player maximum strength is 2)

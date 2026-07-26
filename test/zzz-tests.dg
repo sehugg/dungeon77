@@ -1,0 +1,27 @@
+
+#melee-troll-test
+(test *)
+(run *)
+    (damage #troll with outcome 0)
+    (#troll combat strength is 2)
+    (damage #troll with outcome 3)
+    (#troll combat strength is 1)
+    (damage #troll with outcome 5)
+    (#troll is stunned)
+    (#troll combat strength is 1)
+    (damage #troll with outcome 3)
+    (#troll combat strength is 0)
+    (#troll is nowhere)
+
+#melee-player-test
+(test *)
+(run *)
+    (damage #player with outcome 0)
+    (#player combat strength is 3)
+    (#player maximum strength is 2)
+    (damage #player with outcome 3)
+    (#player combat strength is 2)
+    (damage #player with outcome 5)
+    (#player is stunned)
+    (#player combat strength is 2)
+
