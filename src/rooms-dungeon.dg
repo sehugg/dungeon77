@@ -1,0 +1,59 @@
+
+#cellar
+(name *)        Cellar
+(room *)
+(inherently dark *)
+(look *)
+    You are in a dark and damp cellar with a narrow passageway leading
+    east, and a crawlway to the south.  On the west is the bottom of a
+    steep metal ramp which is unclimbable.
+(from * go #east to #troll-room)
+(from * go #south to #chasm2)
+(narrate failing to leave * #up)
+    The trap door has been barred from the other side.
+(narrate failing to leave * #west)
+    You try to ascend the ramp, but it is impossible, and you slide back down.
+(* awards 25 points on first visit)
+
+#troll-room
+(name *)        The Troll Room
+(room *)
+(inherently dark *)
+(look *)
+    You are in a small room with passages off in all directions. 
+    Bloodstains and deep scratches \(perhaps made by an axe\) mar the
+    walls.
+(from * go #west to #cellar)
+(from * go #east to #crawl4)
+(from * go #north to #passage1)
+(from * go #south to #maze1)
+
+#troll
+(* is #in #troll-room)
+(name *)        troll
+(animate *)
+(male *)
+(villain *)
+(* weakness is #sword)
+(appearance *)
+    (if)~(* is asleep)(then)
+        A nasty-looking troll, brandishing a bloody axe, blocks all passages
+        out of the room.
+    (else)
+        An unconscious troll is sprawled on the floor.  All passages out of
+        the room are open.
+    (endif)
+(descr *)
+    (appearance *)
+(prevent [leave #troll-room #east/#north/#south])
+    (#troll is #in #troll-room)
+    ~(#troll is asleep)
+    The troll fends you off with a menacing gesture.
+
+#axe
+(name *)        bloody axe
+(item *)
+(weapon *)
+(appearance *)  There is a bloody axe here.
+(* is #heldby #troll)
+

@@ -1,0 +1,162 @@
+
+(forest name)   Forest
+(forest look)
+    You are in a forest, with trees in all directions around you.
+(forest look east)
+    You are in a dimly lit forest, with large trees all around.  To the
+    east, there appears to be sunlight.
+
+#forest1
+(room *)
+(name *)    (forest name)
+(look *)    (forest look)
+(from * go #north to #forest1)
+(from * go #east to #forest3)
+(from * go #south to #forest2)
+(from * go #west to #forest1)
+
+#forest2
+(room *)
+(name *)    (forest name)
+(look *)    (forest look east)
+(from * go #north to #south-of-house)
+(from * go #east to #clearing)
+(from * go #south to #forest4)
+(from * go #west to #forest1)
+
+#forest3
+(room *)
+(name *)    (forest name)
+(look *)    (forest look east)
+(from * go #north to #forest2)
+(from * go #east to #clearing)
+(from * go #south to #clearing)
+(from * go #west to #north-of-house)
+
+#forest4
+(room *)
+(name *)    (forest name)
+(look *)
+    You are in a large forest, with trees obstructing all views except
+    to the east, where a small clearing may be seen through the trees.
+(from * go #north to #forest5)
+(from * go #east to #cliff-top)
+(from * go #south to #forest4)
+(from * go #west to #forest2)
+
+#forest5
+(room *)
+(name *)    (forest name)
+(look *)    (forest look)
+(from * go #north to #forest5)
+(from * go #southeast to #cliff-top)
+(from * go #south to #forest4)
+(from * go #west to #forest2)
+
+#clearing
+(room *)
+(name *)    Clearing
+(look *)
+    You are in a clearing, with a forest surrounding you on the west
+    and south.
+(from * go #southwest to #east-of-house)
+(from * go #southeast to #forest5)
+(from * go #north to #clearing)
+(from * go #east to #clearing)
+(from * go #west to #forest3)
+(from * go #south to #forest2)
+(from * go #down through #grating to #grating-room)
+    ~(#grating is #under #pile-of-leaves)
+(narrate failing to leave * #down)
+    The grating is locked.
+
+#pile-of-leaves
+(name *)    pile of leaves
+(item *)
+(flammable *)
+(appearance *)
+    There is a pile of leaves on the ground.
+(* is #in #clearing)
+(after [take *])
+    (#grating is #under #pile-of-leaves)
+    A grating appears on the ground.
+    (now)(#grating is #in #clearing)
+    (notice #grating)
+(after [look #under *])
+    (#grating is #under #pile-of-leaves)
+    (now)(#grating is #in #clearing)
+    (notice #grating)
+
+#grating
+(name *)    grating
+(openable *)
+(lockable *)
+(* is hidden)
+(* is #under #pile-of-leaves)
+(appearance *)
+    (if)(* is open)(then)
+        There is an open grating, descending into darkness.
+    (else)
+        There is a grating securely fastened into the ground.
+    (endif)
+
+#cliff-top
+(room *)
+(name *)        Canyon View
+(look *)
+    You are at the top of the Great Canyon on its south wall.  From here
+    there is a marvelous view of the Canyon and parts of the Frigid River
+    upstream.  Across the canyon, the walls of the White Cliffs still
+    appear to loom far above.  Following the Canyon upstream \(north and
+    northwest\), Aragain Falls may be seen, complete with rainbow. 
+    Fortunately, my vision is better than average and I can discern the
+    top of the Flood Control Dam \#3 far to the distant north.  To the
+    west and south can be seen an immense forest, stretching for miles
+    around.  It is possible to climb down into the canyon from here.
+(from * go #down to #cliff-mid)
+(from * go #south to #forest4)
+(from * go #west to #forest5)
+
+#cliff-mid
+(room *)
+(name *)        Rocky Ledge
+(look *)
+    You are on a ledge about halfway up the wall of the river canyon.
+    You can see from here that the main flow from Aragain Falls twists
+    along a passage which it is impossible to enter.  Below you is the
+    canyon bottom.  Above you is more cliff, which still appears
+    climbable.
+(from * go #up to #cliff-top)
+(from * go #down to #cliff-bottom)
+
+#cliff-bottom
+(room *)
+(name *)        Canyon Bottom
+(look *)
+    You are beneath the walls of the river canyon which may be climbable
+    here.  There is a small stream here, which is the lesser part of the
+    runoff of Aragain Falls. To the north is a narrow path.
+(from * go #up to #cliff-mid)
+(from * go #north to #end-of-rainbow)
+
+#end-of-rainbow
+(room *)
+(name *)        End of Rainbow
+(look *)
+    You are on a small beach on the continuation of the Frigid River
+    past the Falls.  The beach is narrow due to the presence of the White
+    Cliffs.  The river canyon opens here and sunlight shines in from
+    above. A rainbow crosses over the falls to the west and a narrow path
+    continues to the southeast.
+(from * go #southeast to #cliff-bottom)
+
+#rainbow
+(room *)
+(name *)        Rainbow Room
+(look *)
+    You are on top of a rainbow \(I bet you never thought you would walk
+    on a rainbow\), with a magnificent view of the Falls.  The rainbow
+    travels east-west here.  There is an NBC Commissary here.
+(from * go #east to #end-of-rainbow)
+(from * go #west to #falls)
+

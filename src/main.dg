@@ -1,0 +1,184 @@
+(scoring enabled)
+
+%% 1 14 6 20 0
+%% light case-score score size capacity
+
+(style class @headline)
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+    font-style: bold;
+(style class @para)
+	margin-top: 1em;
+	margin-bottom: 1em;
+    text-indent: 2em;
+	text-align: left;
+
+(interface (flammable $>Thing))
+(interface (tool $>Thing))
+(interface (sacred $>Thing))
+(interface (weapon $>Thing))
+(interface (villain $>Thing))
+
+(interface ($<Thing is on fire))
+(interface ($<Thing can be turned))
+(interface ($<Thing can be tied))
+(interface ($<Thing is in melee))
+(interface ($<Thing is stunned))
+(interface ($<Thing is asleep))
+
+(interface ($<Thing capacity is $>Capacity))
+(interface ($<Thing size is $>Size))
+(interface ($<Thing combat strength is $>Strength))
+
+(interface ($<Thing awards $>Points points on return))
+(interface ($<Thing awards $>Points points on first take))
+(interface ($<Room awards $>Points points on first visit))
+
+(interface ($<Room is on land))
+(interface ($<Room is on water))
+(interface ($<Room is in mid-air))
+(interface (can fill bottle in $<Room))
+(interface ($<Room has been munged))
+(interface ($<Room is a bucket))
+(interface ($<Room is in the house))
+
+#player
+(current player *)
+(descr *)
+    You are here.
+(* is #in #west-of-house)
+%% https://blog.zarfhome.com/2026/02/to-fight-a-troll
+
+(narrate door is locked)
+    The door is locked, and there is evidently no key.
+(narrate windows are barred)
+    The windows are all barred.
+
+%%%
+
+%%% Darkness
+
+(narrate darkness)
+    It is pitch black.  You are likely to be eaten by a grue.
+    (notice #grue)
+
+#grue
+(name *)    lurking grue
+%%TODO
+(descr *)
+    The grue is a sinister, lurking presence in the dark places of the
+    earth.  Its favorite diet is adventurers, but its insatiable
+    appetite is tempered by its fear of light.  No grue has ever been
+    seen by the light of day, and few have survived its fearsome jaws
+    to tell the tale.
+(prevent [find *])
+    There is no grue here, but I'm sure there is at least one lurking
+    in the darkness nearby.  I wouldn't let my light go out if I were
+    you!
+
+%% TODO: can't get stuff if dark
+
+%% Look at room after turning on light
+(after [switch on $thing])
+    ($thing provides light)
+    (tick)
+    (par)
+    (try [look])
+
+%%%
+
+(understand [repent] as [repent])
+(refuse [repent])
+    It could very well be too late!
+
+%% Not exactly like Zork
+(list contents of $thing)
+    (if){ ($thing is open) (or) ~(opaque $thing) }(then)
+        (line)
+        (list objects #in $thing)
+        (list objects #on $thing)
+        (list objects #under $thing)
+    (endif)
+
+%% Default rule - Look at a thing that is an openable container
+(descr $thing)
+    (container $thing)
+    (openable $thing)
+    (The $thing is) (if)($thing is open)(then)open(else)closed(endif).
+    (list contents of $thing)
+
+%% Melee
+
+(instead of [attack $victim])
+    (villain $victim)
+    Attack with what?
+	(asking for object in [attack $victim with []])
+
+(perform [attack $victim with $weapon])
+    (weapon $weapon) %% TODO?
+    (#player attacks $victim with $weapon)
+
+(prevent $)
+    (#player is asleep)
+    You can't do much while unconscious.
+
+%% Sword glow
+
+(global variable (current glow level is 0))
+(global variable (new glow level is 0))
+
+(#sword provides light)
+    ~(new glow level is 0)
+
+($object is adjacent to $room)
+    *(from $room go $ to $dest)
+    ($object is #in $dest)
+
+(update glow level)
+    (now)(new glow level is 0)
+    (current room $room)
+    (exhaust) {
+        *(villain $villain)
+        (if) ($villain is #in $room) (then)
+            (now)(new glow level is 2)
+        (elseif) ($villain is adjacent to $room) (then)
+            (now)(new glow level is 1)
+        (endif)
+    }
+    (current glow level is $current)
+    (new glow level is $new)
+    (now)(current glow level is $new)
+    (if) ~($new = $current) (then)
+        (narrate glow level changing from $current to $new)
+    (endif)
+
+(narrate glow level changing from $ to 2)
+    Your sword has begun to glow very brightly.
+(narrate glow level changing from $ to 1)
+    Your sword is glowing with a faint blue glow.
+(narrate glow level changing from $ to 0)
+    Your sword is no longer glowing.
+(narrate glow level changing from $ to $)
+
+(late on every tick)
+    (update glow level)
+
+%% Death
+
+(jigs up)
+    (game over { You have died })
+    %%TODO
+
+%% Scoring
+
+(move player to #in $room)
+    ($room is unvisited)
+    ($room awards $Points points on first visit)
+    (increase score by $Points)
+    (fail)
+
+%% default item sizes
+
+($thing size is 5)
+    (item $thing)
