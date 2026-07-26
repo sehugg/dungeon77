@@ -1,0 +1,408 @@
+
+%% 0 -- attacker misses
+%% 1 -- defender unconscious
+%% 2 -- defender dead
+%% 3 -- defender lightly wounded
+%% 4 -- defender seriously wounded
+%% 5 -- staggered
+
+%% 6 -- loses weapon
+%% 7 -- hesitate (miss on free swing)
+%% 8 -- sitting duck (crunch!)
+
+%% Global variables (for efficiency)
+
+(global variable (player combat strength is 2))
+(global variable (troll combat strength is 2))
+
+(global variable (player wields $weapon))   %% last weapon wielded
+
+(#player combat strength is $result)
+    (player combat strength is $result)
+(set #player combat strength to $value)
+    (now)(player combat strength is $value)
+(#player maximum strength is $result)
+    (current score $score)
+    ($score divided by 70 into $adjust)
+    (2 plus $adjust into $result)
+(#player wields $weapon)
+    (player wields $weapon)
+    ($weapon is #heldby #player)
+
+(#troll combat strength is $result)
+    (troll combat strength is $result)
+(set #troll combat strength to $value)
+    (now)(troll combat strength is $value)
+(#troll maximum strength is 2)
+(#troll wields #axe)
+
+%% Villain ticks
+
+(on every tick in #troll-room)
+    (#troll is #in #troll-room)
+    (#troll attacks #player with #axe)
+
+%% TODO: should take at least 1 turn
+(early on every tick)
+    (exhaust) {
+        *($victim is asleep)
+        (random from 1 to 2 into $wake)
+        ($wake = 1)
+        (now)~($victim is asleep)
+        (if)(player can see $victim)(then)
+            (The $victim) wake(s $victim) up.
+        (endif)
+    }
+
+%% Attack routines
+
+(#player attacks #player with $)
+    Well, you really did it that time.  Is suicide painless?
+    (jigs up)
+
+(#player attacks $ with $)
+    (#player is stunned)
+    You are still recovering from that last blow, so your attack is ineffective.
+    (now)~(#player is stunned)
+
+(#player attacks $defender with $)
+    ($defender is asleep)
+    The unconscious (name $defender) cannot defend (itself $defender):  (It $defender) dies.
+    ($defender gets killed)
+
+($attacker attacks $ with $)
+    ($attacker is stunned)
+    (The $attacker) slowly regains (its $attacker) feet.
+    (now)~($attacker is stunned)
+
+%% Combat routines
+
+(#player attacks $ with $weapon)
+    (now)(player wields $weapon)
+    (fail)
+
+($attacker attacks $defender with $weapon)
+    ~($attacker is asleep)
+    ~($attacker is stunned)
+    ($weapon is #heldby $attacker)
+    ($attacker combat strength is $attacker-strength)
+    ($defender combat strength is $defender-strength)
+    ($attacker-strength > 0)
+    ($defender-strength > 0)
+    (if)($defender weakness is $weapon)(then)
+        ($attacker-strength plus 1 into $adjusted-attacker-strength)
+    (else)
+        ($adjusted-attacker-strength = $attacker-strength)
+    (endif)
+    (random from 1 to 9 into $roll)
+    (compute outcome of $attacker-strength vs $defender-strength roll $roll into $outcome)
+    (if)($defender is asleep)(then)
+        (if)($outcome = 5)(then)
+            (narrate $attacker attacking $defender with outcome 7) %% hesitate
+        (else)
+            (narrate $attacker attacking $defender with outcome 8) %% sitting duck
+            (damage $defender with outcome 2) %% killed
+        (endif)
+    (else)
+        (random from 1 to 4 into $lose)
+        (if)($outcome = 5)($lose = 1)(then)
+            (narrate $attacker attacking $defender with outcome 6) %% lose weapon
+            (damage $defender with outcome 6) %% lose weapon
+        (else)
+            (narrate $attacker attacking $defender with outcome $outcome)
+            (damage $defender with outcome $outcome)
+        (endif)
+    (endif)
+
+(damage $ with outcome 0)
+    %% pass
+(damage $defender with outcome 1)
+    ($defender gets knocked out)
+(damage $defender with outcome 2)
+    ($defender gets killed)
+(damage $defender with outcome 3)
+    ($defender loses 1 strength)
+(damage $defender with outcome 4)
+    ($defender loses 2 strength)
+(damage $defender with outcome 5)
+    ($defender gets stunned)
+(damage $defender with outcome 6)
+    ($defender loses weapon)
+
+(#player gets knocked out)
+    (now)(#player is asleep)
+
+(#player gets killed)
+    It appears that that last blow was too much for you.  I'm afraid you are dead.
+    (set #player combat strength to 0)
+    (jigs up)
+
+($defender gets knocked out)
+    (now)($defender is asleep)
+
+($defender gets killed)
+    %% TODO: drops weapon/loot?
+    Almost as soon as (the $defender) breathes his last breath, a cloud
+    of sinister black fog envelops (them $defender), and when the fog lifts, the
+    carcass has disappeared.
+    (set $defender combat strength to 0)
+    (now)($defender is nowhere)
+
+($defender loses $delta strength)
+    ($defender combat strength is $strength)
+    (if)($strength > $delta)(then)
+        ($strength minus $delta into $newstrength)
+        (set $defender combat strength to $newstrength)
+    (else)
+        ($defender gets killed)
+    (endif)
+
+($defender gets stunned)
+    (now)($defender is stunned)
+
+%% TODO: this fails?
+(#troll loses weapon)
+    %% troll can't lose weapon, but the narration makes it seem like they did
+
+($defender loses weapon)
+    ($defender wields $weapon)
+    ($weapon is #heldby $defender)
+    ($defender is $Rel $Loc)
+    (now) ($weapon is $Rel $Loc)
+
+%% Tables
+%% TODO: not efficient?
+
+(get combat table for defender $strength into $table)
+    (if)($strength = 1)(then)
+        ($table = [
+            [ ]
+            [ ]
+            [ 0 0 0 0 5 5 1 1 2 ]
+            [ 0 0 0 5 5 1 1 2 2 ]
+            [ 0 0 5 5 1 1 2 2 2 ]
+        ])
+    (elseif)($strength = 2)(then)
+        ($table = [
+            [ ]
+            [ 0 0 0 0 0 5 5 3 3 ]
+            [ 0 0 0 5 5 3 3 3 1 ]
+            [ 0 0 5 5 3 3 3 1 2 ]
+            [ 0 5 5 3 3 3 1 2 2 ]
+        ])
+    (elseif)($strength > 2)(then)
+        ($table = [
+            [ 0 0 0 0 0 5 5 3 3 ]
+            [ 0 0 0 0 5 5 3 3 4 ]
+            [ 0 0 0 5 5 3 3 3 4 ]
+            [ 0 0 5 5 3 3 3 4 4 ]
+            [ 0 5 5 3 3 3 3 4 4 ]
+        ])
+    (else)
+        (fail)
+    (endif)
+
+%% TODO: unused
+(clamp $value from $lo to $hi into $result)
+    (if)($value < $lo)(then)
+        ($result = $lo)
+    (elseif)($value > $hi)(then)
+        ($result = $hi)
+    (else)
+        ($result = $value)
+    (endif)
+
+(compute outcome of $attacker-strength vs $defender-strength roll $roll into $outcome)
+    (get combat table for defender $defender-strength into $table)
+    (if)($attacker-strength > $defender-strength)(then)
+        ($attacker-strength minus $defender-strength into $attacker-advantage)
+        (if)($attacker-advantage < 2)(then)
+            ($attacker-advantage plus 3 into $rowindex)
+        (else)
+            ($rowindex = 5)
+        (endif)
+    (elseif)($defender-strength > $attacker-strength)(then)
+        ($defender-strength minus $attacker-strength into $defender-advantage)
+        (if)($defender-advantage < 2)(then)
+            (3 minus $defender-advantage into $rowindex)
+        (else)
+            ($rowindex = 1)
+        (endif)
+    (else)
+        ($rowindex = 3)
+    (endif)
+    (nth $table $rowindex $row)
+    (nth $row $roll $outcome)
+
+%% Messages
+
+(narrate #troll attacking #player with outcome 0)
+    (select)The troll swings his axe, but it misses.
+    (or)The troll's axe barely misses your ear.
+    (or)The axe sweeps past as you jump aside.
+    (or)The axe crashes against the rock, throwing sparks!
+    (at random)
+
+(narrate #troll attacking #player with outcome 1)
+    The flat of the troll's axe hits you delicately on the head, knocking you out.
+
+(narrate #troll attacking #player with outcome 2)
+    (select)The troll lands a killing blow.  You are dead.
+    (or)The troll neatly removes your head.
+    (or)The troll's axe stroke cleaves you from the nave to the chops.
+    (or)The troll's axe removes your head.
+    (at random)
+
+(narrate #troll attacking #player with outcome 3)
+    (select)The axe gets you right in the side.  Ouch!
+    (or)The flat of the troll's axe skins across your forearm.
+    (or)The troll's swing almost knocks you over as you barely parry in time.
+    (or)The troll swings his axe, and it nicks your arm as you dodge.
+    (at random)
+
+(narrate #troll attacking #player with outcome 4)
+    (select)The troll charges, and his axe slashes you on your arm.
+    (or)An axe stroke makes a deep wound in your leg.
+    (or)The troll's axe swings down, gashing your shoulder.
+    (or)The troll sees a hole in your defense, and a lightning stroke opens a wound in your left side.
+    (at random)
+
+(narrate #troll attacking #player with outcome 5)
+    (select)The troll hits you with a glancing blow, and you are momentarily stunned.
+    (or)The troll swings; the blade turns on your armor but crashes broadside into your head.
+    (or)You stagger back under a hail of axe strokes.
+    (or)The troll's mighty blow drops you to your knees.
+    (at random)
+
+(narrate #troll attacking #player with outcome 6)
+    (player wields $weapon)
+    (select)The axe hits your (name $weapon) and knocks it spinning.
+    (or)The troll swings, you parry, but the force of his blow disarms you.
+    (or)The axe knocks your (name $weapon) out of your hand.  It falls to the floor.
+    (or)Your (name $weapon) is knocked out of your hands, but you parried the blow.
+    (at random)
+    ~(narrate alternate player weapon besides $weapon)
+
+(narrate alternate player weapon besides $weapon)
+    (at most once) {
+        *($alt is #heldby #player)
+        ~($alt = $weapon)
+        (weapon $alt)
+    }
+    Fortunately, you still have (a $alt).
+    (fail)
+
+(narrate #troll attacking #player with outcome 7)
+    (select)The troll strikes at your unconscious form, but misses in his rage.
+    (or)The troll hesitates, fingering his axe.
+    (or)The troll scratches his head ruminatively:  Might you be magically protected, he wonders?
+    (or)The troll seems afraid to approach your crumpled form.
+    (at random)
+
+(narrate #troll attacking #player with outcome 8)
+    Conquering his fears, the troll puts you to death.
+
+(narrate #player attacking $victim with outcome 0)
+    (player wields #knife)
+    (select)Your stab misses (the $victim) by an inch.
+    (or)A good slash, but it misses (the $victim) by a mile.
+    (or)You charge, but (the $victim) jumps nimbly aside.
+    (or)A quick stroke, but (the $victim) is on guard.
+    (or)A good stroke, but it's too slow, (the $victim) dodges.
+    (at random)
+
+(narrate #player attacking $victim with outcome 1)
+    (player wields #knife)
+    (select)The haft of your knife knocks out (the $victim).
+    (or)(The $victim) drops to the floor, unconscious.
+    (or)(The $victim) is knocked out!
+    (at random)
+
+(narrate #player attacking $victim with outcome 2)
+    (player wields #knife)
+    (select)The end for (the $victim) as your knife severs his jugular.
+    (or)The fatal thrust strikes (the $victim) square in the heart:  He dies.
+    (or)(The $victim) takes a final blow and slumps to the floor dead.
+    (at random)
+
+(narrate #player attacking $victim with outcome 3)
+    (player wields #knife)
+    (select)(The $victim) is slashed on the arm, blood begins to trickle down.
+    (or)Your knife point pinks (the $victim) on the wrist, but it's not serious.
+    (or)Your stroke lands, but it was only the flat of the blade.
+    (or)The blow lands, making a shallow gash in (the $victim)(no space)'s arm!
+    (at random)
+
+(narrate #player attacking $victim with outcome 4)
+    (player wields #knife)
+    (select)(The $victim) receives a deep gash in his side.
+    (or)A savage cut on the leg stuns (the $victim), but he can still fight!
+    (or)Slash!  Your stroke connects!  (The $victim) could be in serious trouble!
+    (at random)
+
+(narrate #player attacking $victim with outcome 5)
+    (player wields #knife)
+    (select)(The $victim) drops to his knees, staggered.
+    (or)(The $victim) is confused and can't fight back.
+    (or)The quickness of your thrust knocks (the $victim) back, stunned.
+    (at random)
+
+(narrate #player attacking $victim with outcome 6)
+    (player wields #knife)
+    (The $victim) is disarmed by a subtle feint past his guard.
+
+(narrate #player attacking $victim with outcome 0)
+    (select)Your swing misses (the $victim) by an inch.
+    (or)A mighty blow, but it misses (the $victim) by a mile.
+    (or)You charge, but (the $victim) jumps nimbly aside.
+    (or)Clang! Crash! (The $victim) parries.
+    (or)A good stroke, but it's too slow, (the $victim) dodges.
+    (at random)
+
+(narrate #player attacking $victim with outcome 1)
+    (player wields $weapon)
+    (select)Your (name $weapon) crashes down, knocking (the $victim) into dreamland.
+    (or)(The $victim) is battered into unconsciousness.
+    (or)A furious exchange, and (the $victim) is knocked out!
+    (at random)
+
+(narrate #player attacking $victim with outcome 2)
+    (player wields $weapon)
+    (select)It's curtains for (the $victim) as your (name $weapon) removes his head.
+    (or)The fatal blow strikes (the $victim) square in the heart:  He dies.
+    (or)(The $victim) takes a final blow and slumps to the floor dead.
+    (at random)
+
+(narrate #player attacking $victim with outcome 3)
+    (player wields $weapon)
+    (select)(The $victim) is struck on the arm, blood begins to trickle down.
+    (or)Your (name $weapon) pinks (the $victim) on the wrist, but it's not serious.
+    (or)Your stroke lands, but it was only the flat of the blade.
+    (or)The blow lands, making a shallow gash in (the $victim)(no space)'s arm!
+    (at random)
+
+(narrate #player attacking $victim with outcome 4)
+    (select)(The $victim) receives a deep gash in his side.
+    (or)A savage blow on the thigh!  (The $victim) is stunned but can still fight!
+    (or)Slash!  Your blow lands!  That one hit an artery, it could be serious!
+    (at random)
+
+(narrate #player attacking $victim with outcome 5)
+    (select)(The $victim) is staggered, and drops to his knees.
+    (or)(The $victim) is momentarily disoriented and can't fight back.
+    (or)The force of your blow knocks (the $victim) back, stunned.
+    (at random)
+
+(narrate #player attacking #troll with outcome 6)
+    (The #troll)(no space)'s weapon is knocked to the floor, leaving (them #troll) unarmed.
+    The troll, now worried about this encounter, recovers his bloody axe.
+
+(narrate #player attacking $victim with outcome 6)
+    (The $victim)(no space)'s weapon is knocked to the floor, leaving (them $victim) unarmed.
+    The troll, now worried about this encounter, recovers his bloody axe.
+
+(narrate #player attacking $victim with outcome $outcome)
+    %%TODO
+    (player wields $weapon)
+    You attack (the $victim) with (the $weapon), outcome is { $outcome }.
+

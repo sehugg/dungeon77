@@ -14,26 +14,27 @@
     text-indent: 2em;
 	text-align: left;
 
-(interface (flammable $<Thing))
-(interface (tool $<Thing))
-(interface (sacred $<Thing))
-(interface (weapon $<Thing))
-(interface (villain $<Thing))
+(interface (flammable $>Thing))
+(interface (tool $>Thing))
+(interface (sacred $>Thing))
+(interface (weapon $>Thing))
+(interface (villain $>Thing))
 
 (interface ($<Thing is on fire))
 (interface ($<Thing can be turned))
 (interface ($<Thing can be tied))
 (interface ($<Thing is in melee))
-%%(interface ($<Thing is stunned))
+(interface ($<Thing is stunned))
 (interface ($<Thing is asleep))
 
-(interface ($<Thing capacity is $<Capacity))
-(interface ($<Thing size is $<Size))
-(interface ($<Thing awards $<Points case points))
-(interface ($<Thing awards $<Points on first take))
-(interface ($<Thing combat strength is $<Strength))
+(interface ($<Thing capacity is $>Capacity))
+(interface ($<Thing size is $>Size))
+(interface ($<Thing combat strength is $>Strength))
 
-(interface (outdoors $<Room))
+(interface ($<Thing awards $>Points points on return))
+(interface ($<Thing awards $>Points points on first take))
+(interface ($<Room awards $>Points points on first visit))
+
 (interface ($<Room is on land))
 (interface ($<Room is on water))
 (interface ($<Room is in mid-air))
@@ -55,11 +56,9 @@
 (narrate windows are barred)
     The windows are all barred.
 
-%% A room called West of House is an outdoors room. "You are in an open field on the west side of a white house with a boarded front door."
 #west-of-house
 (name *)        West of House
 (room *)
-(outdoors *)
 (look *)        You are in an open field west of a big white house, with a boarded front door.
 (notice #front-door)
 (from * go #north to #north-of-house)
@@ -143,7 +142,6 @@
 #north-of-house
 (name *)        North of House
 (room *)
-(outdoors *)
 (from * go #west to #west-of-house)
 (from * go #east to #east-of-house)
 (from * go #north to #forest3)
@@ -156,7 +154,6 @@
 #south-of-house
 (name *)        South of House
 (room *)
-(outdoors *)
 (from * go #west to #west-of-house)
 (from * go #east to #east-of-house)
 (from * go #south to #forest2)
@@ -169,7 +166,6 @@
 #east-of-house
 (name *)        Behind House
 (room *)
-(outdoors *)
 (from * go #north to #north-of-house)
 (from * go #south to #south-of-house)
 (from * go #east to #clearing)
@@ -216,10 +212,7 @@
 (prevent [go #down])
     (current room *)
     Only Santa Claus climbs down chimneys.
-(move player to #in *)
-    (* is unvisited)
-    (increase score by 10)
-    (fail)
+(* awards 10 points on first visit)
 
 #sack
 (* is #in #kitchen)
@@ -522,7 +515,6 @@
 
 #forest1
 (room *)
-(outdoors *)
 (name *)    (forest name)
 (look *)   (forest look)
 (from * go #north to #forest1)
@@ -532,7 +524,6 @@
 
 #forest2
 (room *)
-(outdoors *)
 (name *)    (forest name)
 (look *)   (forest look east)
 (from * go #north to #south-of-house)
@@ -542,7 +533,6 @@
 
 #forest3
 (room *)
-(outdoors *)
 (name *)    (forest name)
 (look *)   (forest look east)
 (from * go #north to #forest2)
@@ -552,7 +542,6 @@
 
 #forest4
 (room *)
-(outdoors *)
 (name *)    (forest name)
 (look *)
     You are in a large forest, with trees obstructing all views except
@@ -564,7 +553,6 @@
 
 #forest5
 (room *)
-(outdoors *)
 (name *)    (forest name)
 (look *)   (forest look)
 (from * go #north to #forest5)
@@ -574,7 +562,6 @@
 
 #clearing
 (room *)
-(outdoors *)
 (name *)    Clearing
 (look *)
     You are in a clearing, with a forest surrounding you on the west
@@ -622,7 +609,6 @@
 
 #cliff-top
 (room *)
-(outdoors *)
 (name *)        Canyon View
 (look *)
     You are at the top of the Great Canyon on its south wall.  From here
@@ -640,7 +626,6 @@
 
 #cliff-mid
 (room *)
-(outdoors *)
 (name *)        Rocky Ledge
 (look *)
     You are on a ledge about halfway up the wall of the river canyon.
@@ -653,7 +638,6 @@
 
 #cliff-bottom
 (room *)
-(outdoors *)
 (name *)        Canyon Bottom
 (look *)
     You are beneath the walls of the river canyon which may be climbable
@@ -664,7 +648,6 @@
 
 #end-of-rainbow
 (room *)
-(outdoors *)
 (name *)        End of Rainbow
 (look *)
     You are on a small beach on the continuation of the Frigid River
@@ -676,7 +659,6 @@
 
 #rainbow
 (room *)
-(outdoors *)
 (name *)        Rainbow Room
 (look *)
     You are on top of a rainbow \(I bet you never thought you would walk
@@ -701,6 +683,7 @@
     The trap door has been barred from the other side.
 (narrate failing to leave * #west)
     You try to ascend the ramp, but it is impossible, and you slide back down.
+(* awards 25 points on first visit)
 
 #troll-room
 (name *)        The Troll Room
@@ -719,8 +702,10 @@
 (* is #in #troll-room)
 (name *)        troll
 (animate *)
+(male *)
 (villain *)
 (* combat strength is 2)
+(* weakness is #sword)
 (appearance *)
     (if)~(* is asleep)(then)
         A nasty-looking troll, brandishing a bloody axe, blocks all passages
@@ -791,7 +776,7 @@
 (descr $thing)
     (container $thing)
     (openable $thing)
-    (The $thing) is (if)($thing is open)(then)open(else)closed(endif).
+    (The $thing is) (if)($thing is open)(then)open(else)closed(endif).
     (list contents of $thing)
 
 %% Melee
@@ -802,12 +787,57 @@
 	(asking for object in [attack $victim with []])
 
 (perform [attack $victim with $weapon])
-%%TODO
-    You slash at (the $victim) with (the $weapon).
+    (weapon $weapon) %% TODO?
+    (#player attacks $victim with $weapon)
+
+(prevent $)
+    (#player is asleep)
+    You can't do much while unconscious.
+
+%% Sword glow
+
+(global variable (current glow level is 0))
+(global variable (new glow level is 0))
+
+(#sword provides light)
+    ~(new glow level is 0)
+
+(late on every tick)
+    (now)(new glow level is 0)
+    (current room $room)
+    (exhaust) {
+        *(villain $villain)
+        (if)($villain is #in $room)(then)
+            (now)(new glow level is 2)
+        (elseif)(new glow level is 0)($villain is in scope)(then)
+            (now)(new glow level is 1) %% TODO: scope requires light
+        (endif)
+    }
+    (current glow level is $current)
+    (new glow level is $new)
+    (now)(current glow level is $new)
+    (narrate glow level changing from $current to $new)
+
+(narrate glow level changing from 0/1 to 2)
+    Your sword has begun to glow very brightly.
+(narrate glow level changing from 0/2 to 1)
+    Your sword is glowing with a faint blue glow.
+(narrate glow level changing from 1/2 to 0)
+    Your sword is no longer glowing.
+
+%% Death
 
 (jigs up)
     (game over { You have died })
     %%TODO
+
+%% Scoring
+
+(move player to #in $room)
+    ($room is unvisited)
+    ($room awards $Points points on first visit)
+    (increase score by $Points)
+    (fail)
 
 %% default item sizes
 
