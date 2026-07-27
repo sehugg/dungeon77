@@ -11,6 +11,8 @@
 %% TODO: merge with front-door
 (narrate failing to leave * #east)
     (narrate door is locked)
+(unlikely [go to *])
+(very unlikely [go to *])
 
 #mailbox
 (* is #in #west-of-house)
@@ -73,7 +75,7 @@
     It doesn't seem to work.
 %% Check going east from West of House: say "The door is locked, and there is evidently no key." instead.
 
-#white-house
+#house
 (name *)        white house
 (#west-of-house attracts *)
 (#north-of-house attracts *)
@@ -82,6 +84,7 @@
 (descr *)
     The house is a beautiful colonial house which is painted white.
     It is clear that the owners must have been extremely wealthy.
+~(unlikely [enter *])
 
 #north-of-house
 (name *)        North of House
@@ -95,6 +98,9 @@
 (look *)
     You are facing the north side of a white house.
     There is no door here, and all the windows are barred.
+(unlikely [enter *])
+(unlikely [go to *])
+(very unlikely [go to *])
 
 #south-of-house
 (name *)        South of House
@@ -108,6 +114,9 @@
 (look *)
     You are facing the south side of a white house.
     There is no door here, and all the windows are barred.
+(unlikely [enter *])
+(unlikely [go to *])
+(very unlikely [go to *])
 
 #east-of-house
 (name *)        Behind House
@@ -124,6 +133,12 @@
     (else)
         open.
     (endif)
+(unlikely [enter *])
+(unlikely [go to *])
+(very unlikely [go to *])
+(instead of [enter #house])
+    (current room *)
+    (try [go #west])
 
 #window
 (name *)        window
