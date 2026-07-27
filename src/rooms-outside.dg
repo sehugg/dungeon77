@@ -160,3 +160,20 @@
 (from * go #east to #end-of-rainbow)
 (from * go #west to #falls)
 
+#rusty-knife
+(name *)        rusty knife
+(item *)
+(weapon *)
+(dict *)        blade
+(after [take *])
+    (#sword is in scope)
+    As you pick up the rusty knife, your sword gives a single pulse
+    of blinding blue light.
+(instead of [attack $victim with *])
+    (villain $victim)
+    As the knife approaches its victim, your mind is submerged by an
+    overmastering will.  Slowly, your hand turns, until the rusty blade
+    is an inch from your neck.  The knife seems to sing as it savagely
+    slits your throat.
+    (jigs up)
+

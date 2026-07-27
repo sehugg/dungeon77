@@ -16,7 +16,6 @@
 
 (interface (flammable $>Thing))
 (interface (tool $>Thing))
-(interface (sacred $>Thing))
 (interface (weapon $>Thing))
 (interface (villain $>Thing))
 
@@ -35,12 +34,14 @@
 (interface ($<Thing awards $>Points points on first take))
 (interface ($<Room awards $>Points points on first visit))
 
-(interface ($<Room is on land))
-(interface ($<Room is on water))
-(interface ($<Room is in mid-air))
+(interface ($<Room is sacred))
+(interface ($<Room is land))
+(interface ($<Room is water))
+(interface ($<Room can be filled))
+(interface ($<Room is midair))
 (interface (can fill bottle in $<Room))
 (interface ($<Room has been munged))
-(interface ($<Room is a bucket))
+(interface ($<Room is bucket))
 (interface ($<Room is in the house))
 
 #player

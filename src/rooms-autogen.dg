@@ -1,0 +1,3343 @@
+%% Dialog source generated from the MDL Zork sources by mdl2dialog.py
+%% 144 rooms, 155 objects
+
+%% ==================================================================
+%% Rooms
+%% ==================================================================
+
+%% PASS1
+#east-west-passage
+(room *)
+(name *)	East-West Passage
+(inherently dark *)
+(* awards 5 points on first visit)
+(look *)
+	You are in a narrow east-west passageway. There is a narrow stairway
+	leading down at the north end of the room.
+(from * go #east to #round-room)
+(from * go #west to #troll-room)
+(from * go #down to #deep-ravine)
+(from * go #north to #deep-ravine)
+
+%% MAZE1
+#maze1
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #west to #troll-room)
+(from * go #north to #maze1)
+(from * go #south to #maze2)
+(from * go #east to #maze4)
+
+%% MAZE2
+#maze2
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #south to #maze1)
+(from * go #north to #maze4)
+(from * go #east to #maze3)
+
+%% MAZE3
+#maze3
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #west to #maze2)
+(from * go #north to #maze4)
+(from * go #up to #maze5)
+
+%% MAZE4
+#maze4
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #west to #maze3)
+(from * go #north to #maze1)
+(from * go #east to #dead-end1)
+
+%% DEAD1
+#dead-end1
+(room *)
+(name *)	Dead End
+(inherently dark *)
+(look *)
+	Dead End
+(from * go #south to #maze4)
+
+%% MAZE5
+#maze5
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #east to #dead-end2)
+(from * go #north to #maze3)
+(from * go #southwest to #maze6)
+
+%% DEAD2
+#dead-end2
+(room *)
+(name *)	Dead End
+(inherently dark *)
+(look *)
+	Dead End
+(from * go #west to #maze5)
+
+%% MAZE6
+#maze6
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #down to #maze5)
+(from * go #east to #maze7)
+(from * go #west to #maze6)
+(from * go #up to #maze9)
+
+%% MAZE7
+#maze7
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #up to #maze14)
+(from * go #west to #maze6)
+(from * go #northeast to #dead-end1)
+(from * go #east to #maze8)
+(from * go #south to #maze15)
+
+%% MAZE8
+#maze8
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #northeast to #maze7)
+(from * go #west to #maze8)
+(from * go #southeast to #dead-end3)
+
+%% DEAD3
+#dead-end3
+(room *)
+(name *)	Dead End
+(inherently dark *)
+(look *)
+	Dead End
+(from * go #north to #maze8)
+
+%% MAZE9
+#maze9
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #north to #maze6)
+(from * go #east to #maze11)
+(from * go #down to #maze10)
+(from * go #south to #maze13)
+(from * go #west to #maze12)
+(from * go #northwest to #maze9)
+
+%% MAZ10
+#maze10
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #east to #maze9)
+(from * go #west to #maze13)
+(from * go #up to #maze11)
+
+%% MAZ11
+#maze11
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #northeast to #grating-room)
+(from * go #down to #maze10)
+(from * go #northwest to #maze13)
+(from * go #southwest to #maze12)
+
+%% MGRAT
+#grating-room
+(room *)
+(name *)	Grating Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine MAZE-11
+%% TODO: room action routine MAZE-11
+(from * go #southwest to #maze11)
+(from * go #up to #clearing)
+%% TODO: conditional on flag KEY-FLAG
+(prevent [from * go #up])
+	~(key-flag)
+		The grating is locked
+(notice #grating2)
+
+%% MAZ12
+#maze12
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #west to #maze5)
+(from * go #southwest to #maze11)
+(from * go #east to #maze13)
+(from * go #up to #maze9)
+(from * go #north to #dead-end4)
+
+%% DEAD4
+#dead-end4
+(room *)
+(name *)	Dead End
+(inherently dark *)
+(look *)
+	Dead End
+(from * go #south to #maze12)
+
+%% MAZ13
+#maze13
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #east to #maze9)
+(from * go #down to #maze12)
+(from * go #south to #maze10)
+(from * go #west to #maze11)
+
+%% MAZ14
+#maze14
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #west to #maze15)
+(from * go #northwest to #maze14)
+(from * go #northeast to #maze7)
+(from * go #south to #maze7)
+
+%% MAZ15
+#maze15
+(room *)
+(name *)	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
+(look *)
+	You are in a maze of twisty little passages, all alike.
+(from * go #west to #maze14)
+(from * go #south to #maze7)
+(from * go #northeast to #cyclops-room)
+
+%% FORE1
+#forest1
+(room *)
+(name *)	Forest
+(* is sacred)
+(look *)
+	You are in a forest, with trees in all directions around you.
+(from * go #north to #forest1)
+(from * go #east to #forest5)
+(from * go #south to #forest4)
+(from * go #west to #forest1)
+
+%% FORE4
+#forest2
+(room *)
+(name *)	Forest
+(* is sacred)
+(look *)
+	You are in a large forest, with trees obstructing all views except to
+	the east, where a small clearing may be seen through the trees.
+(from * go #east to #canyon-view)
+(from * go #north to #forest3)
+(from * go #south to #forest2)
+(from * go #west to #forest4)
+
+%% FORE5
+#forest3
+(room *)
+(name *)	Forest
+(* is sacred)
+(look *)
+	You are in a forest, with trees in all directions around you.
+(from * go #north to #forest3)
+(from * go #southeast to #canyon-view)
+(from * go #south to #forest2)
+(from * go #west to #forest4)
+
+%% FORE2
+#forest4
+(room *)
+(name *)	Forest
+(* is sacred)
+(look *)
+	You are in a dimly lit forest, with large trees all around. To the east,
+	there appears to be sunlight.
+(from * go #north to #south-of-house)
+(from * go #east to #clearing)
+(from * go #south to #forest2)
+(from * go #west to #forest1)
+
+%% FORE3
+#forest5
+(room *)
+(name *)	Forest
+(* is sacred)
+(look *)
+	You are in a dimly lit forest, with large trees all around. To the east,
+	there appears to be sunlight.
+(from * go #north to #forest4)
+(from * go #east to #clearing)
+(from * go #south to #clearing)
+(from * go #west to #north-of-house)
+
+%% CLEAR
+#clearing
+(room *)
+(name *)	Clearing
+(* is sacred)
+(look *)
+	%% TODO: description comes from room routine CLEARING
+%% TODO: room action routine CLEARING
+(from * go #southwest to #behind-house)
+(from * go #southeast to #forest3)
+(from * go #north to #clearing)
+(from * go #east to #clearing)
+(from * go #west to #forest5)
+(from * go #south to #forest4)
+(from * go #down to #grating-room)
+%% TODO: conditional on flag KEY-FLAG
+(prevent [from * go #down])
+	~(key-flag)
+		You can't go that way.
+(notice #grating1)
+
+%% RAVI1
+#deep-ravine
+(room *)
+(name *)	Deep Ravine
+(inherently dark *)
+(look *)
+	You are in a deep ravine at a crossing with an east-west crawlway. Some
+	stone steps are at the south of the ravine and a steep staircase
+	descends.
+(from * go #south to #east-west-passage)
+(from * go #down to #reservoir-south)
+(from * go #east to #chasm)
+(from * go #west to #rocky-crawl)
+
+%% CRAW1
+#rocky-crawl
+(room *)
+(name *)	Rocky Crawl
+(inherently dark *)
+(look *)
+	You are in a crawlway with a three-foot high ceiling. Your footing is
+	very unsure here due to the assortment of rocks underfoot. Passages can
+	be seen in the east, west, and northwest corners of the passage.
+(from * go #west to #deep-ravine)
+(from * go #east to #dome-room)
+(from * go #northwest to #egyptian-room)
+
+%% RESES
+#reservoir-south
+(room *)
+(name *)	Reservoir South
+(inherently dark *)
+(* can be filled)
+(look *)
+	%% TODO: description comes from room routine RESERVOIR-SOUTH
+%% TODO: room action routine RESERVOIR-SOUTH
+(from * go #south to #deep-ravine)
+%% TODO: conditional on flag EGYPT-FLAG
+(prevent [from * go #south])
+	~(egypt-flag)
+		The coffin will not fit through this passage.
+(from * go #west to #stream)
+(from * go #cross to #reservoir-north)
+%% TODO: conditional on flag LOW-TIDE
+(prevent [from * go #cross])
+	~(low-tide)
+		You are not equipped for swimming.
+(from * go #north to #reservoir-north)
+%% TODO: conditional on flag LOW-TIDE
+(prevent [from * go #north])
+	~(low-tide)
+		You are not equipped for swimming.
+(from * go #up to #deep-canyon)
+%% TODO: conditional on flag EGYPT-FLAG
+(prevent [from * go #up])
+	~(egypt-flag)
+		The stairs are too steep for carrying the coffin.
+
+%% RESEN
+#reservoir-north
+(room *)
+(name *)	Reservoir North
+(inherently dark *)
+(* can be filled)
+(look *)
+	%% TODO: description comes from room routine RESERVOIR-NORTH
+%% TODO: room action routine RESERVOIR-NORTH
+(from * go #north to #atlantis-room)
+(from * go #cross to #reservoir-south)
+%% TODO: conditional on flag LOW-TIDE
+(prevent [from * go #cross])
+	~(low-tide)
+		You are not equipped for swimming.
+(from * go #south to #reservoir-south)
+%% TODO: conditional on flag LOW-TIDE
+(prevent [from * go #south])
+	~(low-tide)
+		You are not equipped for swimming.
+
+%% STREA
+#stream
+(room *)
+(name *)	Stream
+(inherently dark *)
+(* can be filled)
+(look *)
+	You are standing on a path beside a flowing stream. The path travels to
+	the north and the east.
+(from * go #east to #reservoir-south)
+(from * go #north to #glacier-room)
+
+%% EGYPT
+#egyptian-room
+(room *)
+(name *)	Egyptian Room
+(inherently dark *)
+(look *)
+	You are in a room which looks like an Egyptian tomb. There is an
+	ascending staircase in the room as well as doors, east and south.
+(from * go #up to #glacier-room)
+(from * go #south to #volcano-view)
+(from * go #east to #rocky-crawl)
+%% TODO: conditional on flag EGYPT-FLAG
+(prevent [from * go #east])
+	~(egypt-flag)
+		The passage is too narrow to accomodate coffins.
+
+%% ICY
+#glacier-room
+(room *)
+(name *)	Glacier Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine GLACIER-ROOM
+%% TODO: room action routine GLACIER-ROOM
+(from * go #north to #stream)
+(from * go #east to #egyptian-room)
+(from * go #west to #ruby-room)
+%% TODO: conditional on flag GLACIER-FLAG
+(prevent [from * go #west])
+	~(glacier-flag)
+		You can't go that way.
+
+%% RUBYR
+#ruby-room
+(room *)
+(name *)	Ruby Room
+(inherently dark *)
+(look *)
+	You are in a small chamber behind the remains of the Great Glacier. To
+	the south and west are small passageways.
+(from * go #west to #lava-room)
+(from * go #south to #glacier-room)
+
+%% ATLAN
+#atlantis-room
+(room *)
+(name *)	Atlantis Room
+(inherently dark *)
+(look *)
+	You are in an ancient room, long buried by the Reservoir. There are
+	exits here to the southeast and upward.
+(from * go #southeast to #reservoir-north)
+(from * go #up to #cave1)
+
+%% CANY1
+#deep-canyon
+(room *)
+(name *)	Deep Canyon
+(inherently dark *)
+(look *)
+	You are on the south edge of a deep canyon. Passages lead off to the
+	east, south, and northwest. You can hear the sound of flowing water
+	below.
+(from * go #northwest to #reservoir-south)
+(from * go #east to #dam-room)
+(from * go #south to #round-room)
+
+%% ECHO
+#loud-room
+(room *)
+(name *)	Loud Room
+(inherently dark *)
+(look *)
+	You are in a large room with a ceiling which cannot be detected from the
+	ground. There is a narrow passage from east to west and a stone stairway
+	leading upward. The room is extremely noisy. In fact, it is difficult to
+	hear yourself think.
+%% TODO: room action routine ECHO-ROOM
+(from * go #east to #ancient-chasm)
+(from * go #west to #north-south-passage)
+(from * go #up to #damp-cave)
+
+%% MIRR1
+#mirror-room1
+(room *)
+(name *)	Mirror Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine MIRROR-ROOM
+%% TODO: room action routine MIRROR-ROOM
+(from * go #west to #cold-passage)
+(from * go #north to #steep-crawlway)
+(from * go #east to #cave1)
+
+%% MIRR2
+#mirror-room2
+(room *)
+(name *)	Mirror Room
+(look *)
+	%% TODO: description comes from room routine MIRROR-ROOM
+%% TODO: room action routine MIRROR-ROOM
+(from * go #west to #winding-passage)
+(from * go #north to #narrow-crawlway)
+(from * go #east to #cave2)
+
+%% CAVE1
+#cave1
+(room *)
+(name *)	Cave
+(inherently dark *)
+(look *)
+	You are in a small cave with an entrance to the north and a stairway
+	leading down.
+(from * go #north to #mirror-room1)
+(from * go #down to #atlantis-room)
+
+%% CAVE2
+#cave2
+(room *)
+(name *)	Cave
+(inherently dark *)
+(look *)
+	You are in a tiny cave with entrances west and north, and a dark,
+	forbidding staircase leading down.
+%% TODO: room action routine CAVE2-ROOM
+(from * go #north to #narrow-crawlway)
+(from * go #west to #mirror-room2)
+(from * go #down to #entrance-to-hades)
+
+%% CRAW2
+#steep-crawlway
+(room *)
+(name *)	Steep Crawlway
+(inherently dark *)
+(look *)
+	You are in a steep and narrow crawlway. There are two exits nearby to
+	the south and southwest.
+(from * go #south to #mirror-room1)
+(from * go #southwest to #cold-passage)
+
+%% CRAW3
+#narrow-crawlway
+(room *)
+(name *)	Narrow Crawlway
+(inherently dark *)
+(look *)
+	You are in a narrow crawlway. The crawlway leads from north to south.
+	However the south passage divides to the south and southwest.
+(from * go #south to #cave2)
+(from * go #southwest to #mirror-room2)
+(from * go #north to #grail-room)
+
+%% PASS3
+#cold-passage
+(room *)
+(name *)	Cold Passage
+(inherently dark *)
+(look *)
+	You are in a cold and damp corridor where a long east-west passageway
+	intersects with a northward path.
+(from * go #east to #mirror-room1)
+(from * go #west to #slide-room)
+(from * go #north to #steep-crawlway)
+
+%% PASS4
+#winding-passage
+(room *)
+(name *)	Winding Passage
+(inherently dark *)
+(look *)
+	You are in a winding passage. It seems that there is only an exit on the
+	east end although the whirring from the round room can be heard faintly
+	to the north.
+(from * go #east to #mirror-room2)
+(narrate failing to leave * #north)
+	You hear the whir of the carousel room but can find no entrance.
+
+%% SLIDE
+#slide-room
+(room *)
+(name *)	Slide Room
+(inherently dark *)
+(look *)
+	You are in a small chamber, which appears to have been part of a coal
+	mine. On the south wall of the chamber the letters "Granite Wall" are
+	etched in the rock. To the east is a long passage and there is a steep
+	metal slide twisting downward. From the appearance of the slide, an
+	attempt to climb up it would be impossible. To the north is a small
+	opening.
+(from * go #east to #cold-passage)
+(from * go #down to #cellar)
+(from * go #north to #mine-entrance)
+
+%% ENTRA
+#mine-entrance
+(room *)
+(name *)	Mine Entrance
+(inherently dark *)
+(look *)
+	You are standing at the entrance of what might have been a coal mine. To
+	the northeast and the northwest are entrances to the mine, and there is
+	another exit on the south end of the room.
+(from * go #south to #slide-room)
+(from * go #northwest to #squeaky-room)
+(from * go #northeast to #shaft-room)
+
+%% SQUEE
+#squeaky-room
+(room *)
+(name *)	Squeaky Room
+(inherently dark *)
+(look *)
+	You are a small room. Strange squeaky sounds may be heard coming from
+	the passage at the west end. You may also escape to the south.
+(from * go #west to #bat-room)
+(from * go #south to #mine-entrance)
+
+%% TSHAF
+#shaft-room
+(room *)
+(name *)	Shaft Room
+(inherently dark *)
+(look *)
+	You are in a large room, in the middle of which is a small shaft
+	descending through the floor into darkness below. To the west and the
+	north are exits from this room. Constructed over the top of the shaft is
+	a metal framework to which a heavy iron chain is attached.
+(narrate failing to leave * #down)
+	You wouldn't fit and would die if you could.
+(from * go #west to #mine-entrance)
+(from * go #north to #wooden-tunnel)
+
+%% TUNNE
+#wooden-tunnel
+(room *)
+(name *)	Wooden Tunnel
+(inherently dark *)
+(look *)
+	You are in a narrow tunnel with large wooden beams running across the
+	ceiling and around the walls. A path from the south splits into paths
+	running west and northeast.
+(from * go #south to #shaft-room)
+(from * go #west to #smelly-room)
+(from * go #northeast to #coalmine1)
+
+%% SMELL
+#smelly-room
+(room *)
+(name *)	Smelly Room
+(inherently dark *)
+(look *)
+	You are in a small non-descript room. However, from the direction of a
+	small descending staircase a foul odor can be detected. To the east is a
+	narrow path.
+(from * go #down to #gas-room)
+(from * go #east to #wooden-tunnel)
+
+%% BOOM
+#gas-room
+(room *)
+(name *)	Gas Room
+(inherently dark *)
+(look *)
+	You are in a small room which smells strongly of coal gas.
+%% TODO: room action routine BOOM-ROOM
+(from * go #up to #smelly-room)
+
+%% TLADD
+#ladder-top
+(room *)
+(name *)	Ladder Top
+(inherently dark *)
+(look *)
+	You are in a very small room. In the corner is a rickety wooden ladder,
+	leading downward. It might be safe to descend. There is also a staircase
+	leading upward.
+(from * go #down to #ladder-bottom)
+(from * go #up to #coalmine7)
+
+%% MINE1
+#coalmine1
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #north to #coalmine4)
+(from * go #southwest to #coalmine2)
+(from * go #east to #wooden-tunnel)
+
+%% MINE2
+#coalmine2
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #south to #coalmine1)
+(from * go #west to #coalmine5)
+(from * go #up to #coalmine3)
+(from * go #northeast to #coalmine4)
+
+%% MINE3
+#coalmine3
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #west to #coalmine2)
+(from * go #northeast to #coalmine5)
+(from * go #east to #coalmine5)
+
+%% MINE4
+#coalmine4
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #up to #coalmine5)
+(from * go #northeast to #coalmine6)
+(from * go #south to #coalmine1)
+(from * go #west to #coalmine2)
+
+%% MINE5
+#coalmine5
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #down to #coalmine6)
+(from * go #north to #coalmine7)
+(from * go #west to #coalmine2)
+(from * go #south to #coalmine3)
+(from * go #up to #coalmine3)
+(from * go #east to #coalmine4)
+
+%% MINE6
+#coalmine6
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #southeast to #coalmine4)
+(from * go #up to #coalmine5)
+(from * go #northwest to #coalmine7)
+
+%% MINE7
+#coalmine7
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #east to #coalmine1)
+(from * go #west to #coalmine5)
+(from * go #down to #ladder-top)
+(from * go #south to #coalmine6)
+
+%% BLADD
+#ladder-bottom
+(room *)
+(name *)	Ladder Bottom
+(inherently dark *)
+(look *)
+	You are in a rather wide room. On one side is the bottom of a narrow
+	wooden ladder. To the northeast and the south are passages leaving the
+	room.
+(from * go #northeast to #dead-end5)
+(from * go #south to #timber-room)
+(from * go #up to #ladder-top)
+
+%% DEAD7
+#dead-end5
+(room *)
+(name *)	Dead End
+(inherently dark *)
+(look *)
+	Dead End
+(from * go #south to #ladder-bottom)
+
+%% TIMBE
+#timber-room
+(room *)
+(name *)	Timber Room
+(inherently dark *)
+(* is sacred)
+(look *)
+	You are in a long and narrow passage, which is cluttered with broken
+	timbers. A wide passage comes from the north and turns at the southwest
+	corner of the room into a very narrow passageway.
+%% TODO: room action routine NO-OBJS
+(from * go #north to #ladder-bottom)
+(from * go #southwest to #lower-shaft)
+%% TODO: conditional on flag EMPTY-HANDED
+(prevent [from * go #southwest])
+	~(empty-handed)
+		You cannot fit through this passage with that load.
+
+%% BSHAF
+#lower-shaft
+(room *)
+(name *)	Lower Shaft
+(inherently dark *)
+(* is sacred)
+(look *)
+	You are in a small square room which is at the bottom of a long shaft.
+	To the east is a passageway and to the northeast a very narrow passage.
+	In the shaft can be seen a heavy iron chain.
+%% TODO: room action routine NO-OBJS
+(from * go #east to #machine-room1)
+(from * go #out to #timber-room)
+%% TODO: conditional on flag EMPTY-HANDED
+(prevent [from * go #out])
+	~(empty-handed)
+		You cannot fit through this passage with that load.
+(from * go #northeast to #timber-room)
+%% TODO: conditional on flag EMPTY-HANDED
+(prevent [from * go #northeast])
+	~(empty-handed)
+		You cannot fit through this passage with that load.
+(narrate failing to leave * #up)
+	Not a chance.
+(narrate failing to leave * #climb)
+	The chain is not climbable.
+
+%% MACHI
+#machine-room1
+(room *)
+(name *)	Machine Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine MACHINE-ROOM
+%% TODO: room action routine MACHINE-ROOM
+(from * go #northwest to #lower-shaft)
+(notice #switch)
+
+%% BATS
+#bat-room
+(room *)
+(name *)	Bat Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine BATS-ROOM
+%% TODO: room action routine BATS-ROOM
+(from * go #east to #squeaky-room)
+(notice #bat)
+
+%% DOME
+#dome-room
+(room *)
+(name *)	Dome Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine DOME-ROOM
+%% TODO: room action routine DOME-ROOM
+(from * go #east to #rocky-crawl)
+(from * go #down to #torch-room)
+%% TODO: conditional on flag DOME-FLAG
+(prevent [from * go #down])
+	~(dome-flag)
+		You cannot go down without fracturing many bones.
+(from * go #climb to #torch-room)
+%% TODO: conditional on flag DOME-FLAG
+(prevent [from * go #climb])
+	~(dome-flag)
+		You cannot go down without fracturing many bones.
+(notice #railing)
+
+%% MTORC
+#torch-room
+(room *)
+(name *)	Torch Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine TORCH-ROOM
+%% TODO: room action routine TORCH-ROOM
+(narrate failing to leave * #up)
+	You cannot reach the rope.
+(from * go #west to #torch-room)
+(from * go #down to #north-south-crawlway)
+
+%% CRAW4
+#north-south-crawlway
+(room *)
+(name *)	North-South Crawlway
+(inherently dark *)
+(look *)
+	You are in a north-south crawlway; a passage goes to the east also.
+	There is a hole above, but it provides no opportunities for climbing.
+(from * go #north to #west-of-chasm)
+(from * go #south to #studio)
+(from * go #east to #troll-room)
+(narrate failing to leave * #up)
+	Not even a human fly could get up it.
+
+%% CHAS2
+#west-of-chasm
+(room *)
+(name *)	West of Chasm
+(inherently dark *)
+(look *)
+	You are on the west edge of a chasm, the bottom of which cannot be seen.
+	The east side is sheer rock, providing no exits. A narrow passage goes
+	west, and the path you are on continues to the north and south.
+(from * go #west to #cellar)
+(from * go #north to #north-south-crawlway)
+(from * go #south to #gallery)
+(narrate failing to leave * #down)
+	The chasm probably leads straight to the infernal regions.
+
+%% CAROU
+#round-room
+(room *)
+(name *)	Round room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine CAROUSEL-ROOM
+%% TODO: room action routine CAROUSEL-ROOM
+(from * go #north to #engravings-cave)
+%% TODO: conditional on flag CAROUSEL-FLIP
+(prevent [from * go #north])
+	~(carousel-flip)
+		You can't go that way.
+(from * go #south to #engravings-cave)
+%% TODO: conditional on flag CAROUSEL-FLIP
+(prevent [from * go #south])
+	~(carousel-flip)
+		You can't go that way.
+(from * go #east to #grail-room)
+%% TODO: conditional on flag CAROUSEL-FLIP
+(prevent [from * go #east])
+	~(carousel-flip)
+		You can't go that way.
+(from * go #west to #east-west-passage)
+%% TODO: conditional on flag CAROUSEL-FLIP
+(prevent [from * go #west])
+	~(carousel-flip)
+		You can't go that way.
+(from * go #northwest to #deep-canyon)
+%% TODO: conditional on flag CAROUSEL-FLIP
+(prevent [from * go #northwest])
+	~(carousel-flip)
+		You can't go that way.
+(from * go #northeast to #north-south-passage)
+%% TODO: conditional on flag CAROUSEL-FLIP
+(prevent [from * go #northeast])
+	~(carousel-flip)
+		You can't go that way.
+(from * go #southeast to #winding-passage)
+%% TODO: conditional on flag CAROUSEL-FLIP
+(prevent [from * go #southeast])
+	~(carousel-flip)
+		You can't go that way.
+(from * go #southwest to #maze1)
+%% TODO: conditional on flag CAROUSEL-FLIP
+(prevent [from * go #southwest])
+	~(carousel-flip)
+		You can't go that way.
+(from * go #out to #cold-passage)
+%% TODO: conditional on flag CAROUSEL-FLIP
+(prevent [from * go #out])
+	~(carousel-flip)
+		You can't go that way.
+
+%% PASS5
+#north-south-passage
+(room *)
+(name *)	North-South Passage
+(inherently dark *)
+(look *)
+	You are in a high north-south passage, which forks to the northeast.
+(from * go #north to #chasm)
+(from * go #northeast to #loud-room)
+(from * go #south to #round-room)
+
+%% CHAS1
+#chasm
+(room *)
+(name *)	Chasm
+(inherently dark *)
+(look *)
+	A chasm runs southwest to northeast. You are on the south edge; the path
+	exits to the south and to the east.
+(from * go #south to #deep-ravine)
+(from * go #east to #north-south-passage)
+(narrate failing to leave * #down)
+	Are you out of your mind?
+
+%% CAVE3
+#damp-cave
+(room *)
+(name *)	Damp Cave
+(inherently dark *)
+(look *)
+	You are in a cave. Passages exit to the south and to the east, but the
+	cave narrows to a crack to the west. The earth is particularly damp
+	here.
+(from * go #south to #loud-room)
+(from * go #east to #dam)
+(narrate failing to leave * #west)
+	It is too narrow for most insects.
+
+%% CHAS3
+#ancient-chasm
+(room *)
+(name *)	Ancient Chasm
+(inherently dark *)
+(look *)
+	A chasm, evidently produced by an ancient river, runs through the cave
+	here. Passages lead off in all directions.
+(from * go #south to #loud-room)
+(from * go #east to #small-cave)
+(from * go #north to #dead-end6)
+(from * go #west to #dead-end7)
+
+%% DEAD5
+#dead-end6
+(room *)
+(name *)	Dead end
+(inherently dark *)
+(look *)
+	Dead end
+(from * go #southwest to #ancient-chasm)
+
+%% DEAD6
+#dead-end7
+(room *)
+(name *)	Dead end
+(inherently dark *)
+(look *)
+	Dead end
+(from * go #east to #ancient-chasm)
+
+%% CAVE4
+#engravings-cave
+(room *)
+(name *)	Engravings Cave
+(inherently dark *)
+(look *)
+	You have entered a cave with passages leading north and southeast.
+(from * go #north to #round-room)
+(from * go #southeast to #riddle-room)
+
+%% RIDDL
+#riddle-room
+(room *)
+(name *)	Riddle Room
+(inherently dark *)
+(look *)
+	This is a room which is bare on all sides. There is an exit down. To the
+	east is a great door made of stone. Above the stone, the following words
+	are written: 'No man shall enter this room without solving this riddle:
+	What is tall as a house, round as a cup, and all the king's horses can't
+	draw it up?'
+(from * go #down to #engravings-cave)
+(from * go #east to #pearl-room)
+%% TODO: conditional on flag RIDDLE-FLAG
+(prevent [from * go #east])
+	~(riddle-flag)
+		Your way is blocked by an invisible force.
+(notice #door5)
+
+%% MPEAR
+#pearl-room
+(room *)
+(name *)	Pearl Room
+(inherently dark *)
+(look *)
+	This is a former broom closet. The exits are to the east and west.
+(from * go #east to #circular-room)
+(from * go #west to #riddle-room)
+
+%% LLD1
+#entrance-to-hades
+(room *)
+(name *)	Entrance to Hades
+(look *)
+	%% TODO: description comes from room routine LLD-ROOM
+%% TODO: room action routine LLD-ROOM
+(from * go #east to #land-of-the-living-dead)
+%% TODO: conditional on flag LLD-FLAG
+(prevent [from * go #east])
+	~(lld-flag)
+		Some invisible force prevents you from passing through the gate.
+(from * go #up to #cave2)
+(from * go #in to #land-of-the-living-dead)
+%% TODO: conditional on flag LLD-FLAG
+(prevent [from * go #in])
+	~(lld-flag)
+		Some invisible force prevents you from passing through the gate.
+
+%% LLD2
+#land-of-the-living-dead
+(room *)
+(name *)	Land of the Living Dead
+(* awards 30 points on first visit)
+(look *)
+	%% TODO: description comes from room routine LLD2-ROOM
+%% TODO: room action routine LLD2-ROOM
+(from * go #east to #tomb-of-the-unknown-implementer)
+(from * go #out to #entrance-to-hades)
+(from * go #west to #entrance-to-hades)
+(notice #pile-of-bodies)
+
+%% MGRAI
+#grail-room
+(room *)
+(name *)	Grail Room
+(inherently dark *)
+(look *)
+	You are standing in a small circular room with a pedestal. A set of
+	stairs leads up, and passages leave to the east and west.
+(from * go #west to #round-room)
+(from * go #east to #narrow-crawlway)
+(from * go #up to #temple)
+
+%% TEMP1
+#temple
+(room *)
+(name *)	Temple
+(* is sacred)
+(look *)
+	You are in the west end of a large temple. On the south wall is an
+	ancient inscription, probably a prayer in a long-forgotten language. The
+	north wall is solid granite. The entrance at the west end of the room is
+	through huge marble pillars.
+(from * go #west to #grail-room)
+(from * go #east to #altar)
+
+%% TEMP2
+#altar
+(room *)
+(name *)	Altar
+(* is sacred)
+(look *)
+	You are in the east end of a large temple. In front of you is what
+	appears to be an altar.
+(from * go #west to #temple)
+
+%% DAM
+#dam-room
+(room *)
+(name *)	Dam
+(* can be filled)
+(look *)
+	%% TODO: description comes from room routine DAM-ROOM
+%% TODO: room action routine DAM-ROOM
+(from * go #south to #deep-canyon)
+(from * go #down to #dam-base)
+(from * go #east to #damp-cave)
+(from * go #north to #dam-lobby)
+(notice #bolt)
+(notice #dam)
+(notice #bubble)
+
+%% LOBBY
+#dam-lobby
+(room *)
+(name *)	Dam Lobby
+(look *)
+	This room appears to have been the waiting room for groups touring the
+	dam. There are exits here to the north and east marked 'Private', though
+	the doors are open, and an exit to the south.
+(from * go #south to #dam-room)
+(from * go #north to #maintenance-room)
+(from * go #east to #maintenance-room)
+
+%% MAINT
+#maintenance-room
+(room *)
+(name *)	Maintenance Room
+(inherently dark *)
+(look *)
+	You are in what appears to have been the maintenance room for Flood
+	Control Dam \#3, judging by the assortment of tool chests around the
+	room. Apparently, this room has been ransacked recently, for most of the
+	valuable equipment is gone. On the wall in front of you is a panel of
+	buttons, which are labelled in EBCDIC. However, they are of different
+	colors: Blue, Yellow, Brown, and Red. The doors to this room are in the
+	west and south ends.
+%% TODO: room action routine MAINT-ROOM
+(from * go #south to #dam-lobby)
+(from * go #west to #dam-lobby)
+(notice #leak)
+(notice #button4)
+(notice #button2)
+(notice #button5)
+(notice #button3)
+
+%% CYCLO
+#cyclops-room
+(room *)
+(name *)	Cyclops Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine CYCLOPS-ROOM
+%% TODO: room action routine CYCLOPS-ROOM
+(from * go #west to #maze15)
+(from * go #north to #strange-passage)
+%% TODO: conditional on flag MAGIC-FLAG
+(prevent [from * go #north])
+	~(magic-flag)
+		The north wall is solid rock.
+(from * go #up to #treasure-room)
+%% TODO: conditional on flag CYCLOPS-FLAG
+(prevent [from * go #up])
+	~(cyclops-flag)
+		The cyclops doesn't look like he'll let you past.
+
+%% BLROO
+#strange-passage
+(room *)
+(name *)	Strange Passage
+(inherently dark *)
+(* awards 10 points on first visit)
+(look *)
+	You are in a long passage. To the south is one entrance. On the east
+	there is an old wooden door, with a large hole in it \(about cyclops
+	sized\).
+%% TODO: room action routine TIME
+(from * go #south to #cyclops-room)
+(from * go #east to #living-room)
+
+%% TREAS
+#treasure-room
+(room *)
+(name *)	Treasure Room
+(inherently dark *)
+(* awards 25 points on first visit)
+(look *)
+	This is a large room, whose north wall is solid granite. A number of
+	discarded bags, which crumble at your touch, are scattered about on the
+	floor.
+%% TODO: room action routine TREASURE-ROOM
+(from * go #down to #cyclops-room)
+
+%% STUDI
+#studio
+(room *)
+(name *)	Studio
+(inherently dark *)
+(look *)
+	You are in what appears to have been an artist's studio. The walls and
+	floors are splattered with paints of 69 different colors. Strangely
+	enough, nothing of value is hanging here. At the north and northwest of
+	the room are open doors \(also covered with paint\). An extremely dark
+	and narrow chimney leads up from a fireplace; although you might be able
+	to get up it, it seems unlikely you could get back down.
+(from * go #north to #north-south-crawlway)
+(from * go #northwest to #gallery)
+(from * go #up to #kitchen)
+%% TODO: conditional on flag LIGHT-LOAD
+(prevent [from * go #up])
+	~(light-load)
+		The chimney is too narrow for you and all of your baggage.
+
+%% GALLE
+#gallery
+(room *)
+(name *)	Gallery
+(look *)
+	You are in an art gallery. Most of the paintings which were here have
+	been stolen by vandals with exceptional taste. The vandals left through
+	either the north or south exits.
+(from * go #north to #west-of-chasm)
+(from * go #south to #studio)
+
+%% DOCK
+#dam-base
+(room *)
+(name *)	Dam Base
+(* can be filled)
+(* is sacred)
+(look *)
+	You are at the base of Flood Control Dam \#3, which looms above you and
+	to the north. The river Frigid is flowing by here. Across the river are
+	the White Cliffs which seem to form a giant wall stretching from north
+	to south along the east shore of the river as it winds its way
+	downstream.
+(from * go #north to #dam-room)
+(from * go #up to #dam-room)
+(from * go #launch to #frigid-river1)
+
+%% RIVR1
+#frigid-river1
+(room *)
+(name *)	Frigid River
+(inherently dark *)
+(* is water)
+(* can be filled)
+(* is sacred)
+(look *)
+	You are on the River Frigid in the vicinity of the Dam. The river flows
+	quietly here. There is a landing on the west shore.
+(narrate failing to leave * #up)
+	You cannot go upstream due to strong currents.
+(from * go #west to #dam-base)
+(from * go #land to #dam-base)
+(from * go #down to #frigid-river2)
+(narrate failing to leave * #east)
+	The White Cliffs prevent your landing here.
+
+%% RIVR2
+#frigid-river2
+(room *)
+(name *)	Frigid River
+(inherently dark *)
+(* is water)
+(* can be filled)
+(* is sacred)
+(look *)
+	The River turns a corner here making it impossible to see the Dam. The
+	White Cliffs loom on the east bank and large rocks prevent landing on
+	the west.
+(narrate failing to leave * #up)
+	You cannot go upstream due to strong currents.
+(from * go #down to #frigid-river3)
+(narrate failing to leave * #east)
+	The White Cliffs prevent your landing here.
+
+%% RIVR3
+#frigid-river3
+(room *)
+(name *)	Frigid River
+(inherently dark *)
+(* is water)
+(* can be filled)
+(* is sacred)
+(look *)
+	The river descends here into a valley. There is a narrow beach on the
+	east below the cliffs and there is some shore on the west which may be
+	suitable. In the distance a faint rumbling can be heard.
+(narrate failing to leave * #up)
+	You cannot go upstream due to strong currents.
+(from * go #down to #frigid-river4)
+(from * go #east to #white-cliffs-beach1)
+(from * go #west to #rocky-shore)
+(narrate failing to leave * #land)
+	You must specify which direction here.
+
+%% WCLF1
+#white-cliffs-beach1
+(room *)
+(name *)	White Cliffs Beach
+(inherently dark *)
+(* can be filled)
+(look *)
+	You are on a narrow strip of beach which runs along the base of the
+	White Cliffs. The only path here is a narrow one, heading south along
+	the Cliffs.
+%% TODO: room action routine CLIFF-FUNCTION
+(from * go #south to #white-cliffs-beach2)
+%% TODO: conditional on flag DEFLATE
+(prevent [from * go #south])
+	~(deflate)
+		The path is too narrow.
+(from * go #launch to #frigid-river3)
+
+%% WCLF2
+#white-cliffs-beach2
+(room *)
+(name *)	White Cliffs Beach
+(inherently dark *)
+(* can be filled)
+(look *)
+	You are on a rocky, narrow strip of beach beside the Cliffs. A narrow
+	path leads north along the shore.
+%% TODO: room action routine CLIFF-FUNCTION
+(from * go #north to #white-cliffs-beach1)
+%% TODO: conditional on flag DEFLATE
+(prevent [from * go #north])
+	~(deflate)
+		The path is too narrow.
+(from * go #launch to #frigid-river4)
+
+%% RIVR4
+#frigid-river4
+(room *)
+(name *)	Frigid River
+(inherently dark *)
+(* is water)
+(* can be filled)
+(* is sacred)
+(look *)
+	The river is running faster here and the sound ahead appears to be that
+	of rushing water. On the west shore is a sandy beach. A small area of
+	beach can also be seen below the Cliffs.
+%% TODO: room action routine RIVR4-ROOM
+(narrate failing to leave * #up)
+	You cannot go upstream due to strong currents.
+(from * go #down to #frigid-river5)
+(from * go #east to #white-cliffs-beach2)
+(from * go #west to #sandy-beach)
+(narrate failing to leave * #land)
+	Specify the direction to land.
+
+%% RIVR5
+#frigid-river5
+(room *)
+(name *)	Frigid River
+(inherently dark *)
+(* is water)
+(* can be filled)
+(* is sacred)
+(look *)
+	The sound of rushing water is nearly unbearable here. On the west shore
+	is a large landing area.
+(narrate failing to leave * #up)
+	You cannot go upstream due to strong currents.
+(from * go #down to #moby-lossage)
+(from * go #land to #shore)
+
+%% FCHMP
+#moby-lossage
+(room *)
+(name *)	Moby lossage
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine OVER-FALLS
+%% TODO: room action routine OVER-FALLS
+(narrate failing to leave * #north)
+
+%% FANTE
+#shore
+(room *)
+(name *)	Shore
+(inherently dark *)
+(* can be filled)
+(* is sacred)
+(look *)
+	You are on the shore of the River. The river here seems somewhat
+	treacherous. A path travels from north to south here, the south end
+	quickly turning around a sharp corner.
+(from * go #launch to #frigid-river5)
+(from * go #north to #sandy-beach)
+(from * go #south to #aragain-falls)
+
+%% BEACH
+#sandy-beach
+(room *)
+(name *)	Sandy Beach
+(inherently dark *)
+(* can be filled)
+(* is sacred)
+(look *)
+	You are on a large sandy beach at the shore of the river, which is
+	flowing quickly by. A path runs beside the river to the south here.
+%% TODO: room action routine BEACH-ROOM
+(from * go #launch to #frigid-river4)
+(from * go #south to #shore)
+
+%% RCAVE
+#rocky-shore
+(room *)
+(name *)	Rocky Shore
+(inherently dark *)
+(* can be filled)
+(* is sacred)
+(look *)
+	You are on the west shore of the river. An entrance to a cave is to the
+	northwest. The shore is very rocky here.
+(from * go #launch to #frigid-river3)
+(from * go #northwest to #small-cave)
+
+%% TCAVE
+#small-cave
+(room *)
+(name *)	Small Cave
+(inherently dark *)
+(look *)
+	You are in a small cave whose exits are on the south and northwest.
+%% TODO: room action routine TCAVE-ROOM
+(from * go #south to #rocky-shore)
+(from * go #northwest to #ancient-chasm)
+
+%% BARRE
+#barrel
+(room *)
+(name *)	Barrel
+(inherently dark *)
+(look *)
+	You are in a barrel. Congratulations. Etched into the side of the barrel
+	is the word 'Geronimo!'.
+(from * go #out to #aragain-falls)
+
+%% FALLS
+#aragain-falls
+(room *)
+(name *)	Aragain Falls
+(inherently dark *)
+(* is sacred)
+(look *)
+	%% TODO: description comes from room routine FALLS-ROOM
+%% TODO: room action routine FALLS-ROOM
+(from * go #east to #rainbow-room)
+%% TODO: conditional on flag RAINBOW
+(prevent [from * go #east])
+	~(rainbow)
+		You can't go that way.
+(from * go #down to #moby-lossage)
+(from * go #north to #shore)
+(from * go #in to #barrel)
+(from * go #up to #rainbow-room)
+%% TODO: conditional on flag RAINBOW
+(prevent [from * go #up])
+	~(rainbow)
+		You can't go that way.
+(notice #rainbow)
+
+%% VLBOT
+#volcano-bottom
+(room *)
+(name *)	Volcano Bottom
+(inherently dark *)
+(look *)
+	You are at the bottom of a large dormant volcano. High above you light
+	may be seen entering from the cone of the volcano. The only exit here is
+	to the north.
+(from * go #north to #lava-room)
+
+%% VAIR1
+#volcano-core1
+(room *)
+(name *)	Volcano Core
+(inherently dark *)
+(* is midair)
+(* is sacred)
+(look *)
+	You are about one hundred feet above the bottom of the volcano. The top
+	of the volcano is clearly visible here.
+%%(from * go ##!#!# to #thing)
+
+%% VAIR2
+#volcano-core2
+(room *)
+(name *)	Volcano Core
+(inherently dark *)
+(* is midair)
+(* is sacred)
+(look *)
+	You are about two hundred feet above the volcano floor. Looming above is
+	the rim of the volcano. There is a small ledge on the west side.
+(from * go #west to #narrow-ledge)
+(from * go #land to #narrow-ledge)
+
+%% VAIR3
+#volcano-core3
+(room *)
+(name *)	Volcano Core
+(inherently dark *)
+(* is midair)
+(* is sacred)
+(look *)
+	You are high above the floor of the volcano. From here the rim of the
+	volcano looks very narrow and you are very near it. To the east is what
+	appears to be a viewing ledge, too thin to land on.
+%%(from * go ##!#!# to #thing)
+
+%% VAIR4
+#volcano-core4
+(room *)
+(name *)	Volcano Core
+(inherently dark *)
+(* is midair)
+(* is sacred)
+(look *)
+	You are near the rim of the volcano which is only about 15 feet across.
+	To the west, there is a place to land on a wide ledge.
+(from * go #land to #wide-ledge)
+(from * go #east to #wide-ledge)
+
+%% LEDG2
+#narrow-ledge
+(room *)
+(name *)	Narrow Ledge
+(inherently dark *)
+(look *)
+	You are on a narrow ledge overlooking the inside of an old dormant
+	volcano. This ledge appears to be about in the middle between the floor
+	below and the rim above. There is an exit here to the south.
+(narrate failing to leave * #down)
+	I wouldn't jump from here.
+(from * go #launch to #volcano-core2)
+(from * go #west to #volcano-bottom)
+%% TODO: conditional on flag GNOME-DOOR
+(prevent [from * go #west])
+	~(gnome-door)
+		You can't go that way.
+(from * go #south to #library)
+
+%% LIBRA
+#library
+(room *)
+(name *)	Library
+(inherently dark *)
+(look *)
+	You are in a room which must have been a large library, probably for the
+	royal family. All of the shelves appear to have been gnawed to pieces by
+	unfriendly gnomes. To the north is an exit.
+(from * go #north to #narrow-ledge)
+(from * go #out to #narrow-ledge)
+
+%% LEDG3
+#volcano-view
+(room *)
+(name *)	Volcano View
+(inherently dark *)
+(look *)
+	You are on a ledge in the middle of a large volcano. Below you the
+	volcano bottom can be seen and above is the rim of the volcano. A couple
+	of ledges can be seen on the other side of the volcano; it appears that
+	this ledge is intermediate in elevation between those on the other side.
+	The exit from this room is to the east.
+(narrate failing to leave * #down)
+	I wouldn't try that.
+(narrate failing to leave * #cross)
+	It is impossible to cross this distance.
+(from * go #east to #egyptian-room)
+
+%% LEDG4
+#wide-ledge
+(room *)
+(name *)	Wide Ledge
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine LEDGE-FUNCTION
+%% TODO: room action routine LEDGE-FUNCTION
+(narrate failing to leave * #down)
+	It's a long way down.
+(from * go #launch to #volcano-core4)
+(from * go #west to #volcano-bottom)
+%% TODO: conditional on flag GNOME-DOOR
+(prevent [from * go #west])
+	~(gnome-door)
+		You can't go that way.
+(from * go #south to #dusty-room)
+
+%% SAFE
+#dusty-room
+(room *)
+(name *)	Dusty Room
+(look *)
+	%% TODO: description comes from room routine SAFE-ROOM
+%% TODO: room action routine SAFE-ROOM
+(from * go #north to #wide-ledge)
+
+%% LAVA
+#lava-room
+(room *)
+(name *)	Lava Room
+(inherently dark *)
+(look *)
+	You are in a small room, whose walls are formed by an old lava flow.
+	There are exits here to the west and the south.
+(from * go #south to #volcano-bottom)
+(from * go #west to #ruby-room)
+
+%% TOMB
+#tomb-of-the-unknown-implementer
+(room *)
+(name *)	Tomb of the Unknown Implementer
+(inherently dark *)
+(look *)
+	You are in the Tomb of the Unknown Implementer. A hollow voice says:
+	"That's not a bug, it's a feature!"
+(from * go #west to #land-of-the-living-dead)
+
+%% MAGNE
+#low-room
+(room *)
+(name *)	Low Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine MAGNET-ROOM
+%% TODO: room action routine MAGNET-ROOM
+(from * go #north to #machine-room2)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #north])
+	~(frobozz)
+		You can't go that way.
+(from * go #south to #machine-room2)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #south])
+	~(frobozz)
+		You can't go that way.
+(from * go #west to #machine-room2)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #west])
+	~(frobozz)
+		You can't go that way.
+(from * go #northeast to #machine-room2)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #northeast])
+	~(frobozz)
+		You can't go that way.
+(from * go #northwest to #tea-room)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #northwest])
+	~(frobozz)
+		You can't go that way.
+(from * go #southwest to #tea-room)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #southwest])
+	~(frobozz)
+		You can't go that way.
+(from * go #southeast to #tea-room)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #southeast])
+	~(frobozz)
+		You can't go that way.
+(from * go #east to #machine-room2)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #east])
+	~(frobozz)
+		You can't go that way.
+
+%% CMACH
+#machine-room2
+(room *)
+(name *)	Machine Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine CMACH-ROOM
+%% TODO: room action routine CMACH-ROOM
+(from * go #west to #low-room)
+(from * go #south to #dingy-closet)
+(notice #button6)
+(notice #button7)
+(notice #button8)
+
+%% CAGER
+#dingy-closet
+(room *)
+(name *)	Dingy Closet
+(inherently dark *)
+(look *)
+	You are in a dingy closet adjacent to the machine room. On one wall is a
+	small sticker which says Protected by FROBOZZ Magic Alarm Company
+	\(Hello, footpad!\)
+(from * go #north to #machine-room2)
+
+%% CAGED
+#cage
+(room *)
+(name *)	Cage
+(inherently dark *)
+(look *)
+	You are trapped inside an iron cage.
+%% TODO: room action routine CAGED-ROOM
+(narrate failing to leave * #north)
+(notice #mangled-cage)
+
+%% TWELL
+#top-of-well
+(room *)
+(name *)	Top of Well
+(inherently dark *)
+(* is bucket)
+(* awards 10 points on first visit)
+(look *)
+	You are at the top of the well. Well done. There are etchings on the
+	side of the well. There is a small crack across the floor at the
+	entrance to a room on the east, but it can be crossed easily.
+(from * go #east to #tea-room)
+(narrate failing to leave * #down)
+	It's a long way down!
+(notice #wall-with-etchings2)
+
+%% BWELL
+#circular-room
+(room *)
+(name *)	Circular Room
+(inherently dark *)
+(* is bucket)
+(look *)
+	You are in a damp circular room, whose walls are made of brick and
+	mortar. The roof of this room is not visible, but there appear to be
+	some etchings on the walls. There is a passageway to the west.
+(from * go #west to #pearl-room)
+(narrate failing to leave * #up)
+	The walls cannot be climbed.
+(notice #wall-with-etchings1)
+
+%% ALICE
+#tea-room
+(room *)
+(name *)	Tea Room
+(inherently dark *)
+(look *)
+	You are in a small square room, in the center of which is a large oblong
+	table, no doubt set for afternoon tea. It is clear from the objects on
+	the table that the users were indeed mad. In the eastern corner of the
+	room is a small hole \(no more that four inches high\). There are
+	passageways leading away to the west and the northwest.
+(narrate failing to leave * #east)
+	Only a mouse could get in there.
+(from * go #west to #top-of-well)
+(from * go #northwest to #low-room)
+
+%% ALISM
+#posts-room
+(room *)
+(name *)	Posts Room
+(inherently dark *)
+(look *)
+	You are in an enormous room, in the center of which are four wooden
+	posts delineating a rectanular area, above which is what appears to be a
+	wooden roof. In fact, all objects in this room appear to be abnormally
+	large. To the east is a passageway. There is a large chasm on the west
+	and the northwest.
+(narrate failing to leave * #northwest)
+	There is a chasm too large to jump across.
+(from * go #east to #pool-room)
+(narrate failing to leave * #west)
+	There is a chasm too large to jump across.
+(narrate failing to leave * #down)
+	There is a chasm too large to jump across.
+
+%% ALITR
+#pool-room
+(room *)
+(name *)	Pool Room
+(inherently dark *)
+(look *)
+	You are in a large room, one half of which is depressed. There is a
+	large leak in the ceiling through which brown colored goop is falling.
+	The only exit to this room is to the west.
+(from * go #out to #posts-room)
+(from * go #west to #posts-room)
+
+%% ==================================================================
+%% Objects
+%% ==================================================================
+
+%% GUNK
+#piece-of-vitreous-slag
+(name *)	piece of vitreous slag
+(item *)
+(dict *)	mess slag vitre gunk piece vitreous
+(* size is 10)
+(appearance *)
+	There is a small piece of vitreous slag here.
+%% TODO: object action routine GUNK-FUNCTION
+
+%% COAL
+#small-pile-of-coal
+(* is #in #dead-end5)
+(name *)	small pile of coal
+(item *)
+(flammable *)
+(dict *)	heap charc coal small pile
+(* size is 20)
+(appearance *)
+	There is a small heap of coal here.
+
+%% JADE
+#jade-figurine
+(* is #in #bat-room)
+(name *)	jade figurine
+(item *)
+(dict *)	figur jade figurine
+(* size is 10)
+(* awards 5 points on first take)
+(* awards 5 points on return)
+(appearance *)
+	There is an exquisite jade figurine here.
+
+%% MACHI
+#machine
+(* is #in #machine-room1)
+(name *)	machine
+(container *)
+(openable *)
+(dict *)	pdp10 dryer lid machi machine
+(* capacity is 50)
+%% TODO: object action routine MACHINE-FUNCTION
+
+%% DIAMO
+#huge-diamond
+(name *)	huge diamond
+(item *)
+(dict *)	perfe diamo huge diamond
+(* awards 10 points on first take)
+(* awards 6 points on return)
+(appearance *)
+	There is an enormous diamond \(perfectly cut\) here.
+
+%% BLANT
+#burned-out-lantern
+(* is #in #maze5)
+(name *)	burned-out lantern
+(item *)
+(dict *)	lante lamp used burne dead usele blant burned out lantern
+(* size is 20)
+(appearance *)
+	There is a burned-out lantern here.
+(initial appearance *)
+	The deceased adventurer's useless lantern is here.
+
+%% KEYS
+#set-of-skeleton-keys
+(* is #in #maze5)
+(name *)	set of skeleton keys
+(item *)
+(tool *)
+(dict *)	keys set skeleton
+(* size is 10)
+(appearance *)
+	There is a set of skeleton keys here.
+
+%% BONES
+#bones
+(* is #in #maze5)
+(name *)	BONES
+(dict *)	skele body bones
+(appearance *)
+	A skeleton, probably the remains of a luckless adventurer, lies here.
+%% TODO: object action routine SKELETON
+
+%% BAGCO
+#bag-of-coins
+(* is #in #maze5)
+(name *)	bag of coins
+(item *)
+(dict *)	bag coins leath bagco
+(* size is 15)
+(* awards 10 points on first take)
+(* awards 5 points on return)
+(appearance *)
+	An old leather bag, bulging with coins, is here.
+
+%% BAR
+#platinum-bar
+(* is #in #loud-room)
+(name *)	platinum bar
+(item *)
+(* is sacred)
+(dict *)	plati bar platinum
+(* size is 20)
+(* awards 12 points on first take)
+(* awards 10 points on return)
+(appearance *)
+	There is a large platinum bar here.
+
+%% PEARL
+#pearl-necklace
+(* is #in #pearl-room)
+(name *)	pearl necklace
+(item *)
+(dict *)	neckl pearl necklace
+(* size is 10)
+(* awards 9 points on first take)
+(* awards 5 points on return)
+(appearance *)
+	There is a pearl necklace here with hundreds of large pearls.
+
+%% REFL1
+#mirror1
+(* is #in #mirror-room1)
+(name *)	mirror
+(dict *)	mirro refl1 mirror
+%% TODO: object action routine MIRROR-MIRROR
+
+%% REFL2
+#mirror2
+(* is #in #mirror-room2)
+(name *)	mirror
+(dict *)	mirro refl2 mirror
+%% TODO: object action routine MIRROR-MIRROR
+
+%% ICE
+#glacier
+(* is #in #glacier-room)
+(name *)	glacier
+(dict *)	glaci ice glacier
+(appearance *)
+	A mass of ice fills the western half of the room.
+%% TODO: object action routine GLACIER
+
+%% RUBY
+#ruby
+(* is #in #ruby-room)
+(name *)	ruby
+(item *)
+(dict *)	ruby
+(* awards 15 points on first take)
+(* awards 8 points on return)
+(appearance *)
+	There is a moby ruby lying here.
+(initial appearance *)
+	On the floor lies a moby ruby.
+
+%% TRIDE
+#crystal-trident
+(* is #in #atlantis-room)
+(name *)	crystal trident
+(item *)
+(dict *)	fork cryst tride crystal trident
+(* size is 20)
+(* awards 4 points on first take)
+(* awards 11 points on return)
+(appearance *)
+	Neptune's own crystal trident is here.
+(initial appearance *)
+	On the shore lies Neptune's own crystal trident.
+
+%% COFFI
+#gold-coffin
+(* is #in #egyptian-room)
+(name *)	gold coffin
+(item *)
+(container *)
+(openable *)
+(* is sacred)
+(dict *)	caske gold coffi coffin
+(* size is 55)
+(* capacity is 35)
+(* awards 3 points on first take)
+(* awards 7 points on return)
+(appearance *)
+	There is a solid-gold coffin, used for the burial of Ramses II, here.
+
+%% TORCH
+#torch
+(* is #in #torch-room)
+(name *)	torch
+(item *)
+(lightsource *)
+(tool *)
+(dict *)	ivory torch
+(* size is 20)
+(* awards 14 points on first take)
+(* awards 6 points on return)
+(appearance *)
+	There is an ivory torch here.
+(initial appearance *)
+	Sitting on the pedestal is a flaming torch, made of ivory.
+
+%% TBASK
+#basket1
+(* is #in #shaft-room)
+(name *)	basket
+(container *)
+(openable *)
+~(opaque *)
+(dict *)	cage dumbw baske tbask basket
+(* capacity is 50)
+(appearance *)
+	At the end of the chain is a basket.
+%% TODO: object action routine DUMBWAITER
+
+%% FBASK
+#fbask
+(* is #in #lower-shaft)
+(name *)	FBASK
+(dict *)	cage dumbw baske fbask
+%% TODO: object action routine DUMBWAITER
+
+%% BRACE
+#sapphire-bracelet
+(* is #in #gas-room)
+(name *)	sapphire bracelet
+(item *)
+(dict *)	jewel sapph brace sapphire bracelet
+(* size is 10)
+(* awards 5 points on first take)
+(* awards 3 points on return)
+(appearance *)
+	There is a sapphire-encrusted bracelet here.
+
+%% IRBOX
+#iron-box
+(* is #in #round-room)
+(name *)	iron box
+(item *)
+(container *)
+(openable *)
+(hidden *)
+(dict *)	box iron dente irbox
+(* size is 40)
+(* capacity is 20)
+(appearance *)
+	There is a dented iron box here.
+	(list contents of *)
+
+%% STRAD
+#fancy-violin
+(* is #in #iron-box)
+(name *)	fancy violin
+(item *)
+(dict *)	violi fancy strad violin
+(* size is 10)
+(* awards 10 points on first take)
+(* awards 10 points on return)
+(appearance *)
+	There is a Stradavarius here.
+
+%% ENGRA
+#wall-with-engravings
+(* is #in #engravings-cave)
+(name *)	wall with engravings
+(readable *)
+(* is sacred)
+(dict *)	inscr old ancie engra wall with engravings
+(descr *)
+	The engravings were incised in the living rock of the cave wall by an
+	unknown hand. They depict, in symbolic form, the beliefs of the ancient
+	peoples of Zork. Skillfully interwoven with the bas reliefs are excerpts
+	illustrating the major tenets expounded by the sacred texts of the
+	religion of that time. Unfortunately a later age seems to have
+	considered them blasphemous and just as skillfully excised them.
+
+%% GHOST
+#ghost
+(* is #in #entrance-to-hades)
+(name *)	GHOST
+(dict *)	spiri fiend ghost
+%% TODO: object action routine GHOST-FUNCTION
+
+%% GRAIL
+#grail
+(* is #in #grail-room)
+(name *)	grail
+(item *)
+(container *)
+(openable *)
+(dict *)	grail
+(* size is 10)
+(* capacity is 5)
+(* awards 2 points on first take)
+(* awards 5 points on return)
+(appearance *)
+	There is an extremely valuable \(perhaps original\) grail here.
+
+%% PRAYE
+#prayer
+(* is #in #temple)
+(name *)	prayer
+(readable *)
+(* is sacred)
+(dict *)	inscr ancie old praye prayer
+(descr *)
+	The prayer is inscribed in an ancient script which is hardly remembered
+	these days, much less understood. What little of it can be made out
+	seems to be a phillipic against small insects, absent-mindedness, and
+	the picking up and dropping of small objects. The final verse seems to
+	consign trespassers to the land of the dead. All evidence indicates that
+	the beliefs of the ancient Zorkers were obscure.
+
+%% TRUNK
+#trunk-with-jewels
+(* is #in #reservoir-south)
+(name *)	trunk with jewels
+(item *)
+(hidden *)
+(dict *)	chest trunk with jewels
+(* size is 35)
+(* awards 15 points on first take)
+(* awards 8 points on return)
+(appearance *)
+	There is an old trunk here, bulging with assorted jewels.
+(initial appearance *)
+	Lying half buried in the mud is an old trunk, bulging with jewels.
+
+%% BELL
+#bell
+(* is #in #temple)
+(name *)	bell
+(item *)
+(dict *)	brass bell
+(appearance *)
+	There is a small brass bell here.
+(initial appearance *)
+	Lying in a corner of the room is a small brass bell.
+
+%% BOOK
+#book
+(* is #in #altar)
+(name *)	book
+(item *)
+(readable *)
+(flammable *)
+(dict *)	praye bible goodb black book
+(* size is 10)
+(appearance *)
+	There is a large black book here.
+(initial appearance *)
+	On the altar is a large black book, open to page 569.
+(descr *)
+	COMMANDMENT \#12592 Oh ye who go about saying unto each: "Hello sailor":
+	dost thou know the magnitude of thy sin before the gods? Yea, verily,
+	thou shalt be ground between two stones. Shall the angry gods cast thy
+	body into the whirlpool? Surely, thy eye shall be put out with a sharp
+	stick! Even unto the ends of the earth shalt thou wander and unto the
+	land of the dead shalt thou be sent at last. Surely thou shalt repent of
+	thy cunning.
+%% TODO: object action routine BLACK-BOOK
+
+%% CANDL
+#pair-of-candles
+(* is #in #altar)
+(name *)	pair of candles
+(item *)
+(lightsource *)
+(dict *)	candl pair candles
+(* size is 10)
+(appearance *)
+	There are two candles here.
+(initial appearance *)
+	On the two ends of the altar are burning candles.
+%% TODO: object action routine CANDLES
+
+%% GUIDE
+#tour-guidebook
+(* is #in #dam-lobby)
+(name *)	tour guidebook
+(item *)
+(readable *)
+(flammable *)
+(dict *)	book tour guide guidebook
+(appearance *)
+	There are tour guidebooks here.
+(initial appearance *)
+	Some guidebooks entitled 'Flood Control Dam \#3' are on the reception
+	desk.
+(descr *)
+	" Guide Book to Flood Control Dam \#3 Flood Control Dam \#3 \(FCD\#3\)
+	was constructed in year 783 of the Great Underground Empire to harness
+	the destructive power of the Frigid River. This work was supported by a
+	grant of 37 million zorkmids from the Central Bureaucracy and your
+	omnipotent local tyrant Lord Dimwit Flathead the Excessive. This
+	impressive structure is composed of 3.7 cubic feet of concrete, is 256
+	feet tall at the center, and 193 feet wide at the top. The reservoir
+	created behind the dam has a volume of 37 billion cubic feet, an area of
+	12 million square feet, and a shore line of 36 thousand feet.(par)The
+	construction of FCD\#3 took 112 days from ground breaking to the
+	dedication. It required a work force of 384 slaves, 34 slave drivers, 12
+	engineers, 2 turtle doves, and a partridge in a pear tree. The work was
+	managed by a command team composed of 2345 bureaucrats, 2347 secretaries
+	\(at least two of which can type\), 12,256 paper shufflers, 52,469
+	rubber stampers, 245,193 red tape processors, and nearly one million
+	dead trees.(par)We will now point out some of the more interesting features
+	of FCD\#3 as we conduct you on a guided tour of the facilities:(par)
+    1\) You start your tour here in the Dam Lobby. You will notice on your right
+	that .........
+
+%% MATCH
+#matchbook
+(* is #in #dam-lobby)
+(name *)	matchbook
+(item *)
+(readable *)
+(dict *)	flint match matchbook
+(* size is 2)
+(appearance *)
+	There is a matchbook whose cover says 'Visit Beautiful FCD\#3' here.
+(descr *)
+	\[close cover before striking BKD\] You too can make BIG MONEY in the
+	exciting field of PAPER SHUFFLING! Mr. TAA of Muddle, Mass. says:
+	"Before I took this course I used to be a lowly bit twiddler. Now with
+	what I learned at MIT Tech I feel really important and can obfuscate and
+	confuse with the best." Mr. MARC had this to say: "Ten short days ago
+	all I could look forward to was a dead-end job as a doctor. Now I have a
+	promising future and make really big Zorkmids." MIT Tech can't promise
+	these fantastic results to everyone. But when you earn your MDL degree
+	from MIT Tech your future will be brighter. Send for our free brochure
+	today.
+%% TODO: object action routine MATCH-FUNCTION
+
+%% ADVER
+#leaflet
+(* is #in #mailbox)
+(name *)	leaflet
+(item *)
+(readable *)
+(flammable *)
+(dict *)	pamph leafl bookl adver leaflet
+(* size is 2)
+(appearance *)
+	There is a small leaflet here.
+(descr *)
+	WELCOME TO DUNGEON DUNGEON is a game of adventure, danger, and low
+	cunning. In it you will explore some of the most amazing territory ever
+	seen by mortal man. Hardened adventurers have run screaming from the
+	terrors contained within! In DUNGEON the intrepid explorer delves into
+	the forgotten secrets of a lost labyrinth deep in the bowels of the
+	earth, searching for vast treasures long hidden from prying eyes,
+	treasures guarded by fearsome monsters and diabolical traps! No PDP-10
+	should be without one! DUNGEON was created at the Programming Technology
+	Division of the MIT Laboratory for Computer Science, by Tim Anderson,
+	Marc Blank, Bruce Daniels, and Dave Lebling. It was inspired by the
+	ADVENTURE game of Crowther and Woods, and Dungeons and Dragons, by Gygax
+	and Arneson. DUNGEON is written in MDL \(alias MUDDLE\). Direct
+	inquiries by Net mail to DUNGEON\@MIT-DMS.
+
+%% MAILB
+#mailbox
+(* is #in #west-of-house)
+(name *)	mailbox
+(container *)
+(openable *)
+(dict *)	box mailb mailbox
+(* capacity is 10)
+(appearance *)
+	There is a small mailbox here.
+	(list contents of *)
+
+%% TUBE
+#tube
+(* is #in #maintenance-room)
+(name *)	tube
+(item *)
+(container *)
+(openable *)
+(dict *)	tube
+(* size is 10)
+(* capacity is 7)
+(appearance *)
+	There is an object which looks like a tube of toothpaste here.
+	(list contents of *)
+%% TODO: object action routine TUBE-FUNCTION
+
+%% PUTTY
+#viscous-material
+(* is #in #tube)
+(name *)	viscous material
+(item *)
+(tool *)
+(dict *)	mater gunk glue visco putty viscous material
+(* size is 6)
+(appearance *)
+	There is some gunk here
+
+%% WRENC
+#wrench
+(* is #in #maintenance-room)
+(name *)	wrench
+(item *)
+(tool *)
+(dict *)	wrenc wrench
+(* size is 10)
+(appearance *)
+	There is a wrench here.
+
+%% SCREW
+#screwdriver
+(* is #in #maintenance-room)
+(name *)	screwdriver
+(item *)
+(tool *)
+(dict *)	screw screwdriver
+(appearance *)
+	There is a screwdriver here.
+
+%% CYCLO
+#cyclops
+(* is #in #cyclops-room)
+(name *)	cyclops
+(actor *)
+(animate *)
+(dict *)	one-e monst cyclo cyclops
+(* capacity is 10000)
+%% TODO: object action routine CYCLOPS
+
+%% CHALI
+#chalice
+(* is #in #treasure-room)
+(name *)	chalice
+(item *)
+(container *)
+(openable *)
+(dict *)	cup goble chali chalice
+(* size is 10)
+(* capacity is 5)
+(* awards 10 points on first take)
+(* awards 10 points on return)
+(appearance *)
+	There is a silver chalice, intricately engraved, here.
+%% TODO: object action routine CHALICE
+
+%% PAINT
+#painting
+(* is #in #gallery)
+(name *)	painting
+(item *)
+(flammable *)
+(dict *)	art canva maste paint painting
+(* size is 15)
+(* awards 4 points on first take)
+(* awards 7 points on return)
+(appearance *)
+	A masterpiece by a neglected genius is here.
+(initial appearance *)
+	Fortunately, there is still one chance for you to be a vandal, for on
+	the far wall is a work of unparalleled beauty.
+%% TODO: object action routine PAINTING
+
+%% THIEF
+#thief
+(name *)	thief
+(actor *)
+(animate *)
+(dict *)	robbe crook crime crimi bandi gent gentl man shady thug bagma mafia thief
+(* capacity is 4)
+(appearance *)
+	There is a suspicious-looking individual, holding a bag, leaning against
+	one wall. He is armed with a vicious-looking stilletto.
+	(list contents of *)
+%% TODO: object action routine ROBBER-FUNCTION
+
+%% STILL
+#stilletto
+(* is #heldby #thief)
+(name *)	stilletto
+(weapon *)
+(dict *)	vicio still stilletto
+(* size is 10)
+(appearance *)
+	There is a vicious-looking stilletto here.
+
+%% BOLT
+#bolt
+(* is #in #dam-room)
+(name *)	bolt
+(openable *)
+%% door
+(scenery *)
+(dict *)	bolt nut
+%% TODO: object action routine BOLT-FUNCTION
+
+%% SDOOR
+#door5
+(* is #in #riddle-room)
+(name *)	door
+(scenery *)
+(dict *)	door stone sdoor
+%% TODO: object action routine DDOOR-FUNCTION
+
+%% MSWIT
+#switch
+(* is #in #machine-room1)
+(name *)	switch
+(scenery *)
+(dict *)	switc mswit switch
+%% TODO: object action routine MSWITCH-FUNCTION
+
+%% HPOLE
+#head-on-a-pole
+(name *)	head on a pole
+(dict *)	head hpole on pole
+
+%% CORPS
+#corpses
+(* is #in #entrance-to-hades)
+(name *)	corpses
+(dict *)	mangl corps corpses
+
+%% BODIE
+#pile-of-bodies
+(* is #in #land-of-the-living-dead)
+(name *)	pile of bodies
+(scenery *)
+(dict *)	body corps bodie pile bodies
+%% TODO: object action routine BODY-FUNCTION
+
+%% DAM
+#dam
+(* is #in #dam-room)
+(name *)	dam
+(scenery *)
+(dict *)	gate gates fcd dam
+
+%% RAILI
+#railing
+(* is #in #dome-room)
+(name *)	railing
+(scenery *)
+(dict *)	rail raili railing
+
+%% BUTTO
+#button1
+(name *)	button
+(scenery *)
+(dict *)	switc butto button
+
+%% BUBBL
+#bubble
+(* is #in #dam-room)
+(name *)	bubble
+(scenery *)
+(dict *)	bubbl bubble
+
+%% LEAK
+#leak
+(* is #in #maintenance-room)
+(name *)	leak
+(scenery *)
+(dict *)	drip hole leak
+%% TODO: object action routine LEAK-FUNCTION
+
+%% VALUA
+#valuables
+(name *)	valuables
+(item *)
+(scenery *)
+(dict *)	treas valua valuables
+(treasure *)
+%% TODO: object action routine VALUABLES
+
+%% SAILO
+#sailor
+(name *)	sailor
+(scenery *)
+(dict *)	sailo sailor
+(treasure *)
+
+%% TEETH
+#set-of-teeth
+(name *)	set of teeth
+(scenery *)
+(dict *)	teeth set
+(treasure *)
+
+%% WALL
+#wall
+(name *)	wall
+(scenery *)
+(dict *)	wall
+(treasure *)
+
+%% HANDS
+#pair-of-hands
+(name *)	pair of hands
+(tool *)
+(scenery *)
+(dict *)	hand bare hands pair
+(treasure *)
+
+%% LUNGS
+#breath
+(name *)	breath
+(tool *)
+(scenery *)
+(dict *)	lung air lungs breath
+(treasure *)
+
+%% AVIAT
+#flyer
+(name *)	flyer
+(scenery *)
+(dict *)	aviat flyer
+(treasure *)
+
+%% RBUTT
+#button2
+(* is #in #maintenance-room)
+(name *)	button
+(scenery *)
+(dict *)	butto switc red rbutt button
+
+%% YBUTT
+#button3
+(* is #in #maintenance-room)
+(name *)	button
+(scenery *)
+(dict *)	butto switc yello ybutt button
+
+%% BLBUT
+#button4
+(* is #in #maintenance-room)
+(name *)	button
+(scenery *)
+(dict *)	butto switc blue blbut button
+
+%% BRBUT
+#button5
+(* is #in #maintenance-room)
+(name *)	button
+(scenery *)
+(dict *)	butto switc brown brbut button
+
+%% BAT
+#bat
+(* is #in #bat-room)
+(name *)	bat
+(scenery *)
+(dict *)	vampi bat
+%% TODO: object action routine FLY-ME
+
+%% POT
+#pot-filled-with-gold
+(* is #in #end-of-rainbow)
+(name *)	pot filled with gold
+(item *)
+(hidden *)
+(dict *)	gold pot filled with
+(* size is 15)
+(* awards 10 points on first take)
+(* awards 10 points on return)
+(appearance *)
+	There is a pot of gold here.
+(initial appearance *)
+	At the end of the rainbow is a pot of gold.
+
+%% STATU
+#statue
+(* is #in #sandy-beach)
+(name *)	statue
+(item *)
+(hidden *)
+(dict *)	sculp rock statu statue
+(* size is 8)
+(* awards 10 points on first take)
+(* awards 13 points on return)
+(appearance *)
+	There is a beautiful statue here.
+
+%% IBOAT
+#plastic-inflatable-boat
+(* is #in #dam-base)
+(name *)	plastic inflatable boat
+(item *)
+(flammable *)
+(dict *)	boat plast pile iboat plastic inflatable
+(* size is 20)
+(appearance *)
+	There is a folded pile of plastic here which has a small valve attached.
+%% TODO: object action routine IBOAT-FUNCTION
+
+%% DBOAT
+#plastic-boat-with-hole
+(name *)	plastic boat \(with hole\)
+(item *)
+(flammable *)
+(dict *)	boat plast pile dboat plastic with hole
+(* size is 20)
+(appearance *)
+	There is a pile of plastic here with a large hole in it.
+%% TODO: object action routine DBOAT-FUNCTION
+
+%% PUMP
+#hand-held-air-pump
+(* is #in #reservoir-north)
+(name *)	hand-held air pump
+(item *)
+(tool *)
+(dict *)	air-p airpu pump hand held air
+(appearance *)
+	There is a small pump here.
+
+%% RBOAT
+#magic-boat
+(name *)	magic boat
+(item *)
+(flammable *)
+(vehicle *)
+(dict *)	boat plast seawo rboat magic
+(* size is 20)
+(* capacity is 100)
+(appearance *)
+	There is an inflated boat here.
+	(list contents of *)
+%% TODO: object action routine RBOAT-FUNCTION
+
+%% LABEL
+#tan-label
+(* is #in #magic-boat)
+(name *)	tan label
+(item *)
+(readable *)
+(flammable *)
+(dict *)	finep tan label
+(* size is 2)
+(appearance *)
+	There is a tan label here.
+(descr *)
+	!!!! FROBOZZ MAGIC BOAT COMPANY !!!! Hello, Sailor! Instructions for
+	use: To get into boat, say 'Board' To leave boat, say 'Disembark' To get
+	into a body of water, say 'Launch' To get to shore, say 'Land' Warranty:
+	This boat is guaranteed against all defects in parts and workmanship for
+	a period of 76 milliseconds from date of purchase or until first used,
+	whichever comes first. Warning: This boat is made of plastic. Good Luck!
+
+%% STICK
+#broken-sharp-stick
+(* is #in #dam-base)
+(name *)	broken sharp stick
+(item *)
+(dict *)	sharp broke stick broken
+(* size is 3)
+(appearance *)
+	There is a broken sharp stick here.
+(initial appearance *)
+	A sharp stick, which appears to have been broken at one end, is here.
+%% TODO: object action routine STICK-FUNCTION
+
+%% BARRE
+#barrel
+(* is #in #aragain-falls)
+(name *)	barrel
+(dict *)	barre barrel
+
+%% BUOY
+#red-buoy
+(* is #in #frigid-river4)
+(name *)	red buoy
+(item *)
+(container *)
+(openable *)
+(dict *)	red buoy
+(* size is 10)
+(* capacity is 20)
+(appearance *)
+	There is a red buoy here \(probably a warning\).
+	(list contents of *)
+
+%% EMERA
+#large-emerald
+(* is #in #red-buoy)
+(name *)	large emerald
+(item *)
+(dict *)	emera large emerald
+(* awards 5 points on first take)
+(* awards 10 points on return)
+(appearance *)
+	There is an emerald here.
+
+%% SHOVE
+#shovel
+(* is #in #small-cave)
+(name *)	shovel
+(item *)
+(tool *)
+(dict *)	shove shovel
+(* size is 15)
+(appearance *)
+	There is a large shovel here.
+
+%% GUANO
+#hunk-of-bat-guano
+(* is #in #small-cave)
+(name *)	hunk of bat guano
+(item *)
+(dict *)	crap shit hunk guano bat
+(* size is 20)
+(appearance *)
+	There is a hunk of bat guano here.
+
+%% GRUE
+#lurking-grue
+(name *)	lurking grue
+(dict *)	lurki grue lurking
+(treasure *)
+%% TODO: object action routine GRUE-FUNCTION
+
+%% BALLO
+#basket2
+(* is #in #volcano-bottom)
+(name *)	basket
+(vehicle *)
+(dict *)	baske wicke ballo basket
+(* size is 70)
+(* capacity is 100)
+(appearance *)
+	There is a very large and extremely heavy wicker basket with a cloth bag
+	here. Inside the basket is a metal receptacle of some kind. Attached to
+	the basket on the outside is a piece of wire.
+	(list contents of *)
+%% TODO: object action routine BALLOON
+
+%% RECEP
+#receptacle
+(* is #in #basket2)
+(name *)	receptacle
+(container *)
+(openable *)
+(dict *)	recep receptacle
+(* capacity is 6)
+
+%% CBAG
+#cloth-bag
+(* is #in #basket2)
+(name *)	cloth bag
+(dict *)	bag cloth cbag
+
+%% BROPE
+#braided-wire
+(* is #in #basket2)
+(name *)	braided wire
+(dict *)	wire braid brope braided
+%% TODO: object action routine WIRE-FUNCTION
+
+%% HOOK1
+#hook1
+(* is #in #narrow-ledge)
+(name *)	hook
+(dict *)	hook hook1
+(appearance *)
+	There is a small hook attached to the rock here.
+
+%% HOOK2
+#hook2
+(* is #in #wide-ledge)
+(name *)	hook
+(dict *)	hook hook2
+(appearance *)
+	There is a small hook attached to the rock here.
+
+%% ZORKM
+#priceless-zorkmid
+(* is #in #narrow-ledge)
+(name *)	priceless zorkmid
+(item *)
+(readable *)
+(dict *)	coin gold zorkm priceless zorkmid
+(* size is 10)
+(* awards 10 points on first take)
+(* awards 12 points on return)
+(appearance *)
+	There is an engraved zorkmid coin here.
+(initial appearance *)
+	On the floor is a gold zorkmid coin \(a valuable collector's item\).
+(descr *)
+	-------------------------- / Gold Zorkmid \\ / T e n T h o u s a n d \\
+	/ Z O R K M I D S \\ / \\ / \|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\| \\ /
+	!\|\|\|\| \|\|\|\|! \\ \| \|\|\| ^^ ^^ \|\|\| \| \| \|\|\| OO OO \|\|\|
+	\| \| In Frobs \|\|\| << \|\|\| We Trust \| \| \|\| \(______\) \|\| \|
+	\| \| \| \| \| \|__________\| \| \\ / \\ -- Lord Dimwit Flathead -- / \\
+	-- Beloved of Zorkers -- / \\ / \\ \* 722 G.U.E. \* / \\ /
+	--------------------------
+
+%% SAFE
+#box
+(* is #in #dusty-room)
+(name *)	box
+(container *)
+(openable *)
+(dict *)	box safe
+(* capacity is 15)
+%% TODO: object action routine SAFE-FUNCTION
+
+%% CARD
+#card
+(* is #in #box)
+(name *)	card
+(item *)
+(readable *)
+(flammable *)
+(dict *)	note card
+(* size is 1)
+(appearance *)
+	There is a card with writing on it here.
+(descr *)
+	Warning: This room was constructed over very weak rock strata.
+	Detonation of explosives in this room is strictly prohibited! Frobozz
+	Magic Cave Company per M. Agrippa, foreman
+
+%% SSLOT
+#hole
+(* is #in #dusty-room)
+(name *)	hole
+(dict *)	slot hole sslot
+(* capacity is 10)
+
+%% CROWN
+#crown
+(* is #in #box)
+(name *)	crown
+(item *)
+(dict *)	gaudy crown
+(* size is 10)
+(* awards 15 points on first take)
+(* awards 10 points on return)
+(appearance *)
+	Lord Dimwit's crown is here.
+(initial appearance *)
+	The excessively gaudy crown of Lord Dimwit Flathead is here.
+
+%% BRICK
+#brick
+(* is #in #attic)
+(name *)	brick
+(item *)
+(flammable *)
+(dict *)	brick squar clay
+(* size is 9)
+(* capacity is 2)
+(appearance *)
+	There is a square brick here which feels like clay.
+
+%% FUSE
+#wire-coil
+(* is #in #stream)
+(name *)	wire coil
+(item *)
+(flammable *)
+(dict *)	coil wire shiny thin fuse
+(* size is 1)
+(appearance *)
+	There is a coil of thin shiny wire here.
+%% TODO: object action routine FUSE-FUNCTION
+
+%% GNOME
+#volcano-gnome
+(name *)	Volcano Gnome
+(dict *)	troll gnome volcano
+(appearance *)
+	There is a nervous Volcano Gnome here.
+%% TODO: object action routine GNOME-FUNCTION
+
+%% BLABE
+#blue-label
+(* is #in #basket2)
+(name *)	blue label
+(item *)
+(readable *)
+(flammable *)
+(dict *)	label blue blabe
+(* size is 1)
+(appearance *)
+	There is a blue label here.
+(descr *)
+	!!!! FROBOZZ MAGIC BALLOON COMPANY !!!! Hello, Aviator! Instructions for
+	use: To get into balloon, say 'Board' To leave balloon, say 'Disembark'
+	To land, say 'Land' Warranty: No warranty is expressed or implied.
+	You're on your own, sport! Good Luck.
+
+%% DBALL
+#broken-balloon
+(name *)	broken balloon
+(item *)
+(dict *)	ballo baske broke dball broken balloon
+(* size is 40)
+(appearance *)
+	There is a balloon here, broken into pieces.
+
+%% BLBK
+#blue-book
+(* is #in #library)
+(name *)	blue book
+(item *)
+(container *)
+(openable *)
+(readable *)
+(dict *)	book blue blbk
+(* size is 10)
+(* capacity is 2)
+(appearance *)
+	There is a blue book here.
+(descr *)
+	This book is written in a tongue with which I am unfamiliar.
+
+%% GRBK
+#green-book
+(* is #in #library)
+(name *)	green book
+(item *)
+(container *)
+(openable *)
+(readable *)
+(dict *)	book green grbk
+(* size is 10)
+(* capacity is 2)
+(appearance *)
+	There is a green book here.
+(descr *)
+	This book is written in a tongue with which I am unfamiliar.
+
+%% PUBK
+#purple-book
+(* is #in #library)
+(name *)	purple book
+(item *)
+(container *)
+(openable *)
+(readable *)
+(dict *)	book purpl pubk purple
+(* size is 10)
+(* capacity is 2)
+(appearance *)
+	There is a purple book here.
+	(list contents of *)
+(descr *)
+	This book is written in a tongue with which I am unfamiliar.
+
+%% WHBK
+#white-book
+(* is #in #library)
+(name *)	white book
+(item *)
+(container *)
+(openable *)
+(readable *)
+(dict *)	book white whbk
+(* size is 10)
+(* capacity is 2)
+(appearance *)
+	There is a white book here.
+(descr *)
+	This book is written in a tongue with which I am unfamiliar.
+
+%% STAMP
+#stamp
+(* is #in #purple-book)
+(name *)	stamp
+(item *)
+(readable *)
+(flammable *)
+(dict *)	stamp
+(* size is 1)
+(* awards 4 points on first take)
+(* awards 10 points on return)
+(appearance *)
+	There is a Flathead Commemorative stamp here.
+(descr *)
+	---v----v----v----v----v----v----v----v--- \| \| \| \|\|\|\|\|\|\|\|\|\|
+	LORD \| > !\|\|\|\| \| DIMWIT < \| \|\|\|\| ---\| FLATHEAD \| \| \|\|\|C
+	CC \\ \| > \|\|\|\| _\\ < \| \|\|\| \(____\| \| \| \|\| \| \| >
+	\|______\| Our < \| / \\ Excessive \| \| / \\ Leader \| > \| \| < \| \|
+	\| \| \| \| > G.U.E. POSTAGE 3 Zorkmids < \| \|
+	---^----^----^----^----^----^----^----^---
+
+%% TOMB
+#tomb
+(* is #in #tomb-of-the-unknown-implementer)
+(name *)	tomb
+(readable *)
+(dict *)	grave tomb
+(appearance *)
+	There is a tomb here, made of the finest marble, and large enough for
+	four headless corpses. On one end is the cryptic inscription: "Feel
+	Free."
+(descr *)
+	Here lie the implementers, whose heads were placed on poles by the
+	Keeper of the Dungeon for amazing untastefulness.
+%% TODO: object action routine HEAD-FUNCTION
+
+%% HEADS
+#set-of-poled-heads
+(* is #in #tomb-of-the-unknown-implementer)
+(name *)	set of poled heads
+(* is sacred)
+(dict *)	head pole poles pdl bkd taa marc imple loser heads set poled
+(appearance *)
+	There are four heads here, mounted securely on poles.
+%% TODO: object action routine HEAD-FUNCTION
+
+%% COKES
+#bunch-of-coke-bottles
+(* is #in #tomb-of-the-unknown-implementer)
+(name *)	bunch of Coke bottles
+(item *)
+(dict *)	bottl coke cokes bunch bottles
+(* size is 15)
+(appearance *)
+	Many empty Coke bottles are here. Alas, they can't hold water.
+(initial appearance *)
+	There is a large pile of empty Coke bottles here, evidently produced by
+	the implementers during their long struggle to win totally.
+%% TODO: object action routine COKE-BOTTLES
+
+%% LISTS
+#stack-of-listings
+(* is #in #tomb-of-the-unknown-implementer)
+(name *)	stack of listings
+(item *)
+(readable *)
+(flammable *)
+(dict *)	paper list print listi stack lists listings
+(* size is 70)
+(appearance *)
+	There is an enormous stack of line-printer paper here. It is barely
+	readable.
+(initial appearance *)
+	There is a gigantic pile of line-printer output here. Although the paper
+	once contained useful information, almost nothing can be distinguished
+	now.
+(descr *)
+    <DEFINE FEEL-FREE \(LOSER\)
+        <TELL \"FEEL FREE, CHOMPER!\">>
+            ...
+    The rest is, alas, unintelligible \(as were the implementers\).
+
+%% LCASE
+#large-case
+(name *)	large case
+~(opaque *)
+(dict *)	case large lcase
+(appearance *)
+	There is a large case here, containing objects which you used to
+	possess.
+
+%% CAGE
+#mangled-cage
+(* is #in #cage)
+(name *)	mangled cage
+(scenery *)
+(dict *)	cage mangled
+(* size is 60)
+
+%% RCAGE
+#iron-cage
+(name *)	iron cage
+(dict *)	cage iron rcage
+(appearance *)
+	There is an iron cage in the middle of the room.
+
+%% SPHER
+#crystal-sphere
+(* is #in #dingy-closet)
+(name *)	crystal sphere
+(* is sacred)
+(dict *)	ball cryst glass spher crystal sphere
+(* size is 10)
+(* awards 6 points on first take)
+(* awards 6 points on return)
+(appearance *)
+	There is a beautiful crystal sphere here.
+%% TODO: object action routine SPHERE-FUNCTION
+
+%% SQBUT
+#button6
+(* is #in #machine-room2)
+(name *)	button
+(scenery *)
+(dict *)	butto squar sqbut button
+%% TODO: object action routine BUTTONS
+
+%% RNBUT
+#button7
+(* is #in #machine-room2)
+(name *)	button
+(scenery *)
+(dict *)	butto round rnbut button
+%% TODO: object action routine BUTTONS
+
+%% TRBUT
+#button8
+(* is #in #machine-room2)
+(name *)	button
+(scenery *)
+(dict *)	butto trian trbut button
+%% TODO: object action routine BUTTONS
+
+%% ETCH1
+#wall-with-etchings1
+(* is #in #circular-room)
+(name *)	wall with etchings
+(readable *)
+(scenery *)
+(dict *)	etchi walls wall etch1 with etchings
+(descr *)
+	o b o A G I E L m p a
+
+%% ETCH2
+#wall-with-etchings2
+(* is #in #top-of-well)
+(name *)	wall with etchings
+(readable *)
+(scenery *)
+(dict *)	etchi walls wall etch2 with etchings
+(descr *)
+	o b o r z f M A G I C z c W E L L y o n m p a
+
+%% FLASK
+#glass-flask-filled-with-liquid
+(* is #in #pool-room)
+(name *)	glass flask filled with liquid
+(item *)
+~(opaque *)
+(dict *)	glass flask filled with liquid
+(* size is 10)
+(* capacity is 5)
+(appearance *)
+	A stoppered glass flask with a skull-and-crossbones marking is here. The
+	flask is filled with some clear liquid.
+%% TODO: object action routine FLASK-FUNCTION
+
+%% POOL
+#pool-of-sewage
+(* is #in #pool-room)
+(name *)	pool of sewage
+(dict *)	sewag large pool sewage
+(appearance *)
+	The leak has submerged the depressed area in a pool of sewage.
+
+%% SAFFR
+#tin-of-spices
+(* is #in #pool-room)
+(name *)	tin of spices
+(item *)
+(hidden *)
+(dict *)	tin spice rare saffr spices
+(* size is 8)
+(* awards 5 points on first take)
+(* awards 5 points on return)
+(appearance *)
+	There is a tin of rare spices here.
+
+%% ATABL
+#large-oblong-table
+(* is #in #tea-room)
+(name *)	large oblong table
+(dict *)	large oblon atabl oblong table
+
+%% POSTS
+#wooden-posts
+(* is #in #posts-room)
+(name *)	wooden posts
+(dict *)	post woode posts wooden
+
+%% BUCKE
+#wooden-bucket
+(* is #in #circular-room)
+(name *)	wooden bucket
+(vehicle *)
+(dict *)	woode bucke wooden bucket
+(* size is 100)
+(* capacity is 100)
+(appearance *)
+	There is a wooden bucket here, 3 feet in diameter and 3 feet high.
+%% TODO: object action routine BUCKET
+
+%% ECAKE
+#piece-of-eat-me-cake
+(* is #in #tea-room)
+(name *)	piece of 'Eat Me' cake
+(item *)
+(edible *)
+(dict *)	cake eatme eat-m ecake piece eat me
+(* size is 10)
+(appearance *)
+	There is a piece of cake here with the words 'Eat Me' on it.
+%% TODO: object action routine EATME-FUNCTION
+
+%% ORICE
+#piece-of-cake-with-orange-icing
+(* is #in #tea-room)
+(name *)	piece of cake with orange icing
+(item *)
+(readable *)
+(edible *)
+(dict *)	cake icing orang orice piece with orange
+(* size is 4)
+(appearance *)
+	There is a piece of cake with orange icing here.
+%% TODO: object action routine CAKE-FUNCTION
+
+%% RDICE
+#piece-of-cake-with-red-icing
+(* is #in #tea-room)
+(name *)	piece of cake with red icing
+(item *)
+(readable *)
+(edible *)
+(dict *)	cake icing red rdice piece with
+(* size is 4)
+(appearance *)
+	There is a piece of cake with red icing here.
+%% TODO: object action routine CAKE-FUNCTION
+
+%% BLICE
+#piece-of-cake-with-blue-icing
+(* is #in #tea-room)
+(name *)	piece of cake with blue icing
+(item *)
+(readable *)
+(edible *)
+(dict *)	cake icing blue ecch blice piece with
+(* size is 4)
+(appearance *)
+	There is a piece of cake with blue \(ecch\) icing here.
+%% TODO: object action routine CAKE-FUNCTION
+
+%% ROBOT
+#robot
+(* is #in #low-room)
+(name *)	robot
+(actor *)
+(animate *)
+(* is sacred)
+(dict *)	r2d2 c3po robby robot
+(appearance *)
+	There is a robot here.
+%% TODO: object action routine ROBOT-FUNCTION
+
+%% RBTLB
+#green-piece-of-paper
+(* is #in #low-room)
+(name *)	green piece of paper
+(item *)
+(readable *)
+(flammable *)
+(dict *)	paper green rbtlb piece
+(* size is 3)
+(appearance *)
+	There is a green piece of paper here.
+(descr *)
+            !!!!  FROBOZZ MAGIC ROBOT COMPANY  !!!!
+
+    Hello, Master!
+    
+    I am a late-model robot, trained at MIT Tech to perform various
+    simple household functions. 
+
+    Instructions for use:
+    To activate me, use the following formula:
+        >TELL ROBOT '<something to do>' <cr>
+    The quotation marks are required!
+        
+    Warranty:
+    No warranty is expressed or implied.
+                                    
+                                            At your service!

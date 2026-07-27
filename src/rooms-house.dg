@@ -4,6 +4,7 @@
 (room *)
 (look *)        You are in an open field west of a big white house, with a boarded front door.
 (notice #front-door)
+(* is sacred)
 (from * go #north to #north-of-house)
 (from * go #south to #south-of-house)
 (from * go #west to #forest1)
@@ -85,6 +86,7 @@
 #north-of-house
 (name *)        North of House
 (room *)
+(* is sacred)
 (from * go #west to #west-of-house)
 (from * go #east to #east-of-house)
 (from * go #north to #forest3)
@@ -97,6 +99,7 @@
 #south-of-house
 (name *)        South of House
 (room *)
+(* is sacred)
 (from * go #west to #west-of-house)
 (from * go #east to #east-of-house)
 (from * go #south to #forest2)
@@ -109,6 +112,7 @@
 #east-of-house
 (name *)        Behind House
 (room *)
+(* is sacred)
 (from * go #north to #north-of-house)
 (from * go #south to #south-of-house)
 (from * go #east to #clearing)
@@ -139,6 +143,7 @@
 #kitchen
 (name *)        Kitchen
 (room *)
+(* is sacred)
 (* is in the house)
 (from * go #west to #living-room)
 (from * go #up to #attic)
@@ -200,6 +205,7 @@
 (openable *)
 ~(opaque *)
 (* capacity is 4)
+(dict *)	container pitcher
 (appearance *)  A bottle is sitting on the table. (list contents of *)
 
 %% Check destroying the bottle:
@@ -210,6 +216,7 @@
 (* is #in #bottle)
 (name *)        quantity of water
 (potable *)
+(dict *)	liquid h2o
 
 #attic
 (name *)        Attic
@@ -243,23 +250,6 @@
         There is a nasty-looking knife lying here.
     (endif)
 
-#rusty-knife
-(name *)        rusty knife
-(item *)
-(weapon *)
-(dict *)        blade
-(after [take *])
-    (#sword is in scope)
-    As you pick up the rusty knife, your sword gives a single pulse
-    of blinding blue light.
-(instead of [attack $victim with *])
-    (villain $victim)
-    As the knife approaches its victim, your mind is submerged by an
-    overmastering will.  Slowly, your hand turns, until the rusty blade
-    is an inch from your neck.  The knife seems to sing as it savagely
-    slits your throat.
-    (jigs up)
-
 #brick
 (* is #in #attic)
 (name *)        brick
@@ -271,6 +261,7 @@
 (name *)        Living Room
 (room *)
 (* is in the house)
+(* is sacred)
 (from * go #east to #kitchen)
 (look *)
     (if)(#wooden-door is closed)(then)
