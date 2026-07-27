@@ -268,7 +268,7 @@
 (look *)
 	You are in a large forest, with trees obstructing all views except to
 	the east, where a small clearing may be seen through the trees.
-(from * go #east to #canyon-view)
+(from * go #east to #cliff-top)
 (from * go #north to #forest3)
 (from * go #south to #forest2)
 (from * go #west to #forest4)
@@ -281,7 +281,7 @@
 (look *)
 	You are in a forest, with trees in all directions around you.
 (from * go #north to #forest3)
-(from * go #southeast to #canyon-view)
+(from * go #southeast to #cliff-top)
 (from * go #south to #forest2)
 (from * go #west to #forest4)
 
@@ -319,7 +319,7 @@
 (look *)
 	%% TODO: description comes from room routine CLEARING
 %% TODO: room action routine CLEARING
-(from * go #southwest to #behind-house)
+(from * go #southwest to #east-of-house)
 (from * go #southeast to #forest3)
 (from * go #north to #clearing)
 (from * go #east to #clearing)
@@ -330,7 +330,6 @@
 (prevent [from * go #down])
 	~(key-flag)
 		You can't go that way.
-(notice #grating1)
 
 %% RAVI1
 #deep-ravine
@@ -848,8 +847,6 @@
 	~(empty-handed)
 		You cannot fit through this passage with that load.
 (narrate failing to leave * #up)
-	Not a chance.
-(narrate failing to leave * #climb)
 	The chain is not climbable.
 
 %% MACHI
@@ -886,11 +883,6 @@
 (from * go #down to #torch-room)
 %% TODO: conditional on flag DOME-FLAG
 (prevent [from * go #down])
-	~(dome-flag)
-		You cannot go down without fracturing many bones.
-(from * go #climb to #torch-room)
-%% TODO: conditional on flag DOME-FLAG
-(prevent [from * go #climb])
 	~(dome-flag)
 		You cannot go down without fracturing many bones.
 (notice #railing)
@@ -2295,44 +2287,6 @@
 	from MIT Tech your future will be brighter. Send for our free brochure
 	today.
 %% TODO: object action routine MATCH-FUNCTION
-
-%% ADVER
-#leaflet
-(* is #in #mailbox)
-(name *)	leaflet
-(item *)
-(readable *)
-(flammable *)
-(dict *)	pamph leafl bookl adver leaflet
-(* size is 2)
-(appearance *)
-	There is a small leaflet here.
-(descr *)
-	WELCOME TO DUNGEON DUNGEON is a game of adventure, danger, and low
-	cunning. In it you will explore some of the most amazing territory ever
-	seen by mortal man. Hardened adventurers have run screaming from the
-	terrors contained within! In DUNGEON the intrepid explorer delves into
-	the forgotten secrets of a lost labyrinth deep in the bowels of the
-	earth, searching for vast treasures long hidden from prying eyes,
-	treasures guarded by fearsome monsters and diabolical traps! No PDP-10
-	should be without one! DUNGEON was created at the Programming Technology
-	Division of the MIT Laboratory for Computer Science, by Tim Anderson,
-	Marc Blank, Bruce Daniels, and Dave Lebling. It was inspired by the
-	ADVENTURE game of Crowther and Woods, and Dungeons and Dragons, by Gygax
-	and Arneson. DUNGEON is written in MDL \(alias MUDDLE\). Direct
-	inquiries by Net mail to DUNGEON\@MIT-DMS.
-
-%% MAILB
-#mailbox
-(* is #in #west-of-house)
-(name *)	mailbox
-(container *)
-(openable *)
-(dict *)	box mailb mailbox
-(* capacity is 10)
-(appearance *)
-	There is a small mailbox here.
-	(list contents of *)
 
 %% TUBE
 #tube

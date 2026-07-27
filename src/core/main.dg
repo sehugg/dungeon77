@@ -178,6 +178,17 @@
     (increase score by $Points)
     (fail)
 
+(after [put $object #in #trophy-case])
+    ($object awards $Points points on return)
+    (increase score by $Points)
+    (fail)
+
+(perform [take $object])
+    ($object is #in #trophy-case)
+    ($object awards $Points points on return)
+    (decrease score by $Points)
+    (fail)
+
 %% Inventory limits
 
 (global variable (player max load is 100))

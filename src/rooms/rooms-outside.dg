@@ -150,8 +150,10 @@
     above. A rainbow crosses over the falls to the west and a narrow path
     continues to the southeast.
 (from * go #southeast to #cliff-bottom)
+(from * go #west to #rainbow-room)
+    (rainbow is solid)
 
-#rainbow
+#rainbow-room
 (room *)
 (name *)        Rainbow Room
 (look *)
@@ -159,7 +161,7 @@
     on a rainbow\), with a magnificent view of the Falls.  The rainbow
     travels east-west here.  There is an NBC Commissary here.
 (from * go #east to #end-of-rainbow)
-(from * go #west to #falls)
+(from * go #west to #aragain-falls)
 
 #rusty-knife
 (name *)        rusty knife

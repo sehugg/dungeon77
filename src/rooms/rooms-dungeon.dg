@@ -8,7 +8,7 @@
     east, and a crawlway to the south.  On the west is the bottom of a
     steep metal ramp which is unclimbable.
 (from * go #east to #troll-room)
-(from * go #south to #chasm2)
+(from * go #south to #west-of-chasm)
 (narrate failing to leave * #up)
     The trap door has been barred from the other side.
 (narrate failing to leave * #west)
@@ -24,8 +24,8 @@
     Bloodstains and deep scratches \(perhaps made by an axe\) mar the
     walls.
 (from * go #west to #cellar)
-(from * go #east to #crawl4)
-(from * go #north to #passage1)
+(from * go #east to #north-south-crawlway)
+(from * go #north to #east-west-passage)
 (from * go #south to #maze1)
 
 #troll

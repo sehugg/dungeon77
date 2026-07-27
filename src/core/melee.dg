@@ -19,6 +19,8 @@
 
 (global variable (player wields $weapon))   %% last weapon wielded
 
+(interface ($actor wields $weapon))
+
 (#player combat strength is $result)
     (player combat strength is $result)
 (set #player combat strength to $value)

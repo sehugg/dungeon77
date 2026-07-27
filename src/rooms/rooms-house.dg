@@ -31,6 +31,7 @@
 (flammable *)
 (readable *)
 (* size is 2)
+(dict *)        pamphlet booklet
 (descr *)
     (div @headline) { WELCOME TO DUNGEON }
     (par)

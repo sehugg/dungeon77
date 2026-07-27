@@ -4,42 +4,33 @@ id: 0
 label: START
 --------------------------------------------------------------------------------
 [1m[36mWarning:[0m[36m Object #grating2 was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #canyon-view was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #behind-house was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #grating1 was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #cross was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #climb was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #launch was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #land was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #rainbow-room was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #chasm2 was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #crawl4 was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #passage1 was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #falls was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 190: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 374: Possible typo: A query is made to '(egypt-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 380: Possible typo: A query is made to '(low-tide)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 455: Possible typo: A query is made to '(glacier-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 825: Possible typo: A query is made to '(empty-handed)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 889: Possible typo: A query is made to '(dome-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 951: Possible typo: A query is made to '(carousel-flip)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1088: Possible typo: A query is made to '(riddle-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1112: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1231: Possible typo: A query is made to '(magic-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1236: Possible typo: A query is made to '(cyclops-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1283: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1384: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1527: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1616: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1708: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2057: Possible typo: A rule is defined for '(lightsource $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2107: Possible typo: A rule is defined for '(hidden $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2388: Possible typo: A rule is defined for '(actor $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2456: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2536: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 30: Possible typo: A rule is defined for '($ wields $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 235: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 188: Possible typo: Local variable $thing only appears once.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 373: Possible typo: A query is made to '(egypt-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 379: Possible typo: A query is made to '(low-tide)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 454: Possible typo: A query is made to '(glacier-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 824: Possible typo: A query is made to '(empty-handed)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 886: Possible typo: A query is made to '(dome-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 943: Possible typo: A query is made to '(carousel-flip)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1080: Possible typo: A query is made to '(riddle-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1104: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1223: Possible typo: A query is made to '(magic-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1228: Possible typo: A query is made to '(cyclops-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1275: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1376: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1519: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1608: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1700: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2049: Possible typo: A rule is defined for '(lightsource $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2099: Possible typo: A rule is defined for '(hidden $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2342: Possible typo: A rule is defined for '(actor $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2410: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2490: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-outside.dg, line 154: Possible typo: A query is made to '(rainbow is solid)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 237: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
 [0m
 
 [0m[1mDungeon
@@ -285,3 +276,143 @@ command: get axe
 > get axe
 You take the bloody axe.
 
+--------------------------------------------------------------------------------
+id: 1785165693039
+parent-id: 1785098749857
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mCellar[0m
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+--------------------------------------------------------------------------------
+id: 1785165693040
+parent-id: 1785165693039
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mWest of Chasm[0m
+You are on the west edge of a chasm, the bottom of which cannot be seen. The east side is sheer rock, providing no exits. A narrow passage goes west, and the path you are on continues to the north and south.
+
+--------------------------------------------------------------------------------
+id: 1785165693041
+parent-id: 1785165693040
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mGallery[0m
+You are in an art gallery. Most of the paintings which were here have been stolen by vandals with exceptional taste. The vandals left through either the north or south exits.
+
+A masterpiece by a neglected genius is here.
+
+--------------------------------------------------------------------------------
+id: 1785165693042
+parent-id: 1785165693041
+command: get painting
+--------------------------------------------------------------------------------
+> get painting
+You take the painting.
+
+--------------------------------------------------------------------------------
+id: 1785165693043
+parent-id: 1785165693042
+command: up
+--------------------------------------------------------------------------------
+> up
+There doesn't appear to be an exit in that direction.
+
+--------------------------------------------------------------------------------
+id: 1785165693044
+parent-id: 1785165693043
+command: south
+--------------------------------------------------------------------------------
+> south
+You walk south.
+
+[0m[1mStudio[0m
+You are in what appears to have been an artist's studio. The walls and floors are splattered with paints of 69 different colors. Strangely enough, nothing of value is hanging here. At the north and northwest of the room are open doors (also covered with paint). An extremely dark and narrow chimney leads up from a fireplace; although you might be able to get up it, it seems unlikely you could get back down.
+
+--------------------------------------------------------------------------------
+id: 1785165693045
+parent-id: 1785165693044
+command: go up
+--------------------------------------------------------------------------------
+> go up
+You climb up.
+
+[0m[1mKitchen[0m
+This is the kitchen of the white house. A table seems to have been used recently for the preparation of food. A passage leads to the west and a dark staircase can be seen leading upward. A dark chimney leads down and to the east is a small window which is open.
+
+--------------------------------------------------------------------------------
+id: 1785165693046
+parent-id: 1785165693045
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mLiving Room[0m
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a closed trap-door at your feet.
+
+There is a trophy case here.
+
+--------------------------------------------------------------------------------
+id: 1785165693047
+parent-id: 1785165693046
+command: open case
+--------------------------------------------------------------------------------
+> open case
+You open the trophy case.
+
+--------------------------------------------------------------------------------
+id: 1785165693048
+parent-id: 1785165693047
+command: put painting in case
+--------------------------------------------------------------------------------
+> put painting in case
+You put the painting in the trophy case.
+
+[0m[4m(Your score has gone up by seven points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785165693049
+parent-id: 1785165693048
+command: score
+--------------------------------------------------------------------------------
+> score
+[0m[4mYou currently have 42 points.
+[0m
+--------------------------------------------------------------------------------
+id: 1785166191612
+parent-id: 1785165693049
+command: take painting from case
+--------------------------------------------------------------------------------
+> take painting from case
+You take the painting out of the trophy case.
+
+[0m[4m(Your score has gone down by seven points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785166191613
+parent-id: 1785166191612
+command: put painting in case
+--------------------------------------------------------------------------------
+> put painting in case
+You put the painting in the trophy case.
+
+[0m[4m(Your score has gone up by seven points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785166191614
+parent-id: 1785166191613
+command: score
+--------------------------------------------------------------------------------
+> score
+[0m[4mYou currently have 42 points.
+[0m
