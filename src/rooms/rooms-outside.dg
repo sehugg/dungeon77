@@ -1,4 +1,6 @@
 
+~(rainbow is solid)
+
 (forest name)   Forest
 (forest look)
     You are in a forest, with trees in all directions around you.
@@ -79,14 +81,25 @@
 (* is #in #clearing)
 (* size is 25)
 (after [take *])
-    (#grating is #under #pile-of-leaves)
     A grating appears on the ground.
-    (now)(#grating is #in #clearing)
-    (notice #grating)
+    (grating appears)
 (after [look #under *])
     (#grating is #under #pile-of-leaves)
+    (grating appears)
+(instead of [burn *])
+    (* is #heldby #player)
+    The sight of someone carrying a pile of burning leaves so offends
+    the neighbors that they come over and put you out.
+    (grating appears)
+    (jigs up)
+(instead of [burn *])
+    (#grating is #under #pile-of-leaves)
+    The leaves burn and the neighbors start to complain.
+    (grating appears)
+(grating appears)
     (now)(#grating is #in #clearing)
     (notice #grating)
+    
 
 #grating
 (name *)    grating
@@ -162,22 +175,4 @@
     travels east-west here.  There is an NBC Commissary here.
 (from * go #east to #end-of-rainbow)
 (from * go #west to #aragain-falls)
-
-#rusty-knife
-(name *)        rusty knife
-(item *)
-(weapon *)
-(dict *)        blade
-(* size is 20)
-(after [take *])
-    (#sword is in scope)
-    As you pick up the rusty knife, your sword gives a single pulse
-    of blinding blue light.
-(instead of [attack $victim with *])
-    (villain $victim)
-    As the knife approaches its victim, your mind is submerged by an
-    overmastering will.  Slowly, your hand turns, until the rusty blade
-    is an inch from your neck.  The knife seems to sing as it savagely
-    slits your throat.
-    (jigs up)
 

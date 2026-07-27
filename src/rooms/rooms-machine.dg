@@ -1,0 +1,151 @@
+
+%% CMACH
+#machine-room2
+(room *)
+(name *)	Machine Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine CMACH-ROOM
+%% TODO: room action routine CMACH-ROOM
+(from * go #west to #low-room)
+(from * go #south to #dingy-closet)
+(notice #button6)
+(notice #button7)
+(notice #button8)
+
+%% MAGNE
+#low-room
+(room *)
+(name *)	Low Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine MAGNET-ROOM
+%% TODO: room action routine MAGNET-ROOM
+(from * go #north to #machine-room2)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #north])
+	~(frobozz)
+		You can't go that way.
+(from * go #south to #machine-room2)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #south])
+	~(frobozz)
+		You can't go that way.
+(from * go #west to #machine-room2)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #west])
+	~(frobozz)
+		You can't go that way.
+(from * go #northeast to #machine-room2)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #northeast])
+	~(frobozz)
+		You can't go that way.
+(from * go #northwest to #tea-room)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #northwest])
+	~(frobozz)
+		You can't go that way.
+(from * go #southwest to #tea-room)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #southwest])
+	~(frobozz)
+		You can't go that way.
+(from * go #southeast to #tea-room)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #southeast])
+	~(frobozz)
+		You can't go that way.
+(from * go #east to #machine-room2)
+%% TODO: conditional on flag FROBOZZ
+(prevent [from * go #east])
+	~(frobozz)
+		You can't go that way.
+
+%% CAGER
+#dingy-closet
+(room *)
+(name *)	Dingy Closet
+(inherently dark *)
+(look *)
+	You are in a dingy closet adjacent to the machine room. On one wall is a
+	small sticker which says Protected by FROBOZZ Magic Alarm Company
+	\(Hello, footpad!\)
+(from * go #north to #machine-room2)
+
+%% SQBUT
+#button6
+(* is #in #machine-room2)
+(name *)	button
+(scenery *)
+(dict *)	butto squar sqbut button
+%% TODO: object action routine BUTTONS
+
+%% RNBUT
+#button7
+(* is #in #machine-room2)
+(name *)	button
+(scenery *)
+(dict *)	butto round rnbut button
+%% TODO: object action routine BUTTONS
+
+%% TRBUT
+#button8
+(* is #in #machine-room2)
+(name *)	button
+(scenery *)
+(dict *)	butto trian trbut button
+%% TODO: object action routine BUTTONS
+
+%% SPHER
+#crystal-sphere
+(* is #in #dingy-closet)
+(name *)	crystal sphere
+(* is sacred)
+(dict *)	ball cryst glass spher crystal sphere
+(* size is 10)
+(* awards 6 points on first take)
+(* awards 6 points on return)
+(appearance *)
+	There is a beautiful crystal sphere here.
+%% TODO: object action routine SPHERE-FUNCTION
+
+%% ROBOT
+#robot
+(* is #in #low-room)
+(name *)	robot
+(animate *)
+(* is sacred)
+(dict *)	r2d2 c3po robby robot
+(appearance *)
+	There is a robot here.
+%% TODO: object action routine ROBOT-FUNCTION
+
+%% RBTLB
+#green-piece-of-paper
+(* is #in #low-room)
+(name *)	green piece of paper
+(item *)
+(readable *)
+(flammable *)
+(dict *)	paper green rbtlb piece
+(* size is 3)
+(appearance *)
+	There is a green piece of paper here.
+(descr *)
+            !!!!  FROBOZZ MAGIC ROBOT COMPANY  !!!!
+
+    Hello, Master!
+    
+    I am a late-model robot, trained at MIT Tech to perform various
+    simple household functions. 
+
+    Instructions for use:
+    To activate me, use the following formula:
+        >TELL ROBOT '<something to do>' <cr>
+    The quotation marks are required!
+        
+    Warranty:
+    No warranty is expressed or implied.
+                                    
+                                            At your service!

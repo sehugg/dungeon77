@@ -1,0 +1,100 @@
+
+%% ALICE
+#tea-room
+(room *)
+(name *)	Tea Room
+(inherently dark *)
+(look *)
+	You are in a small square room, in the center of which is a large oblong
+	table, no doubt set for afternoon tea. It is clear from the objects on
+	the table that the users were indeed mad. In the eastern corner of the
+	room is a small hole \(no more that four inches high\). There are
+	passageways leading away to the west and the northwest.
+(narrate failing to leave * #east)
+	Only a mouse could get in there.
+(from * go #west to #top-of-well)
+(from * go #northwest to #low-room)
+
+%% ATABL
+#large-oblong-table
+(* is #in #tea-room)
+(name *)	large oblong table
+(dict *)	large oblon atabl oblong table
+
+%% ECAKE
+#piece-of-eat-me-cake
+(* is #in #tea-room)
+(name *)	piece of 'Eat Me' cake
+(item *)
+(edible *)
+(dict *)	cake eatme eat-m ecake piece eat me
+(* size is 10)
+(appearance *)
+	There is a piece of cake here with the words 'Eat Me' on it.
+%% TODO: object action routine EATME-FUNCTION
+
+%% ORICE
+#piece-of-cake-with-orange-icing
+(* is #in #tea-room)
+(name *)	piece of cake with orange icing
+(item *)
+(readable *)
+(edible *)
+(dict *)	cake icing orang orice piece with orange
+(* size is 4)
+(appearance *)
+	There is a piece of cake with orange icing here.
+%% TODO: object action routine CAKE-FUNCTION
+
+%% RDICE
+#piece-of-cake-with-red-icing
+(* is #in #tea-room)
+(name *)	piece of cake with red icing
+(item *)
+(readable *)
+(edible *)
+(dict *)	cake icing red rdice piece with
+(* size is 4)
+(appearance *)
+	There is a piece of cake with red icing here.
+%% TODO: object action routine CAKE-FUNCTION
+
+%% BLICE
+#piece-of-cake-with-blue-icing
+(* is #in #tea-room)
+(name *)	piece of cake with blue icing
+(item *)
+(readable *)
+(edible *)
+(dict *)	cake icing blue ecch blice piece with
+(* size is 4)
+(appearance *)
+	There is a piece of cake with blue \(ecch\) icing here.
+%% TODO: object action routine CAKE-FUNCTION
+
+%% TWELL
+#top-of-well
+(room *)
+(name *)	Top of Well
+(inherently dark *)
+(* is bucket)
+(* awards 10 points on first visit)
+(look *)
+	You are at the top of the well. Well done. There are etchings on the
+	side of the well. There is a small crack across the floor at the
+	entrance to a room on the east, but it can be crossed easily.
+(from * go #east to #tea-room)
+(narrate failing to leave * #down)
+	It's a long way down!
+(notice #wall-with-etchings2)
+
+%% ETCH2
+#wall-with-etchings2
+(* is #in #top-of-well)
+(name *)	wall with etchings
+(readable *)
+(scenery *)
+(dict *)	etchi walls wall etch2 with etchings
+(descr *)
+	o b o r z f M A G I C z c W E L L y o n m p a
+

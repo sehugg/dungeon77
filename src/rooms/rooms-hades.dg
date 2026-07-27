@@ -1,0 +1,125 @@
+
+%% LLD1
+#entrance-to-hades
+(room *)
+(name *)	Entrance to Hades
+(look *)
+	%% TODO: description comes from room routine LLD-ROOM
+%% TODO: room action routine LLD-ROOM
+(from * go #east to #land-of-the-living-dead)
+%% TODO: conditional on flag LLD-FLAG
+(prevent [from * go #east])
+	~(lld-flag)
+		Some invisible force prevents you from passing through the gate.
+(from * go #up to #cave2)
+(from * go #in to #land-of-the-living-dead)
+%% TODO: conditional on flag LLD-FLAG
+(prevent [from * go #in])
+	~(lld-flag)
+		Some invisible force prevents you from passing through the gate.
+
+%% LLD2
+#land-of-the-living-dead
+(room *)
+(name *)	Land of the Living Dead
+(* awards 30 points on first visit)
+(look *)
+	%% TODO: description comes from room routine LLD2-ROOM
+%% TODO: room action routine LLD2-ROOM
+(from * go #east to #tomb-of-the-unknown-implementer)
+(from * go #out to #entrance-to-hades)
+(from * go #west to #entrance-to-hades)
+(notice #pile-of-bodies)
+
+%% TOMB
+#tomb-of-the-unknown-implementer
+(room *)
+(name *)	Tomb of the Unknown Implementer
+(inherently dark *)
+(look *)
+	You are in the Tomb of the Unknown Implementer. A hollow voice says:
+	"That's not a bug, it's a feature!"
+(from * go #west to #land-of-the-living-dead)
+
+%% TOMB
+#tomb
+(* is #in #tomb-of-the-unknown-implementer)
+(name *)	tomb
+(readable *)
+(dict *)	grave tomb
+(appearance *)
+	There is a tomb here, made of the finest marble, and large enough for
+	four headless corpses. On one end is the cryptic inscription: "Feel
+	Free."
+(descr *)
+	Here lie the implementers, whose heads were placed on poles by the
+	Keeper of the Dungeon for amazing untastefulness.
+%% TODO: object action routine HEAD-FUNCTION
+
+%% HEADS
+#set-of-poled-heads
+(* is #in #tomb-of-the-unknown-implementer)
+(name *)	set of poled heads
+(* is sacred)
+(dict *)	head pole poles pdl bkd taa marc imple loser heads set poled
+(appearance *)
+	There are four heads here, mounted securely on poles.
+%% TODO: object action routine HEAD-FUNCTION
+
+%% COKES
+#bunch-of-coke-bottles
+(* is #in #tomb-of-the-unknown-implementer)
+(name *)	bunch of Coke bottles
+(item *)
+(dict *)	bottl coke cokes bunch bottles
+(* size is 15)
+(appearance *)
+	Many empty Coke bottles are here. Alas, they can't hold water.
+(initial appearance *)
+	There is a large pile of empty Coke bottles here, evidently produced by
+	the implementers during their long struggle to win totally.
+%% TODO: object action routine COKE-BOTTLES
+
+%% LISTS
+#stack-of-listings
+(* is #in #tomb-of-the-unknown-implementer)
+(name *)	stack of listings
+(item *)
+(readable *)
+(flammable *)
+(dict *)	paper list print listi stack lists listings
+(* size is 70)
+(appearance *)
+	There is an enormous stack of line-printer paper here. It is barely
+	readable.
+(initial appearance *)
+	There is a gigantic pile of line-printer output here. Although the paper
+	once contained useful information, almost nothing can be distinguished
+	now.
+(descr *)
+    <DEFINE FEEL-FREE \(LOSER\)
+        <TELL \"FEEL FREE, CHOMPER!\">>
+            ...
+    The rest is, alas, unintelligible \(as were the implementers\).
+
+%% GHOST
+#ghost
+(* is #in #entrance-to-hades)
+(name *)	GHOST
+(dict *)	spiri fiend ghost
+%% TODO: object action routine GHOST-FUNCTION
+
+%% CORPS
+#corpses
+(* is #in #entrance-to-hades)
+(name *)	corpses
+(dict *)	mangl corps corpses
+
+%% BODIE
+#pile-of-bodies
+(* is #in #land-of-the-living-dead)
+(name *)	pile of bodies
+(scenery *)
+(dict *)	body corps bodie pile bodies
+%% TODO: object action routine BODY-FUNCTION
+

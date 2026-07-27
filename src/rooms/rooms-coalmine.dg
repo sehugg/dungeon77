@@ -1,0 +1,310 @@
+
+(empty-handed)
+	~(* has parent #player)
+
+%% ENTRA
+#mine-entrance
+(room *)
+(name *)	Mine Entrance
+(inherently dark *)
+(look *)
+	You are standing at the entrance of what might have been a coal mine. To
+	the northeast and the northwest are entrances to the mine, and there is
+	another exit on the south end of the room.
+(from * go #south to #slide-room)
+(from * go #northwest to #squeaky-room)
+(from * go #northeast to #shaft-room)
+
+%% SQUEE
+#squeaky-room
+(room *)
+(name *)	Squeaky Room
+(inherently dark *)
+(look *)
+	You are a small room. Strange squeaky sounds may be heard coming from
+	the passage at the west end. You may also escape to the south.
+(from * go #west to #bat-room)
+(from * go #south to #mine-entrance)
+
+%% TSHAF
+#shaft-room
+(room *)
+(name *)	Shaft Room
+(inherently dark *)
+(look *)
+	You are in a large room, in the middle of which is a small shaft
+	descending through the floor into darkness below. To the west and the
+	north are exits from this room. Constructed over the top of the shaft is
+	a metal framework to which a heavy iron chain is attached.
+(narrate failing to leave * #down)
+	You wouldn't fit and would die if you could.
+(from * go #west to #mine-entrance)
+(from * go #north to #wooden-tunnel)
+
+%% TUNNE
+#wooden-tunnel
+(room *)
+(name *)	Wooden Tunnel
+(inherently dark *)
+(look *)
+	You are in a narrow tunnel with large wooden beams running across the
+	ceiling and around the walls. A path from the south splits into paths
+	running west and northeast.
+(from * go #south to #shaft-room)
+(from * go #west to #smelly-room)
+(from * go #northeast to #coalmine1)
+
+%% SMELL
+#smelly-room
+(room *)
+(name *)	Smelly Room
+(inherently dark *)
+(look *)
+	You are in a small non-descript room. However, from the direction of a
+	small descending staircase a foul odor can be detected. To the east is a
+	narrow path.
+(from * go #down to #gas-room)
+(from * go #east to #wooden-tunnel)
+
+%% BOOM
+#gas-room
+(room *)
+(name *)	Gas Room
+(inherently dark *)
+(look *)
+	You are in a small room which smells strongly of coal gas.
+%% TODO: room action routine BOOM-ROOM
+(from * go #up to #smelly-room)
+
+%% TLADD
+#ladder-top
+(room *)
+(name *)	Ladder Top
+(inherently dark *)
+(look *)
+	You are in a very small room. In the corner is a rickety wooden ladder,
+	leading downward. It might be safe to descend. There is also a staircase
+	leading upward.
+(from * go #down to #ladder-bottom)
+(from * go #up to #coalmine7)
+
+%% MINE1
+#coalmine1
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #north to #coalmine4)
+(from * go #southwest to #coalmine2)
+(from * go #east to #wooden-tunnel)
+
+%% MINE2
+#coalmine2
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #south to #coalmine1)
+(from * go #west to #coalmine5)
+(from * go #up to #coalmine3)
+(from * go #northeast to #coalmine4)
+
+%% MINE3
+#coalmine3
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #west to #coalmine2)
+(from * go #northeast to #coalmine5)
+(from * go #east to #coalmine5)
+
+%% MINE4
+#coalmine4
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #up to #coalmine5)
+(from * go #northeast to #coalmine6)
+(from * go #south to #coalmine1)
+(from * go #west to #coalmine2)
+
+%% MINE5
+#coalmine5
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #down to #coalmine6)
+(from * go #north to #coalmine7)
+(from * go #west to #coalmine2)
+(from * go #south to #coalmine3)
+(from * go #up to #coalmine3)
+(from * go #east to #coalmine4)
+
+%% MINE6
+#coalmine6
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #southeast to #coalmine4)
+(from * go #up to #coalmine5)
+(from * go #northwest to #coalmine7)
+
+%% MINE7
+#coalmine7
+(room *)
+(name *)	You are in a non-descript part of a coal mine.
+(inherently dark *)
+(look *)
+	You are in a non-descript part of a coal mine.
+(from * go #east to #coalmine1)
+(from * go #west to #coalmine5)
+(from * go #down to #ladder-top)
+(from * go #south to #coalmine6)
+
+%% BLADD
+#ladder-bottom
+(room *)
+(name *)	Ladder Bottom
+(inherently dark *)
+(look *)
+	You are in a rather wide room. On one side is the bottom of a narrow
+	wooden ladder. To the northeast and the south are passages leaving the
+	room.
+(from * go #northeast to #dead-end5)
+(from * go #south to #timber-room)
+(from * go #up to #ladder-top)
+
+%% DEAD7
+#dead-end5
+(room *)
+(name *)	Dead End
+(inherently dark *)
+(look *)
+	Dead End
+(from * go #south to #ladder-bottom)
+
+%% TIMBE
+#timber-room
+(room *)
+(name *)	Timber Room
+(inherently dark *)
+(* is sacred)
+(look *)
+	You are in a long and narrow passage, which is cluttered with broken
+	timbers. A wide passage comes from the north and turns at the southwest
+	corner of the room into a very narrow passageway.
+%% TODO: room action routine NO-OBJS
+(from * go #north to #ladder-bottom)
+(from * go #southwest to #lower-shaft)
+%% TODO: conditional on flag EMPTY-HANDED
+(prevent [from * go #southwest])
+	~(empty-handed)
+		You cannot fit through this passage with that load.
+
+%% BSHAF
+#lower-shaft
+(room *)
+(name *)	Lower Shaft
+(inherently dark *)
+(* is sacred)
+(look *)
+	You are in a small square room which is at the bottom of a long shaft.
+	To the east is a passageway and to the northeast a very narrow passage.
+	In the shaft can be seen a heavy iron chain.
+%% TODO: room action routine NO-OBJS
+(from * go #east to #machine-room1)
+(from * go #out to #timber-room)
+%% TODO: conditional on flag EMPTY-HANDED
+(prevent [from * go #out])
+	~(empty-handed)
+		You cannot fit through this passage with that load.
+(from * go #northeast to #timber-room)
+%% TODO: conditional on flag EMPTY-HANDED
+(prevent [from * go #northeast])
+	~(empty-handed)
+		You cannot fit through this passage with that load.
+(narrate failing to leave * #up)
+	The chain is not climbable.
+
+%% MACHI
+#machine-room1
+(room *)
+(name *)	Machine Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine MACHINE-ROOM
+%% TODO: room action routine MACHINE-ROOM
+(from * go #northwest to #lower-shaft)
+(notice #switch)
+
+%% MACHI
+#machine
+(* is #in #machine-room1)
+(name *)	machine
+(container *)
+(openable *)
+(dict *)	pdp10 dryer lid machi machine
+(* capacity is 50)
+%% TODO: object action routine MACHINE-FUNCTION
+
+%% MSWIT
+#switch
+(* is #in #machine-room1)
+(name *)	switch
+(scenery *)
+(dict *)	switc mswit switch
+%% TODO: object action routine MSWITCH-FUNCTION
+
+%% COAL
+#small-pile-of-coal
+(* is #in #dead-end5)
+(name *)	small pile of coal
+(item *)
+(flammable *)
+(dict *)	heap charc coal small pile
+(* size is 20)
+(appearance *)
+	There is a small heap of coal here.
+
+%% TBASK
+#basket1
+(* is #in #shaft-room)
+(name *)	basket
+(container *)
+(openable *)
+~(opaque *)
+(dict *)	cage dumbw baske tbask basket
+(* capacity is 50)
+(appearance *)
+	At the end of the chain is a basket.
+%% TODO: object action routine DUMBWAITER
+
+%% FBASK
+#fbask
+(* is #in #lower-shaft)
+(name *)	FBASK
+(dict *)	cage dumbw baske fbask
+%% TODO: object action routine DUMBWAITER
+
+%% BRACE
+#sapphire-bracelet
+(* is #in #gas-room)
+(name *)	sapphire bracelet
+(item *)
+(dict *)	jewel sapph brace sapphire bracelet
+(* size is 10)
+(* awards 5 points on first take)
+(* awards 3 points on return)
+(appearance *)
+	There is a sapphire-encrusted bracelet here.
+

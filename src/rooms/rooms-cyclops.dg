@@ -1,0 +1,74 @@
+
+%% CYCLO
+#cyclops-room
+(room *)
+(name *)	Cyclops Room
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine CYCLOPS-ROOM
+%% TODO: room action routine CYCLOPS-ROOM
+(from * go #west to #maze15)
+(from * go #north to #strange-passage)
+%% TODO: conditional on flag MAGIC-FLAG
+(prevent [from * go #north])
+	~(magic-flag)
+		The north wall is solid rock.
+(from * go #up to #treasure-room)
+%% TODO: conditional on flag CYCLOPS-FLAG
+(prevent [from * go #up])
+	~(cyclops-flag)
+		The cyclops doesn't look like he'll let you past.
+
+%% BLROO
+#strange-passage
+(room *)
+(name *)	Strange Passage
+(inherently dark *)
+(* awards 10 points on first visit)
+(look *)
+	You are in a long passage. To the south is one entrance. On the east
+	there is an old wooden door, with a large hole in it \(about cyclops
+	sized\).
+%% TODO: room action routine TIME
+(from * go #south to #cyclops-room)
+(from * go #east to #living-room)
+
+%% TREAS
+#treasure-room
+(room *)
+(name *)	Treasure Room
+(inherently dark *)
+(* awards 25 points on first visit)
+(look *)
+	This is a large room, whose north wall is solid granite. A number of
+	discarded bags, which crumble at your touch, are scattered about on the
+	floor.
+%% TODO: room action routine TREASURE-ROOM
+(from * go #down to #cyclops-room)
+
+%% CYCLO
+#cyclops
+(* is #in #cyclops-room)
+(name *)	cyclops
+(villain *)
+(animate *)
+(dict *)	one-e monst cyclo cyclops
+(* capacity is 10000)
+%% TODO: object action routine CYCLOPS
+
+%% CHALI
+#chalice
+(* is #in #treasure-room)
+(name *)	chalice
+(item *)
+(container *)
+(openable *)
+(dict *)	cup goble chali chalice
+(* size is 10)
+(* capacity is 5)
+(* awards 10 points on first take)
+(* awards 10 points on return)
+(appearance *)
+	There is a silver chalice, intricately engraved, here.
+%% TODO: object action routine CHALICE
+

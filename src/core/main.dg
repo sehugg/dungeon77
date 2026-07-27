@@ -19,7 +19,7 @@
 (interface (weapon $>Thing))
 (interface (villain $>Thing))
 
-(interface ($<Thing is on fire))
+(interface ($<Thing is burning))
 (interface ($<Thing can be turned))
 (interface ($<Thing can be tied))
 (interface ($<Thing is in melee))
@@ -87,10 +87,6 @@
     (try [look])
 
 %%%
-
-(understand [repent] as [repent])
-(refuse [repent])
-    It could very well be too late!
 
 %% Not exactly like Zork
 (list contents of $thing)

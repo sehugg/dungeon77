@@ -1,0 +1,126 @@
+
+%% RESES
+#reservoir-south
+(room *)
+(name *)	Reservoir South
+(inherently dark *)
+(* can be filled)
+(look *)
+	%% TODO: description comes from room routine RESERVOIR-SOUTH
+%% TODO: room action routine RESERVOIR-SOUTH
+(from * go #south to #deep-ravine)
+%% TODO: conditional on flag EGYPT-FLAG
+(prevent [from * go #south])
+	~(egypt-flag)
+		The coffin will not fit through this passage.
+(from * go #west to #stream)
+(from * go #cross to #reservoir-north)
+%% TODO: conditional on flag LOW-TIDE
+(prevent [from * go #cross])
+	~(low-tide)
+		You are not equipped for swimming.
+(from * go #north to #reservoir-north)
+%% TODO: conditional on flag LOW-TIDE
+(prevent [from * go #north])
+	~(low-tide)
+		You are not equipped for swimming.
+(from * go #up to #deep-canyon)
+%% TODO: conditional on flag EGYPT-FLAG
+(prevent [from * go #up])
+	~(egypt-flag)
+		The stairs are too steep for carrying the coffin.
+
+%% RESEN
+#reservoir-north
+(room *)
+(name *)	Reservoir North
+(inherently dark *)
+(* can be filled)
+(look *)
+	%% TODO: description comes from room routine RESERVOIR-NORTH
+%% TODO: room action routine RESERVOIR-NORTH
+(from * go #north to #atlantis-room)
+(from * go #cross to #reservoir-south)
+%% TODO: conditional on flag LOW-TIDE
+(prevent [from * go #cross])
+	~(low-tide)
+		You are not equipped for swimming.
+(from * go #south to #reservoir-south)
+%% TODO: conditional on flag LOW-TIDE
+(prevent [from * go #south])
+	~(low-tide)
+		You are not equipped for swimming.
+
+%% STREA
+#stream
+(room *)
+(name *)	Stream
+(inherently dark *)
+(* can be filled)
+(look *)
+	You are standing on a path beside a flowing stream. The path travels to
+	the north and the east.
+(from * go #east to #reservoir-south)
+(from * go #north to #glacier-room)
+
+%% ATLAN
+#atlantis-room
+(room *)
+(name *)	Atlantis Room
+(inherently dark *)
+(look *)
+	You are in an ancient room, long buried by the Reservoir. There are
+	exits here to the southeast and upward.
+(from * go #southeast to #reservoir-north)
+(from * go #up to #cave1)
+
+%% CANY1
+#deep-canyon
+(room *)
+(name *)	Deep Canyon
+(inherently dark *)
+(look *)
+	You are on the south edge of a deep canyon. Passages lead off to the
+	east, south, and northwest. You can hear the sound of flowing water
+	below.
+(from * go #northwest to #reservoir-south)
+(from * go #east to #dam-room)
+(from * go #south to #round-room)
+
+%% TRUNK
+#trunk-with-jewels
+(* is #in #reservoir-south)
+(name *)	trunk with jewels
+(item *)
+(* is hidden)
+(dict *)	chest trunk with jewels
+(* size is 35)
+(* awards 15 points on first take)
+(* awards 8 points on return)
+(appearance *)
+	There is an old trunk here, bulging with assorted jewels.
+(initial appearance *)
+	Lying half buried in the mud is an old trunk, bulging with jewels.
+
+%% PUMP
+#hand-held-air-pump
+(* is #in #reservoir-north)
+(name *)	hand-held air pump
+(item *)
+(tool *)
+(dict *)	air-p airpu pump hand held air
+(appearance *)
+	There is a small pump here.
+
+%% FUSE
+#wire-coil
+(* is #in #stream)
+(name *)	wire coil
+(item *)
+(flammable *)
+(dict *)	coil wire shiny thin fuse
+(* size is 1)
+(appearance *)
+	There is a coil of thin shiny wire here.
+%% TODO: object action routine FUSE-FUNCTION
+

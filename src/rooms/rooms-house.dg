@@ -67,6 +67,7 @@
 
 #front-door
 (name *)        front door
+(door *)
 (* is #in #west-of-house)
 (prevent [enter *])
     (narrate door is locked)
@@ -371,6 +372,7 @@
 (appearance *)
     There is a trophy case here.
     (list contents of *)
+    %% TODO: list treasures
 (prevent [take *])
     The trophy case is securely fastened to the wall \(perhaps to foil any attempt by robbers to remove it\).
 

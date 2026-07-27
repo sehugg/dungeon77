@@ -1,0 +1,116 @@
+
+%% MGRAI
+#grail-room
+(room *)
+(name *)	Grail Room
+(inherently dark *)
+(look *)
+	You are standing in a small circular room with a pedestal. A set of
+	stairs leads up, and passages leave to the east and west.
+(from * go #west to #round-room)
+(from * go #east to #narrow-crawlway)
+(from * go #up to #temple)
+
+%% TEMP1
+#temple
+(room *)
+(name *)	Temple
+(* is sacred)
+(look *)
+	You are in the west end of a large temple. On the south wall is an
+	ancient inscription, probably a prayer in a long-forgotten language. The
+	north wall is solid granite. The entrance at the west end of the room is
+	through huge marble pillars.
+(from * go #west to #grail-room)
+(from * go #east to #altar)
+
+%% TEMP2
+#altar
+(room *)
+(name *)	Altar
+(* is sacred)
+(look *)
+	You are in the east end of a large temple. In front of you is what
+	appears to be an altar.
+(from * go #west to #temple)
+
+%% GRAIL
+#grail
+(* is #in #grail-room)
+(name *)	grail
+(item *)
+(container *)
+(openable *)
+(dict *)	grail
+(* size is 10)
+(* capacity is 5)
+(* awards 2 points on first take)
+(* awards 5 points on return)
+(appearance *)
+	There is an extremely valuable \(perhaps original\) grail here.
+
+%% PRAYE
+#prayer
+(* is #in #temple)
+(name *)	prayer
+(readable *)
+(* is sacred)
+(dict *)	inscr ancie old praye prayer
+(descr *)
+	The prayer is inscribed in an ancient script which is hardly remembered
+	these days, much less understood. What little of it can be made out
+	seems to be a phillipic against small insects, absent-mindedness, and
+	the picking up and dropping of small objects. The final verse seems to
+	consign trespassers to the land of the dead. All evidence indicates that
+	the beliefs of the ancient Zorkers were obscure.
+
+%% BELL
+#bell
+(* is #in #temple)
+(name *)	bell
+(item *)
+(dict *)	brass bell
+(appearance *)
+	There is a small brass bell here.
+(initial appearance *)
+	Lying in a corner of the room is a small brass bell.
+
+%% BOOK
+#book
+(* is #in #altar)
+(name *)	book
+(item *)
+(readable *)
+(flammable *)
+(dict *)	praye bible goodb black book
+(* size is 10)
+(appearance *)
+	There is a large black book here.
+(initial appearance *)
+	On the altar is a large black book, open to page 569.
+(descr *)
+	(div @headline) { COMMANDMENT \#12592 }
+	Oh ye who go about saying unto each: "Hello sailor":(line)
+	dost thou know the magnitude of thy sin before the gods? Yea, verily,
+	thou shalt be ground between two stones. Shall the angry gods cast thy
+	body into the whirlpool? Surely, thy eye shall be put out with a sharp
+	stick! Even unto the ends of the earth shalt thou wander and unto the
+	land of the dead shalt thou be sent at last. Surely thou shalt repent of
+	thy cunning.
+%% TODO: object action routine BLACK-BOOK
+
+%% CANDL
+#pair-of-candles
+(* is #in #altar)
+(name *)	pair of candles
+(item *)
+(dict *)	candl pair candles
+(* size is 10)
+(appearance *)
+	There are two candles here.
+(initial appearance *)
+	On the two ends of the altar are burning candles.
+(* provides light)
+	(* is burning)
+%% TODO: object action routine CANDLES
+

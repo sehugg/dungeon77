@@ -1,0 +1,383 @@
+
+%% VLBOT
+#volcano-bottom
+(room *)
+(name *)	Volcano Bottom
+(inherently dark *)
+(look *)
+	You are at the bottom of a large dormant volcano. High above you light
+	may be seen entering from the cone of the volcano. The only exit here is
+	to the north.
+(from * go #north to #lava-room)
+
+%% VAIR1
+#volcano-core1
+(room *)
+(name *)	Volcano Core
+(inherently dark *)
+(* is midair)
+(* is sacred)
+(look *)
+	You are about one hundred feet above the bottom of the volcano. The top
+	of the volcano is clearly visible here.
+%%(from * go ##!#!# to #thing)
+
+%% VAIR2
+#volcano-core2
+(room *)
+(name *)	Volcano Core
+(inherently dark *)
+(* is midair)
+(* is sacred)
+(look *)
+	You are about two hundred feet above the volcano floor. Looming above is
+	the rim of the volcano. There is a small ledge on the west side.
+(from * go #west to #narrow-ledge)
+(from * go #land to #narrow-ledge)
+
+%% VAIR3
+#volcano-core3
+(room *)
+(name *)	Volcano Core
+(inherently dark *)
+(* is midair)
+(* is sacred)
+(look *)
+	You are high above the floor of the volcano. From here the rim of the
+	volcano looks very narrow and you are very near it. To the east is what
+	appears to be a viewing ledge, too thin to land on.
+%%(from * go ##!#!# to #thing)
+
+%% VAIR4
+#volcano-core4
+(room *)
+(name *)	Volcano Core
+(inherently dark *)
+(* is midair)
+(* is sacred)
+(look *)
+	You are near the rim of the volcano which is only about 15 feet across.
+	To the west, there is a place to land on a wide ledge.
+(from * go #land to #wide-ledge)
+(from * go #east to #wide-ledge)
+
+%% LEDG2
+#narrow-ledge
+(room *)
+(name *)	Narrow Ledge
+(inherently dark *)
+(look *)
+	You are on a narrow ledge overlooking the inside of an old dormant
+	volcano. This ledge appears to be about in the middle between the floor
+	below and the rim above. There is an exit here to the south.
+(narrate failing to leave * #down)
+	I wouldn't jump from here.
+(from * go #launch to #volcano-core2)
+(from * go #west to #volcano-bottom)
+%% TODO: conditional on flag GNOME-DOOR
+(prevent [from * go #west])
+	~(gnome-door)
+		You can't go that way.
+(from * go #south to #library)
+
+%% LEDG3
+#volcano-view
+(room *)
+(name *)	Volcano View
+(inherently dark *)
+(look *)
+	You are on a ledge in the middle of a large volcano. Below you the
+	volcano bottom can be seen and above is the rim of the volcano. A couple
+	of ledges can be seen on the other side of the volcano; it appears that
+	this ledge is intermediate in elevation between those on the other side.
+	The exit from this room is to the east.
+(narrate failing to leave * #down)
+	I wouldn't try that.
+(narrate failing to leave * #cross)
+	It is impossible to cross this distance.
+(from * go #east to #egyptian-room)
+
+%% LEDG4
+#wide-ledge
+(room *)
+(name *)	Wide Ledge
+(inherently dark *)
+(look *)
+	%% TODO: description comes from room routine LEDGE-FUNCTION
+%% TODO: room action routine LEDGE-FUNCTION
+(narrate failing to leave * #down)
+	It's a long way down.
+(from * go #launch to #volcano-core4)
+(from * go #west to #volcano-bottom)
+%% TODO: conditional on flag GNOME-DOOR
+(prevent [from * go #west])
+	~(gnome-door)
+		You can't go that way.
+(from * go #south to #dusty-room)
+
+%% SAFE
+#dusty-room
+(room *)
+(name *)	Dusty Room
+(look *)
+	%% TODO: description comes from room routine SAFE-ROOM
+%% TODO: room action routine SAFE-ROOM
+(from * go #north to #wide-ledge)
+
+%% LAVA
+#lava-room
+(room *)
+(name *)	Lava Room
+(inherently dark *)
+(look *)
+	You are in a small room, whose walls are formed by an old lava flow.
+	There are exits here to the west and the south.
+(from * go #south to #volcano-bottom)
+(from * go #west to #ruby-room)
+
+%% GNOME
+#volcano-gnome
+(name *)	Volcano Gnome
+(dict *)	troll gnome volcano
+(appearance *)
+	There is a nervous Volcano Gnome here.
+%% TODO: object action routine GNOME-FUNCTION
+
+%% BALLO
+#basket2
+(* is #in #volcano-bottom)
+(name *)	basket
+(vehicle *)
+(dict *)	baske wicke ballo basket
+(* size is 70)
+(* capacity is 100)
+(appearance *)
+	There is a very large and extremely heavy wicker basket with a cloth bag
+	here. Inside the basket is a metal receptacle of some kind. Attached to
+	the basket on the outside is a piece of wire.
+	(list contents of *)
+%% TODO: object action routine BALLOON
+
+%% RECEP
+#receptacle
+(* is #in #basket2)
+(name *)	receptacle
+(container *)
+(openable *)
+(dict *)	recep receptacle
+(* capacity is 6)
+
+%% CBAG
+#cloth-bag
+(* is #in #basket2)
+(name *)	cloth bag
+(dict *)	bag cloth cbag
+
+%% BROPE
+#braided-wire
+(* is #in #basket2)
+(name *)	braided wire
+(dict *)	wire braid brope braided
+%% TODO: object action routine WIRE-FUNCTION
+
+%% HOOK1
+#hook1
+(* is #in #narrow-ledge)
+(name *)	hook
+(dict *)	hook hook1
+(appearance *)
+	There is a small hook attached to the rock here.
+
+%% HOOK2
+#hook2
+(* is #in #wide-ledge)
+(name *)	hook
+(dict *)	hook hook2
+(appearance *)
+	There is a small hook attached to the rock here.
+
+%% ZORKM
+#priceless-zorkmid
+(* is #in #narrow-ledge)
+(name *)	priceless zorkmid
+(item *)
+(readable *)
+(dict *)	coin gold zorkm priceless zorkmid
+(* size is 10)
+(* awards 10 points on first take)
+(* awards 12 points on return)
+(appearance *)
+	There is an engraved zorkmid coin here.
+(initial appearance *)
+	On the floor is a gold zorkmid coin \(a valuable collector's item\).
+(descr *)
+	-------------------------- / Gold Zorkmid \\ / T e n T h o u s a n d \\
+	/ Z O R K M I D S \\ / \\ / \|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\| \\ /
+	!\|\|\|\| \|\|\|\|! \\ \| \|\|\| ^^ ^^ \|\|\| \| \| \|\|\| OO OO \|\|\|
+	\| \| In Frobs \|\|\| << \|\|\| We Trust \| \| \|\| \(______\) \|\| \|
+	\| \| \| \| \| \|__________\| \| \\ / \\ -- Lord Dimwit Flathead -- / \\
+	-- Beloved of Zorkers -- / \\ / \\ \* 722 G.U.E. \* / \\ /
+	--------------------------
+
+%% SAFE
+#box
+(* is #in #dusty-room)
+(name *)	box
+(container *)
+(openable *)
+(dict *)	box safe
+(* capacity is 15)
+%% TODO: object action routine SAFE-FUNCTION
+
+%% CARD
+#card
+(* is #in #box)
+(name *)	card
+(item *)
+(readable *)
+(flammable *)
+(dict *)	note card
+(* size is 1)
+(appearance *)
+	There is a card with writing on it here.
+(descr *)
+	Warning: This room was constructed over very weak rock strata.
+	Detonation of explosives in this room is strictly prohibited! Frobozz
+	Magic Cave Company per M. Agrippa, foreman
+
+%% SSLOT
+#hole
+(* is #in #dusty-room)
+(name *)	hole
+(dict *)	slot hole sslot
+(* capacity is 10)
+
+%% CROWN
+#crown
+(* is #in #box)
+(name *)	crown
+(item *)
+(dict *)	gaudy crown
+(* size is 10)
+(* awards 15 points on first take)
+(* awards 10 points on return)
+(appearance *)
+	Lord Dimwit's crown is here.
+(initial appearance *)
+	The excessively gaudy crown of Lord Dimwit Flathead is here.
+
+%% LIBRA
+#library
+(room *)
+(name *)	Library
+(inherently dark *)
+(look *)
+	You are in a room which must have been a large library, probably for the
+	royal family. All of the shelves appear to have been gnawed to pieces by
+	unfriendly gnomes. To the north is an exit.
+(from * go #north to #narrow-ledge)
+(from * go #out to #narrow-ledge)
+
+%% BLBK
+#blue-book
+(* is #in #library)
+(name *)	blue book
+(item *)
+(container *)
+(openable *)
+(readable *)
+(dict *)	book blue blbk
+(* size is 10)
+(* capacity is 2)
+(appearance *)
+	There is a blue book here.
+(descr *)
+	This book is written in a tongue with which I am unfamiliar.
+
+%% GRBK
+#green-book
+(* is #in #library)
+(name *)	green book
+(item *)
+(container *)
+(openable *)
+(readable *)
+(dict *)	book green grbk
+(* size is 10)
+(* capacity is 2)
+(appearance *)
+	There is a green book here.
+(descr *)
+	This book is written in a tongue with which I am unfamiliar.
+
+%% PUBK
+#purple-book
+(* is #in #library)
+(name *)	purple book
+(item *)
+(container *)
+(openable *)
+(readable *)
+(dict *)	book purpl pubk purple
+(* size is 10)
+(* capacity is 2)
+(appearance *)
+	There is a purple book here.
+	(list contents of *)
+(descr *)
+	This book is written in a tongue with which I am unfamiliar.
+
+%% WHBK
+#white-book
+(* is #in #library)
+(name *)	white book
+(item *)
+(container *)
+(openable *)
+(readable *)
+(dict *)	book white whbk
+(* size is 10)
+(* capacity is 2)
+(appearance *)
+	There is a white book here.
+(descr *)
+	This book is written in a tongue with which I am unfamiliar.
+
+%% STAMP
+#stamp
+(* is #in #purple-book)
+(name *)	stamp
+(item *)
+(readable *)
+(flammable *)
+(dict *)	stamp
+(* size is 1)
+(* awards 4 points on first take)
+(* awards 10 points on return)
+(appearance *)
+	There is a Flathead Commemorative stamp here.
+(descr *)
+	---v----v----v----v----v----v----v----v--- \| \| \| \|\|\|\|\|\|\|\|\|\|
+	LORD \| > !\|\|\|\| \| DIMWIT < \| \|\|\|\| ---\| FLATHEAD \| \| \|\|\|C
+	CC \\ \| > \|\|\|\| _\\ < \| \|\|\| \(____\| \| \| \|\| \| \| >
+	\|______\| Our < \| / \\ Excessive \| \| / \\ Leader \| > \| \| < \| \|
+	\| \| \| \| > G.U.E. POSTAGE 3 Zorkmids < \| \|
+	---^----^----^----^----^----^----^----^---
+
+%% BLABE
+#blue-label
+(* is #in #basket2)
+(name *)	blue label
+(item *)
+(readable *)
+(flammable *)
+(dict *)	label blue blabe
+(* size is 1)
+(appearance *)
+	There is a blue label here.
+(descr *)
+	!!!! FROBOZZ MAGIC BALLOON COMPANY !!!! Hello, Aviator! Instructions for
+	use: To get into balloon, say 'Board' To leave balloon, say 'Disembark'
+	To land, say 'Land' Warranty: No warranty is expressed or implied.
+	You're on your own, sport! Good Luck.
+

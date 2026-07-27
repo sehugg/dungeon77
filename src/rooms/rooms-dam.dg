@@ -1,0 +1,156 @@
+%% DAM
+#dam-room
+(room *)
+(name *)	Dam
+(* can be filled)
+(look *)
+	%% TODO: description comes from room routine DAM-ROOM
+%% TODO: room action routine DAM-ROOM
+(from * go #south to #deep-canyon)
+(from * go #down to #dam-base)
+(from * go #east to #damp-cave)
+(from * go #north to #dam-lobby)
+(notice #bolt)
+(notice #dam)
+(notice #bubble)
+
+%% LOBBY
+#dam-lobby
+(room *)
+(name *)	Dam Lobby
+(look *)
+	This room appears to have been the waiting room for groups touring the
+	dam. There are exits here to the north and east marked 'Private', though
+	the doors are open, and an exit to the south.
+(from * go #south to #dam-room)
+(from * go #north to #maintenance-room)
+(from * go #east to #maintenance-room)
+
+%% MAINT
+#maintenance-room
+(room *)
+(name *)	Maintenance Room
+(inherently dark *)
+(look *)
+	You are in what appears to have been the maintenance room for Flood
+	Control Dam \#3, judging by the assortment of tool chests around the
+	room. Apparently, this room has been ransacked recently, for most of the
+	valuable equipment is gone. On the wall in front of you is a panel of
+	buttons, which are labelled in EBCDIC. However, they are of different
+	colors: Blue, Yellow, Brown, and Red. The doors to this room are in the
+	west and south ends.
+%% TODO: room action routine MAINT-ROOM
+(from * go #south to #dam-lobby)
+(from * go #west to #dam-lobby)
+(notice #leak)
+(notice #button4)
+(notice #button2)
+(notice #button5)
+(notice #button3)
+
+%%%
+
+%% GUIDE
+#tour-guidebook
+(* is #in #dam-lobby)
+(name *)	tour guidebook
+(item *)
+(readable *)
+(flammable *)
+(dict *)	book tour guide guidebook
+(appearance *)
+	There are tour guidebooks here.
+(initial appearance *)
+	Some guidebooks entitled 'Flood Control Dam \#3' are on the reception
+	desk.
+(descr *)
+	" Guide Book to Flood Control Dam \#3 Flood Control Dam \#3 \(FCD\#3\)
+	was constructed in year 783 of the Great Underground Empire to harness
+	the destructive power of the Frigid River. This work was supported by a
+	grant of 37 million zorkmids from the Central Bureaucracy and your
+	omnipotent local tyrant Lord Dimwit Flathead the Excessive. This
+	impressive structure is composed of 3.7 cubic feet of concrete, is 256
+	feet tall at the center, and 193 feet wide at the top. The reservoir
+	created behind the dam has a volume of 37 billion cubic feet, an area of
+	12 million square feet, and a shore line of 36 thousand feet.(par)The
+	construction of FCD\#3 took 112 days from ground breaking to the
+	dedication. It required a work force of 384 slaves, 34 slave drivers, 12
+	engineers, 2 turtle doves, and a partridge in a pear tree. The work was
+	managed by a command team composed of 2345 bureaucrats, 2347 secretaries
+	\(at least two of which can type\), 12,256 paper shufflers, 52,469
+	rubber stampers, 245,193 red tape processors, and nearly one million
+	dead trees.(par)We will now point out some of the more interesting features
+	of FCD\#3 as we conduct you on a guided tour of the facilities:(par)
+    1\) You start your tour here in the Dam Lobby. You will notice on your right
+	that .........
+
+%% MATCH
+#matchbook
+(* is #in #dam-lobby)
+(name *)	matchbook
+(item *)
+(readable *)
+(dict *)	flint match matchbook
+(* size is 2)
+(appearance *)
+	There is a matchbook whose cover says 'Visit Beautiful FCD\#3' here.
+(descr *)
+	\[close cover before striking BKD\] You too can make BIG MONEY in the
+	exciting field of PAPER SHUFFLING! Mr. TAA of Muddle, Mass. says:
+	"Before I took this course I used to be a lowly bit twiddler. Now with
+	what I learned at MIT Tech I feel really important and can obfuscate and
+	confuse with the best." Mr. MARC had this to say: "Ten short days ago
+	all I could look forward to was a dead-end job as a doctor. Now I have a
+	promising future and make really big Zorkmids." MIT Tech can't promise
+	these fantastic results to everyone. But when you earn your MDL degree
+	from MIT Tech your future will be brighter. Send for our free brochure
+	today.
+%% TODO: object action routine MATCH-FUNCTION
+
+%% TUBE
+#tube
+(* is #in #maintenance-room)
+(name *)	tube
+(item *)
+(container *)
+(openable *)
+(dict *)	tube
+(* size is 10)
+(* capacity is 7)
+(appearance *)
+	There is an object which looks like a tube of toothpaste here.
+	(list contents of *)
+%% TODO: object action routine TUBE-FUNCTION
+
+%% PUTTY
+#viscous-material
+(* is #in #tube)
+(name *)	viscous material
+(item *)
+(tool *)
+(dict *)	mater gunk glue visco putty viscous material
+(* size is 6)
+(appearance *)
+	There is some gunk here
+
+%% WRENC
+#wrench
+(* is #in #maintenance-room)
+(name *)	wrench
+(item *)
+(tool *)
+(dict *)	wrenc wrench
+(* size is 10)
+(appearance *)
+	There is a wrench here.
+
+%% SCREW
+#screwdriver
+(* is #in #maintenance-room)
+(name *)	screwdriver
+(item *)
+(tool *)
+(dict *)	screw screwdriver
+(appearance *)
+	There is a screwdriver here.
+

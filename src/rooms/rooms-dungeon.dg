@@ -59,3 +59,27 @@
 (appearance *)  There is a bloody axe here.
 (* is #heldby #troll)
 
+%% THIEF
+#thief
+(* is #in #round-room)
+(name *)	thief
+(villain *)
+(animate *)
+(dict *)	robber crook crime criminal bandit man shady thug bagman mafia
+(* capacity is 4)
+(appearance *)
+	There is a suspicious-looking individual, holding a bag, leaning against
+	one wall. He is armed with a vicious-looking stilletto.
+	(list contents of *)
+%% TODO: object action routine ROBBER-FUNCTION
+
+%% STILL
+#stilletto
+(* is #heldby #thief)
+(name *)	stilletto
+(weapon *)
+(dict *)	vicious still
+(* size is 10)
+(appearance *)
+	There is a vicious-looking stilletto here.
+
