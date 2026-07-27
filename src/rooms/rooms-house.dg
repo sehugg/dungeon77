@@ -217,6 +217,7 @@
 (name *)        quantity of water
 (potable *)
 (dict *)	liquid h2o
+(* size is 4)
 
 #attic
 (name *)        Attic
@@ -230,6 +231,7 @@
 (* is #in #attic)
 (name *)        rope
 (item *)
+(* size is 10)
 (appearance *)
     (if)(* is pristine)(then)
         A large coil of rope is lying in the corner.

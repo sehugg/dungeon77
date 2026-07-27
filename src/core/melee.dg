@@ -1,4 +1,6 @@
 
+%% https://blog.zarfhome.com/2026/02/to-fight-a-troll
+
 %% 0 -- attacker misses
 %% 1 -- defender unconscious
 %% 2 -- defender dead
@@ -36,21 +38,38 @@
 (#troll maximum strength is 2)
 (#troll wields #axe)
 
+%% Healing ticks
+
+(early on every tick)
+    (exhaust) {
+        *($actor maximum strength is $max)
+        ($actor combat strength is $value)
+        ($value < $max)
+        (random from 1 to 30 into $rnd)
+        ($rnd = 1)
+        ($value plus 1 into $new)
+        (set $actor combat strength to $new)
+    }
+
 %% Villain ticks
 
 (on every tick in #troll-room)
     (#troll is #in #troll-room)
     (#troll attacks #player with #axe)
 
-%% TODO: should take at least 1 turn
 (early on every tick)
     (exhaust) {
         *($victim is asleep)
-        (random from 1 to 2 into $wake)
-        ($wake = 1)
-        (now)~($victim is asleep)
-        (if)(player can see $victim)(then)
-            (The $victim) wake(s $victim) up.
+        %% make sure we take at least 1 turn
+        (if) ($victim is stunned) (then)
+            (now) ~($victim is stunned)
+        (else)
+            (random from 1 to 2 into $wake)
+            ($wake = 1)
+            (now)~($victim is asleep)
+            (if)(player can see $victim)(then)
+                (The $victim) wake(s $victim) up.
+            (endif)
         (endif)
     }
 
@@ -133,6 +152,7 @@
 
 (#player gets knocked out)
     (now)(#player is asleep)
+    (now)(#player is stunned)
 
 (#player gets killed)
     It appears that that last blow was too much for you.  I'm afraid you are dead.
@@ -141,6 +161,7 @@
 
 ($defender gets knocked out)
     (now)($defender is asleep)
+    (now)($defender is stunned)
 
 ($defender gets killed)
     %% TODO: drops weapon/loot?

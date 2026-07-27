@@ -1,0 +1,287 @@
+seed: 85413
+--------------------------------------------------------------------------------
+id: 0
+label: START
+--------------------------------------------------------------------------------
+[1m[36mWarning:[0m[36m Object #grating2 was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #canyon-view was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #behind-house was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #grating1 was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #cross was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #climb was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #launch was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #land was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #rainbow-room was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #chasm2 was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #crawl4 was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #passage1 was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #falls was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 190: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 374: Possible typo: A query is made to '(egypt-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 380: Possible typo: A query is made to '(low-tide)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 455: Possible typo: A query is made to '(glacier-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 825: Possible typo: A query is made to '(empty-handed)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 889: Possible typo: A query is made to '(dome-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 951: Possible typo: A query is made to '(carousel-flip)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1088: Possible typo: A query is made to '(riddle-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1112: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1231: Possible typo: A query is made to '(magic-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1236: Possible typo: A query is made to '(cyclops-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1283: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1384: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1527: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1616: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1708: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2057: Possible typo: A rule is defined for '(lightsource $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2107: Possible typo: A rule is defined for '(hidden $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2388: Possible typo: A rule is defined for '(actor $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2456: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2536: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 30: Possible typo: A rule is defined for '($ wields $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 235: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 188: Possible typo: Local variable $thing only appears once.
+[0m
+
+[0m[1mDungeon
+[0mA Computerized Fantasy Simulation by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling.
+Release 1. Serial number DEBUG.
+Dialog Interactive Debugger (dgdebug) version 1c/02. Library version 1.2.2. Debugging extension 1.2.2-dev.
+
+[0m[1mWest of House[0m
+You are in an open field west of a big white house, with a boarded front door.
+
+There is a small mailbox here.
+
+--------------------------------------------------------------------------------
+id: 1784976588565
+parent-id: 0
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mNorth of House[0m
+You are facing the north side of a white house. There is no door here, and all the windows are barred.
+
+--------------------------------------------------------------------------------
+id: 1784976588566
+parent-id: 1784976588565
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mBehind House[0m
+You are behind the white house. In one corner of the house is a window that is open.
+
+--------------------------------------------------------------------------------
+id: 1785098749839
+parent-id: 1784976588566
+command: w
+--------------------------------------------------------------------------------
+> w
+(first attempting to open the window to the west)
+With great effort, you open the window far enough to allow entry.
+
+You walk west through the window.
+
+[0m[1mKitchen[0m
+This is the kitchen of the white house. A table seems to have been used recently for the preparation of food. A passage leads to the west and a dark staircase can be seen leading upward. A dark chimney leads down and to the east is a small window which is open.
+
+On the table is an enlongated brown sack, smelling of hot peppers.
+
+A bottle is sitting on the table.
+In the glass bottle is a quantity of water.
+
+[0m[4m(Your score has gone up by ten points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785098749840
+parent-id: 1785098749839
+command: get all
+--------------------------------------------------------------------------------
+> get all
+The sandwich bag: You take the sandwich bag.
+
+The glass bottle: You take the glass bottle.
+
+--------------------------------------------------------------------------------
+id: 1785098749841
+parent-id: 1785098749840
+command: d
+--------------------------------------------------------------------------------
+> d
+Only Santa Claus climbs down chimneys.
+
+--------------------------------------------------------------------------------
+id: 1785098749842
+parent-id: 1785098749841
+command: u
+--------------------------------------------------------------------------------
+> u
+You climb up.
+
+[0m[1mIn the dark[0m
+It is pitch black. You are likely to be eaten by a grue.
+
+--------------------------------------------------------------------------------
+id: 1785098749843
+parent-id: 1785098749842
+command: get all
+--------------------------------------------------------------------------------
+> get all
+The brick: You take the brick.
+
+The rope: You take the rope.
+
+The knife: You take the knife.
+
+--------------------------------------------------------------------------------
+id: 1785098749844
+parent-id: 1785098749843
+command: d
+--------------------------------------------------------------------------------
+> d
+You climb down.
+
+[0m[1mKitchen[0m
+This is the kitchen of the white house. A table seems to have been used recently for the preparation of food. A passage leads to the west and a dark staircase can be seen leading upward. A dark chimney leads down and to the east is a small window which is open.
+
+--------------------------------------------------------------------------------
+id: 1785098749845
+parent-id: 1785098749844
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mLiving Room[0m
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a large oriental rug in the center of the room.
+
+There is a trophy case here.
+On the trophy case is a battery-powered brass lantern.
+
+On hooks above the mantelpiece hangs an elvish sword of great antiquity.
+
+There is an issue of US NEWS & DUNGEON REPORT dated 7/25/2026 here.
+
+--------------------------------------------------------------------------------
+id: 1785098749846
+parent-id: 1785098749845
+command: get all
+--------------------------------------------------------------------------------
+> get all
+The battery-powered brass lantern: You take the battery-powered brass lantern off the trophy case.
+
+The elvish sword: You take the elvish sword.
+
+The newspaper: You take the newspaper.
+
+--------------------------------------------------------------------------------
+id: 1785098749847
+parent-id: 1785098749846
+command: pull rug
+--------------------------------------------------------------------------------
+> pull rug
+With a great effort, the rug is moved to one side of the room. With the rug moved, the dusty cover of a closed trap-door appears.
+
+--------------------------------------------------------------------------------
+id: 1785098749848
+parent-id: 1785098749847
+command: d
+--------------------------------------------------------------------------------
+> d
+(first attempting to open the trap door below)
+The door reluctantly opens to reveal a rickety staircase...
+
+You climb down through the trap door.
+
+[0m[1mIn the dark[0m
+It is pitch black. You are likely to be eaten by a grue.
+
+The trap door crashes shut, and you hear someone barring it. Your sword is glowing with a faint blue glow.
+
+[0m[4m(Your score has gone up by 25 points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785098749849
+parent-id: 1785098749848
+command: turn on lamp
+--------------------------------------------------------------------------------
+> turn on lamp
+You switch the battery-powered brass lantern on.
+
+[0m[1mCellar[0m
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+--------------------------------------------------------------------------------
+id: 1785098749850
+parent-id: 1785098749849
+command: w
+--------------------------------------------------------------------------------
+> w
+You try to ascend the ramp, but it is impossible, and you slide back down.
+
+--------------------------------------------------------------------------------
+id: 1785098749851
+parent-id: 1785098749850
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mThe Troll Room[0m
+You are in a small room with passages off in all directions. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
+
+A nasty-looking troll, brandishing a bloody axe, blocks all passages out of the room.
+
+The axe gets you right in the side. Ouch! Your sword has begun to glow very brightly.
+
+--------------------------------------------------------------------------------
+id: 1785098749852
+parent-id: 1785098749851
+command: kill troll with sword
+--------------------------------------------------------------------------------
+> kill troll with sword
+The troll is struck on the arm, blood begins to trickle down. The troll swings his axe, but it misses.
+
+--------------------------------------------------------------------------------
+id: 1785098749853
+parent-id: 1785098749852
+command: again
+--------------------------------------------------------------------------------
+> again
+A good stroke, but it's too slow, the troll dodges. The axe sweeps past as you jump aside.
+
+--------------------------------------------------------------------------------
+id: 1785098749854
+parent-id: 1785098749853
+command: again
+--------------------------------------------------------------------------------
+> again
+The force of your blow knocks the troll back, stunned. The troll slowly regains his feet.
+
+--------------------------------------------------------------------------------
+id: 1785098749855
+parent-id: 1785098749854
+command: again
+--------------------------------------------------------------------------------
+> again
+Your elvish sword crashes down, knocking the troll into dreamland.
+
+--------------------------------------------------------------------------------
+id: 1785098749856
+parent-id: 1785098749855
+command: again
+--------------------------------------------------------------------------------
+> again
+The unconscious troll cannot defend himself: He dies. Almost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. Your sword is no longer glowing.
+
+--------------------------------------------------------------------------------
+id: 1785098749857
+parent-id: 1785098749856
+command: get axe
+--------------------------------------------------------------------------------
+> get axe
+You take the bloody axe.
+

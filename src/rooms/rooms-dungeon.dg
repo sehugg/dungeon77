@@ -34,6 +34,7 @@
 (animate *)
 (male *)
 (villain *)
+(* capacity is 2)
 (* weakness is #sword)
 (appearance *)
     (if)~(* is asleep)(then)
@@ -54,6 +55,7 @@
 (name *)        bloody axe
 (item *)
 (weapon *)
+(* size is 25)
 (appearance *)  There is a bloody axe here.
 (* is #heldby #troll)
 

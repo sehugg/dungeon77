@@ -49,7 +49,6 @@
 (descr *)
     You are here.
 (* is #in #west-of-house)
-%% https://blog.zarfhome.com/2026/02/to-fight-a-troll
 
 (narrate door is locked)
     The door is locked, and there is evidently no key.
@@ -179,7 +178,31 @@
     (increase score by $Points)
     (fail)
 
-%% default item sizes
+%% Inventory limits
 
+(global variable (player max load is 100))
+
+%% Default item size
 ($thing size is 5)
     (item $thing)
+($ size is 0)
+
+($thing capacity is 5)
+    (container $thing)
+($ capacity is 0)
+
+(total weight $item into $result)
+    ($item size is $parentsum)
+    (accumulate $value)
+        ($child has parent $item)
+        (total weight $child into $value)
+    (into $childsum)
+    ($parentsum plus $childsum into $result)
+
+(when $Obj can't be taken)
+    (player max load is $maxload)
+    (total weight #player into $total)
+    (total weight $Obj into $additional)
+    ($total plus $additional into $newload)
+    ($newload > $maxload)
+    Your load is too heavy.  You will have to leave something behind.

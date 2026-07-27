@@ -5,7 +5,7 @@
   {:options ["--cover"     "cover.png"
              "--cover-alt" "Dungeon"]}}
  :sources
- {:main    ["src"]
+ {:main    ["src/rooms" "src/core"]
   :test    ["test" "lib/dialog/test"]
   :debug   ["lib/dialog/debug"]
   :library ["lib/dialog"]}}

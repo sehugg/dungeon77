@@ -16,3 +16,12 @@
     ~(compute outcome of 3 vs 2 roll 0 into $outcome)
     ~(compute outcome of 1 vs 0 roll 1 into $outcome)
 
+#max-load-test
+(test *)
+(run *)
+    (total weight #player into $weight1)
+    (assert $weight1 = 0)
+    (total weight #mailbox into $weight2)
+    (assert $weight2 = 2)
+    (total weight #kitchen into $weight3)
+    (assert $weight3 = 8)
