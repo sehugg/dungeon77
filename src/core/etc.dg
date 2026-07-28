@@ -1,4 +1,7 @@
 
+(rewrite [say | $Words] into $result)
+	(append [talk to me about] $Words $result)
+
 (understand command [zork])
 (perform [zork])
 	That word is replaced henceforth with DUNGEON.

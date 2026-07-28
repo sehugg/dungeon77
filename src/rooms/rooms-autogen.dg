@@ -427,6 +427,11 @@
 		Your way is blocked by an invisible force.
 (notice #door5)
 
+(topic keyword @well)
+(instead of [talk to #player about @well])
+	There is a clap of thunder and the east door opens.
+	(now)(riddle-flag)
+
 %% MPEAR
 #pearl-room
 (room *)
