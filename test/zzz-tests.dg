@@ -18,7 +18,7 @@
 (run *)
     (damage #player with outcome 0)
     (#player combat strength is 3)
-    (#player maximum strength is 2)
+    (#player maximum strength is 3)
     (damage #player with outcome 3)
     (#player combat strength is 2)
     (damage #player with outcome 5)

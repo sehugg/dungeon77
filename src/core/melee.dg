@@ -1,6 +1,8 @@
 
 %% https://blog.zarfhome.com/2026/02/to-fight-a-troll
 
+%% OUTCOMES:
+
 %% 0 -- attacker misses
 %% 1 -- defender unconscious
 %% 2 -- defender dead
@@ -28,7 +30,7 @@
 (#player maximum strength is $result)
     (current score $score)
     ($score divided by 70 into $adjust) %% TODO: performance
-    (2 plus $adjust into $result)
+    (3 plus $adjust into $result)
 (#player wields $weapon)
     (player wields $weapon)
     ($weapon is #heldby #player)
@@ -43,12 +45,12 @@
 %% Healing ticks
 
 (early on every tick)
+    (random from 1 to 30 into $rnd)
+    ($rnd = 1)
     (exhaust) {
         *($actor maximum strength is $max)
         ($actor combat strength is $value)
         ($value < $max)
-        (random from 1 to 30 into $rnd)
-        ($rnd = 1)
         ($value plus 1 into $new)
         (set $actor combat strength to $new)
     }
@@ -439,3 +441,24 @@
     (player wields $weapon)
     You attack (the $victim) with (the $weapon), outcome is { $outcome }.
 
+%% DIAGNOSE
+
+(understand command [diagnose])
+(perform [diagnose])
+    (#player maximum strength is $max)
+    (player combat strength is $strength)
+    ($max minus $strength into $wd)
+    (if) ($wd = 0) (then) You are in perfect health.
+    (elseif) ($wd = 1) (then) You have a light wound.
+    (elseif) ($wd = 2) (then) You have several wounds.
+    (else) You have serious wounds.
+    (endif)
+    (if) ($strength = 0) (then) You are dead.
+    (elseif) ($strength = 1) (then) You can be killed by one more light wound.
+    (elseif) ($strength = 2) (then) You can be killed by a serious wound.
+    (elseif) ($strength = 3) (then) You can survive one serious wound.
+    (else) You are strong enough to take several wounds.
+    (endif)
+    %%<COND (<NOT <0? ,DEATHS>>
+    %%      <TELL "You have been killed " 1 <COND (<1? ,DEATHS> "once.")
+    %%                                          (T "twice.")>>)>>
