@@ -8,9 +8,9 @@ label: START
 [0m[1m[36mWarning:[0m[36m Object #launch was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #land was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 462: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 681: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 739: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 478: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 697: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 755: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-glacier.dg, line 51: Possible typo: A query is made to '(room is lit)', but there is no matching rule or interface definition.
@@ -1048,7 +1048,10 @@ parent-id: 1785255063863
 command: w
 --------------------------------------------------------------------------------
 > w
-The door is nailed shut.
+You walk west.
+
+[0m[1mStrange Passage[0m
+You are in a long passage. To the south is one entrance. On the east there is an old wooden door, with a large hole in it (about cyclops sized).
 
 --------------------------------------------------------------------------------
 id: 1785255063865
@@ -1056,7 +1059,10 @@ parent-id: 1785255063864
 command: s
 --------------------------------------------------------------------------------
 > s
-There doesn't appear to be an exit in that direction.
+You walk south.
+
+[0m[1mCyclops Room[0m
+You are in a room with an exit on the west side, and a staircase leading up. On the north of the room is a wall which used to be solid, but which now has a cyclops-sized hole in it.
 
 --------------------------------------------------------------------------------
 id: 1785255063866
@@ -1064,5 +1070,228 @@ parent-id: 1785255063865
 command: u
 --------------------------------------------------------------------------------
 > u
-There doesn't appear to be an exit in that direction.
+You climb up.
+
+[0m[1mTreasure Room[0m
+This is a large room, whose north wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor.
+
+There is a silver chalice, intricately engraved, here.
+
+[0m[4m(Your score has gone up by 25 points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785255063867
+parent-id: 1785255063866
+command: get chalice
+--------------------------------------------------------------------------------
+> get chalice
+You take the chalice.
+
+--------------------------------------------------------------------------------
+id: 1785255063868
+parent-id: 1785255063867
+command: give egg to thief
+--------------------------------------------------------------------------------
+> give egg to thief
+[0m[4m(I only understood you as far as wanting to give something to someone.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785255063869
+parent-id: 1785255063868
+command: d
+--------------------------------------------------------------------------------
+> d
+You climb down.
+
+[0m[1mCyclops Room[0m
+You are in a room with an exit on the west side, and a staircase leading up. On the north of the room is a wall which used to be solid, but which now has a cyclops-sized hole in it.
+
+--------------------------------------------------------------------------------
+id: 1785255063870
+parent-id: 1785255063869
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mStrange Passage[0m
+You are in a long passage. To the south is one entrance. On the east there is an old wooden door, with a large hole in it (about cyclops sized).
+
+--------------------------------------------------------------------------------
+id: 1785255063871
+parent-id: 1785255063870
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mLiving Room[0m
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a closed trap-door at your feet.
+
+There is a trophy case here.
+In the trophy case are a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
+
+--------------------------------------------------------------------------------
+id: 1785255063872
+parent-id: 1785255063871
+command: open trap door
+--------------------------------------------------------------------------------
+> open trap door
+The door reluctantly opens to reveal a rickety staircase...
+
+--------------------------------------------------------------------------------
+id: 1785255063873
+parent-id: 1785255063872
+command: d
+--------------------------------------------------------------------------------
+> d
+You climb down through the trap door.
+
+[0m[1mCellar[0m
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+The trap door crashes shut, and you hear someone barring it.
+
+--------------------------------------------------------------------------------
+id: 1785255063874
+parent-id: 1785255063873
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mThe Troll Room[0m
+You are in a small room with passages off in all directions. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
+
+There is an elvish sword here.
+
+There is a bloody axe here.
+
+--------------------------------------------------------------------------------
+id: 1785255063875
+parent-id: 1785255063874
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mEast-West Passage[0m
+You are in a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.
+
+Your sword is glowing with a faint blue glow.
+
+--------------------------------------------------------------------------------
+id: 1785255063876
+parent-id: 1785255063875
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mRound room[0m
+
+There is a dented iron box here.
+
+There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
+
+Your sword has begun to glow very brightly.
+
+--------------------------------------------------------------------------------
+id: 1785255063877
+parent-id: 1785255063876
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mGrail Room[0m
+You are standing in a small circular room with a pedestal. A set of stairs leads up, and passages leave to the east and west.
+
+There is an extremely valuable (perhaps original) grail here.
+
+Your sword is glowing with a faint blue glow.
+
+--------------------------------------------------------------------------------
+id: 1785255063878
+parent-id: 1785255063877
+command: take grail
+--------------------------------------------------------------------------------
+> take grail
+You take the grail.
+
+--------------------------------------------------------------------------------
+id: 1785255063879
+parent-id: 1785255063878
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mRound room[0m
+
+There is a dented iron box here.
+
+There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
+
+Your sword has begun to glow very brightly.
+
+--------------------------------------------------------------------------------
+id: 1785255063880
+parent-id: 1785255063879
+command: ne
+--------------------------------------------------------------------------------
+> ne
+You walk northeast.
+
+[0m[1mNorth-South Passage[0m
+You are in a high north-south passage, which forks to the northeast.
+
+Your sword is glowing with a faint blue glow.
+
+--------------------------------------------------------------------------------
+id: 1785255063881
+parent-id: 1785255063880
+command: ne
+--------------------------------------------------------------------------------
+> ne
+You walk northeast.
+
+[0m[1mLoud Room[0m
+You are in a large room with a ceiling which cannot be detected from the ground. There is a narrow passage from east to west and a stone stairway leading upward. The room is extremely noisy. In fact, it is difficult to hear yourself think.
+
+There is a large platinum bar here.
+
+Your sword is no longer glowing.
+
+--------------------------------------------------------------------------------
+id: 1785255063893
+parent-id: 1785255063881
+command: take bar
+--------------------------------------------------------------------------------
+> take bar
+take take...
+
+--------------------------------------------------------------------------------
+id: 1785255063894
+parent-id: 1785255063893
+command: say say
+--------------------------------------------------------------------------------
+> say say
+talk talk...
+
+--------------------------------------------------------------------------------
+id: 1785255063895
+parent-id: 1785255063894
+command: say echo
+--------------------------------------------------------------------------------
+> say echo
+The acoustics of the room change subtly.
+
+--------------------------------------------------------------------------------
+id: 1785255063896
+parent-id: 1785255063895
+command: get bar
+--------------------------------------------------------------------------------
+> get bar
+You take the platinum bar.
 

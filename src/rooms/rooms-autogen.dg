@@ -4,6 +4,7 @@
 ~(riddle-flag)
 ~(egypt-flag)
 ~(dome-flag)
+~(echo-flag)
 
 %% ==================================================================
 %% Rooms
@@ -91,6 +92,22 @@
 (from * go #east to #ancient-chasm)
 (from * go #west to #north-south-passage)
 (from * go #up to #damp-cave)
+
+(topic keyword @echo)
+(try [talk to #player about @echo])
+	(current room *)
+	~(echo-flag)
+	The acoustics of the room change subtly.
+	(now)(echo-flag)
+(try $action)
+	(current room *)
+	~(echo-flag)
+	([ $cmd | $ ] = $action)
+	~([$cmd] = [go])
+	~([$cmd] = [leave])
+	~([$cmd] = [look])
+	$cmd $cmd ...
+%% TODO: say "echo"
 
 %% MIRR1
 #mirror-room1

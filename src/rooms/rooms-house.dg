@@ -283,6 +283,8 @@
 (* is in the house)
 (* is sacred)
 (from * go #east to #kitchen)
+(from * go #west to #strange-passage)
+    (magic-flag)
 (look *)
     (if)(#wooden-door is closed)(then)
     You are in the living room.  There is a door to the east, a wooden
