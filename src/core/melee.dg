@@ -64,6 +64,7 @@
 (early on every tick)
     (exhaust) {
         *($victim is asleep)
+        (villain $victim)
         %% make sure we take at least 1 turn
         (if) ($victim is stunned) (then)
             (now) ~($victim is stunned)
@@ -94,9 +95,14 @@
     ($defender gets killed)
 
 ($attacker attacks $ with $)
-    ($attacker is stunned)
+    ($attacker recovers next turn)
     (The $attacker) slowly regains (its $attacker) feet.
+    (now)~($attacker recovers next turn)
     (now)~($attacker is stunned)
+
+($attacker attacks $ with $)
+    ($attacker is stunned)
+    (now)($attacker recovers next turn)
 
 %% Combat routines
 
@@ -119,6 +125,7 @@
     (endif)
     (random from 1 to 9 into $roll)
     (compute outcome of $attacker-strength vs $defender-strength roll $roll into $outcome)
+    %%{ $attacker $attacker-strength vs $defender $defender-strength roll $roll = $outcome }
     %% if player is knocked out, NPCs might hesitate or deliver a killing blow
     (if) ($defender is asleep) ~($attacker = #player) (then)
         (if)($outcome = 5)(then)

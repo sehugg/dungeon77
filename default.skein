@@ -8,29 +8,23 @@ label: START
 [0m[1m[36mWarning:[0m[36m Object #launch was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #land was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 190: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 373: Possible typo: A query is made to '(egypt-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 379: Possible typo: A query is made to '(low-tide)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 454: Possible typo: A query is made to '(glacier-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 824: Possible typo: A query is made to '(empty-handed)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 886: Possible typo: A query is made to '(dome-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 943: Possible typo: A query is made to '(carousel-flip)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1080: Possible typo: A query is made to '(riddle-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1104: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1223: Possible typo: A query is made to '(magic-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1228: Possible typo: A query is made to '(cyclops-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1275: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1376: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1519: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1608: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 1700: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2049: Possible typo: A rule is defined for '(lightsource $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2099: Possible typo: A rule is defined for '(hidden $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2342: Possible typo: A rule is defined for '(actor $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2410: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 2490: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-outside.dg, line 154: Possible typo: A query is made to '(rainbow is solid)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 237: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 286: Possible typo: A query is made to '(carousel-flip)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 457: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 727: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 785: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 14: Possible typo: A query is made to '(magic-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 19: Possible typo: A query is made to '(cyclops-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-glacier.dg, line 51: Possible typo: A query is made to '(room is lit)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-hades.dg, line 12: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-machine.dg, line 27: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-maze.dg, line 170: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-reservoir.dg, line 20: Possible typo: A query is made to '(low-tide)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 89: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 232: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 30: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 38: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 246: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
 [0m
 
 [0m[1mDungeon
@@ -226,7 +220,7 @@ You are in a small room with passages off in all directions. Bloodstains and dee
 
 A nasty-looking troll, brandishing a bloody axe, blocks all passages out of the room.
 
-The axe gets you right in the side. Ouch! Your sword has begun to glow very brightly.
+The troll's swing almost knocks you over as you barely parry in time. Your sword has begun to glow very brightly.
 
 --------------------------------------------------------------------------------
 id: 1785098749852
@@ -234,7 +228,7 @@ parent-id: 1785098749851
 command: kill troll with sword
 --------------------------------------------------------------------------------
 > kill troll with sword
-The troll is struck on the arm, blood begins to trickle down. The troll swings his axe, but it misses.
+A mighty blow, but it misses the troll by a mile. The troll swings his axe, but it misses.
 
 --------------------------------------------------------------------------------
 id: 1785098749853
@@ -242,7 +236,7 @@ parent-id: 1785098749852
 command: again
 --------------------------------------------------------------------------------
 > again
-A good stroke, but it's too slow, the troll dodges. The axe sweeps past as you jump aside.
+The force of your blow knocks the troll back, stunned.
 
 --------------------------------------------------------------------------------
 id: 1785098749854
@@ -250,7 +244,7 @@ parent-id: 1785098749853
 command: again
 --------------------------------------------------------------------------------
 > again
-The force of your blow knocks the troll back, stunned. The troll slowly regains his feet.
+A good stroke, but it's too slow, the troll dodges. The troll slowly regains his feet.
 
 --------------------------------------------------------------------------------
 id: 1785098749855
@@ -258,14 +252,18 @@ parent-id: 1785098749854
 command: again
 --------------------------------------------------------------------------------
 > again
-Your elvish sword crashes down, knocking the troll into dreamland.
+The troll is momentarily disoriented and can't fight back.
 
 --------------------------------------------------------------------------------
 id: 1785098749856
 parent-id: 1785098749855
-command: again
+command: again then again then again
 --------------------------------------------------------------------------------
-> again
+> again then again then again
+Your stroke lands, but it was only the flat of the blade. The troll slowly regains his feet.
+
+Your elvish sword crashes down, knocking the troll into dreamland.
+
 The unconscious troll cannot defend himself: He dies. Almost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. Your sword is no longer glowing.
 
 --------------------------------------------------------------------------------

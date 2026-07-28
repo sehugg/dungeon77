@@ -22,9 +22,10 @@
 (interface ($<Thing is burning))
 (interface ($<Thing can be turned))
 (interface ($<Thing can be tied))
-(interface ($<Thing is in melee))
-(interface ($<Thing is stunned))
-(interface ($<Thing is asleep))
+(interface ($<Actor is in melee))
+(interface ($<Actor is stunned))
+(interface ($<Actor recovers next turn))
+(interface ($<Actor is asleep))
 
 (interface ($<Thing capacity is $>Capacity))
 (interface ($<Thing size is $>Size))
