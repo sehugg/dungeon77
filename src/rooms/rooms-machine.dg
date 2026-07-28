@@ -1,11 +1,21 @@
 
+(carousel-zoom)
+(carousel-flip)
+
 %% CMACH
 #machine-room2
 (room *)
 (name *)	Machine Room
 (inherently dark *)
 (look *)
-	%% TODO: description comes from room routine CMACH-ROOM
+	You are in a large room full of assorted heavy machinery.  The room
+	smells of burned resistors. The room is noisy from the whirring
+	sounds of the machines. Along one wall of the room are three buttons
+	which are, respectively, round, triangular, and square.  Naturally,
+	above these buttons are instructions written in EBCDIC.  A large sign
+	in English above all the buttons says
+					'DANGER -- HIGH VOLTAGE '.
+	There are exits to the west and the south.
 %% TODO: room action routine CMACH-ROOM
 (from * go #west to #low-room)
 (from * go #south to #dingy-closet)
@@ -76,25 +86,22 @@
 %% SQBUT
 #button6
 (* is #in #machine-room2)
-(name *)	button
-(scenery *)
-(dict *)	butto squar sqbut button
+(name *)	square button
+(button *)
 %% TODO: object action routine BUTTONS
 
 %% RNBUT
 #button7
 (* is #in #machine-room2)
-(name *)	button
-(scenery *)
-(dict *)	butto round rnbut button
+(name *)	round button
+(button *)
 %% TODO: object action routine BUTTONS
 
 %% TRBUT
 #button8
 (* is #in #machine-room2)
-(name *)	button
-(scenery *)
-(dict *)	butto trian trbut button
+(name *)	triangular button
+(button *)
 %% TODO: object action routine BUTTONS
 
 %% SPHER
@@ -116,7 +123,7 @@
 (name *)	robot
 (animate *)
 (* is sacred)
-(dict *)	r2d2 c3po robby robot
+(dict *)	r2d2 c3po robby
 (appearance *)
 	There is a robot here.
 %% TODO: object action routine ROBOT-FUNCTION
@@ -133,19 +140,63 @@
 (appearance *)
 	There is a green piece of paper here.
 (descr *)
+	(div @headline) {
             !!!!  FROBOZZ MAGIC ROBOT COMPANY  !!!!
-
+	}
     Hello, Master!
-    
+	(par)
     I am a late-model robot, trained at MIT Tech to perform various
     simple household functions. 
-
-    Instructions for use:
-    To activate me, use the following formula:
-        >TELL ROBOT '<something to do>' <cr>
-    The quotation marks are required!
-        
+	(par)
+    Instructions for use:(line)
+    To activate me, use the following formula:(line)
+        >TELL ROBOT TO <something to do>(line)
+    No quotation marks!(line)
+	(par)
     Warranty:
     No warranty is expressed or implied.
-                                    
+	(par)
                                             At your service!
+
+(perform [push $button])
+	(button $button)
+	($button is #in #machine-room2)
+	There is a giant spark and you are fried to a crisp.
+
+#robot
+(perform [tell * to go $Dir])
+	(* is in room $Room)
+	(from $Room go $Dir to room $)
+	(let * go $Dir)
+
+(perform [tell * to push #button6])
+	(carousel-zoom)
+	Nothing seems to happen.
+
+(perform [tell * to push #button6])
+	~(carousel-zoom)
+	The whirring increases in intensity slightly.
+	(now)(carousel-zoom)
+
+(perform [tell * to push #button7])
+	~(carousel-zoom)
+	Nothing seems to happen.
+
+(perform [tell * to push #button7])
+	(carousel-zoom)
+	The whirring decreases in intensity slightly.
+	(now)~(carousel-zoom)
+
+(perform [tell * to push #button8])
+	~(carousel-flip)
+	(now)(carousel-flip)
+	(move iron box)
+
+(perform [tell * to push #button8])
+	(carousel-flip)
+	(now)~(carousel-flip)
+	(move iron box)
+
+(move iron box)
+	A dull thump is heard in the distance.
+	(now)(#iron-box is #in #round-room)

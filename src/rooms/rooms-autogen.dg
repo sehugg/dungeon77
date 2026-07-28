@@ -484,61 +484,15 @@
 (narrate failing to leave * #north)
 (notice #mangled-cage)
 
-%% BWELL
-#circular-room
-(room *)
-(name *)	Circular Room
-(inherently dark *)
-(* is bucket)
-(look *)
-	You are in a damp circular room, whose walls are made of brick and
-	mortar. The roof of this room is not visible, but there appear to be
-	some etchings on the walls. There is a passageway to the west.
-(from * go #west to #pearl-room)
-(narrate failing to leave * #up)
-	The walls cannot be climbed.
-(notice #wall-with-etchings1)
-
-%% ALISM
-#posts-room
-(room *)
-(name *)	Posts Room
-(inherently dark *)
-(look *)
-	You are in an enormous room, in the center of which are four wooden
-	posts delineating a rectanular area, above which is what appears to be a
-	wooden roof. In fact, all objects in this room appear to be abnormally
-	large. To the east is a passageway. There is a large chasm on the west
-	and the northwest.
-(narrate failing to leave * #northwest)
-	There is a chasm too large to jump across.
-(from * go #east to #pool-room)
-(narrate failing to leave * #west)
-	There is a chasm too large to jump across.
-(narrate failing to leave * #down)
-	There is a chasm too large to jump across.
-
-%% ALITR
-#pool-room
-(room *)
-(name *)	Pool Room
-(inherently dark *)
-(look *)
-	You are in a large room, one half of which is depressed. There is a
-	large leak in the ceiling through which brown colored goop is falling.
-	The only exit to this room is to the west.
-(from * go #out to #posts-room)
-(from * go #west to #posts-room)
-
 %% ==================================================================
 %% Objects
 %% ==================================================================
 
 %% GUNK
-#piece-of-vitreous-slag
+#vitreous-slag
 (name *)	piece of vitreous slag
 (item *)
-(dict *)	mess slag vitre gunk piece vitreous
+(dict *)	mess gunk
 (* size is 10)
 (appearance *)
 	There is a small piece of vitreous slag here.
@@ -549,7 +503,7 @@
 (* is #in #bat-room)
 (name *)	jade figurine
 (item *)
-(dict *)	figur jade figurine
+(dict *)	figure
 (* size is 10)
 (* awards 5 points on first take)
 (* awards 5 points on return)
@@ -560,7 +514,7 @@
 #huge-diamond
 (name *)	huge diamond
 (item *)
-(dict *)	perfe diamo huge diamond
+(dict *)	perfectly perfect enormous
 (* awards 10 points on first take)
 (* awards 6 points on return)
 (appearance *)
@@ -572,7 +526,6 @@
 (name *)	platinum bar
 (item *)
 (* is sacred)
-(dict *)	plati bar platinum
 (* size is 20)
 (* awards 12 points on first take)
 (* awards 10 points on return)
@@ -584,7 +537,7 @@
 (* is #in #pearl-room)
 (name *)	pearl necklace
 (item *)
-(dict *)	neckl pearl necklace
+(dict *)	pearls
 (* size is 10)
 (* awards 9 points on first take)
 (* awards 5 points on return)
@@ -595,14 +548,12 @@
 #mirror1
 (* is #in #mirror-room1)
 (name *)	mirror
-(dict *)	mirro refl1 mirror
 %% TODO: object action routine MIRROR-MIRROR
 
 %% REFL2
 #mirror2
 (* is #in #mirror-room2)
 (name *)	mirror
-(dict *)	mirro refl2 mirror
 %% TODO: object action routine MIRROR-MIRROR
 
 %% RUBY
@@ -610,7 +561,6 @@
 (* is #in #ruby-room)
 (name *)	ruby
 (item *)
-(dict *)	ruby
 (* awards 15 points on first take)
 (* awards 8 points on return)
 (appearance *)
@@ -623,7 +573,7 @@
 (* is #in #atlantis-room)
 (name *)	crystal trident
 (item *)
-(dict *)	fork cryst tride crystal trident
+(dict *)	fork
 (* size is 20)
 (* awards 4 points on first take)
 (* awards 11 points on return)
@@ -640,7 +590,7 @@
 (container *)
 (openable *)
 (* is sacred)
-(dict *)	caske gold coffi coffin
+(dict *)	casket
 (* size is 55)
 (* capacity is 35)
 (* awards 3 points on first take)
@@ -651,11 +601,10 @@
 %% TORCH
 #torch
 (* is #in #torch-room)
-(name *)	torch
+(name *)	ivory torch
 (item *)
 (* provides light)
 (tool *)
-(dict *)	ivory torch
 (* size is 20)
 (* awards 14 points on first take)
 (* awards 6 points on return)
@@ -839,28 +788,28 @@
 (* is #in #maintenance-room)
 (name *)	button
 (scenery *)
-(dict *)	butto switc red rbutt button
+(dict *)	red
 
 %% YBUTT
 #button3
 (* is #in #maintenance-room)
 (name *)	button
 (scenery *)
-(dict *)	butto switc yello ybutt button
+(dict *)	yellow
 
 %% BLBUT
 #button4
 (* is #in #maintenance-room)
 (name *)	button
 (scenery *)
-(dict *)	butto switc blue blbut button
+(dict *)	blue
 
 %% BRBUT
 #button5
 (* is #in #maintenance-room)
 (name *)	button
 (scenery *)
-(dict *)	butto switc brown brbut button
+(dict *)	brown
 
 %% BAT
 #bat
@@ -876,7 +825,6 @@
 (name *)	pot filled with gold
 (item *)
 (* is hidden)
-(dict *)	gold pot filled with
 (* size is 15)
 (* awards 10 points on first take)
 (* awards 10 points on return)
@@ -891,7 +839,7 @@
 (name *)	statue
 (item *)
 (* is hidden)
-(dict *)	sculp rock statu statue
+(dict *)	sculpture rock
 (* size is 8)
 (* awards 10 points on first take)
 (* awards 13 points on return)
@@ -904,7 +852,7 @@
 (name *)	plastic inflatable boat
 (item *)
 (flammable *)
-(dict *)	boat plast pile iboat plastic inflatable
+(dict *)	pile valve
 (* size is 20)
 (appearance *)
 	There is a folded pile of plastic here which has a small valve attached.
@@ -915,7 +863,6 @@
 (name *)	plastic boat \(with hole\)
 (item *)
 (flammable *)
-(dict *)	boat plast pile dboat plastic with hole
 (* size is 20)
 (appearance *)
 	There is a pile of plastic here with a large hole in it.
@@ -927,7 +874,7 @@
 (item *)
 (flammable *)
 (vehicle *)
-(dict *)	boat plast seawo rboat magic
+(dict *)	platic
 (* size is 20)
 (* capacity is 100)
 (appearance *)
@@ -942,7 +889,6 @@
 (item *)
 (readable *)
 (flammable *)
-(dict *)	finep tan label
 (* size is 2)
 (appearance *)
 	There is a tan label here.
@@ -959,7 +905,6 @@
 (* is #in #dam-base)
 (name *)	broken sharp stick
 (item *)
-(dict *)	sharp broke stick broken
 (* size is 3)
 (appearance *)
 	There is a broken sharp stick here.
@@ -971,7 +916,6 @@
 #barrel
 (* is #in #aragain-falls)
 (name *)	barrel
-(dict *)	barre barrel
 
 %% BUOY
 #red-buoy
@@ -980,7 +924,6 @@
 (item *)
 (container *)
 (openable *)
-(dict *)	red buoy
 (* size is 10)
 (* capacity is 20)
 (appearance *)
@@ -992,7 +935,6 @@
 (* is #in #red-buoy)
 (name *)	large emerald
 (item *)
-(dict *)	emera large emerald
 (* awards 5 points on first take)
 (* awards 10 points on return)
 (appearance *)
@@ -1004,7 +946,6 @@
 (name *)	shovel
 (item *)
 (tool *)
-(dict *)	shove shovel
 (* size is 15)
 (appearance *)
 	There is a large shovel here.
@@ -1014,7 +955,7 @@
 (* is #in #small-cave)
 (name *)	hunk of bat guano
 (item *)
-(dict *)	crap shit hunk guano bat
+(dict *)	crap shit
 (* size is 20)
 (appearance *)
 	There is a hunk of bat guano here.
@@ -1025,7 +966,7 @@
 (name *)	brick
 (item *)
 (flammable *)
-(dict *)	brick squar clay
+(dict *)	square clay
 (* size is 9)
 (* capacity is 2)
 (appearance *)
@@ -1035,7 +976,6 @@
 #broken-balloon
 (name *)	broken balloon
 (item *)
-(dict *)	ballo baske broke dball broken balloon
 (* size is 40)
 (appearance *)
 	There is a balloon here, broken into pieces.
@@ -1044,7 +984,6 @@
 #large-case
 (name *)	large case
 ~(opaque *)
-(dict *)	case large lcase
 (appearance *)
 	There is a large case here, containing objects which you used to
 	possess.
@@ -1054,13 +993,11 @@
 (* is #in #cage)
 (name *)	mangled cage
 (scenery *)
-(dict *)	cage mangled
 (* size is 60)
 
 %% RCAGE
 #iron-cage
 (name *)	iron cage
-(dict *)	cage iron rcage
 (appearance *)
 	There is an iron cage in the middle of the room.
 
@@ -1070,60 +1007,7 @@
 (name *)	wall with etchings
 (readable *)
 (scenery *)
-(dict *)	etchi walls wall etch1 with etchings
+(dict *)	etch
 (descr *)
 	o b o A G I E L m p a
-
-%% FLASK
-#glass-flask-filled-with-liquid
-(* is #in #pool-room)
-(name *)	glass flask filled with liquid
-(item *)
-~(opaque *)
-(dict *)	glass flask filled with liquid
-(* size is 10)
-(* capacity is 5)
-(appearance *)
-	A stoppered glass flask with a skull-and-crossbones marking is here. The
-	flask is filled with some clear liquid.
-%% TODO: object action routine FLASK-FUNCTION
-
-%% POOL
-#pool-of-sewage
-(* is #in #pool-room)
-(name *)	pool of sewage
-(dict *)	sewag large pool sewage
-(appearance *)
-	The leak has submerged the depressed area in a pool of sewage.
-
-%% SAFFR
-#tin-of-spices
-(* is #in #pool-room)
-(name *)	tin of spices
-(item *)
-(* is hidden)
-(dict *)	tin spice rare saffr spices
-(* size is 8)
-(* awards 5 points on first take)
-(* awards 5 points on return)
-(appearance *)
-	There is a tin of rare spices here.
-
-%% POSTS
-#wooden-posts
-(* is #in #posts-room)
-(name *)	wooden posts
-(dict *)	post woode posts wooden
-
-%% BUCKE
-#wooden-bucket
-(* is #in #circular-room)
-(name *)	wooden bucket
-(vehicle *)
-(dict *)	woode bucke wooden bucket
-(* size is 100)
-(* capacity is 100)
-(appearance *)
-	There is a wooden bucket here, 3 feet in diameter and 3 feet high.
-%% TODO: object action routine BUCKET
 

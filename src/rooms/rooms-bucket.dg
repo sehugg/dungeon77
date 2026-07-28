@@ -1,0 +1,79 @@
+
+%% BWELL
+#circular-room
+(room *)
+(name *)	Circular Room
+(inherently dark *)
+(* is bucket)
+(look *)
+	You are in a damp circular room, whose walls are made of brick and
+	mortar. The roof of this room is not visible, but there appear to be
+	some etchings on the walls. There is a passageway to the west.
+(from * go #west to #pearl-room)
+(narrate failing to leave * #up)
+	The walls cannot be climbed.
+(notice #wall-with-etchings1)
+
+
+%% BUCKE
+#bucket
+(* is #in #circular-room)
+(name *)	wooden bucket
+(vehicle *)
+(actor container *)
+(* size is 100)
+(* capacity is 100)
+(appearance *)
+	(#player is #in #bucket)
+	You are in a wooden bucket, 3 feet in diameter and 3 feet high.
+(appearance *)
+	There is a wooden bucket here, 3 feet in diameter and 3 feet high.
+
+%% TWELL
+#top-of-well
+(room *)
+(name *)	Top of Well
+(inherently dark *)
+(* is bucket)
+(* awards 10 points on first visit)
+(look *)
+	You are at the top of the well. Well done. There are etchings on the
+	side of the well. There is a small crack across the floor at the
+	entrance to a room on the east, but it can be crossed easily.
+(from * go #east to #tea-room)
+(narrate failing to leave * #down)
+	It's a long way down!
+(notice #wall-with-etchings2)
+
+%% ETCH2
+#wall-with-etchings2
+(* is #in #top-of-well)
+(name *)	wall with etchings
+(readable *)
+(scenery *)
+(descr *)
+	o b o r z f M A G I C z c W E L L y o n m p a
+
+%%%
+
+(perform [drop $Obj])
+    (liquid $Obj)
+	($Obj has ancestor #player)
+    (#player is #in #bucket)
+    (#bucket is #in #circular-room)
+    There is now a puddle in the bottom of the wooden bucket.
+    The bucket rises and comes to a stop.
+    (now)($Obj is #in #bucket)
+	(enter #top-of-well by #bucket)
+
+(instead of [put $Obj #in #bucket])
+    (#player is #in #bucket)
+    (try [drop $Obj])
+
+(after [put $Obj #in $Container])
+	(liquid $Obj)
+	($Obj has ancestor #bucket)
+    (#player is #in #bucket)
+    (#bucket is #in #top-of-well)
+	The bucket descends and comes to a stop.
+	(enter #circular-room by #bucket)

@@ -1,0 +1,25 @@
+
+(grammar [pour [single]] for [drop $])
+(grammar [pour [single] into [single]] for [put $ #in $])
+
+(grammar [fill [single]] for [put #water #in $])
+(grammar [fill [single] with [single]] for [put $ #in $] reversed)
+
+~(prevent [drop $Obj])
+    (liquid $Obj)
+
+~(prevent [put $Obj #in $])
+    (liquid $Obj)
+    %% TODO: holding bottle?
+
+(perform [drop $Obj])
+    (liquid $Obj)
+    The water spills to the floor and evaporates immediately.
+    (now)($Obj is nowhere)
+
+(perform [put $Obj #in $Container])
+    (liquid $Obj)
+    ~($Container = #bottle)
+    The water leaks out of (the $Container) and evaporates immediately.
+    (now)($Obj is nowhere)
+

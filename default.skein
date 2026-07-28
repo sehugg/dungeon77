@@ -8,23 +8,29 @@ label: START
 [0m[1m[36mWarning:[0m[36m Object #launch was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #land was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 286: Possible typo: A query is made to '(carousel-flip)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 457: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 727: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 785: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 462: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 681: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 739: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 14: Possible typo: A query is made to '(magic-flag)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 19: Possible typo: A query is made to '(cyclops-flag)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-glacier.dg, line 51: Possible typo: A query is made to '(room is lit)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-hades.dg, line 12: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-machine.dg, line 27: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-machine.dg, line 37: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-maze.dg, line 170: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-reservoir.dg, line 20: Possible typo: A query is made to '(low-tide)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 89: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 232: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 30: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 38: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 37: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 45: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 246: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 175: Possible typo: Local variable $cake only appears once.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 182: Possible typo: Local variable $cake only appears once.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 187: Possible typo: Local variable $cake only appears once.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 198: Possible typo: Local variable $cake only appears once.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-bucket.dg, line 73: Possible typo: Local variable $Container only appears once.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 180: Possible typo: Local variable $Readable only appears once.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 180: Possible typo: Local variable $Lens only appears once.
 [0m
 
 [0m[1mDungeon
@@ -267,150 +273,701 @@ Your elvish sword crashes down, knocking the troll into dreamland.
 The unconscious troll cannot defend himself: He dies. Almost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. Your sword is no longer glowing.
 
 --------------------------------------------------------------------------------
-id: 1785098749857
+id: 1785254175414
 parent-id: 1785098749856
-command: get axe
+command: drop sword
 --------------------------------------------------------------------------------
-> get axe
-You take the bloody axe.
+> drop sword
+The elvish sword falls to the ground.
 
 --------------------------------------------------------------------------------
-id: 1785165693039
-parent-id: 1785098749857
+id: 1785254175415
+parent-id: 1785254175414
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mEast-West Passage[0m
+You are in a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.
+
+Your sword is glowing with a faint blue glow.
+
+[0m[4m(Your score has gone up by five points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785254175416
+parent-id: 1785254175415
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mRound room[0m
+
+There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
+
+Your sword has begun to glow very brightly.
+
+--------------------------------------------------------------------------------
+id: 1785254175417
+parent-id: 1785254175416
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mEngravings Cave[0m
+You have entered a cave with passages leading north and southeast.
+
+Your sword is glowing with a faint blue glow.
+
+--------------------------------------------------------------------------------
+id: 1785254175418
+parent-id: 1785254175417
+command: se
+--------------------------------------------------------------------------------
+> se
+You walk southeast.
+
+[0m[1mRiddle Room[0m
+This is a room which is bare on all sides. There is an exit down. To the east is a great door made of stone. Above the stone, the following words are written:
+
+'No man shall enter this room without solving this riddle:
+What is tall as a house,
+round as a cup,
+and all the king's horses can't draw it up?'
+
+Your sword is no longer glowing.
+
+--------------------------------------------------------------------------------
+id: 1785254175419
+parent-id: 1785254175418
+command: say well
+--------------------------------------------------------------------------------
+> say well
+There is a clap of thunder and the east door opens.
+
+--------------------------------------------------------------------------------
+id: 1785254175420
+parent-id: 1785254175419
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mPearl Room[0m
+This is a former broom closet. The exits are to the east and west.
+
+There is a pearl necklace here with hundreds of large pearls.
+
+--------------------------------------------------------------------------------
+id: 1785254175421
+parent-id: 1785254175420
+command: take pearls
+--------------------------------------------------------------------------------
+> take pearls
+You take the pearl necklace.
+
+--------------------------------------------------------------------------------
+id: 1785254175422
+parent-id: 1785254175421
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mCircular Room[0m
+You are in a damp circular room, whose walls are made of brick and mortar. The roof of this room is not visible, but there appear to be some etchings on the walls. There is a passageway to the west.
+
+There is a wooden bucket here, 3 feet in diameter and 3 feet high.
+
+--------------------------------------------------------------------------------
+id: 1785254175423
+parent-id: 1785254175422
+command: enter bucket
+--------------------------------------------------------------------------------
+> enter bucket
+You get into the wooden bucket.
+
+--------------------------------------------------------------------------------
+id: 1785254175424
+parent-id: 1785254175423
+command: open bottle
+--------------------------------------------------------------------------------
+> open bottle
+You open the glass bottle, revealing a quantity of water.
+
+--------------------------------------------------------------------------------
+id: 1785254175425
+parent-id: 1785254175424
+command: pour water
+--------------------------------------------------------------------------------
+> pour water
+There is now a puddle in the bottom of the wooden bucket. The bucket rises and comes to a stop.
+
+[0m[1mTop of Well[0m (in the wooden bucket)
+You are at the top of the well. Well done. There are etchings on the side of the well. There is a small crack across the floor at the entrance to a room on the east, but it can be crossed easily.
+
+You are in a wooden bucket, 3 feet in diameter and 3 feet high.
+
+--------------------------------------------------------------------------------
+id: 1785254175426
+parent-id: 1785254175425
+command: exit
+--------------------------------------------------------------------------------
+> exit
+You get out of the wooden bucket.
+
+--------------------------------------------------------------------------------
+id: 1785255063768
+parent-id: 1785254175426
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mTea Room[0m
+You are in a small square room, in the center of which is a large oblong table, no doubt set for afternoon tea. It is clear from the objects on the table that the users were indeed mad. In the eastern corner of the room is a small hole (no more that four inches high). There are passageways leading away to the west and the northwest.
+
+There is a piece of cake here with the words 'Eat Me' on it.
+
+There is a piece of cake with orange icing here.
+
+There is a piece of cake with red icing here.
+
+There is a piece of cake with blue (ecch) icing here.
+
+--------------------------------------------------------------------------------
+id: 1785255063769
+parent-id: 1785255063768
+command: nw
+--------------------------------------------------------------------------------
+> nw
+You walk northwest.
+
+[0m[1mLow Room[0m
+
+There is a robot here.
+
+There is a green piece of paper here.
+
+--------------------------------------------------------------------------------
+id: 1785255063772
+parent-id: 1785255063769
+command: tell robot to go east
+--------------------------------------------------------------------------------
+> tell robot to go east
+The robot disappears east.
+
+--------------------------------------------------------------------------------
+id: 1785255063775
+parent-id: 1785255063772
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mMachine Room[0m
+You are in a large room full of assorted heavy machinery. The room smells of burned resistors. The room is noisy from the whirring sounds of the machines. Along one wall of the room are three buttons which are, respectively, round, triangular, and square. Naturally, above these buttons are instructions written in EBCDIC. A large sign in English above all the buttons says 'DANGER--HIGH VOLTAGE '. There are exits to the west and the south.
+
+There is a robot here.
+
+--------------------------------------------------------------------------------
+id: 1785255063776
+parent-id: 1785255063775
+command: tell robot to push triangular button
+--------------------------------------------------------------------------------
+> tell robot to push triangular button
+A dull thump is heard in the distance.
+
+--------------------------------------------------------------------------------
+id: 1785255063777
+parent-id: 1785255063776
+command: tell robot to s
+--------------------------------------------------------------------------------
+> tell robot to s
+The robot disappears south.
+
+--------------------------------------------------------------------------------
+id: 1785255063778
+parent-id: 1785255063777
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mDingy Closet[0m
+You are in a dingy closet adjacent to the machine room. On one wall is a small sticker which says Protected by FROBOZZ Magic Alarm Company (Hello, footpad!)
+
+There is a robot here.
+
+There is a beautiful crystal sphere here.
+
+--------------------------------------------------------------------------------
+id: 1785255063779
+parent-id: 1785255063778
+command: take sphere
+--------------------------------------------------------------------------------
+> take sphere
+You can't take the crystal sphere.
+
+--------------------------------------------------------------------------------
+id: 1785255063780
+parent-id: 1785255063779
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mMachine Room[0m
+You are in a large room full of assorted heavy machinery. The room smells of burned resistors. The room is noisy from the whirring sounds of the machines. Along one wall of the room are three buttons which are, respectively, round, triangular, and square. Naturally, above these buttons are instructions written in EBCDIC. A large sign in English above all the buttons says 'DANGER--HIGH VOLTAGE '. There are exits to the west and the south.
+
+--------------------------------------------------------------------------------
+id: 1785255063781
+parent-id: 1785255063780
 command: w
 --------------------------------------------------------------------------------
 > w
 You walk west.
 
-[0m[1mCellar[0m
-You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+[0m[1mLow Room[0m
+
+There is a green piece of paper here.
 
 --------------------------------------------------------------------------------
-id: 1785165693040
-parent-id: 1785165693039
+id: 1785255063782
+parent-id: 1785255063781
+command: se
+--------------------------------------------------------------------------------
+> se
+You walk southeast.
+
+[0m[1mTea Room[0m
+You are in a small square room, in the center of which is a large oblong table, no doubt set for afternoon tea. It is clear from the objects on the table that the users were indeed mad. In the eastern corner of the room is a small hole (no more that four inches high). There are passageways leading away to the west and the northwest.
+
+There is a piece of cake here with the words 'Eat Me' on it.
+
+There is a piece of cake with orange icing here.
+
+There is a piece of cake with red icing here.
+
+There is a piece of cake with blue (ecch) icing here.
+
+--------------------------------------------------------------------------------
+id: 1785255063783
+parent-id: 1785255063782
+command: get all
+--------------------------------------------------------------------------------
+> get all
+The piece of 'Eat Me' cake: You take the piece of 'Eat Me' cake.
+
+The piece of cake with orange icing: You take the piece of cake with orange icing.
+
+The piece of cake with red icing: You take the piece of cake with red icing.
+
+The piece of cake with blue icing: You take the piece of cake with blue icing.
+
+--------------------------------------------------------------------------------
+id: 1785255063787
+parent-id: 1785255063783
+command: eat eat me cake
+--------------------------------------------------------------------------------
+> eat eat me cake
+Suddenly, the room appears to have become very large.
+
+--------------------------------------------------------------------------------
+id: 1785255063788
+parent-id: 1785255063787
+command: l
+--------------------------------------------------------------------------------
+> l
+[0m[1mPosts Room[0m
+You are in an enormous room, in the center of which are four wooden posts delineating a rectanular area, above which is what appears to be a wooden roof. In fact, all objects in this room appear to be abnormally large. To the east is a passageway. There is a large chasm on the west and the northwest.
+
+--------------------------------------------------------------------------------
+id: 1785255063789
+parent-id: 1785255063788
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mPool Room[0m
+You are in a large room, one half of which is depressed. There is a large leak in the ceiling through which brown colored goop is falling. The only exit to this room is to the west.
+
+A stoppered glass flask with a skull-and-crossbones marking is here. The flask is filled with some clear liquid.
+
+The leak has submerged the depressed area in a pool of sewage.
+
+--------------------------------------------------------------------------------
+id: 1785255063790
+parent-id: 1785255063789
+command: i
+--------------------------------------------------------------------------------
+> i
+You have a piece of cake with blue icing, a piece of cake with red icing, a piece of cake with orange icing, a piece of 'Eat Me' cake, a pearl necklace, a newspaper, a battery-powered brass lantern, a knife, a rope, a brick, a glass bottle, and a sandwich bag.
+
+--------------------------------------------------------------------------------
+id: 1785255063791
+parent-id: 1785255063790
+command: read blue
+--------------------------------------------------------------------------------
+> read blue
+It reads:
+
+It seems to be harmless.
+
+--------------------------------------------------------------------------------
+id: 1785255063795
+parent-id: 1785255063791
+command: read blue through bottle
+--------------------------------------------------------------------------------
+> read blue through bottle
+You can't read the piece of cake with blue icing through the glass bottle.
+
+--------------------------------------------------------------------------------
+id: 1785255063796
+parent-id: 1785255063795
+command: read blue through flask
+--------------------------------------------------------------------------------
+> read blue through flask
+The icing, now visible, says 'Enlarge'.
+
+--------------------------------------------------------------------------------
+id: 1785255063798
+parent-id: 1785255063796
+command: throw red cake
+--------------------------------------------------------------------------------
+> throw red cake
+At what?
+
+--------------------------------------------------------------------------------
+id: 1785255063800
+parent-id: 1785255063798
+command: pool
+--------------------------------------------------------------------------------
+> pool
+The pool of water evaporates, revealing a tin of rare spices.
+
+--------------------------------------------------------------------------------
+id: 1785255063801
+parent-id: 1785255063800
+command: get spices
+--------------------------------------------------------------------------------
+> get spices
+You take the tin of spices.
+
+--------------------------------------------------------------------------------
+id: 1785255063802
+parent-id: 1785255063801
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mPosts Room[0m
+You are in an enormous room, in the center of which are four wooden posts delineating a rectanular area, above which is what appears to be a wooden roof. In fact, all objects in this room appear to be abnormally large. To the east is a passageway. There is a large chasm on the west and the northwest.
+
+--------------------------------------------------------------------------------
+id: 1785255063803
+parent-id: 1785255063802
+command: eat blue cake
+--------------------------------------------------------------------------------
+> eat blue cake
+The room around you seems to be getting smaller.
+
+--------------------------------------------------------------------------------
+id: 1785255063804
+parent-id: 1785255063803
+command: drop orange cake
+--------------------------------------------------------------------------------
+> drop orange cake
+The piece of cake with orange icing falls to the ground.
+
+--------------------------------------------------------------------------------
+id: 1785255063805
+parent-id: 1785255063804
+command: l
+--------------------------------------------------------------------------------
+> l
+[0m[1mTea Room[0m
+You are in a small square room, in the center of which is a large oblong table, no doubt set for afternoon tea. It is clear from the objects on the table that the users were indeed mad. In the eastern corner of the room is a small hole (no more that four inches high). There are passageways leading away to the west and the northwest.
+
+There is a piece of cake with orange icing here.
+
+--------------------------------------------------------------------------------
+id: 1785255063815
+parent-id: 1785255063805
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mTop of Well[0m
+You are at the top of the well. Well done. There are etchings on the side of the well. There is a small crack across the floor at the entrance to a room on the east, but it can be crossed easily.
+
+There is a wooden bucket here, 3 feet in diameter and 3 feet high.
+
+--------------------------------------------------------------------------------
+id: 1785255063816
+parent-id: 1785255063815
+command: board
+--------------------------------------------------------------------------------
+> board
+[0m[4m(I only understood you as far as wanting to get into something.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785255063817
+parent-id: 1785255063816
+command: board bucket
+--------------------------------------------------------------------------------
+> board bucket
+You get into the wooden bucket.
+
+--------------------------------------------------------------------------------
+id: 1785255063818
+parent-id: 1785255063817
+command: fill bottle
+--------------------------------------------------------------------------------
+> fill bottle
+You put the quantity of water in the glass bottle. The bucket descends and comes to a stop.
+
+[0m[1mCircular Room[0m (in the wooden bucket)
+You are in a damp circular room, whose walls are made of brick and mortar. The roof of this room is not visible, but there appear to be some etchings on the walls. There is a passageway to the west.
+
+You are in a wooden bucket, 3 feet in diameter and 3 feet high.
+
+--------------------------------------------------------------------------------
+id: 1785255063819
+parent-id: 1785255063818
+command: close bottle
+--------------------------------------------------------------------------------
+> close bottle
+You close the glass bottle.
+
+--------------------------------------------------------------------------------
+id: 1785255063820
+parent-id: 1785255063819
+command: disembark
+--------------------------------------------------------------------------------
+> disembark
+You get out of the wooden bucket.
+
+--------------------------------------------------------------------------------
+id: 1785255063821
+parent-id: 1785255063820
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mPearl Room[0m
+This is a former broom closet. The exits are to the east and west.
+
+--------------------------------------------------------------------------------
+id: 1785255063823
+parent-id: 1785255063821
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mRiddle Room[0m
+This is a room which is bare on all sides. There is an exit down. To the east is a great door made of stone. Above the stone, the following words are written:
+
+'No man shall enter this room without solving this riddle:
+What is tall as a house,
+round as a cup,
+and all the king's horses can't draw it up?'
+
+--------------------------------------------------------------------------------
+id: 1785255063824
+parent-id: 1785255063823
+command: d
+--------------------------------------------------------------------------------
+> d
+You climb down.
+
+[0m[1mEngravings Cave[0m
+You have entered a cave with passages leading north and southeast.
+
+Your sword is glowing with a faint blue glow.
+
+--------------------------------------------------------------------------------
+id: 1785255063825
+parent-id: 1785255063824
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mRound room[0m
+
+There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
+
+Your sword has begun to glow very brightly.
+
+--------------------------------------------------------------------------------
+id: 1785255063826
+parent-id: 1785255063825
+command: open box
+--------------------------------------------------------------------------------
+> open box
+You open the iron box, revealing a fancy violin.
+
+--------------------------------------------------------------------------------
+id: 1785255063827
+parent-id: 1785255063826
+command: get violin
+--------------------------------------------------------------------------------
+> get violin
+You take the fancy violin out of the iron box.
+
+--------------------------------------------------------------------------------
+id: 1785255063828
+parent-id: 1785255063827
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mEast-West Passage[0m
+You are in a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.
+
+Your sword is glowing with a faint blue glow.
+
+--------------------------------------------------------------------------------
+id: 1785255063829
+parent-id: 1785255063828
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mThe Troll Room[0m
+You are in a small room with passages off in all directions. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
+
+There is an elvish sword here.
+
+There is a bloody axe here.
+
+Your sword is no longer glowing.
+
+--------------------------------------------------------------------------------
+id: 1785255063830
+parent-id: 1785255063829
 command: s
 --------------------------------------------------------------------------------
 > s
 You walk south.
 
-[0m[1mWest of Chasm[0m
-You are on the west edge of a chasm, the bottom of which cannot be seen. The east side is sheer rock, providing no exits. A narrow passage goes west, and the path you are on continues to the north and south.
+[0m[1mYou are in a maze of twisty little passages, all alike.[0m
+You are in a maze of twisty little passages, all alike.
 
 --------------------------------------------------------------------------------
-id: 1785165693041
-parent-id: 1785165693040
+id: 1785255063831
+parent-id: 1785255063830
 command: s
 --------------------------------------------------------------------------------
 > s
 You walk south.
 
-[0m[1mGallery[0m
-You are in an art gallery. Most of the paintings which were here have been stolen by vandals with exceptional taste. The vandals left through either the north or south exits.
-
-A masterpiece by a neglected genius is here.
+[0m[1mYou are in a maze of twisty little passages, all alike.[0m
+You are in a maze of twisty little passages, all alike.
 
 --------------------------------------------------------------------------------
-id: 1785165693042
-parent-id: 1785165693041
-command: get painting
+id: 1785255063832
+parent-id: 1785255063831
+command: e
 --------------------------------------------------------------------------------
-> get painting
-You take the painting.
+> e
+You walk east.
+
+[0m[1mYou are in a maze of twisty little passages, all alike.[0m
+You are in a maze of twisty little passages, all alike.
 
 --------------------------------------------------------------------------------
-id: 1785165693043
-parent-id: 1785165693042
-command: up
+id: 1785255063833
+parent-id: 1785255063832
+command: u
 --------------------------------------------------------------------------------
-> up
-There doesn't appear to be an exit in that direction.
-
---------------------------------------------------------------------------------
-id: 1785165693044
-parent-id: 1785165693043
-command: south
---------------------------------------------------------------------------------
-> south
-You walk south.
-
-[0m[1mStudio[0m
-You are in what appears to have been an artist's studio. The walls and floors are splattered with paints of 69 different colors. Strangely enough, nothing of value is hanging here. At the north and northwest of the room are open doors (also covered with paint). An extremely dark and narrow chimney leads up from a fireplace; although you might be able to get up it, it seems unlikely you could get back down.
-
---------------------------------------------------------------------------------
-id: 1785165693045
-parent-id: 1785165693044
-command: go up
---------------------------------------------------------------------------------
-> go up
+> u
 You climb up.
 
-[0m[1mKitchen[0m
-This is the kitchen of the white house. A table seems to have been used recently for the preparation of food. A passage leads to the west and a dark staircase can be seen leading upward. A dark chimney leads down and to the east is a small window which is open.
+[0m[1mYou are in a maze of twisty little passages, all alike.[0m
+You are in a maze of twisty little passages, all alike.
+
+There is a burned-out lantern here.
+
+There is a set of skeleton keys here.
+
+A skeleton, probably the remains of a luckless adventurer, lies here.
+
+An old leather bag, bulging with coins, is here.
+
+Beside the skeleton is a rusty knife.
 
 --------------------------------------------------------------------------------
-id: 1785165693046
-parent-id: 1785165693045
-command: w
+id: 1785255063834
+parent-id: 1785255063833
+command: take coins
 --------------------------------------------------------------------------------
-> w
-You walk west.
-
-[0m[1mLiving Room[0m
-You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a closed trap-door at your feet.
-
-There is a trophy case here.
+> take coins
+You take the bag of coins.
 
 --------------------------------------------------------------------------------
-id: 1785165693047
-parent-id: 1785165693046
-command: open case
+id: 1785255063835
+parent-id: 1785255063834
+command: sw
 --------------------------------------------------------------------------------
-> open case
-You open the trophy case.
+> sw
+You walk southwest.
+
+[0m[1mYou are in a maze of twisty little passages, all alike.[0m
+You are in a maze of twisty little passages, all alike.
 
 --------------------------------------------------------------------------------
-id: 1785165693048
-parent-id: 1785165693047
-command: put painting in case
+id: 1785255063836
+parent-id: 1785255063835
+command: e
 --------------------------------------------------------------------------------
-> put painting in case
-You put the painting in the trophy case.
+> e
+You walk east.
 
-[0m[4m(Your score has gone up by seven points.)
-[0m
---------------------------------------------------------------------------------
-id: 1785165693049
-parent-id: 1785165693048
-command: score
---------------------------------------------------------------------------------
-> score
-[0m[4mYou currently have 42 points.
-[0m
---------------------------------------------------------------------------------
-id: 1785166191612
-parent-id: 1785165693049
-command: take painting from case
---------------------------------------------------------------------------------
-> take painting from case
-You take the painting out of the trophy case.
+[0m[1mYou are in a maze of twisty little passages, all alike.[0m
+You are in a maze of twisty little passages, all alike.
 
-[0m[4m(Your score has gone down by seven points.)
-[0m
 --------------------------------------------------------------------------------
-id: 1785166191613
-parent-id: 1785166191612
-command: put painting in case
+id: 1785255063837
+parent-id: 1785255063836
+command: s
 --------------------------------------------------------------------------------
-> put painting in case
-You put the painting in the trophy case.
+> s
+You walk south.
 
-[0m[4m(Your score has gone up by seven points.)
-[0m
+[0m[1mYou are in a maze of twisty little passages, all alike.[0m
+You are in a maze of twisty little passages, all alike.
+
+Your sword is glowing with a faint blue glow.
+
 --------------------------------------------------------------------------------
-id: 1785166191614
-parent-id: 1785166191613
-command: score
+id: 1785255063838
+parent-id: 1785255063837
+command: ne
 --------------------------------------------------------------------------------
-> score
-[0m[4mYou currently have 42 points.
+> ne
+You walk northeast.
+
+[0m[1mCyclops Room[0m
+
+Your sword has begun to glow very brightly.
+
+--------------------------------------------------------------------------------
+id: 1785255063840
+parent-id: 1785255063838
+command: odysseus
+--------------------------------------------------------------------------------
+> odysseus
+[0m[4m(I'm sorry, I didn't understand what you wanted to do.)
 [0m

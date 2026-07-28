@@ -2,6 +2,10 @@
 (rewrite [say | $Words] into $result)
 	(append [talk to me about] $Words $result)
 
+(grammar [board [single]] for [enter $])
+(grammar [disembark [single]] for [leave $])
+(grammar [disembark] for [leave])
+
 (understand command [zork])
 (perform [zork])
 	That word is replaced henceforth with DUNGEON.
@@ -50,4 +54,17 @@
 	I don't think that anybody's home.
 (refuse [knock on $object])
 	Why knock on (a $object)?
+
+%% Readable objects print their description when you read them.
+(unlikely [read $thing])
+    ~(readable $thing)
+
+(perform [read $thing])
+    (readable $thing)
+    (if) (item $thing) (player can reach $thing) ~($thing is #heldby #player) (then)
+        (first try [take $thing])
+    (endif)
+    It reads:
+    (par)
+    (look $thing)
 

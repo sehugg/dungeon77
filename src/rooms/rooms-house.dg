@@ -233,6 +233,7 @@
 (* is #in #bottle)
 (name *)        quantity of water
 (potable *)
+(liquid *)
 (dict *)	liquid h2o
 (* size is 4)
 
@@ -428,18 +429,6 @@
 (item *)
 (dict *)        lantern
 (appearance *)  There is a broken brass lantern here.
-
-%% Readable objects print their description when you read them.
-(unlikely [read $thing])
-    ~(readable $thing)
-(perform [read $thing])
-    (readable $thing)
-    (if) (item $thing) (player can reach $thing) ~($thing is #heldby #player) (then)
-        (first try [take $thing])
-    (endif)
-    It reads:
-    (par)
-    (look $thing)
 
 #newspaper
 (* is #in #living-room)
