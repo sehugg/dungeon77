@@ -1,7 +1,6 @@
 %% Dialog source generated from the MDL Zork sources by mdl2dialog.py
 %% 144 rooms, 155 objects
 
-~(glacier-flag)
 ~(riddle-flag)
 ~(egypt-flag)
 ~(dome-flag)
@@ -66,24 +65,6 @@
 (prevent [from * go #east])
 	~(egypt-flag)
 		The passage is too narrow to accomodate coffins.
-
-%% ICY
-#glacier-room
-(room *)
-(name *)	Glacier Room
-(inherently dark *)
-(look *)
-	You are in a large room, with giant icicles hanging from the walls
-	and ceiling.  There are passages to the north and east.
-	(if) (glacier-flag) (then) There is a large passageway leading westward. (endif)
-%% TODO: room action routine GLACIER-ROOM
-(from * go #north to #stream)
-(from * go #east to #egyptian-room)
-(from * go #west to #ruby-room)
-%% TODO: conditional on flag GLACIER-FLAG
-(prevent [from * go #west])
-	~(glacier-flag)
-		You can't go that way.
 
 %% RUBYR
 #ruby-room
@@ -618,15 +599,6 @@
 (name *)	mirror
 (dict *)	mirro refl2 mirror
 %% TODO: object action routine MIRROR-MIRROR
-
-%% ICE
-#glacier
-(* is #in #glacier-room)
-(name *)	glacier
-(dict *)	glaci ice glacier
-(appearance *)
-	A mass of ice fills the western half of the room.
-%% TODO: object action routine GLACIER
 
 %% RUBY
 #ruby

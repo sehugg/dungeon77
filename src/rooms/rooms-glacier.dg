@@ -1,0 +1,61 @@
+%% Glacier logic - from 77act1.mud GLACIER and GLACIER-ROOM routines
+
+~(glacier-flag)
+
+%% ICY
+#glacier-room
+(room *)
+(name *)	Glacier Room
+(inherently dark *)
+(look *)
+	You are in a large room, with giant icicles hanging from the walls
+	and ceiling.  There are passages to the north and east.
+	(if) (glacier-flag) (then) There is a large passageway leading westward. (endif)
+(from * go #north to #stream)
+(from * go #east to #egyptian-room)
+(from * go #west to #ruby-room)
+(prevent [from * go #west])
+	~(glacier-flag)
+    You can't go that way.
+
+%% ICE
+#glacier
+(* is #in #glacier-room)
+(name *)	glacier
+(dict *)	ice
+(appearance *)
+	A mass of ice fills the western half of the room.
+
+%% Object action: GLACIER - throw torch at glacier to melt it
+
+(grammar [melt [object]] for [melt $])
+(grammar [melt [object] with [object]] for [melt $ with $])
+
+(perform [melt $obj])
+    How exactly are you going to melt (the $obj)?
+    (tick) (stop)
+
+(perform [melt $ with $])
+    That doesn't seem to work.
+
+%% THROW TORCH AT GLACIER
+
+(perform [throw #torch at #glacier])
+    The torch hits the glacier and explodes into a great ball of flame,
+    devouring the glacier.  The water from the melting glacier rushes
+    downstream, carrying the torch with it.  In the place of the glacier,
+    there is a passageway leading west.
+    (now) (#torch is #in #stream)
+    (now) (#glacier is nowhere)
+    (now) (glacier-flag)
+    (if) ~(room is lit) (then)
+        (par)
+        The melting glacier seems to have carried the torch away, leaving
+        you in the dark.
+    (endif)
+    (tick) (stop)
+
+%% Generic throw at glacier rejection
+(perform [throw $ at #glacier])
+    The glacier is unmoved by your ridiculous attempt.
+    (tick) (stop)
