@@ -108,8 +108,9 @@
 #crystal-sphere
 (* is #in #dingy-closet)
 (name *)	crystal sphere
+(item *)
 (* is sacred)
-(dict *)	ball cryst glass spher crystal sphere
+(dict *)	ball glass cristal
 (* size is 10)
 (* awards 6 points on first take)
 (* awards 6 points on return)

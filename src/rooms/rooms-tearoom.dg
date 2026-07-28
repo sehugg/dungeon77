@@ -173,19 +173,19 @@
 %%% Reading cake
 
 (perform [read $cake])
-	(* has small print)
+	($cake has small print)
 	The only writing legible is a capital E.  The rest is too small to
 	be clearly visible.
 
-(grammar [read [single] through/with [single]] for [read $Readable through $Lens])
+(grammar [read [single] through/with [single]] for [read $ through $])
 
 (perform [read $cake])
-	(* has small print)
+	($cake has small print)
 	The only writing legible is a capital E.  The rest is too small to
 	be clearly visible.
 
 (perform [read $cake through #bottle])
-	(* has small print)
+	($cake has small print)
 	The letters appear larger, but still are too small to be read.
 
 (perform [read #cake-with-red-icing through #flask])
@@ -196,7 +196,7 @@
 	The icing, now visible, says 'Explode'.
 
 (perform [read $cake through $])
-	(* has small print)
+	($cake has small print)
 	You can't see through that!
 
 %%% Throwing cake

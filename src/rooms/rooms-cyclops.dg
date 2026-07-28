@@ -1,23 +1,28 @@
 
+~(cyclops-flag)
+~(magic-flag)
+
 %% CYCLO
 #cyclops-room
 (room *)
 (name *)	Cyclops Room
 (inherently dark *)
 (look *)
-	%% TODO: description comes from room routine CYCLOPS-ROOM
-%% TODO: room action routine CYCLOPS-ROOM
+	You are in a room with an exit on the west side, and a staircase
+	leading up.
+	(if) (magic-flag) (then)
+		On the north of the room is a wall which used to be solid, but which
+		now has a cyclops-sized hole in it.
+	(endif)
 (from * go #west to #maze15)
 (from * go #north to #strange-passage)
-%% TODO: conditional on flag MAGIC-FLAG
-(prevent [from * go #north])
-	~(magic-flag)
-		The north wall is solid rock.
+	(magic-flag)
 (from * go #up to #treasure-room)
-%% TODO: conditional on flag CYCLOPS-FLAG
-(prevent [from * go #up])
-	~(cyclops-flag)
-		The cyclops doesn't look like he'll let you past.
+	(cyclops-flag)
+(narrate failing to leave * #north)
+	The north wall is solid rock.
+(narrate failing to leave * #up)
+	The cyclops doesn't look like he'll let you past.
 
 %% BLROO
 #strange-passage
@@ -52,8 +57,27 @@
 (name *)	cyclops
 (villain *)
 (animate *)
+(male *)
 (dict *)	one-e monst cyclo cyclops
 (* capacity is 10000)
+(appearance *)
+	(* is asleep)
+	The cyclops, perhaps affected by a drug in your drink, is sleeping
+	blissfully at the foot of the stairs.
+(appearance *)
+	(* is thirsty)
+	The cyclops, having eaten the hot peppers, appears to be gasping.
+	His enflamed tongue protrudes from his man-sized mouth.
+(appearance *)
+	(* is hungry)
+	The cyclops is standing in the corner, eyeing you closely.  I don't
+	think he likes you very much.  He looks extremely hungry even for a
+	cyclops.
+(appearance *)
+	A cyclops, who looks prepared to eat horses \(much less mere
+	adventurers\), blocks the staircase.  From his state of health, and
+	the bloodstains on the walls, you gather that he is not very
+	friendly, though he likes people.
 %% TODO: object action routine CYCLOPS
 
 %% CHALI
@@ -71,4 +95,20 @@
 (appearance *)
 	There is a silver chalice, intricately engraved, here.
 %% TODO: object action routine CHALICE
+
+%%%
+
+(topic keyword @odysseus implies @odysseus)
+(topic keyword @ulysses implies @odysseus)
+
+(instead of [talk to #player/#cyclops about @odysseus])
+	~(cyclops-flag)
+	The cyclops, hearing the name of his deadly nemesis, flees the room
+	by knocking down the wall on the north of the room.
+	(now)(cyclops-flag)
+	(now)(magic-flag)
+	(now)(#cyclops is nowhere)
+
+(instead of [talk to $ about @odysseus])
+	Wasn't he a sailor?
 

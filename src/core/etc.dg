@@ -1,6 +1,6 @@
 
 (rewrite [say | $Words] into $result)
-	(append [talk to me about] $Words $result)
+	(append [talk to myself about] $Words $result)
 
 (grammar [board [single]] for [enter $])
 (grammar [disembark [single]] for [leave $])

@@ -3,9 +3,8 @@
 #maze1
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #west to #troll-room)
 (from * go #north to #maze1)
 (from * go #south to #maze2)
@@ -15,9 +14,8 @@
 #maze2
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #south to #maze1)
 (from * go #north to #maze4)
 (from * go #east to #maze3)
@@ -26,9 +24,8 @@
 #maze3
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #west to #maze2)
 (from * go #north to #maze4)
 (from * go #up to #maze5)
@@ -37,9 +34,8 @@
 #maze4
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #west to #maze3)
 (from * go #north to #maze1)
 (from * go #east to #dead-end1)
@@ -48,18 +44,16 @@
 #dead-end1
 (room *)
 (name *)	Dead End
-(inherently dark *)
 (look *)
-	Dead End
+(inherently dark *)
 (from * go #south to #maze4)
 
 %% MAZE5
 #maze5
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #east to #dead-end2)
 (from * go #north to #maze3)
 (from * go #southwest to #maze6)
@@ -68,18 +62,16 @@
 #dead-end2
 (room *)
 (name *)	Dead End
-(inherently dark *)
 (look *)
-	Dead End
+(inherently dark *)
 (from * go #west to #maze5)
 
 %% MAZE6
 #maze6
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #down to #maze5)
 (from * go #east to #maze7)
 (from * go #west to #maze6)
@@ -89,9 +81,8 @@
 #maze7
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #up to #maze14)
 (from * go #west to #maze6)
 (from * go #northeast to #dead-end1)
@@ -102,9 +93,8 @@
 #maze8
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #northeast to #maze7)
 (from * go #west to #maze8)
 (from * go #southeast to #dead-end3)
@@ -113,18 +103,16 @@
 #dead-end3
 (room *)
 (name *)	Dead End
-(inherently dark *)
 (look *)
-	Dead End
+(inherently dark *)
 (from * go #north to #maze8)
 
 %% MAZE9
 #maze9
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #north to #maze6)
 (from * go #east to #maze11)
 (from * go #down to #maze10)
@@ -136,9 +124,8 @@
 #maze10
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #east to #maze9)
 (from * go #west to #maze13)
 (from * go #up to #maze11)
@@ -147,9 +134,8 @@
 #maze11
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #northeast to #grating-room)
 (from * go #down to #maze10)
 (from * go #northwest to #maze13)
@@ -175,9 +161,8 @@
 #maze12
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #west to #maze5)
 (from * go #southwest to #maze11)
 (from * go #east to #maze13)
@@ -188,18 +173,16 @@
 #dead-end4
 (room *)
 (name *)	Dead End
-(inherently dark *)
 (look *)
-	Dead End
+(inherently dark *)
 (from * go #south to #maze12)
 
 %% MAZ13
 #maze13
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #east to #maze9)
 (from * go #down to #maze12)
 (from * go #south to #maze10)
@@ -209,9 +192,8 @@
 #maze14
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #west to #maze15)
 (from * go #northwest to #maze14)
 (from * go #northeast to #maze7)
@@ -221,9 +203,8 @@
 #maze15
 (room *)
 (name *)	You are in a maze of twisty little passages, all alike.
-(inherently dark *)
 (look *)
-	You are in a maze of twisty little passages, all alike.
+(inherently dark *)
 (from * go #west to #maze14)
 (from * go #south to #maze7)
 (from * go #northeast to #cyclops-room)
@@ -233,7 +214,7 @@
 (* is #in #maze5)
 (name *)	burned-out lantern
 (item *)
-(dict *)	lante lamp used burne dead usele blant burned out lantern
+(dict *)	used useless dead lamp
 (* size is 20)
 (appearance *)
 	There is a burned-out lantern here.
@@ -246,7 +227,6 @@
 (name *)	set of skeleton keys
 (item *)
 (tool *)
-(dict *)	keys set skeleton
 (* size is 10)
 (appearance *)
 	There is a set of skeleton keys here.
@@ -255,7 +235,7 @@
 #bones
 (* is #in #maze5)
 (name *)	BONES
-(dict *)	skele body bones
+(dict *)	skeleton body bones
 (appearance *)
 	A skeleton, probably the remains of a luckless adventurer, lies here.
 %% TODO: object action routine SKELETON
@@ -265,7 +245,6 @@
 (* is #in #maze5)
 (name *)	bag of coins
 (item *)
-(dict *)	bag coins leath bagco
 (* size is 15)
 (* awards 10 points on first take)
 (* awards 5 points on return)

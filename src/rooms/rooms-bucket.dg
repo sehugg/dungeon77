@@ -70,7 +70,7 @@
     (#player is #in #bucket)
     (try [drop $Obj])
 
-(after [put $Obj #in $Container])
+(after [put $Obj #in $])
 	(liquid $Obj)
 	($Obj has ancestor #bucket)
     (#player is #in #bucket)

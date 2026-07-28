@@ -11,12 +11,12 @@ label: START
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 462: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 681: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 739: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 14: Possible typo: A query is made to '(magic-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 19: Possible typo: A query is made to '(cyclops-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-glacier.dg, line 51: Possible typo: A query is made to '(room is lit)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-hades.dg, line 12: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-machine.dg, line 37: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-maze.dg, line 170: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-maze.dg, line 156: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-reservoir.dg, line 20: Possible typo: A query is made to '(low-tide)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 89: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 232: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
@@ -24,13 +24,6 @@ label: START
 [0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 37: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 45: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 246: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 175: Possible typo: Local variable $cake only appears once.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 182: Possible typo: Local variable $cake only appears once.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 187: Possible typo: Local variable $cake only appears once.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 198: Possible typo: Local variable $cake only appears once.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-bucket.dg, line 73: Possible typo: Local variable $Container only appears once.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 180: Possible typo: Local variable $Readable only appears once.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-tearoom.dg, line 180: Possible typo: Local variable $Lens only appears once.
 [0m
 
 [0m[1mDungeon
@@ -510,7 +503,7 @@ parent-id: 1785255063778
 command: take sphere
 --------------------------------------------------------------------------------
 > take sphere
-You can't take the crystal sphere.
+You take the crystal sphere.
 
 --------------------------------------------------------------------------------
 id: 1785255063780
@@ -606,7 +599,7 @@ parent-id: 1785255063789
 command: i
 --------------------------------------------------------------------------------
 > i
-You have a piece of cake with blue icing, a piece of cake with red icing, a piece of cake with orange icing, a piece of 'Eat Me' cake, a pearl necklace, a newspaper, a battery-powered brass lantern, a knife, a rope, a brick, a glass bottle, and a sandwich bag.
+You have a piece of cake with blue icing, a piece of cake with red icing, a piece of cake with orange icing, a piece of 'Eat Me' cake, a crystal sphere, a pearl necklace, a newspaper, a battery-powered brass lantern, a knife, a rope, a brick, a glass bottle, and a sandwich bag.
 
 --------------------------------------------------------------------------------
 id: 1785255063791
@@ -614,9 +607,7 @@ parent-id: 1785255063790
 command: read blue
 --------------------------------------------------------------------------------
 > read blue
-It reads:
-
-It seems to be harmless.
+The only writing legible is a capital E. The rest is too small to be clearly visible.
 
 --------------------------------------------------------------------------------
 id: 1785255063795
@@ -624,7 +615,7 @@ parent-id: 1785255063791
 command: read blue through bottle
 --------------------------------------------------------------------------------
 > read blue through bottle
-You can't read the piece of cake with blue icing through the glass bottle.
+The letters appear larger, but still are too small to be read.
 
 --------------------------------------------------------------------------------
 id: 1785255063796
@@ -863,7 +854,6 @@ command: s
 You walk south.
 
 [0m[1mYou are in a maze of twisty little passages, all alike.[0m
-You are in a maze of twisty little passages, all alike.
 
 --------------------------------------------------------------------------------
 id: 1785255063831
@@ -874,7 +864,6 @@ command: s
 You walk south.
 
 [0m[1mYou are in a maze of twisty little passages, all alike.[0m
-You are in a maze of twisty little passages, all alike.
 
 --------------------------------------------------------------------------------
 id: 1785255063832
@@ -885,7 +874,6 @@ command: e
 You walk east.
 
 [0m[1mYou are in a maze of twisty little passages, all alike.[0m
-You are in a maze of twisty little passages, all alike.
 
 --------------------------------------------------------------------------------
 id: 1785255063833
@@ -896,7 +884,6 @@ command: u
 You climb up.
 
 [0m[1mYou are in a maze of twisty little passages, all alike.[0m
-You are in a maze of twisty little passages, all alike.
 
 There is a burned-out lantern here.
 
@@ -925,7 +912,6 @@ command: sw
 You walk southwest.
 
 [0m[1mYou are in a maze of twisty little passages, all alike.[0m
-You are in a maze of twisty little passages, all alike.
 
 --------------------------------------------------------------------------------
 id: 1785255063836
@@ -936,7 +922,6 @@ command: e
 You walk east.
 
 [0m[1mYou are in a maze of twisty little passages, all alike.[0m
-You are in a maze of twisty little passages, all alike.
 
 --------------------------------------------------------------------------------
 id: 1785255063837
@@ -947,12 +932,11 @@ command: s
 You walk south.
 
 [0m[1mYou are in a maze of twisty little passages, all alike.[0m
-You are in a maze of twisty little passages, all alike.
 
 Your sword is glowing with a faint blue glow.
 
 --------------------------------------------------------------------------------
-id: 1785255063838
+id: 1785255063842
 parent-id: 1785255063837
 command: ne
 --------------------------------------------------------------------------------
@@ -960,14 +944,125 @@ command: ne
 You walk northeast.
 
 [0m[1mCyclops Room[0m
+You are in a room with an exit on the west side, and a staircase leading up.
+
+A cyclops, who looks prepared to eat horses (much less mere adventurers), blocks the staircase. From his state of health, and the bloodstains on the walls, you gather that he is not very friendly, though he likes people.
 
 Your sword has begun to glow very brightly.
 
 --------------------------------------------------------------------------------
-id: 1785255063840
-parent-id: 1785255063838
-command: odysseus
+id: 1785255063850
+parent-id: 1785255063842
+command: n
 --------------------------------------------------------------------------------
-> odysseus
-[0m[4m(I'm sorry, I didn't understand what you wanted to do.)
+> n
+The north wall is solid rock.
+
+--------------------------------------------------------------------------------
+id: 1785255063851
+parent-id: 1785255063850
+command: u
+--------------------------------------------------------------------------------
+> u
+The cyclops doesn't look like he'll let you past.
+
+--------------------------------------------------------------------------------
+id: 1785255063852
+parent-id: 1785255063851
+command: say odysseus
+--------------------------------------------------------------------------------
+> say odysseus
+The cyclops, hearing the name of his deadly nemesis, flees the room by knocking down the wall on the north of the room. Your sword is no longer glowing.
+
+--------------------------------------------------------------------------------
+id: 1785255063858
+parent-id: 1785255063852
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mStrange Passage[0m
+You are in a long passage. To the south is one entrance. On the east there is an old wooden door, with a large hole in it (about cyclops sized).
+
+[0m[4m(Your score has gone up by ten points.)
 [0m
+--------------------------------------------------------------------------------
+id: 1785255063859
+parent-id: 1785255063858
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mLiving Room[0m
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a closed trap-door at your feet.
+
+There is a trophy case here.
+
+--------------------------------------------------------------------------------
+id: 1785255063860
+parent-id: 1785255063859
+command: open case
+--------------------------------------------------------------------------------
+> open case
+You open the trophy case.
+
+--------------------------------------------------------------------------------
+id: 1785255063861
+parent-id: 1785255063860
+command: i
+--------------------------------------------------------------------------------
+> i
+You have a bag of coins, a fancy violin, a tin of spices, a piece of cake with blue icing, a piece of cake with red icing, a piece of 'Eat Me' cake, a crystal sphere, a pearl necklace, a newspaper, a battery-powered brass lantern, a knife, a rope, a brick, a glass bottle, and a sandwich bag.
+
+--------------------------------------------------------------------------------
+id: 1785255063862
+parent-id: 1785255063861
+command: put coins and violin and spices and pearl and sphere in case
+--------------------------------------------------------------------------------
+> put coins and violin and spices and pearl and sphere in case
+The bag of coins: You put the bag of coins in the trophy case.
+
+The fancy violin: You put the fancy violin in the trophy case.
+
+The tin of spices: You put the tin of spices in the trophy case.
+
+The pearl necklace: You put the pearl necklace in the trophy case.
+
+The crystal sphere: You put the crystal sphere in the trophy case.
+
+[0m[4m(Your score has gone up by 31 points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785255063863
+parent-id: 1785255063862
+command: take egg
+--------------------------------------------------------------------------------
+> take egg
+[0m[4m(I only understood you as far as wanting to take something.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785255063864
+parent-id: 1785255063863
+command: w
+--------------------------------------------------------------------------------
+> w
+The door is nailed shut.
+
+--------------------------------------------------------------------------------
+id: 1785255063865
+parent-id: 1785255063864
+command: s
+--------------------------------------------------------------------------------
+> s
+There doesn't appear to be an exit in that direction.
+
+--------------------------------------------------------------------------------
+id: 1785255063866
+parent-id: 1785255063865
+command: u
+--------------------------------------------------------------------------------
+> u
+There doesn't appear to be an exit in that direction.
+

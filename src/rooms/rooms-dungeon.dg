@@ -65,6 +65,7 @@
 (name *)	thief
 (villain *)
 (animate *)
+(female *)
 (dict *)	robber crook crime criminal bandit man shady thug bagman mafia
 (* capacity is 4)
 (appearance *)
