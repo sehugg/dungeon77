@@ -8,21 +8,20 @@ label: START
 [0m[1m[36mWarning:[0m[36m Object #launch was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #land was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 478: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 697: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 755: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 456: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 661: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 688: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-glacier.dg, line 51: Possible typo: A query is made to '(room is lit)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-hades.dg, line 12: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-machine.dg, line 37: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-maze.dg, line 156: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-reservoir.dg, line 20: Possible typo: A query is made to '(low-tide)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 89: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 232: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 37: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 45: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 39: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 47: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 246: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
 [0m
 
@@ -1294,4 +1293,349 @@ command: get bar
 --------------------------------------------------------------------------------
 > get bar
 You take the platinum bar.
+
+--------------------------------------------------------------------------------
+id: 1785255063897
+parent-id: 1785255063896
+command: u
+--------------------------------------------------------------------------------
+> u
+You climb up.
+
+[0m[1mDamp Cave[0m
+You are in a cave. Passages exit to the south and to the east, but the cave narrows to a crack to the west. The earth is particularly damp here.
+
+--------------------------------------------------------------------------------
+id: 1785255063900
+parent-id: 1785255063897
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mDam[0m
+You are standing on the top of the Flood Control Dam #3, which was quite a tourist attraction in times far distant. There are paths to the north, south, east, and down. The sluice gates on the dam are closed. Behind the dam, there can be seen a wide lake. A small stream is formed by the runoff from the lake.
+
+There is a control panel here. There is a large metal bolt on the panel. Above the bolt is a small green plastic bubble.
+
+--------------------------------------------------------------------------------
+id: 1785255063901
+parent-id: 1785255063900
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mDam Lobby[0m
+This room appears to have been the waiting room for groups touring the dam. There are exits here to the north and east marked 'Private', though the doors are open, and an exit to the south.
+
+There are tour guidebooks here.
+
+There is a matchbook whose cover says 'Visit Beautiful FCD#3' here.
+
+--------------------------------------------------------------------------------
+id: 1785255063902
+parent-id: 1785255063901
+command: take match
+--------------------------------------------------------------------------------
+> take match
+You take the matchbook.
+
+--------------------------------------------------------------------------------
+id: 1785255063905
+parent-id: 1785255063902
+command: read matchbook
+--------------------------------------------------------------------------------
+> read matchbook
+It reads:
+
+[close cover before striking BKD]
+
+You too can make BIG MONEY in the exciting field of
+
+PAPER SHUFFLING!
+
+Mr. TAA of Muddle, Mass. says: "Before I took this course I used to be a lowly bit twiddler. Now with what I learned at MIT Tech I feel really important and can obfuscate and confuse with the best." Mr. MARC had this to say: "Ten short days ago all I could look forward to was a dead-end job as a doctor. Now I have a promising future and make really big Zorkmids."
+
+MIT Tech can't promise these fantastic results to everyone. But when you earn your MDL degree from MIT Tech your future will be brighter. Send for our free brochure today.
+
+--------------------------------------------------------------------------------
+id: 1785255063906
+parent-id: 1785255063905
+command: send for brochure
+--------------------------------------------------------------------------------
+> send for brochure
+[0m[4m(I'm sorry, I didn't understand what you wanted to do.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785255063907
+parent-id: 1785255063906
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mMaintenance Room[0m
+You are in what appears to have been the maintenance room for Flood Control Dam #3, judging by the assortment of tool chests around the room. Apparently, this room has been ransacked recently, for most of the valuable equipment is gone. On the wall in front of you is a panel of buttons, which are labelled in EBCDIC. However, they are of different colors: Blue, Yellow, Brown, and Red. The doors to this room are in the west and south ends.
+
+There is an object which looks like a tube of toothpaste here.
+
+There is a wrench here.
+
+There is a screwdriver here.
+
+--------------------------------------------------------------------------------
+id: 1785255063908
+parent-id: 1785255063907
+command: take screwdriver, wrench
+--------------------------------------------------------------------------------
+> take screwdriver, wrench
+The screwdriver: You take the screwdriver.
+
+The wrench: You take the wrench.
+
+--------------------------------------------------------------------------------
+id: 1785255063909
+parent-id: 1785255063908
+command: push yellow
+--------------------------------------------------------------------------------
+> push yellow
+Click.
+
+--------------------------------------------------------------------------------
+id: 1785255063910
+parent-id: 1785255063909
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mDam Lobby[0m
+This room appears to have been the waiting room for groups touring the dam. There are exits here to the north and east marked 'Private', though the doors are open, and an exit to the south.
+
+There are tour guidebooks here.
+
+--------------------------------------------------------------------------------
+id: 1785255063911
+parent-id: 1785255063910
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mDam[0m
+You are standing on the top of the Flood Control Dam #3, which was quite a tourist attraction in times far distant. There are paths to the north, south, east, and down. The sluice gates on the dam are closed. Behind the dam, there can be seen a wide lake. A small stream is formed by the runoff from the lake.
+
+There is a control panel here. There is a large metal bolt on the panel. Above the bolt is a small green plastic bubble. The green bubble is glowing.
+
+--------------------------------------------------------------------------------
+id: 1785255063914
+parent-id: 1785255063911
+command: turn bolt
+--------------------------------------------------------------------------------
+> turn bolt
+Turn the bolt with what?
+
+--------------------------------------------------------------------------------
+id: 1785255063915
+parent-id: 1785255063914
+command: wrench
+--------------------------------------------------------------------------------
+> wrench
+The sluice gates open and water pours through the dam.
+
+--------------------------------------------------------------------------------
+id: 1785255063916
+parent-id: 1785255063915
+command: drop wrench
+--------------------------------------------------------------------------------
+> drop wrench
+The wrench falls to the ground.
+
+--------------------------------------------------------------------------------
+id: 1785255063917
+parent-id: 1785255063916
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mDeep Canyon[0m
+You are on the south edge of a deep canyon. Passages lead off to the east, south, and northwest. You can hear the sound of flowing water below.
+
+Your sword is glowing with a faint blue glow.
+
+--------------------------------------------------------------------------------
+id: 1785255063918
+parent-id: 1785255063917
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mRound room[0m
+
+There is a dented iron box here.
+
+There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
+
+Your sword has begun to glow very brightly.
+
+--------------------------------------------------------------------------------
+id: 1785255063919
+parent-id: 1785255063918
+command: se
+--------------------------------------------------------------------------------
+> se
+You walk southeast.
+
+[0m[1mWinding Passage[0m
+You are in a winding passage. It seems that there is only an exit on the east end although the whirring from the round room can be heard faintly to the north.
+
+Your sword is no longer glowing.
+
+--------------------------------------------------------------------------------
+id: 1785255063920
+parent-id: 1785255063919
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mMirror Room[0m
+You are in a large square room with tall ceilings. On the south wall is an enormous mirror which fills the entire wall. There are exits on the other three sides of the room.
+
+--------------------------------------------------------------------------------
+id: 1785255063921
+parent-id: 1785255063920
+command: touch mirror
+--------------------------------------------------------------------------------
+> touch mirror
+There is a rumble from deep within the earth and the room shakes.
+
+--------------------------------------------------------------------------------
+id: 1785255063926
+parent-id: 1785255063921
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mCave[0m
+You are in a small cave with an entrance to the north and a stairway leading down.
+
+--------------------------------------------------------------------------------
+id: 1785255063927
+parent-id: 1785255063926
+command: d
+--------------------------------------------------------------------------------
+> d
+You climb down.
+
+[0m[1mAtlantis Room[0m
+You are in an ancient room, long buried by the Reservoir. There are exits here to the southeast and upward.
+
+Neptune's own crystal trident is here.
+
+--------------------------------------------------------------------------------
+id: 1785255063928
+parent-id: 1785255063927
+command: get trident
+--------------------------------------------------------------------------------
+> get trident
+You take the crystal trident.
+
+--------------------------------------------------------------------------------
+id: 1785255063929
+parent-id: 1785255063928
+command: se
+--------------------------------------------------------------------------------
+> se
+You walk southeast.
+
+[0m[1mReservoir North[0m
+
+There is a small pump here.
+
+--------------------------------------------------------------------------------
+id: 1785255063930
+parent-id: 1785255063929
+command: get pump
+--------------------------------------------------------------------------------
+> get pump
+You take the hand-held air pump.
+
+--------------------------------------------------------------------------------
+id: 1785255063931
+parent-id: 1785255063930
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mAtlantis Room[0m
+You are in an ancient room, long buried by the Reservoir. There are exits here to the southeast and upward.
+
+--------------------------------------------------------------------------------
+id: 1785255063932
+parent-id: 1785255063931
+command: u
+--------------------------------------------------------------------------------
+> u
+You climb up.
+
+[0m[1mCave[0m
+You are in a small cave with an entrance to the north and a stairway leading down.
+
+--------------------------------------------------------------------------------
+id: 1785255063933
+parent-id: 1785255063932
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mMirror Room[0m
+You are in a large square room with tall ceilings. On the south wall is an enormous mirror which fills the entire wall. There are exits on the other three sides of the room.
+
+--------------------------------------------------------------------------------
+id: 1785255063934
+parent-id: 1785255063933
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mCold Passage[0m
+You are in a cold and damp corridor where a long east-west passageway intersects with a northward path.
+
+--------------------------------------------------------------------------------
+id: 1785255063935
+parent-id: 1785255063934
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mSlide Room[0m
+You are in a small chamber, which appears to have been part of a coal mine. On the south wall of the chamber the letters "Granite Wall" are etched in the rock. To the east is a long passage and there is a steep metal slide twisting downward. From the appearance of the slide, an attempt to climb up it would be impossible. To the north is a small opening.
+
+--------------------------------------------------------------------------------
+id: 1785255063936
+parent-id: 1785255063935
+command: d
+--------------------------------------------------------------------------------
+> d
+You climb down.
+
+[0m[1mCellar[0m
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+--------------------------------------------------------------------------------
+id: 1785255063937
+parent-id: 1785255063936
+command: u
+--------------------------------------------------------------------------------
+> u
+The trap door has been barred from the other side.
 

@@ -1,0 +1,65 @@
+
+~(mirror-mung)
+
+(mirror-room-desc)
+    You are in a large square room with tall ceilings.  On the south wall
+    is an enormous mirror which fills the entire wall.  There are exits
+    on the other three sides of the room.
+    (if) (mirror-mung) (then)
+        Unfortunately, you have managed to destroy it by your reckless
+        actions.
+    (endif)
+
+%% MIRR1
+#mirror-room1
+(room *)
+(name *)	Mirror Room
+(inherently dark *)
+(look *)
+    (mirror-room-desc)
+(from * go #west to #cold-passage)
+(from * go #north to #steep-crawlway)
+(from * go #east to #cave1)
+(* attracts #mirror)
+
+%% MIRR2
+#mirror-room2
+(room *)
+(name *)	Mirror Room
+(look *)
+    (mirror-room-desc)
+(from * go #west to #winding-passage)
+(from * go #north to #narrow-crawlway)
+(from * go #east to #cave2)
+(* attracts #mirror)
+
+#mirror
+(name *)	mirror
+(descr *)
+    ~(mirror-mung)There is an ugly person staring at you.
+(descr *)
+    (mirror-mung)The mirror is broken into many pieces.
+
+%% TODO: object action routine MIRROR-MIRROR
+
+(perform [feel #mirror])
+    ~(mirror-mung)
+    There is a rumble from deep within the earth and the room shakes.
+    (if) (current room #mirror-room1) (then)
+        (now)(#player is #in #mirror-room2)
+    (else)
+        (now)(#player is #in #mirror-room1)
+    (endif)
+
+(perform [feel #mirror])
+    (mirror-mung)
+    Nobody but a greedy surgeon would allow you to attempt that trick.
+
+(perform [attack #mirror])
+    ~(mirror-mung)
+    (now)(mirror-mung)
+    You have broken the mirror.  I hope you have a seven years supply of
+    good luck handy.
+
+(perform [attack #mirror])
+    (mirror-mung)Haven't you done enough already?

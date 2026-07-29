@@ -1,4 +1,6 @@
 
+%% TODO: "valuables" or "treasures" as "all"
+
 (rewrite [say | $Words] into $result)
 	(append [talk to myself about] $Words $result)
 

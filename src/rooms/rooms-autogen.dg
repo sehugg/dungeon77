@@ -109,29 +109,6 @@
 	$cmd $cmd ...
 %% TODO: say "echo"
 
-%% MIRR1
-#mirror-room1
-(room *)
-(name *)	Mirror Room
-(inherently dark *)
-(look *)
-	%% TODO: description comes from room routine MIRROR-ROOM
-%% TODO: room action routine MIRROR-ROOM
-(from * go #west to #cold-passage)
-(from * go #north to #steep-crawlway)
-(from * go #east to #cave1)
-
-%% MIRR2
-#mirror-room2
-(room *)
-(name *)	Mirror Room
-(look *)
-	%% TODO: description comes from room routine MIRROR-ROOM
-%% TODO: room action routine MIRROR-ROOM
-(from * go #west to #winding-passage)
-(from * go #north to #narrow-crawlway)
-(from * go #east to #cave2)
-
 %% CAVE1
 #cave1
 (room *)
@@ -377,7 +354,7 @@
 	cave narrows to a crack to the west. The earth is particularly damp
 	here.
 (from * go #south to #loud-room)
-(from * go #east to #dam)
+(from * go #east to #dam-room)
 (narrate failing to leave * #west)
 	It is too narrow for most insects.
 
@@ -561,18 +538,6 @@
 (appearance *)
 	There is a pearl necklace here with hundreds of large pearls.
 
-%% REFL1
-#mirror1
-(* is #in #mirror-room1)
-(name *)	mirror
-%% TODO: object action routine MIRROR-MIRROR
-
-%% REFL2
-#mirror2
-(* is #in #mirror-room2)
-(name *)	mirror
-%% TODO: object action routine MIRROR-MIRROR
-
 %% RUBY
 #ruby
 (* is #in #ruby-room)
@@ -689,63 +654,30 @@
 	the far wall is a work of unparalleled beauty.
 %% TODO: object action routine PAINTING
 
-%% BOLT
-#bolt
-(* is #in #dam-room)
-(name *)	bolt
-(openable *)
-%% door
-(scenery *)
-(dict *)	bolt nut
-%% TODO: object action routine BOLT-FUNCTION
-
 %% SDOOR
 #door5
 (* is #in #riddle-room)
 (name *)	door
 (scenery *)
-(dict *)	door stone sdoor
+(dict *)	stone
 %% TODO: object action routine DDOOR-FUNCTION
 
 %% HPOLE
 #head-on-a-pole
 (name *)	head on a pole
-(dict *)	head hpole on pole
-
-%% DAM
-#dam
-(* is #in #dam-room)
-(name *)	dam
-(scenery *)
-(dict *)	gate gates fcd dam
 
 %% RAILI
 #railing
 (* is #in #dome-room)
 (name *)	railing
 (scenery *)
-(dict *)	rail raili railing
+(dict *)	rail
 
 %% BUTTO
 #button1
 (name *)	button
 (scenery *)
-(dict *)	switc butto button
-
-%% BUBBL
-#bubble
-(* is #in #dam-room)
-(name *)	bubble
-(scenery *)
-(dict *)	bubbl bubble
-
-%% LEAK
-#leak
-(* is #in #maintenance-room)
-(name *)	leak
-(scenery *)
-(dict *)	drip hole leak
-%% TODO: object action routine LEAK-FUNCTION
+(dict *)	switch
 
 %% VALUA
 #valuables
@@ -799,34 +731,6 @@
 (scenery *)
 (dict *)	aviat flyer
 (treasure *)
-
-%% RBUTT
-#button2
-(* is #in #maintenance-room)
-(name *)	button
-(scenery *)
-(dict *)	red
-
-%% YBUTT
-#button3
-(* is #in #maintenance-room)
-(name *)	button
-(scenery *)
-(dict *)	yellow
-
-%% BLBUT
-#button4
-(* is #in #maintenance-room)
-(name *)	button
-(scenery *)
-(dict *)	blue
-
-%% BRBUT
-#button5
-(* is #in #maintenance-room)
-(name *)	button
-(scenery *)
-(dict *)	brown
 
 %% BAT
 #bat
