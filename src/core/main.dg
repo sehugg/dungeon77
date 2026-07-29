@@ -31,9 +31,10 @@
 (interface ($<Thing size is $>Size))
 (interface ($<Thing combat strength is $>Strength))
 
-(interface ($<Thing awards $>Points points on return))
-(interface ($<Thing awards $>Points points on first take))
-(interface ($<Room awards $>Points points on first visit))
+(interface ($Thing awards $>Points points on return))
+(interface ($Thing awards $>Points points on first take))
+(interface ($Room awards $>Points points on first visit))
+(interface ($Thing has scored))
 
 (interface ($<Room is sacred))
 (interface ($<Room is land))
@@ -58,8 +59,6 @@
     The door is locked, and there is evidently no key.
 (narrate windows are barred)
     The windows are all barred.
-
-%%%
 
 %%% Darkness
 
@@ -189,6 +188,12 @@
     (decrease score by $Points)
     (fail)
 
+(after [take $object])
+    ($object awards $Points points on first take)
+    ~($object has scored)
+    (increase score by $Points)
+    (now)($object has scored)
+
 %% Inventory limits
 
 (global variable (player max load is 100))
@@ -217,3 +222,102 @@
     ($total plus $additional into $newload)
     ($newload > $maxload)
     Your load is too heavy.  You will have to leave something behind.
+
+%% PUT LOOT IN CASE
+(parse basic noun [treasure/treasures/valuables/loot] as $Result (nonempty $Policy) 1)
+	(just)
+	(collect $Obj)
+		*($Obj is in scope)
+        (treasure $Obj)
+		~(excluded from all $Obj)
+		~($Obj is hidden)
+		(verify object policy $Policy $Obj)
+	(into $Result)
+
+(rewrite [say | $Words] into $result)
+	(append [talk to myself about] $Words $result)
+
+(grammar [board [single]] for [enter $])
+(grammar [disembark [single]] for [leave $])
+(grammar [disembark] for [leave])
+
+%% Readable objects print their description when you read them.
+(unlikely [read $thing])
+    ~(readable $thing)
+
+(perform [read $thing])
+    (readable $thing)
+    (if) (item $thing) (player can reach $thing) ~($thing is #heldby #player) (then)
+        (first try [take $thing])
+    (endif)
+    It reads:
+    (par)
+    (look $thing)
+
+%% RING BELL
+(grammar [ring [object]] for [ring $])
+(perform [ring $Object])
+    (ringable $Object)
+    Ding, dong.
+(perform [ring $Object])
+    ~(ringable $Object)
+    How, exactly, can I ring that?
+
+%% LIGHT/BURN
+(grammar [light/burn [object] with [object]] for [burn $ with $])
+(grammar [light/strike/burn [object]] for [burn $])
+
+%% "Yuks"
+
+(yuk)
+	(select)Nice try.
+	(or)You can't be serious.
+	(or)Chomp, Chomp.
+	(or)Not a prayer.
+	(or)I don't think so.
+	(at random)
+
+(swimyuk)
+	(select)I don't really see how.
+    (or)I think that swimming is best performed in water.
+    (or)Perhaps it is your head that is swimming.
+	(at random)
+
+%% Misc useless verbs
+
+(understand command [zork])
+(perform [zork])
+	That word is replaced henceforth with DUNGEON.
+
+(understand command [dungeon])
+(perform [dungeon])
+	At your service!
+
+(understand command [chomp/lose/barf])
+(perform [chomp])
+    I don't know how to do that.  I win in all cases!
+
+(understand command [frobozz])
+(perform [frobozz])
+    The FROBOZZ Corporation created, owns, and operates this dungeon.
+
+(understand command [win])
+(perform [win])
+    Naturally!
+
+(understand [yell/scream/shout] as [yell])
+(perform [yell])
+    Aaaarrrrrrrrgggggggggggggghhhhhhhhhhhhhh!
+
+(understand [repent] as [repent])
+(refuse [repent])
+    It could very well be too late!
+
+(grammar [knock on [object]] for [knock on $])
+(refuse [knock on $object])
+	(door $object)
+	I don't think that anybody's home.
+
+(refuse [knock on $object])
+	Why knock on (a $object)?
+

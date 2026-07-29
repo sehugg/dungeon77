@@ -115,6 +115,7 @@
 (name *)	matchbook
 (item *)
 (readable *)
+(flammable *)
 (dict *)	flint match matchbook
 (* size is 2)
 (appearance *)
@@ -281,3 +282,4 @@
 (perform [turn #bolt with #wrench])
 	~(gate-flag)
 	The bolt won't turn with your best effort.
+

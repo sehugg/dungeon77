@@ -67,9 +67,9 @@
 %% BELL
 #bell
 (* is #in #temple)
-(name *)	bell
+(name *)	brass bell
 (item *)
-(dict *)	brass bell
+(ringable *)
 (appearance *)
 	There is a small brass bell here.
 (initial appearance *)
@@ -78,11 +78,11 @@
 %% BOOK
 #book
 (* is #in #altar)
-(name *)	book
+(name *)	black book
 (item *)
 (readable *)
 (flammable *)
-(dict *)	praye bible goodb black book
+(dict *)	large prayer bible
 (* size is 10)
 (appearance *)
 	There is a large black book here.
@@ -100,11 +100,12 @@
 %% TODO: object action routine BLACK-BOOK
 
 %% CANDL
-#pair-of-candles
+#candles
 (* is #in #altar)
 (name *)	pair of candles
 (item *)
-(dict *)	candl pair candles
+(dict *)	candle
+(flammable *)
 (* size is 10)
 (appearance *)
 	There are two candles here.

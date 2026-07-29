@@ -10,43 +10,10 @@ label: START
 [0m[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 456: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 661: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 688: Possible typo: A rule is defined for '(treasure $)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-glacier.dg, line 51: Possible typo: A query is made to '(room is lit)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-hades.dg, line 12: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-machine.dg, line 37: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-maze.dg, line 156: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 89: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 232: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 47: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 55: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 246: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
-[0m
-
-[0m[1mDungeon
-[0mA Computerized Fantasy Simulation by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling.
-Release 1. Serial number DEBUG.
-Dialog Interactive Debugger (dgdebug) version 1c/02. Library version 1.2.2. Debugging extension 1.2.2-dev.
-
-[0m[1mWest of House[0m
-You are in an open field west of a big white house, with a boarded front door.
-
-There is a small mailbox here.
-
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-[1m[36mWarning:[0m[36m Object #grating2 was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #cross was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #launch was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #land was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 456: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 661: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-glacier.dg, line 51: Possible typo: A query is made to '(room is lit)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-hades.dg, line 12: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-glacier.dg, line 52: Possible typo: A query is made to '($ is lit)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-hades.dg, line 43: Possible typo: A query is made to '(on-pole)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-machine.dg, line 37: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-maze.dg, line 156: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 89: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
@@ -393,6 +360,8 @@ command: take pearls
 > take pearls
 You take the pearl necklace.
 
+[0m[4m(Your score has gone up by nine points.)
+[0m
 --------------------------------------------------------------------------------
 id: 1785254175422
 parent-id: 1785254175421
@@ -536,6 +505,8 @@ command: take sphere
 > take sphere
 You take the crystal sphere.
 
+[0m[4m(Your score has gone up by six points.)
+[0m
 --------------------------------------------------------------------------------
 id: 1785255063780
 parent-id: 1785255063779
@@ -680,6 +651,8 @@ command: get spices
 > get spices
 You take the tin of spices.
 
+[0m[4m(Your score has gone up by five points.)
+[0m
 --------------------------------------------------------------------------------
 id: 1785255063802
 parent-id: 1785255063801
@@ -846,6 +819,8 @@ command: get violin
 > get violin
 You take the fancy violin out of the iron box.
 
+[0m[4m(Your score has gone up by ten points.)
+[0m
 --------------------------------------------------------------------------------
 id: 1785255063828
 parent-id: 1785255063827
@@ -934,6 +909,8 @@ command: take coins
 > take coins
 You take the bag of coins.
 
+[0m[4m(Your score has gone up by ten points.)
+[0m
 --------------------------------------------------------------------------------
 id: 1785255063835
 parent-id: 1785255063834
@@ -1118,6 +1095,8 @@ command: get chalice
 > get chalice
 You take the chalice.
 
+[0m[4m(Your score has gone up by ten points.)
+[0m
 --------------------------------------------------------------------------------
 id: 1785255063868
 parent-id: 1785255063867
@@ -1248,6 +1227,8 @@ command: take grail
 > take grail
 You take the grail.
 
+[0m[4m(Your score has gone up by two points.)
+[0m
 --------------------------------------------------------------------------------
 id: 1785255063879
 parent-id: 1785255063878
@@ -1324,6 +1305,8 @@ command: get bar
 > get bar
 You take the platinum bar.
 
+[0m[4m(Your score has gone up by twelve points.)
+[0m
 --------------------------------------------------------------------------------
 id: 1785255063897
 parent-id: 1785255063896
@@ -1575,6 +1558,8 @@ command: get trident
 > get trident
 You take the crystal trident.
 
+[0m[4m(Your score has gone up by four points.)
+[0m
 --------------------------------------------------------------------------------
 id: 1785255063929
 parent-id: 1785255063928
@@ -1691,3 +1676,367 @@ The chalice: You put the chalice in the trophy case.
 
 [0m[4m(Your score has gone up by 36 points.)
 [0m
+--------------------------------------------------------------------------------
+id: 1785255063947
+parent-id: 1785255063943
+command: drop pump, screwdriver
+--------------------------------------------------------------------------------
+> drop pump, screwdriver
+The hand-held air pump: The hand-held air pump falls to the ground.
+
+The screwdriver: The screwdriver falls to the ground.
+
+--------------------------------------------------------------------------------
+id: 1785255063948
+parent-id: 1785255063947
+command: d
+--------------------------------------------------------------------------------
+> d
+You climb down through the trap door.
+
+[0m[1mCellar[0m
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+--------------------------------------------------------------------------------
+id: 1785255063949
+parent-id: 1785255063948
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mWest of Chasm[0m
+You are on the west edge of a chasm, the bottom of which cannot be seen. The east side is sheer rock, providing no exits. A narrow passage goes west, and the path you are on continues to the north and south.
+
+--------------------------------------------------------------------------------
+id: 1785255063950
+parent-id: 1785255063949
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mGallery[0m
+You are in an art gallery. Most of the paintings which were here have been stolen by vandals with exceptional taste. The vandals left through either the north or south exits.
+
+A masterpiece by a neglected genius is here.
+
+--------------------------------------------------------------------------------
+id: 1785255063951
+parent-id: 1785255063950
+command: get painting
+--------------------------------------------------------------------------------
+> get painting
+You take the painting.
+
+[0m[4m(Your score has gone up by four points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785255063952
+parent-id: 1785255063951
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mWest of Chasm[0m
+You are on the west edge of a chasm, the bottom of which cannot be seen. The east side is sheer rock, providing no exits. A narrow passage goes west, and the path you are on continues to the north and south.
+
+--------------------------------------------------------------------------------
+id: 1785255063953
+parent-id: 1785255063952
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mCellar[0m
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+--------------------------------------------------------------------------------
+id: 1785255063954
+parent-id: 1785255063953
+command: u
+--------------------------------------------------------------------------------
+> u
+You climb up.
+
+[0m[1mLiving Room[0m
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a rug lying beside an open trap-door.
+
+There is a screwdriver here.
+
+There is a small pump here.
+
+There is a trophy case here.
+In the trophy case are a chalice, a grail, a platinum bar, a crystal trident, a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
+
+--------------------------------------------------------------------------------
+id: 1785255063955
+parent-id: 1785255063954
+command: put loot in case
+--------------------------------------------------------------------------------
+> put loot in case
+You put the painting in the trophy case.
+
+[0m[4m(Your score has gone up by seven points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785255063956
+parent-id: 1785255063955
+command: get bottle
+--------------------------------------------------------------------------------
+> get bottle
+You're already holding the glass bottle.
+
+--------------------------------------------------------------------------------
+id: 1785255063958
+parent-id: 1785255063956
+command: d
+--------------------------------------------------------------------------------
+> d
+You climb down through the trap door.
+
+[0m[1mCellar[0m
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+--------------------------------------------------------------------------------
+id: 1785255063959
+parent-id: 1785255063958
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mThe Troll Room[0m
+You are in a small room with passages off in all directions. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
+
+There is an elvish sword here.
+
+There is a bloody axe here.
+
+--------------------------------------------------------------------------------
+id: 1785255063960
+parent-id: 1785255063959
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mEast-West Passage[0m
+You are in a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.
+
+Your sword is glowing with a faint blue glow.
+
+--------------------------------------------------------------------------------
+id: 1785255063961
+parent-id: 1785255063960
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mRound room[0m
+
+There is a dented iron box here.
+
+There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
+
+Your sword has begun to glow very brightly.
+
+--------------------------------------------------------------------------------
+id: 1785255063962
+parent-id: 1785255063961
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mGrail Room[0m
+You are standing in a small circular room with a pedestal. A set of stairs leads up, and passages leave to the east and west.
+
+Your sword is glowing with a faint blue glow.
+
+--------------------------------------------------------------------------------
+id: 1785255063963
+parent-id: 1785255063962
+command: u
+--------------------------------------------------------------------------------
+> u
+You climb up.
+
+[0m[1mTemple[0m
+You are in the west end of a large temple. On the south wall is an ancient inscription, probably a prayer in a long-forgotten language. The north wall is solid granite. The entrance at the west end of the room is through huge marble pillars.
+
+There is a small brass bell here.
+
+Your sword is no longer glowing.
+
+--------------------------------------------------------------------------------
+id: 1785255063964
+parent-id: 1785255063963
+command: get bell
+--------------------------------------------------------------------------------
+> get bell
+You take the brass bell.
+
+--------------------------------------------------------------------------------
+id: 1785255063968
+parent-id: 1785255063965
+command: g
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> g
+[0m[4m(I'm sorry, I didn't understand what you wanted to do.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785255063969
+parent-id: 1785255063964
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mAltar[0m
+You are in the east end of a large temple. In front of you is what appears to be an altar.
+
+There is a large black book here.
+
+There are two candles here.
+
+--------------------------------------------------------------------------------
+id: 1785255063970
+parent-id: 1785255063969
+command: get book and candles
+--------------------------------------------------------------------------------
+> get book and candles
+The black book: You take the black book.
+
+The pair of candles: You take the pair of candles.
+
+--------------------------------------------------------------------------------
+id: 1785255063971
+parent-id: 1785255063970
+command: w, w, e, s, d
+--------------------------------------------------------------------------------
+> w, w, e, s, d
+West: You walk west.
+
+[0m[1mTemple[0m
+You are in the west end of a large temple. On the south wall is an ancient inscription, probably a prayer in a long-forgotten language. The north wall is solid granite. The entrance at the west end of the room is through huge marble pillars.
+
+West: You walk west.
+
+[0m[1mGrail Room[0m
+You are standing in a small circular room with a pedestal. A set of stairs leads up, and passages leave to the east and west.
+
+Your sword is glowing with a faint blue glow.
+
+East: You walk east.
+
+[0m[1mNarrow Crawlway[0m
+You are in a narrow crawlway. The crawlway leads from north to south. However the south passage divides to the south and southwest.
+
+Your sword is no longer glowing.
+
+South: You walk south.
+
+[0m[1mCave[0m
+You are in a tiny cave with entrances west and north, and a dark, forbidding staircase leading down.
+
+Down: You climb down.
+
+[0m[1mEntrance to Hades[0m
+You are outside a large gateway, on which is inscribed:
+"Abandon every hope, all ye who enter here."
+The gate is open; through it you can see a desolation, with a pile of mangled corpses in one corner. Thousands of voices, lamenting some hideous fate, can be heard. The way through the gate is barred by evil spirits, who jeer at your attempts to pass.
+
+--------------------------------------------------------------------------------
+id: 1785255063972
+parent-id: 1785255063971
+command: open bottle
+--------------------------------------------------------------------------------
+> open bottle
+You open the glass bottle, revealing a quantity of water.
+
+--------------------------------------------------------------------------------
+id: 1785255063973
+parent-id: 1785255063972
+command: ring bell
+--------------------------------------------------------------------------------
+> ring bell
+Ding, dong.
+
+--------------------------------------------------------------------------------
+id: 1785342514340
+parent-id: 1785255063973
+command: light match
+--------------------------------------------------------------------------------
+> light match
+One of the matches starts to burn.
+
+--------------------------------------------------------------------------------
+id: 1785342514341
+parent-id: 1785342514340
+command: light candles with match
+--------------------------------------------------------------------------------
+> light candles with match
+The pair of candles is burning.
+
+--------------------------------------------------------------------------------
+id: 1785342514342
+parent-id: 1785342514341
+command: exorcise
+--------------------------------------------------------------------------------
+> exorcise
+There is a clap of thunder, and a voice echoes through the cavern: "Begone, fiends!" The spirits, sensing the presence of a greater power, flee through the walls.
+
+--------------------------------------------------------------------------------
+id: 1785342514343
+parent-id: 1785342514342
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mLand of the Living Dead[0m
+You have entered the Land of the Living Dead, a large desolate room. Although it is apparently uninhabited, you can hear the sounds of thousands of lost souls weeping and moaning. In the east corner are stacked the remains of dozens of previous adventurers who were less fortunate than yourself. To the east is an ornate passage, apparently recently constructed.
+
+[0m[4m(Your score has gone up by 30 points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785342514344
+parent-id: 1785342514343
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mTomb of the Unknown Implementer[0m
+You are in the Tomb of the Unknown Implementer. A hollow voice says: "That's not a bug, it's a feature!"
+
+There is a tomb here, made of the finest marble, and large enough for four headless corpses. On one end is the cryptic inscription:
+"Feel Free."
+
+There are four heads here, mounted securely on poles.
+
+Many empty Coke bottles are here. Alas, they can't hold water.
+
+There is an enormous stack of line-printer paper here. It is barely readable.
+
+--------------------------------------------------------------------------------
+id: 1785342514345
+parent-id: 1785342514344
+command: score
+--------------------------------------------------------------------------------
+> score
+[0m[4mYou currently have 251 points.
+[0m
+--------------------------------------------------------------------------------
+id: 1785342514346
+parent-id: 1785342514345
+command: diagnose
+--------------------------------------------------------------------------------
+> diagnose
+You are in perfect health. You are strong enough to take several wounds.
+

@@ -253,7 +253,7 @@
 (name *)	machine
 (container *)
 (openable *)
-(dict *)	pdp10 dryer lid machi machine
+(dict *)	pdp10 dryer lid
 (* capacity is 50)
 %% TODO: object action routine MACHINE-FUNCTION
 
@@ -262,7 +262,6 @@
 (* is #in #machine-room1)
 (name *)	switch
 (scenery *)
-(dict *)	switc mswit switch
 %% TODO: object action routine MSWITCH-FUNCTION
 
 %% COAL
@@ -271,7 +270,7 @@
 (name *)	small pile of coal
 (item *)
 (flammable *)
-(dict *)	heap charc coal small pile
+(dict *)	heap charcoal
 (* size is 20)
 (appearance *)
 	There is a small heap of coal here.
@@ -283,7 +282,7 @@
 (container *)
 (openable *)
 ~(opaque *)
-(dict *)	cage dumbw baske tbask basket
+(dict *)	cage dumbwaiter
 (* capacity is 50)
 (appearance *)
 	At the end of the chain is a basket.
@@ -293,7 +292,7 @@
 #fbask
 (* is #in #lower-shaft)
 (name *)	FBASK
-(dict *)	cage dumbw baske fbask
+(dict *)	cage dumbwaiter
 %% TODO: object action routine DUMBWAITER
 
 %% BRACE
@@ -301,7 +300,7 @@
 (* is #in #gas-room)
 (name *)	sapphire bracelet
 (item *)
-(dict *)	jewel sapph brace sapphire bracelet
+(dict *)	jewel brace 
 (* size is 10)
 (* awards 5 points on first take)
 (* awards 3 points on return)

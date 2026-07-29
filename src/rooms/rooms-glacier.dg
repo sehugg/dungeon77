@@ -48,7 +48,8 @@
     (now) (#torch is #in #stream)
     (now) (#glacier is nowhere)
     (now) (glacier-flag)
-    (if) ~(room is lit) (then)
+    (current room $room)
+    (if) ~($room is lit) (then)
         (par)
         The melting glacier seems to have carried the torch away, leaving
         you in the dark.

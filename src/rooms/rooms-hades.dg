@@ -1,19 +1,29 @@
 
+~(lld-flag)
+
 %% LLD1
 #entrance-to-hades
 (room *)
 (name *)	Entrance to Hades
 (look *)
-	%% TODO: description comes from room routine LLD-ROOM
+	You are outside a large gateway, on which is inscribed:(line)
+        "Abandon every hope, all ye who enter here."(line)
+	The gate is open; through it you can see a desolation, with a pile of
+	mangled corpses in one corner.  Thousands of voices, lamenting some
+	hideous fate, can be heard.
+	(if)~(lld-flag)(then)
+		The way through the gate is barred by evil spirits, who jeer at your
+		attempts to pass.
+	(endif)
 %% TODO: room action routine LLD-ROOM
 (from * go #east to #land-of-the-living-dead)
+%% TODO: conditional on flag LLD-FLAG
+(from * go #up to #cave2)
+(from * go #in to #land-of-the-living-dead)
 %% TODO: conditional on flag LLD-FLAG
 (prevent [from * go #east])
 	~(lld-flag)
 		Some invisible force prevents you from passing through the gate.
-(from * go #up to #cave2)
-(from * go #in to #land-of-the-living-dead)
-%% TODO: conditional on flag LLD-FLAG
 (prevent [from * go #in])
 	~(lld-flag)
 		Some invisible force prevents you from passing through the gate.
@@ -24,7 +34,17 @@
 (name *)	Land of the Living Dead
 (* awards 30 points on first visit)
 (look *)
-	%% TODO: description comes from room routine LLD2-ROOM
+	You have entered the Land of the Living Dead, a large desolate room.
+	Although it is apparently uninhabited, you can hear the sounds of
+	thousands of lost souls weeping and moaning.  In the east corner are
+	stacked the remains of dozens of previous adventurers who were less
+	fortunate than yourself.  To the east is an ornate passage,
+	apparently recently constructed.
+	(if)(on-pole)(then)
+		Amid the desolation, you spot what
+		appears to be your head, at the end of a long pole.
+	(endif)
+
 %% TODO: room action routine LLD2-ROOM
 (from * go #east to #tomb-of-the-unknown-implementer)
 (from * go #out to #entrance-to-hades)
@@ -46,18 +66,18 @@
 (* is #in #tomb-of-the-unknown-implementer)
 (name *)	tomb
 (readable *)
-(dict *)	grave tomb
+(dict *)	grave
 (appearance *)
 	There is a tomb here, made of the finest marble, and large enough for
-	four headless corpses. On one end is the cryptic inscription: "Feel
-	Free."
+	four headless corpses. On one end is the cryptic inscription:(line)
+	"Feel Free."
 (descr *)
 	Here lie the implementers, whose heads were placed on poles by the
 	Keeper of the Dungeon for amazing untastefulness.
 %% TODO: object action routine HEAD-FUNCTION
 
 %% HEADS
-#set-of-poled-heads
+#poled-heads
 (* is #in #tomb-of-the-unknown-implementer)
 (name *)	set of poled heads
 (* is sacred)
@@ -67,7 +87,7 @@
 %% TODO: object action routine HEAD-FUNCTION
 
 %% COKES
-#bunch-of-coke-bottles
+#coke-bottles
 (* is #in #tomb-of-the-unknown-implementer)
 (name *)	bunch of Coke bottles
 (item *)
@@ -97,29 +117,99 @@
 	once contained useful information, almost nothing can be distinguished
 	now.
 (descr *)
-    <DEFINE FEEL-FREE \(LOSER\)
-        <TELL \"FEEL FREE, CHOMPER!\">>
-            ...
+    <DEFINE FEEL-FREE \(LOSER\)(line)
+        <TELL \"FEEL FREE, CHOMPER!\">>(line)
+            ...(line)
     The rest is, alas, unintelligible \(as were the implementers\).
 
 %% GHOST
 #ghost
 (* is #in #entrance-to-hades)
 (name *)	GHOST
-(dict *)	spiri fiend ghost
+(dict *)	spirit fiend ghost
 %% TODO: object action routine GHOST-FUNCTION
 
 %% CORPS
 #corpses
 (* is #in #entrance-to-hades)
 (name *)	corpses
-(dict *)	mangl corps corpses
+(dict *)	mangled corpse
 
 %% BODIE
 #pile-of-bodies
 (* is #in #land-of-the-living-dead)
 (name *)	pile of bodies
 (scenery *)
-(dict *)	body corps bodie pile bodies
+(dict *)	corpse corpses body bodies
 %% TODO: object action routine BODY-FUNCTION
 
+%%% Exorcism
+
+(grammar [exorcise] for itself)
+
+(perform [exorcise])
+	(#ghost is in scope)
+	(#bell is in scope)
+	(#book is in scope)
+	(#candles is in scope)
+	(#candles is burning)
+	There is a clap of thunder, and a voice echoes through the cavern: 
+	"Begone, fiends!"  The spirits, sensing the presence of a greater
+	power, flee through the walls.
+	(now)(#ghost is nowhere)
+	(now)(lld-flag)
+
+(perform [exorcise])
+	You are not equipped for an exorcism.
+
+%%% Matches
+
+(global variable (match-timer 0))
+
+#matchbook
+(perform [burn *])
+	One of the matches starts to burn.
+	(now)(* is burning)
+	(now)(match-timer 2)
+
+(on every tick)
+	(match-timer $timer)
+	($timer > 0)
+	($timer minus 1 into $newtimer)
+	(now)(match-timer $timer)
+	($newtimer = 0)
+	The match has gone out.
+	%% TODO: limited # of matches
+
+%%% Candles
+
+(perform [burn $Flammable with $Lit])
+ 	(flammable $Flammable)
+	($Lit is burning)
+	(The $Flammable) (is $Flammable) burning.
+	(now)($Flammable is burning)
+
+%% TODO: candle light source, dimming, etc
+
+%%% Tomb
+
+(perform [attack #coke-bottles])
+	Congratulations!  You've managed to break all those bottles.
+	Fortunately for your feet, they were made of magic glass and disappear
+	immediately.
+	(now)(#coke-bottles is nowhere)
+
+(perform [attack/feel/take #tomb/#poled-heads])
+	Although the implementers are dead, they foresaw that some cretin
+	would tamper with their remains.  Therefore, they took steps to
+	prevent this.
+	(par)
+	Unfortunately, we've run out of poles.  Therefore, in punishment for
+	your most grievous sin, we shall deprive you of all your valuables,
+	and of your life.
+	(exhaust) {
+		*(treasure $obj)
+		{ ($obj is #in #trophy-case) (or) ($obj is #heldby #player) }
+		(now)($obj is #in #tomb-of-the-unknown-implementer)
+	}
+	(jigs up)
