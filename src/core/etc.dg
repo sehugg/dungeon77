@@ -1,5 +1,14 @@
 
-%% TODO: "valuables" or "treasures" as "all"
+%% PUT LOOT IN CASE
+(parse basic noun [treasure/treasures/valuables/loot] as $Result (nonempty $Policy) 1)
+	(just)
+	(collect $Obj)
+		*($Obj is in scope)
+        (treasure $Obj)
+		~(excluded from all $Obj)
+		~($Obj is hidden)
+		(verify object policy $Policy $Obj)
+	(into $Result)
 
 (rewrite [say | $Words] into $result)
 	(append [talk to myself about] $Words $result)

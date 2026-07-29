@@ -20,8 +20,40 @@ label: START
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 89: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 232: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/rooms-volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 39: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 47: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 47: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 55: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 246: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
+[0m
+
+[0m[1mDungeon
+[0mA Computerized Fantasy Simulation by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling.
+Release 1. Serial number DEBUG.
+Dialog Interactive Debugger (dgdebug) version 1c/02. Library version 1.2.2. Debugging extension 1.2.2-dev.
+
+[0m[1mWest of House[0m
+You are in an open field west of a big white house, with a boarded front door.
+
+There is a small mailbox here.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[1m[36mWarning:[0m[36m Object #grating2 was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #cross was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #launch was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #land was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 456: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 661: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-glacier.dg, line 51: Possible typo: A query is made to '(room is lit)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-hades.dg, line 12: Possible typo: A query is made to '(lld-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-machine.dg, line 37: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-maze.dg, line 156: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 89: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 232: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/rooms-volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 48: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 56: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 246: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
 [0m
 
@@ -1149,8 +1181,6 @@ You climb down through the trap door.
 [0m[1mCellar[0m
 You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
 
-The trap door crashes shut, and you hear someone barring it.
-
 --------------------------------------------------------------------------------
 id: 1785255063874
 parent-id: 1785255063873
@@ -1637,5 +1667,27 @@ parent-id: 1785255063936
 command: u
 --------------------------------------------------------------------------------
 > u
-The trap door has been barred from the other side.
+You climb up.
 
+[0m[1mLiving Room[0m
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a rug lying beside an open trap-door.
+
+There is a trophy case here.
+In the trophy case are a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
+
+--------------------------------------------------------------------------------
+id: 1785255063943
+parent-id: 1785255063937
+command: put loot in case
+--------------------------------------------------------------------------------
+> put loot in case
+The crystal trident: You put the crystal trident in the trophy case.
+
+The platinum bar: You put the platinum bar in the trophy case.
+
+The grail: You put the grail in the trophy case.
+
+The chalice: You put the chalice in the trophy case.
+
+[0m[4m(Your score has gone up by 36 points.)
+[0m

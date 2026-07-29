@@ -9,6 +9,8 @@
     steep metal ramp which is unclimbable.
 (from * go #east to #troll-room)
 (from * go #south to #west-of-chasm)
+(from * go #up to #living-room)
+    (exit-found)
 (narrate failing to leave * #up)
     The trap door has been barred from the other side.
 (narrate failing to leave * #west)

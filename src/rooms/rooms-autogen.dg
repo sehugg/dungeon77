@@ -679,34 +679,22 @@
 (scenery *)
 (dict *)	switch
 
-%% VALUA
-#valuables
-(name *)	valuables
-(item *)
-(scenery *)
-(dict *)	treas valua valuables
-(treasure *)
-%% TODO: object action routine VALUABLES
-
 %% SAILO
 #sailor
 (name *)	sailor
 (scenery *)
-(dict *)	sailo sailor
 (treasure *)
 
 %% TEETH
 #set-of-teeth
 (name *)	set of teeth
 (scenery *)
-(dict *)	teeth set
 (treasure *)
 
 %% WALL
 #wall
 (name *)	wall
 (scenery *)
-(dict *)	wall
 (treasure *)
 
 %% HANDS
@@ -714,7 +702,7 @@
 (name *)	pair of hands
 (tool *)
 (scenery *)
-(dict *)	hand bare hands pair
+(dict *)	hand bare
 (treasure *)
 
 %% LUNGS
@@ -722,14 +710,14 @@
 (name *)	breath
 (tool *)
 (scenery *)
-(dict *)	lung air lungs breath
+(dict *)	lung air lungs breathe
 (treasure *)
 
 %% AVIAT
 #flyer
 (name *)	flyer
 (scenery *)
-(dict *)	aviat flyer
+(dict *)	aviator
 (treasure *)
 
 %% BAT
@@ -737,7 +725,7 @@
 (* is #in #bat-room)
 (name *)	bat
 (scenery *)
-(dict *)	vampi bat
+(dict *)	vampire
 %% TODO: object action routine FLY-ME
 
 %% POT

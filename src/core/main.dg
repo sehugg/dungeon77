@@ -45,6 +45,9 @@
 (interface ($<Room is bucket))
 (interface ($<Room is in the house))
 
+(treasure $Thing)
+    ($Thing awards $ points on return)
+
 #player
 (current player *)
 (descr *)

@@ -1,4 +1,6 @@
 
+~(exit-found)
+
 #west-of-house
 (name *)        West of House
 (room *)
@@ -360,6 +362,7 @@
 (narrate closing *)
     The door swings shut and closes.
 (after [leave #living-room #down])
+    ~(exit-found)
     (par)
     The trap door crashes shut, and you hear someone barring it.
     (now) (* is closed)
