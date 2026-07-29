@@ -46,9 +46,9 @@
     ~(mirror-mung)
     There is a rumble from deep within the earth and the room shakes.
     (if) (current room #mirror-room1) (then)
-        (now)(#player is #in #mirror-room2)
+        (move player to #in #mirror-room2)
     (else)
-        (now)(#player is #in #mirror-room1)
+        (move player to #in #mirror-room1)
     (endif)
 
 (perform [feel #mirror])

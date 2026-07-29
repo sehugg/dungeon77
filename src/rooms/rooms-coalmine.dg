@@ -253,7 +253,7 @@
 (name *)	machine
 (container *)
 (openable *)
-(dict *)	pdp10 dryer lid
+(dict *)	pdp10 dryer lid vax
 (* capacity is 50)
 %% TODO: object action routine MACHINE-FUNCTION
 
