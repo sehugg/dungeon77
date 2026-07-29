@@ -106,6 +106,7 @@
 (item *)
 (dict *)	candle
 (flammable *)
+(* timer is 40)
 (* size is 10)
 (appearance *)
 	There are two candles here.

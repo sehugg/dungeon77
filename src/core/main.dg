@@ -321,3 +321,9 @@
 (refuse [knock on $object])
 	Why knock on (a $object)?
 
+(refuse [attack $door])
+    (door $door)
+    (select)The door is invulnerable.
+    (or)You cannot damage this door.
+    (or)The door is still under warranty.
+    (at random)

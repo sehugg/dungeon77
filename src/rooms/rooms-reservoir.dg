@@ -1,4 +1,5 @@
 
+
 %% RESES
 #reservoir-south
 (room *)
@@ -6,7 +7,14 @@
 (inherently dark *)
 (* can be filled)
 (look *)
-	%% TODO: description comes from room routine RESERVOIR-SOUTH
+	(if) (low-tide) (then)
+		You are in the south end of a large cavernous room which was formerly
+		a reservoir.
+	(else)
+		You are at the south end of a large reservoir.
+	(endif)
+	There is a western exit, a passageway south, and a steep pathway
+	climbing up along the edge of a cliff.
 %% TODO: room action routine RESERVOIR-SOUTH
 (from * go #south to #deep-ravine)
 %% TODO: conditional on flag EGYPT-FLAG
@@ -15,17 +23,14 @@
 		The coffin will not fit through this passage.
 (from * go #west to #stream)
 (from * go #cross to #reservoir-north)
-%% TODO: conditional on flag LOW-TIDE
 (prevent [from * go #cross])
 	~(low-tide)
 		You are not equipped for swimming.
 (from * go #north to #reservoir-north)
-%% TODO: conditional on flag LOW-TIDE
 (prevent [from * go #north])
 	~(low-tide)
 		You are not equipped for swimming.
 (from * go #up to #deep-canyon)
-%% TODO: conditional on flag EGYPT-FLAG
 (prevent [from * go #up])
 	~(egypt-flag)
 		The stairs are too steep for carrying the coffin.
@@ -37,16 +42,20 @@
 (inherently dark *)
 (* can be filled)
 (look *)
-	%% TODO: description comes from room routine RESERVOIR-NORTH
+	(if) (low-tide) (then)
+		You are in the north end of a large cavernous room which was formerly
+		a reservoir.
+	(else)
+		You are at the north end of a large reservoir.
+	(endif)
+	There is a tunnel leaving the room to the north.
 %% TODO: room action routine RESERVOIR-NORTH
 (from * go #north to #atlantis-room)
 (from * go #cross to #reservoir-south)
-%% TODO: conditional on flag LOW-TIDE
 (prevent [from * go #cross])
 	~(low-tide)
 		You are not equipped for swimming.
 (from * go #south to #reservoir-south)
-%% TODO: conditional on flag LOW-TIDE
 (prevent [from * go #south])
 	~(low-tide)
 		You are not equipped for swimming.

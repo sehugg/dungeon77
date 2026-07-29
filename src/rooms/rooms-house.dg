@@ -412,21 +412,16 @@
     (else)
         There is a brass lantern \(battery-powered\) here.
     (endif)
-(global variable (lamp charge level is 325))
 (* provides light)
     (* is on)
-(on every tick)
+(* timer running)
     (* is on)
-    (lamp charge level is $level)
-    ($level > 0)
-    ($level minus 1 into $newlevel)
-    (now)(lamp charge level is $newlevel)
-    %% TODO: narrate dimmer
-    ($newlevel = 0)
+(* timer is 325)
+(on * timeout)
     (now)(* is off)
     (par)I hope you have more light than from (a *).
 (prevent [switch on *])
-    (lamp charge level is 0)
+    (* timer is 0)
     The battery has died.
 
 #broken-lamp

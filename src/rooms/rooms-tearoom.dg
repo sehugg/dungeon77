@@ -153,9 +153,11 @@
 
 (perform [eat #eat-me-cake])
 	Suddenly, the room appears to have become very large.
-	*($item is #in #tea-room)
-	~($item is sacred)
-	(now)($item is #in #posts-room)
+	(exhaust) {
+		*($item is #in #tea-room)
+		~($item is sacred)
+		(now)($item is #in #posts-room)
+	}
 
 (perform [eat #cake-with-blue-icing])
 	~(current room #posts-room)
@@ -166,9 +168,11 @@
 
 (perform [eat #cake-with-blue-icing])
 	The room around you seems to be getting smaller.
-	*($item is #in #posts-room)
-	~($item is sacred)
-	(now)($item is #in #tea-room)
+	(exhaust) {
+		*($item is #in #posts-room)
+		~($item is sacred)
+		(now)($item is #in #tea-room)
+	}
 
 %%% Reading cake
 

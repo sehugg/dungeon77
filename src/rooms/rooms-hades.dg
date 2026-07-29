@@ -164,31 +164,6 @@
 
 %%% Matches
 
-(global variable (match-timer 0))
-
-#matchbook
-(perform [burn *])
-	One of the matches starts to burn.
-	(now)(* is burning)
-	(now)(match-timer 2)
-
-(on every tick)
-	(match-timer $timer)
-	($timer > 0)
-	($timer minus 1 into $newtimer)
-	(now)(match-timer $timer)
-	($newtimer = 0)
-	The match has gone out.
-	%% TODO: limited # of matches
-
-%%% Candles
-
-(perform [burn $Flammable with $Lit])
- 	(flammable $Flammable)
-	($Lit is burning)
-	(The $Flammable) (is $Flammable) burning.
-	(now)($Flammable is burning)
-
 %% TODO: candle light source, dimming, etc
 
 %%% Tomb

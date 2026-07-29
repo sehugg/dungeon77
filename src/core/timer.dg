@@ -1,0 +1,68 @@
+
+(interface (on $object timeout))
+(interface ($object timer running))
+(interface ($object timer is $ticks))
+
+(on every tick)
+    (exhaust) {
+        *($object timer running)
+        ($object timer is $ticks)
+        ($ticks > 0)
+        ($ticks minus 1 into $newticks)
+        (now) ($object timer is $newticks)
+        ($newticks = 0)
+        *(on $object timeout)
+    }
+
+%%% Flammables
+
+(descr $Flammable)
+ 	(flammable $Flammable)
+    ($Flammable is burning)
+    (The $Flammable) (is $Flammable) burning.
+
+(perform [burn $Flammable with $Lit])
+ 	(flammable $Flammable)
+ 	($Lit is burning)
+    ($Flammable timer is $)
+    (now) ($Flammable timer running)
+    (narrate $Flammable starting to burn)
+
+(perform [burn $Flammable with $Lit])
+ 	(flammable $Flammable)
+ 	($Lit is burning)
+    (now) ($Flammable is nowhere)
+    (narrate $Flammable burned up)
+
+($Flammable is burning)
+ 	(flammable $Flammable)
+	($Flammable timer running)
+
+(on $Flammable timeout)
+ 	(flammable $Flammable)
+	($Flammable is in scope)
+    (narrate $Flammable no longer burning)
+
+(narrate $Flammable burned up)
+    (The $Flammable) catches fire and is consumed.
+
+(narrate $Flammable starting to burn)
+	(The $Flammable) (is $Flammable) burning.
+
+(narrate $Flammable no longer burning)
+	(The $Flammable) has gone out.
+
+(prevent [burn $Flammable])
+ 	~(flammable $Flammable)
+    I don't think you can burn (a $Flammable).
+
+(prevent [burn $Flammable with $])
+ 	~(flammable $Flammable)
+    I don't think you can burn (a $Flammable).
+
+(prevent [burn $Flammable with $Lit])
+ 	(flammable $Flammable)
+ 	~($Lit is burning)
+    You have to light (the $Flammable) with something that's burning, you know.
+
+
