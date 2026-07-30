@@ -128,7 +128,8 @@
 (from * go #west to #sandy-beach)
 (narrate failing to leave * #land)
 	Specify the direction to land.
-(after [enter *])
+
+(enter *)
 	(buoy-flag)
 	Something seems funny about the feel of the buoy.
 	(now) ~(buoy-flag)

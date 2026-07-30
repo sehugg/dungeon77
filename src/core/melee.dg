@@ -124,6 +124,7 @@
     ($defender combat strength is $defender-strength)
     ($attacker-strength > 0)
     ($defender-strength > 0)
+    (now) ($defender is fighting)
     (if)($defender weakness is $weapon)(then)
         ($attacker-strength plus 1 into $adjusted-attacker-strength)
     (else)

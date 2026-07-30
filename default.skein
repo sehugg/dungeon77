@@ -295,6 +295,7 @@ command: e
 You walk east.
 
 [0m[1mRound room[0m
+You are in a circular room with passages off in eight directions. Your compass needle spins wildly, and you can't get your bearings.
 
 There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
 
@@ -525,7 +526,7 @@ parent-id: 1785255063780
 command: w
 --------------------------------------------------------------------------------
 > w
-You walk west.
+You walk west. As you enter, your compass starts spinning wildly.
 
 [0m[1mLow Room[0m
 You are in a room with a low ceiling which is circular in shape. There are exits to the east and the southeast.
@@ -800,6 +801,7 @@ command: n
 You walk north.
 
 [0m[1mRound room[0m
+You are in a circular room with passages off in eight directions.
 
 There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
 
@@ -1199,6 +1201,7 @@ command: e
 You walk east.
 
 [0m[1mRound room[0m
+You are in a circular room with passages off in eight directions.
 
 There is a dented iron box here.
 
@@ -1240,6 +1243,7 @@ command: w
 You walk west.
 
 [0m[1mRound room[0m
+You are in a circular room with passages off in eight directions.
 
 There is a dented iron box here.
 
@@ -1489,6 +1493,7 @@ command: s
 You walk south.
 
 [0m[1mRound room[0m
+You are in a circular room with passages off in eight directions.
 
 There is a dented iron box here.
 
@@ -1840,6 +1845,7 @@ command: e
 You walk east.
 
 [0m[1mRound room[0m
+You are in a circular room with passages off in eight directions.
 
 There is a dented iron box here.
 

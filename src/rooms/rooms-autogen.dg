@@ -4,6 +4,7 @@
 ~(riddle-flag)
 ~(dome-flag)
 ~(echo-flag)
+~(bat-disabled)
 
 (light-load)
 	(current player $Player)
@@ -136,6 +137,7 @@
 	You are in a tiny cave with entrances west and north, and a dark,
 	forbidding staircase leading down.
 %% TODO: room action routine CAVE2-ROOM
+%% The cave is very windy at the moment and your candles have blown out.
 (from * go #north to #narrow-crawlway)
 (from * go #west to #mirror-room2)
 (from * go #down to #entrance-to-hades)
@@ -210,10 +212,23 @@
 (name *)	Bat Room
 (inherently dark *)
 (look *)
-	%% TODO: description comes from room routine BATS-ROOM
-%% TODO: room action routine BATS-ROOM
+	You are in a small room which has only one door, to the east.
+	(if) (bat-disabled) (then)
+	In the corner of the room on the ceiling is a large vampire bat who
+	is obviously deranged and holding his nose.
+	(endif)
 (from * go #east to #squeaky-room)
 (notice #bat)
+
+(bat-disabled)
+	(#garlic is nested #in *)
+
+(enter *)
+	~(bat-disabled)
+	A deranged giant vampire bat \(a reject from WUMPUS\) swoops down
+	from his belfry and lifts you away....
+	(randomly select $Room from [#coalmine1 #coalmine2 #coalmine3 #coalmine4 #coalmine5 #coalmine6 #coalmine7 #ladder-top #ladder-bottom])
+	(move player to #in $Room)
 
 %% DOME
 #dome-room
@@ -279,7 +294,10 @@
 (name *)	Round room
 (inherently dark *)
 (look *)
-	%% TODO: description comes from room routine CAROUSEL-ROOM
+	You are in a circular room with passages off in eight directions.
+	(if) ~(carousel-flip) (then)
+		Your compass needle spins wildly, and you can't get your bearings.
+	(endif)
 %% TODO: room action routine CAROUSEL-ROOM
 (from * go #north to #engravings-cave)
 %% TODO: conditional on flag CAROUSEL-FLIP

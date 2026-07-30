@@ -1,6 +1,6 @@
 
-(carousel-zoom)
-(carousel-flip)
+~(carousel-zoom)
+~(carousel-flip)
 
 %% CMACH
 #machine-room2
@@ -31,7 +31,7 @@
 (look *)
 	You are in a room with a low ceiling which is circular in shape. 
 	There are exits to the east and the southeast.
-(after [enter *])
+(enter *)
 	(carousel-flip)
 	As you enter, your compass starts spinning wildly.
 	(carousel-zoom)
