@@ -21,10 +21,10 @@
 (from * go #up to #cave2)
 (from * go #in to #land-of-the-living-dead)
 %% TODO: conditional on flag LLD-FLAG
-(prevent [from * go #east])
+(prevent [leave * #east])
 	~(lld-flag)
 		Some invisible force prevents you from passing through the gate.
-(prevent [from * go #in])
+(prevent [leave * #in])
 	~(lld-flag)
 		Some invisible force prevents you from passing through the gate.
 

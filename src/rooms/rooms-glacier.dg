@@ -14,7 +14,7 @@
 (from * go #north to #stream)
 (from * go #east to #egyptian-room)
 (from * go #west to #ruby-room)
-(prevent [from * go #west])
+(prevent [leave * #west])
 	~(glacier-flag)
     You can't go that way.
 

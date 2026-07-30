@@ -207,7 +207,7 @@
 (from * go #north to #ladder-bottom)
 (from * go #southwest to #lower-shaft)
 %% TODO: conditional on flag EMPTY-HANDED
-(prevent [from * go #southwest])
+(prevent [leave * #southwest])
 	~(empty-handed)
 		You cannot fit through this passage with that load.
 
@@ -225,12 +225,12 @@
 (from * go #east to #machine-room1)
 (from * go #out to #timber-room)
 %% TODO: conditional on flag EMPTY-HANDED
-(prevent [from * go #out])
+(prevent [leave * #out])
 	~(empty-handed)
 		You cannot fit through this passage with that load.
 (from * go #northeast to #timber-room)
 %% TODO: conditional on flag EMPTY-HANDED
-(prevent [from * go #northeast])
+(prevent [leave * #northeast])
 	~(empty-handed)
 		You cannot fit through this passage with that load.
 (narrate failing to leave * #up)

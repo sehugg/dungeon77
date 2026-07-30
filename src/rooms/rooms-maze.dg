@@ -276,10 +276,12 @@
 	(else)
 		There is a rusty knife here.
 	(endif)
+
 (after [take *])
     (#sword is in scope)
     As you pick up the rusty knife, your sword gives a single pulse
     of blinding blue light.
+
 (instead of [attack $victim with *])
     (villain $victim)
     As the knife approaches its victim, your mind is submerged by an

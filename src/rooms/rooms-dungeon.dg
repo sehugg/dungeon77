@@ -81,7 +81,7 @@
 (* is #heldby #thief)
 (name *)	stilletto
 (weapon *)
-(dict *)	vicious still
+(dict *)	vicious still stiletto knife
 (* size is 10)
 (appearance *)
 	There is a vicious-looking stilletto here.

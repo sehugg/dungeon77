@@ -12,7 +12,7 @@
     ($NumItems < 3)
 
 (egypt-flag)
-	(#coffin is #heldby #player)
+	(#gold-coffin is #heldby #player)
 
 %% ==================================================================
 %% Rooms
@@ -70,7 +70,7 @@
 (from * go #up to #glacier-room)
 (from * go #south to #volcano-view)
 (from * go #east to #rocky-crawl)
-(prevent [from * go #east])
+(prevent [leave * #east])
 	~(egypt-flag)
 		The passage is too narrow to accomodate coffins.
 
@@ -226,7 +226,7 @@
 (from * go #east to #rocky-crawl)
 (from * go #down to #torch-room)
 %% TODO: conditional on flag DOME-FLAG
-(prevent [from * go #down])
+(prevent [leave * #down])
 	~(dome-flag)
 		You cannot go down without fracturing many bones.
 (notice #railing)
@@ -283,49 +283,22 @@
 %% TODO: room action routine CAROUSEL-ROOM
 (from * go #north to #engravings-cave)
 %% TODO: conditional on flag CAROUSEL-FLIP
-(prevent [from * go #north])
-	~(carousel-flip)
-		You can't go that way.
 (from * go #south to #engravings-cave)
 %% TODO: conditional on flag CAROUSEL-FLIP
-(prevent [from * go #south])
-	~(carousel-flip)
-		You can't go that way.
 (from * go #east to #grail-room)
 %% TODO: conditional on flag CAROUSEL-FLIP
-(prevent [from * go #east])
-	~(carousel-flip)
-		You can't go that way.
 (from * go #west to #east-west-passage)
 %% TODO: conditional on flag CAROUSEL-FLIP
-(prevent [from * go #west])
-	~(carousel-flip)
-		You can't go that way.
 (from * go #northwest to #deep-canyon)
 %% TODO: conditional on flag CAROUSEL-FLIP
-(prevent [from * go #northwest])
-	~(carousel-flip)
-		You can't go that way.
 (from * go #northeast to #north-south-passage)
 %% TODO: conditional on flag CAROUSEL-FLIP
-(prevent [from * go #northeast])
-	~(carousel-flip)
-		You can't go that way.
 (from * go #southeast to #winding-passage)
 %% TODO: conditional on flag CAROUSEL-FLIP
-(prevent [from * go #southeast])
-	~(carousel-flip)
-		You can't go that way.
 (from * go #southwest to #maze1)
 %% TODO: conditional on flag CAROUSEL-FLIP
-(prevent [from * go #southwest])
-	~(carousel-flip)
-		You can't go that way.
 (from * go #out to #cold-passage)
 %% TODO: conditional on flag CAROUSEL-FLIP
-(prevent [from * go #out])
-	~(carousel-flip)
-		You can't go that way.
 
 %% PASS5
 #north-south-passage
@@ -423,7 +396,7 @@
 (from * go #down to #engravings-cave)
 (from * go #east to #pearl-room)
 %% TODO: conditional on flag RIDDLE-FLAG
-(prevent [from * go #east])
+(prevent [leave * #east])
 	~(riddle-flag)
 		Your way is blocked by an invisible force.
 (notice #door5)
@@ -458,7 +431,7 @@
 (from * go #north to #north-south-crawlway)
 (from * go #northwest to #gallery)
 (from * go #up to #kitchen)
-(prevent [from * go #up])
+(prevent [leave * #up])
 	~(light-load)
 		The chimney is too narrow for you and all of your baggage.
 
@@ -549,6 +522,7 @@
 (* is #in #ruby-room)
 (name *)	ruby
 (item *)
+(dict *)	moby
 (* awards 15 points on first take)
 (* awards 8 points on return)
 (appearance *)

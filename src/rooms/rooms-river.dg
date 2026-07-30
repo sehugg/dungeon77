@@ -1,4 +1,6 @@
 
+(buoy-flag)
+
 %% DOCK
 #dam-base
 (room *)
@@ -85,7 +87,7 @@
 %% TODO: room action routine CLIFF-FUNCTION
 (from * go #south to #white-cliffs-beach2)
 %% TODO: conditional on flag DEFLATE
-(prevent [from * go #south])
+(prevent [leave * #south])
 	~(deflate)
 		The path is too narrow.
 (from * go #launch to #frigid-river3)
@@ -102,7 +104,7 @@
 %% TODO: room action routine CLIFF-FUNCTION
 (from * go #north to #white-cliffs-beach1)
 %% TODO: conditional on flag DEFLATE
-(prevent [from * go #north])
+(prevent [leave * #north])
 	~(deflate)
 		The path is too narrow.
 (from * go #launch to #frigid-river4)
@@ -119,7 +121,6 @@
 	The river is running faster here and the sound ahead appears to be that
 	of rushing water. On the west shore is a sandy beach. A small area of
 	beach can also be seen below the Cliffs.
-%% TODO: room action routine RIVR4-ROOM
 (narrate failing to leave * #up)
 	You cannot go upstream due to strong currents.
 (from * go #down to #frigid-river5)
@@ -127,6 +128,10 @@
 (from * go #west to #sandy-beach)
 (narrate failing to leave * #land)
 	Specify the direction to land.
+(after [enter *])
+	(buoy-flag)
+	Something seems funny about the feel of the buoy.
+	(now) ~(buoy-flag)
 
 %% RIVR5
 #frigid-river5
@@ -140,7 +145,7 @@
 	The sound of rushing water is nearly unbearable here. On the west shore
 	is a large landing area.
 (from * go #land to #shore)
-(narrate failing to leave * #down)
+(prevent [leave * #down])
 	(went over falls)
 
 %% FANTE
@@ -227,7 +232,7 @@
 (from * go #east/#up to #rainbow-room)
 	(rainbow is solid)
 
-(narrate failing to leave * #down)
+(prevent [leave * #down])
 	(went over falls)
 
 (went over falls)

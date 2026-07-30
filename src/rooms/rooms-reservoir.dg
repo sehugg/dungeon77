@@ -18,20 +18,20 @@
 	There is a western exit, a passageway south, and a steep pathway
 	climbing up along the edge of a cliff.
 (from * go #south to #deep-ravine)
-(prevent [from * go #south])
+(prevent [leave * #south])
 	~(egypt-flag)
 		The coffin will not fit through this passage.
 (from * go #west to #stream)
 (from * go #cross to #reservoir-north)
-(prevent [from * go #cross])
+(prevent [leave * #cross])
 	~(low-tide)
 		You are not equipped for swimming.
 (from * go #north to #reservoir-north)
-(prevent [from * go #north])
+(prevent [leave * #north])
 	~(low-tide)
 		You are not equipped for swimming.
 (from * go #up to #deep-canyon)
-(prevent [from * go #up])
+(prevent [leave * #up])
 	~(egypt-flag)
 		The stairs are too steep for carrying the coffin.
 
@@ -53,11 +53,11 @@
 	There is a tunnel leaving the room to the north.
 (from * go #north to #atlantis-room)
 (from * go #cross to #reservoir-south)
-(prevent [from * go #cross])
+(prevent [leave * #cross])
 	~(low-tide)
 		You are not equipped for swimming.
 (from * go #south to #reservoir-south)
-(prevent [from * go #south])
+(prevent [leave * #south])
 	~(low-tide)
 		You are not equipped for swimming.
 

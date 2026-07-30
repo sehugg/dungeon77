@@ -29,48 +29,35 @@
 (name *)	Low Room
 (inherently dark *)
 (look *)
-	%% TODO: description comes from room routine MAGNET-ROOM
+	You are in a room with a low ceiling which is circular in shape. 
+	There are exits to the east and the southeast.
+(after [enter *])
+	(carousel-flip)
+	As you enter, your compass starts spinning wildly.
+	(carousel-zoom)
+	According to Prof. TAA of MIT Tech, the rapidly changing magnetic
+	fields in the room are so intense as to cause you to be electrocuted. 
+	I really don't know, but in any event, something just killed you.
 %% TODO: room action routine MAGNET-ROOM
 (from * go #north to #machine-room2)
 %% TODO: conditional on flag FROBOZZ
-(prevent [from * go #north])
-	~(frobozz)
-		You can't go that way.
 (from * go #south to #machine-room2)
 %% TODO: conditional on flag FROBOZZ
-(prevent [from * go #south])
-	~(frobozz)
-		You can't go that way.
 (from * go #west to #machine-room2)
 %% TODO: conditional on flag FROBOZZ
-(prevent [from * go #west])
-	~(frobozz)
-		You can't go that way.
 (from * go #northeast to #machine-room2)
 %% TODO: conditional on flag FROBOZZ
-(prevent [from * go #northeast])
-	~(frobozz)
-		You can't go that way.
 (from * go #northwest to #tea-room)
 %% TODO: conditional on flag FROBOZZ
-(prevent [from * go #northwest])
-	~(frobozz)
-		You can't go that way.
 (from * go #southwest to #tea-room)
 %% TODO: conditional on flag FROBOZZ
-(prevent [from * go #southwest])
-	~(frobozz)
-		You can't go that way.
 (from * go #southeast to #tea-room)
 %% TODO: conditional on flag FROBOZZ
-(prevent [from * go #southeast])
-	~(frobozz)
-		You can't go that way.
 (from * go #east to #machine-room2)
 %% TODO: conditional on flag FROBOZZ
-(prevent [from * go #east])
-	~(frobozz)
-		You can't go that way.
+%%(prevent [leave * #east])
+%%	~(frobozz)
+%%		You can't go that way.
 
 %% CAGER
 #dingy-closet

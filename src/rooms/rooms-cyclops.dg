@@ -102,6 +102,7 @@
 (topic keyword @ulysses implies @odysseus)
 
 (instead of [talk to #player/#cyclops about @odysseus])
+	(current room #cyclops-room)
 	~(cyclops-flag)
 	The cyclops, hearing the name of his deadly nemesis, flees the room
 	by knocking down the wall on the north of the room.

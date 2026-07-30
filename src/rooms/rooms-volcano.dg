@@ -75,7 +75,7 @@
 (from * go #launch to #volcano-core2)
 (from * go #west to #volcano-bottom)
 %% TODO: conditional on flag GNOME-DOOR
-(prevent [from * go #west])
+(prevent [leave * #west])
 	~(gnome-door)
 		You can't go that way.
 (from * go #south to #library)
@@ -110,7 +110,7 @@
 (from * go #launch to #volcano-core4)
 (from * go #west to #volcano-bottom)
 %% TODO: conditional on flag GNOME-DOOR
-(prevent [from * go #west])
+(prevent [leave * #west])
 	~(gnome-door)
 		You can't go that way.
 (from * go #south to #dusty-room)

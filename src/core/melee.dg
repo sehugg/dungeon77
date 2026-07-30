@@ -61,6 +61,12 @@
     (#troll is #in #troll-room)
     (#troll attacks #player with #axe)
 
+(on every tick)
+    (#thief is fighting)
+    (current player $room)
+    (#thief is #in $room)
+    (#thief attacks #player with #stilletto)
+
 (early on every tick)
     (exhaust) {
         *($victim is asleep)
