@@ -147,15 +147,27 @@
 (name *)	Grating Room
 (inherently dark *)
 (look *)
-	%% TODO: description comes from room routine MAZE-11
-%% TODO: room action routine MAZE-11
+	You are in a small room near the maze. There are twisty passages
+	in the immediate vicinity.
 (from * go #southwest to #maze11)
-(from * go #up to #clearing)
-%% TODO: conditional on flag KEY-FLAG
-(prevent [from * go #up])
-	~(key-flag)
-		The grating is locked
-(notice #grating2)
+(from * go #up through #grating to #clearing)
+(narrate failing to leave * #up)
+    The grating is locked.
+(notice #grating)
+
+(appearance #grating)
+    (current room #grating-room)
+    (if)(* is open)(then)
+        Above you is an open grating with sunlight pouring in.
+    (elseif)~(* is locked)(then)
+		Above you is a grating.
+    (else)
+        Above you is a grating locked with a skull-and-crossbones lock.
+    (endif)
+
+(narrate opening #grating)
+    (current room #grating-room)
+	The grating opens to reveal trees above you.
 
 %% MAZ12
 #maze12

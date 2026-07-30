@@ -2,9 +2,17 @@
 %% 144 rooms, 155 objects
 
 ~(riddle-flag)
-~(egypt-flag)
 ~(dome-flag)
 ~(echo-flag)
+
+(light-load)
+	(current player $Player)
+    (collect $C) *($C is #heldby $Player) (into $HeldList)
+    (length of $HeldList into $NumItems)
+    ($NumItems < 3)
+
+(egypt-flag)
+	(#coffin is #heldby #player)
 
 %% ==================================================================
 %% Rooms
@@ -62,7 +70,6 @@
 (from * go #up to #glacier-room)
 (from * go #south to #volcano-view)
 (from * go #east to #rocky-crawl)
-%% TODO: conditional on flag EGYPT-FLAG
 (prevent [from * go #east])
 	~(egypt-flag)
 		The passage is too narrow to accomodate coffins.
@@ -451,7 +458,6 @@
 (from * go #north to #north-south-crawlway)
 (from * go #northwest to #gallery)
 (from * go #up to #kitchen)
-%% TODO: conditional on flag LIGHT-LOAD
 (prevent [from * go #up])
 	~(light-load)
 		The chimney is too narrow for you and all of your baggage.

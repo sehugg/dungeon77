@@ -68,7 +68,6 @@
 (from * go #west to #forest3)
 (from * go #south to #forest2)
 (from * go #down through #grating to #grating-room)
-    ~(#grating is #under #pile-of-leaves)
 (narrate failing to leave * #down)
     The grating is locked.
 
@@ -80,34 +79,38 @@
     There is a pile of leaves on the ground.
 (* is #in #clearing)
 (* size is 25)
+
+(perform [look #under *])
+    (grating appears)
+
 (after [take *])
-    A grating appears on the ground.
     (grating appears)
-(after [look #under *])
-    (#grating is #under #pile-of-leaves)
-    (grating appears)
-(instead of [burn *])
+
+(after [burn *])
     (* is #heldby #player)
+    (grating appears)
     The sight of someone carrying a pile of burning leaves so offends
     the neighbors that they come over and put you out.
-    (grating appears)
     (jigs up)
-(instead of [burn *])
-    (#grating is #under #pile-of-leaves)
+
+(after [burn *])
+    (#grating is hidden)
     The leaves burn and the neighbors start to complain.
     (grating appears)
+
 (grating appears)
-    (now)(#grating is #in #clearing)
+    (now)~(#grating is hidden)
+    A grating appears on the ground.
     (notice #grating)
-    
 
 #grating
 (name *)    grating
+(door *)
 (openable *)
 (lockable *)
 (* is hidden)
-(* is #under #pile-of-leaves)
 (appearance *)
+    (current room #clearing)
     (if)(* is open)(then)
         There is an open grating, descending into darkness.
     (else)

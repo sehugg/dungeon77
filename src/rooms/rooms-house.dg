@@ -164,6 +164,7 @@
 (room *)
 (* is sacred)
 (* is in the house)
+(* awards 10 points on first visit)
 (from * go #west to #living-room)
 (from * go #up to #attic)
 (look *)
@@ -176,10 +177,10 @@
     (else)
         closed.
     (endif)
+
 (prevent [go #down])
     (current room *)
     Only Santa Claus climbs down chimneys.
-(* awards 10 points on first visit)
 
 #sack
 (* is #in #kitchen)

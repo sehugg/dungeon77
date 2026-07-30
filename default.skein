@@ -1569,6 +1569,7 @@ command: se
 You walk southeast.
 
 [0m[1mReservoir North[0m
+You are in the north end of a large cavernous room which was formerly a reservoir. However, with the water level lowered, there is merely a wide stream running through the center of the room. There is a tunnel leaving the room to the north.
 
 There is a small pump here.
 
@@ -1989,7 +1990,7 @@ parent-id: 1785342514341
 command: exorcise
 --------------------------------------------------------------------------------
 > exorcise
-There is a clap of thunder, and a voice echoes through the cavern: "Begone, fiends!" The spirits, sensing the presence of a greater power, flee through the walls.
+There is a clap of thunder, and a voice echoes through the cavern: "Begone, fiends!" The spirits, sensing the presence of a greater power, flee through the walls. The match has gone out.
 
 --------------------------------------------------------------------------------
 id: 1785342514343
@@ -2030,7 +2031,7 @@ parent-id: 1785342514344
 command: score
 --------------------------------------------------------------------------------
 > score
-[0m[4mYou currently have 251 points.
+[0m[4mYou currently have 251 points out of a maximum of 500.
 [0m
 --------------------------------------------------------------------------------
 id: 1785342514346

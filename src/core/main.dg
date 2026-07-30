@@ -307,28 +307,28 @@
 
 %% Misc useless verbs
 
-(understand command [zork])
-(perform [zork])
+(understand [zork])
+(refuse [zork])
 	That word is replaced henceforth with DUNGEON.
 
-(understand command [dungeon])
-(perform [dungeon])
+(understand [dungeon])
+(refuse [dungeon])
 	At your service!
 
-(understand command [chomp/lose/barf])
-(perform [chomp])
+(understand [chomp/lose/barf] as [chomp])
+(refuse [chomp])
     I don't know how to do that.  I win in all cases!
 
-(understand command [frobozz])
-(perform [frobozz])
+(understand [frobozz])
+(refuse [frobozz])
     The FROBOZZ Corporation created, owns, and operates this dungeon.
 
-(understand command [win])
-(perform [win])
+(understand [win])
+(refuse [win])
     Naturally!
 
 (understand [yell/scream/shout] as [yell])
-(perform [yell])
+(refuse [yell])
     Aaaarrrrrrrrgggggggggggggghhhhhhhhhhhhhh!
 
 (understand [repent] as [repent])
@@ -348,4 +348,21 @@
     (select)The door is invulnerable.
     (or)You cannot damage this door.
     (or)The door is still under warranty.
+    (at random)
+
+(understand [pray] as [pray])
+(refuse [pray])
+    If you pray enough, your prayers may be answered.
+
+(understand [foo/bletch] as [jargon])
+(refuse [jargon])
+    Well, FOO, BAR, and BLETCH to you too!
+
+(understand [shit/fuck/damn] as [curse])
+(refuse [curse])
+    (select)Such language in a high-class establishment like this!
+    (or)You ought to be ashamed of yourself.
+    (or)Its not so bad.  You could have been killed already.
+    (or)Tough shit, asshole.
+    (or)Oh, dear.  Such language from a supposed winning adventurer!
     (at random)

@@ -24,6 +24,10 @@
 (from * go #west to #grail-room)
 (from * go #east to #altar)
 
+(perform [pray])
+	(current room *)
+	(move player to #in #forest1)
+
 %% TEMP2
 #altar
 (room *)

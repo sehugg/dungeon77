@@ -35,6 +35,9 @@
     How exactly are you going to melt (the $obj)?
     (tick) (stop)
 
+(perform [melt #glacier with #torch])
+    (try [throw #torch at #glacier])
+
 (perform [melt $ with $])
     That doesn't seem to work.
 
