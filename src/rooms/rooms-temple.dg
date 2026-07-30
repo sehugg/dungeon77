@@ -101,7 +101,11 @@
 	stick! Even unto the ends of the earth shalt thou wander and unto the
 	land of the dead shalt thou be sent at last. Surely thou shalt repent of
 	thy cunning.
-%% TODO: object action routine BLACK-BOOK
+%% object action routine BLACK-BOOK
+(refuse [burn *])
+	A booming voice says 'Wrong, cretin!' and you notice that you have
+	turned into a pile of dust.
+	(jigs up)
 
 %% CANDL
 #candles

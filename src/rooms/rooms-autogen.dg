@@ -236,8 +236,14 @@
 (name *)	Dome Room
 (inherently dark *)
 (look *)
-	%% TODO: description comes from room routine DOME-ROOM
-%% TODO: room action routine DOME-ROOM
+	You are at the periphery of a large dome, which forms the ceiling
+	of another room below.  Protecting you from a precipitous drop is a
+	wooden railing which circles the dome.
+	(if) (dome-flag) (then)
+		(par)
+		Hanging down from the railing is a rope which ends about ten feet
+		from the floor below.
+	(endif)
 (from * go #east to #rocky-crawl)
 (from * go #down to #torch-room)
 %% TODO: conditional on flag DOME-FLAG
@@ -245,6 +251,7 @@
 	~(dome-flag)
 		You cannot go down without fracturing many bones.
 (notice #railing)
+%% I'm afraid that the leap you attempted has done you in.
 
 %% MTORC
 #torch-room
@@ -252,8 +259,16 @@
 (name *)	Torch Room
 (inherently dark *)
 (look *)
-	%% TODO: description comes from room routine TORCH-ROOM
-%% TODO: room action routine TORCH-ROOM
+	You are in a large room with a prominent doorway leading to a down
+	staircase. To the west is a narrow twisting tunnel.  Above you is a
+	large dome painted with scenes depicting elfin hacking rites. Up
+	around the edge of the dome \(20 feet up\) is a wooden railing. In the
+	center of the room there is a white marble pedestal.
+	(if) (dome-flag) (then)
+		(par)
+		A large piece of rope descends from the railing above, ending some
+		five feet above your head.
+	(endif)
 (narrate failing to leave * #up)
 	You cannot reach the rope.
 (from * go #west to #torch-room)
