@@ -415,9 +415,10 @@
     (endif)
 (* provides light)
     (* is on)
-(* timer running)
-    (* is on)
 (* timer is 325)
+(perform [switch on *])
+    (now) (* timer running)
+    (fail)
 (on * timeout)
     (now)(* is off)
     (par)I hope you have more light than from (a *).
