@@ -188,3 +188,13 @@
 		(now)($obj is #in #tomb-of-the-unknown-implementer)
 	}
 	(jigs up)
+
+(refuse [take #pile-of-bodies])
+	A force keeps you from taking the bodies.
+
+(perform [attack/feel #pile-of-bodies])
+	The voice of the guardian of the dungeon booms out from the darkness 
+	'Your disrespect costs you your life!' and places your head on a pole.
+	(now) (on-pole)
+	(jigs up)
+
