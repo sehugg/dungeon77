@@ -4,14 +4,13 @@ id: 0
 label: START
 --------------------------------------------------------------------------------
 [1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 682: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 681: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/glacier.dg, line 55: Possible typo: A query is made to '($ is lit)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 317: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 325: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 325: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 333: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m
 
 [0m[1mDungeon
@@ -3249,3 +3248,760 @@ You open the sandwich bag, revealing a lunch and a clove of garlic.
 
 You take the clove of garlic out of the sandwich bag.
 
+--------------------------------------------------------------------------------
+id: 1785508581876
+parent-id: 1785508581865
+command: get candles and matches
+--------------------------------------------------------------------------------
+> get candles and matches
+The candles: You take the candles.
+
+The matchbook: You take the matchbook.
+
+You feel a little better.
+
+--------------------------------------------------------------------------------
+id: 1785508581878
+parent-id: 1785508581876
+command: l at lamp
+--------------------------------------------------------------------------------
+> l at lamp
+The battery-powered brass lantern is off.
+
+--------------------------------------------------------------------------------
+id: 1785508581879
+parent-id: 1785508581878
+command: get torch and screwdriver
+--------------------------------------------------------------------------------
+> get torch and screwdriver
+The ivory torch: You take the ivory torch out of the trophy case.
+
+The screwdriver: You take the screwdriver.
+
+[0m[4m(Your score has gone down by six points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581880
+parent-id: 1785508581879
+command: d,e,n,e,se,e
+--------------------------------------------------------------------------------
+> d,e,n,e,se,e
+Down: You climb down through the trap door.
+
+[0m[1mCellar[0m
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+East: You walk east.
+
+[0m[1mThe Troll Room[0m
+You are in a small room with passages off in all directions. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
+
+There is an elvish sword here.
+
+There is a bloody axe here.
+
+North: You walk north.
+
+[0m[1mEast-West Passage[0m
+You are in a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.
+
+East: You walk east.
+
+[0m[1mRound room[0m
+You are in a circular room with passages off in eight directions.
+
+There is a dented iron box here.
+
+Southeast: You walk southeast.
+
+[0m[1mWinding Passage[0m
+You are in a winding passage. It seems that there is only an exit on the east end although the whirring from the round room can be heard faintly to the north.
+
+East: You walk east.
+
+[0m[1mMirror Room[0m
+You are in a large square room with tall ceilings. On the south wall is an enormous mirror which fills the entire wall. There are exits on the other three sides of the room.
+
+--------------------------------------------------------------------------------
+id: 1785508581881
+parent-id: 1785508581880
+command: touch mirror
+--------------------------------------------------------------------------------
+> touch mirror
+There is a rumble from deep within the earth and the room shakes.
+
+--------------------------------------------------------------------------------
+id: 1785508581882
+parent-id: 1785508581881
+command: w,w,n,nw,w
+--------------------------------------------------------------------------------
+> w,w,n,nw,w
+West: You walk west.
+
+[0m[1mCold Passage[0m
+You are in a cold and damp corridor where a long east-west passageway intersects with a northward path.
+
+West: You walk west.
+
+[0m[1mSlide Room[0m
+You are in a small chamber, which appears to have been part of a coal mine. On the south wall of the chamber the letters "Granite Wall" are etched in the rock. To the east is a long passage and there is a steep metal slide twisting downward. From the appearance of the slide, an attempt to climb up it would be impossible. To the north is a small opening.
+
+North: You walk north.
+
+[0m[1mMine Entrance[0m
+You are standing at the entrance of what might have been a coal mine. To the northeast and the northwest are entrances to the mine, and there is another exit on the south end of the room.
+
+Northwest: You walk northwest.
+
+[0m[1mSqueaky Room[0m
+You are a small room. Strange squeaky sounds may be heard coming from the passage at the west end. You may also escape to the south.
+
+West: You walk west.
+
+[0m[1mBat Room[0m
+You are in a small room which has only one door, to the east. In the corner of the room on the ceiling is a large vampire bat who is obviously deranged and holding his nose.
+
+There is an exquisite jade figurine here.
+
+--------------------------------------------------------------------------------
+id: 1785508581889
+parent-id: 1785508581882
+command: get figure
+--------------------------------------------------------------------------------
+> get figure
+You take the jade figurine.
+
+[0m[4m(Your score has gone up by five points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581890
+parent-id: 1785508581889
+command: e,s,ne
+--------------------------------------------------------------------------------
+> e,s,ne
+East: You walk east.
+
+[0m[1mSqueaky Room[0m
+You are a small room. Strange squeaky sounds may be heard coming from the passage at the west end. You may also escape to the south.
+
+South: You walk south.
+
+[0m[1mMine Entrance[0m
+You are standing at the entrance of what might have been a coal mine. To the northeast and the northwest are entrances to the mine, and there is another exit on the south end of the room.
+
+Northeast: You walk northeast.
+
+[0m[1mShaft Room[0m
+You are in a large room, in the middle of which is a small shaft descending through the floor into darkness below. To the west and the north are exits from this room. Constructed over the top of the shaft is a metal framework to which a heavy iron chain is attached.
+
+At the end of the chain is a basket.
+
+--------------------------------------------------------------------------------
+id: 1785508581892
+parent-id: 1785508581890
+command: put torch in basket
+--------------------------------------------------------------------------------
+> put torch in basket
+(first attempting to open the basket)
+You open the basket.
+
+You put the ivory torch in the basket.
+
+--------------------------------------------------------------------------------
+id: 1785508581893
+parent-id: 1785508581892
+command: put screwdriver in basket
+--------------------------------------------------------------------------------
+> put screwdriver in basket
+You put the screwdriver in the basket.
+
+--------------------------------------------------------------------------------
+id: 1785508581895
+parent-id: 1785508581893
+command: turn on lamp
+--------------------------------------------------------------------------------
+> turn on lamp
+You switch the battery-powered brass lantern on.
+
+--------------------------------------------------------------------------------
+id: 1785508581896
+parent-id: 1785508581895
+command: n,w,d
+--------------------------------------------------------------------------------
+> n,w,d
+North: You walk north.
+
+[0m[1mWooden Tunnel[0m
+You are in a narrow tunnel with large wooden beams running across the ceiling and around the walls. A path from the south splits into paths running west and northeast.
+
+West: You walk west.
+
+[0m[1mSmelly Room[0m
+You are in a small non-descript room. However, from the direction of a small descending staircase a foul odor can be detected. To the east is a narrow path.
+
+Down: You climb down.
+
+[0m[1mGas Room[0m
+You are in a small room which smells strongly of coal gas.
+
+There is a sapphire-encrusted bracelet here.
+
+--------------------------------------------------------------------------------
+id: 1785508581897
+parent-id: 1785508581896
+command: get bracelet
+--------------------------------------------------------------------------------
+> get bracelet
+You take the sapphire bracelet.
+
+[0m[4m(Your score has gone up by five points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581898
+parent-id: 1785508581897
+command: u,e,ne
+--------------------------------------------------------------------------------
+> u,e,ne
+Up: You climb up.
+
+[0m[1mSmelly Room[0m
+You are in a small non-descript room. However, from the direction of a small descending staircase a foul odor can be detected. To the east is a narrow path.
+
+East: You walk east.
+
+[0m[1mWooden Tunnel[0m
+You are in a narrow tunnel with large wooden beams running across the ceiling and around the walls. A path from the south splits into paths running west and northeast.
+
+Northeast: You walk northeast.
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+You are in a non-descript part of a coal mine.
+
+--------------------------------------------------------------------------------
+id: 1785508581899
+parent-id: 1785508581898
+command: n,ne,nw
+--------------------------------------------------------------------------------
+> n,ne,nw
+North: You walk north.
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+You are in a non-descript part of a coal mine.
+
+Northeast: You walk northeast.
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+You are in a non-descript part of a coal mine.
+
+Northwest: You walk northwest.
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+You are in a non-descript part of a coal mine.
+
+--------------------------------------------------------------------------------
+id: 1785508581900
+parent-id: 1785508581899
+command: d,d,ne
+--------------------------------------------------------------------------------
+> d,d,ne
+Down: You climb down.
+
+[0m[1mLadder Top[0m
+You are in a very small room. In the corner is a rickety wooden ladder, leading downward. It might be safe to descend. There is also a staircase leading upward.
+
+Down: You climb down.
+
+[0m[1mLadder Bottom[0m
+You are in a rather wide room. On one side is the bottom of a narrow wooden ladder. To the northeast and the south are passages leaving the room.
+
+Northeast: You walk northeast.
+
+[0m[1mDead End[0m
+Dead End
+
+There is a small heap of coal here.
+
+--------------------------------------------------------------------------------
+id: 1785508581901
+parent-id: 1785508581900
+command: get coal
+--------------------------------------------------------------------------------
+> get coal
+You take the small pile of coal.
+
+--------------------------------------------------------------------------------
+id: 1785508581902
+parent-id: 1785508581901
+command: s,u,u
+--------------------------------------------------------------------------------
+> s,u,u
+South: You walk south.
+
+[0m[1mLadder Bottom[0m
+You are in a rather wide room. On one side is the bottom of a narrow wooden ladder. To the northeast and the south are passages leaving the room.
+
+Up: You climb up.
+
+[0m[1mLadder Top[0m
+You are in a very small room. In the corner is a rickety wooden ladder, leading downward. It might be safe to descend. There is also a staircase leading upward.
+
+Up: You climb up.
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+You are in a non-descript part of a coal mine.
+
+--------------------------------------------------------------------------------
+id: 1785508581903
+parent-id: 1785508581902
+command: e,e,s
+--------------------------------------------------------------------------------
+> e,e,s
+East: You walk east.
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+You are in a non-descript part of a coal mine.
+
+East: You walk east.
+
+[0m[1mWooden Tunnel[0m
+You are in a narrow tunnel with large wooden beams running across the ceiling and around the walls. A path from the south splits into paths running west and northeast.
+
+South: You walk south.
+
+[0m[1mShaft Room[0m
+You are in a large room, in the middle of which is a small shaft descending through the floor into darkness below. To the west and the north are exits from this room. Constructed over the top of the shaft is a metal framework to which a heavy iron chain is attached.
+
+At the end of the chain is a basket.
+In the basket are a screwdriver and a ivory torch.
+
+--------------------------------------------------------------------------------
+id: 1785508581904
+parent-id: 1785508581903
+command: put coal in basket
+--------------------------------------------------------------------------------
+> put coal in basket
+You put the small pile of coal in the basket.
+
+--------------------------------------------------------------------------------
+id: 1785508581905
+parent-id: 1785508581904
+command: lower basket
+--------------------------------------------------------------------------------
+> lower basket
+The basket is lowered to the bottom of the shaft.
+
+--------------------------------------------------------------------------------
+id: 1785508581908
+parent-id: 1785508581905
+command: go to ladder top
+--------------------------------------------------------------------------------
+> go to ladder top
+(north)
+
+[0m[1mWooden Tunnel[0m
+
+(northeast)
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+
+(north)
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+
+(northeast)
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+
+(northwest)
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+
+(down)
+
+[0m[1mLadder Top[0m
+You are in a very small room. In the corner is a rickety wooden ladder, leading downward. It might be safe to descend. There is also a staircase leading upward.
+
+--------------------------------------------------------------------------------
+id: 1785508581909
+parent-id: 1785508581908
+command: d,s
+--------------------------------------------------------------------------------
+> d,s
+Down: You climb down.
+
+[0m[1mLadder Bottom[0m
+You are in a rather wide room. On one side is the bottom of a narrow wooden ladder. To the northeast and the south are passages leaving the room.
+
+South: You walk south.
+
+[0m[1mTimber Room[0m
+You are in a long and narrow passage, which is cluttered with broken timbers. A wide passage comes from the north and turns at the southwest corner of the room into a very narrow passageway.
+
+--------------------------------------------------------------------------------
+id: 1785508581914
+parent-id: 1785508581909
+command: sw
+--------------------------------------------------------------------------------
+> sw
+You cannot fit through this passage with that load.
+
+--------------------------------------------------------------------------------
+id: 1785508581915
+parent-id: 1785508581914
+command: drop all
+--------------------------------------------------------------------------------
+> drop all
+The sapphire bracelet: The sapphire bracelet falls to the ground.
+
+The jade figurine: The jade figurine falls to the ground.
+
+The matchbook: The matchbook falls to the ground.
+
+The candles: The candles fall to the ground.
+
+The clove of garlic: The clove of garlic falls to the ground.
+
+The broken sharp stick: The broken sharp stick falls to the ground.
+
+The red buoy: The red buoy falls to the ground.
+
+The shovel: The shovel falls to the ground.
+
+The wire coil: The wire coil falls to the ground.
+
+The knife: The knife falls to the ground.
+
+The battery-powered brass lantern: The battery-powered brass lantern falls to the ground.
+
+--------------------------------------------------------------------------------
+id: 1785508581916
+parent-id: 1785508581915
+command: sw
+--------------------------------------------------------------------------------
+> sw
+You walk southwest.
+
+[0m[1mLower Shaft[0m
+You are in a small square room which is at the bottom of a long shaft. To the east is a passageway and to the northeast a very narrow passage. In the shaft can be seen a heavy iron chain.
+
+At the end of the chain is a basket.
+In the basket are a small pile of coal, a screwdriver, and a ivory torch.
+
+--------------------------------------------------------------------------------
+id: 1785508581918
+parent-id: 1785508581916
+command: get coal, screw, torch
+--------------------------------------------------------------------------------
+> get coal, screw, torch
+The small pile of coal: You take the small pile of coal out of the basket.
+
+The screwdriver: You take the screwdriver out of the basket.
+
+The ivory torch: You take the ivory torch out of the basket.
+
+--------------------------------------------------------------------------------
+id: 1785508581919
+parent-id: 1785508581918
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mMachine Room[0m
+You are in a large room which seems to be air-conditioned. In one corner there is a machine (?) which is shaped somewhat like a clothes dryer. On the 'panel' there is a switch which is labelled in a dialect of Swahili. Fortunately, I know this dialect and the label translates to START. The switch does not appear to be manipulable by any human hand (unless the fingers are about 1/16 by 1/4 inch). On the front of the machine is a large lid. The lid on the machine is closed.
+
+--------------------------------------------------------------------------------
+id: 1785508581920
+parent-id: 1785508581919
+command: put coal in machine
+--------------------------------------------------------------------------------
+> put coal in machine
+(first attempting to open the machine)
+You open the machine.
+
+You put the small pile of coal in the machine.
+
+--------------------------------------------------------------------------------
+id: 1785508581921
+parent-id: 1785508581920
+command: close lid
+--------------------------------------------------------------------------------
+> close lid
+You close the machine.
+
+--------------------------------------------------------------------------------
+id: 1785508581922
+parent-id: 1785508581921
+command: turn switch
+--------------------------------------------------------------------------------
+> turn switch
+Turn the switch with what?
+
+--------------------------------------------------------------------------------
+id: 1785508581923
+parent-id: 1785508581922
+command: screw
+--------------------------------------------------------------------------------
+> screw
+The machine comes to life (figuratively) with a dazzling display of colored lights and bizarre noises. After a few moments, the excitement abates.
+
+--------------------------------------------------------------------------------
+id: 1785508581944
+parent-id: 1785508581923
+command: open lid
+--------------------------------------------------------------------------------
+> open lid
+You open the machine, revealing a huge diamond.
+
+--------------------------------------------------------------------------------
+id: 1785508581945
+parent-id: 1785508581944
+command: get diamond
+--------------------------------------------------------------------------------
+> get diamond
+You take the huge diamond out of the machine.
+
+[0m[4m(Your score has gone up by ten points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581946
+parent-id: 1785508581945
+command: nw
+--------------------------------------------------------------------------------
+> nw
+You walk northwest.
+
+[0m[1mLower Shaft[0m
+You are in a small square room which is at the bottom of a long shaft. To the east is a passageway and to the northeast a very narrow passage. In the shaft can be seen a heavy iron chain.
+
+At the end of the chain is a basket.
+
+--------------------------------------------------------------------------------
+id: 1785508581947
+parent-id: 1785508581946
+command: Put the diamond, torch, and screwdriver in the basket
+--------------------------------------------------------------------------------
+> Put the diamond, torch, and screwdriver in the basket
+The huge diamond: You put the huge diamond in the basket.
+
+The ivory torch: You put the ivory torch in the basket.
+
+The screwdriver: You put the screwdriver in the basket.
+
+--------------------------------------------------------------------------------
+id: 1785508581948
+parent-id: 1785508581947
+command: ne
+--------------------------------------------------------------------------------
+> ne
+You walk northeast.
+
+[0m[1mTimber Room[0m
+You are in a long and narrow passage, which is cluttered with broken timbers. A wide passage comes from the north and turns at the southwest corner of the room into a very narrow passageway.
+
+There is a brass lantern (battery-powered) here.
+
+There is a nasty-looking knife lying here.
+
+There is a coil of thin shiny wire here.
+
+There is a large shovel here.
+
+There is a red buoy here (probably a warning).
+
+There is a broken sharp stick here.
+
+There is a clove of garlic here.
+
+There are two candles here.
+
+There is a matchbook whose cover says 'Visit Beautiful FCD#3' here.
+
+There is an exquisite jade figurine here.
+
+There is a sapphire-encrusted bracelet here.
+
+--------------------------------------------------------------------------------
+id: 1785508581949
+parent-id: 1785508581948
+command: take all
+--------------------------------------------------------------------------------
+> take all
+The battery-powered brass lantern: You take the battery-powered brass lantern.
+
+The knife: You take the knife.
+
+The wire coil: You take the wire coil.
+
+The shovel: You take the shovel.
+
+The red buoy: You take the red buoy.
+
+The broken sharp stick: You take the broken sharp stick.
+
+The clove of garlic: You take the clove of garlic.
+
+The candles: You take the candles.
+
+The matchbook: You take the matchbook.
+
+The jade figurine: You take the jade figurine.
+
+The sapphire bracelet: You take the sapphire bracelet.
+
+--------------------------------------------------------------------------------
+id: 1785508581950
+parent-id: 1785508581949
+command: n,u,u
+--------------------------------------------------------------------------------
+> n,u,u
+North: You walk north.
+
+[0m[1mLadder Bottom[0m
+You are in a rather wide room. On one side is the bottom of a narrow wooden ladder. To the northeast and the south are passages leaving the room.
+
+Up: You climb up.
+
+[0m[1mLadder Top[0m
+You are in a very small room. In the corner is a rickety wooden ladder, leading downward. It might be safe to descend. There is also a staircase leading upward.
+
+Up: You climb up.
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+You are in a non-descript part of a coal mine.
+
+--------------------------------------------------------------------------------
+id: 1785508581951
+parent-id: 1785508581950
+command: e,e,s
+--------------------------------------------------------------------------------
+> e,e,s
+East: You walk east.
+
+[0m[1mYou are in a non-descript part of a coal mine.[0m
+You are in a non-descript part of a coal mine.
+
+East: You walk east.
+
+[0m[1mWooden Tunnel[0m
+You are in a narrow tunnel with large wooden beams running across the ceiling and around the walls. A path from the south splits into paths running west and northeast.
+
+South: You walk south.
+
+[0m[1mShaft Room[0m
+You are in a large room, in the middle of which is a small shaft descending through the floor into darkness below. To the west and the north are exits from this room. Constructed over the top of the shaft is a metal framework to which a heavy iron chain is attached.
+
+--------------------------------------------------------------------------------
+id: 1785508581952
+parent-id: 1785508581951
+command: drop timber
+--------------------------------------------------------------------------------
+> drop timber
+[0m[4m(I only understood you as far as wanting to drop something.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581953
+parent-id: 1785508581952
+command: raise basket
+--------------------------------------------------------------------------------
+> raise basket
+The basket is raised to the top of the shaft.
+
+--------------------------------------------------------------------------------
+id: 1785508581954
+parent-id: 1785508581953
+command: take all from basket
+--------------------------------------------------------------------------------
+> take all from basket
+The screwdriver: You take the screwdriver out of the basket.
+
+The ivory torch: You take the ivory torch out of the basket.
+
+The huge diamond: You take the huge diamond out of the basket.
+
+--------------------------------------------------------------------------------
+id: 1785508581955
+parent-id: 1785508581954
+command: turn off lamp
+--------------------------------------------------------------------------------
+> turn off lamp
+You switch the battery-powered brass lantern off.
+
+--------------------------------------------------------------------------------
+id: 1785508581956
+parent-id: 1785508581955
+command: go to living room
+--------------------------------------------------------------------------------
+> go to living room
+(west)
+
+[0m[1mMine Entrance[0m
+
+(south)
+
+[0m[1mSlide Room[0m
+
+(down)
+
+[0m[1mCellar[0m
+
+(up)
+
+[0m[1mLiving Room[0m
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a rug lying beside an open trap-door.
+
+A sandwich bag is here.
+In the sandwich bag is a lunch.
+
+A bottle is sitting on the table.
+In the glass bottle is some water.
+
+There is a square brick here which feels like clay.
+
+There is an issue of US NEWS & DUNGEON REPORT dated 7/25/2026 here.
+
+There is a piece of cake here with the words 'Eat Me' on it.
+
+There is a piece of cake with red icing here.
+
+There is a piece of cake with blue (ecch) icing here.
+
+There is a small brass bell here.
+
+There is a large black book here.
+
+There is a trophy case here.
+In the trophy case are a large emerald, a statue, a pot filled with gold, a gold coffin, a chalice, a trunk with jewels, a painting, a grail, a platinum bar, a crystal trident, a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
+
+--------------------------------------------------------------------------------
+id: 1785508581957
+parent-id: 1785508581956
+command: Put the diamond, bracelet and figurine in the case.
+--------------------------------------------------------------------------------
+> Put the diamond, bracelet and figurine in the case.
+The huge diamond: You put the huge diamond in the trophy case.
+
+The sapphire bracelet: You put the sapphire bracelet in the trophy case.
+
+The jade figurine: You put the jade figurine in the trophy case.
+
+[0m[4m(Your score has gone up by fourteen points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581958
+parent-id: 1785508581957
+command: Drop the garlic and the screwdriver.
+--------------------------------------------------------------------------------
+> Drop the garlic and the screwdriver.
+The clove of garlic: The clove of garlic falls to the ground.
+
+The screwdriver: The screwdriver falls to the ground.
+
+--------------------------------------------------------------------------------
+id: 1785508581959
+parent-id: 1785508581958
+command: score
+--------------------------------------------------------------------------------
+> score
+[0m[4mYou currently have 390 points out of a maximum of 500.
+[0m

@@ -377,8 +377,18 @@
 (appearance *)
 	There is a blue label here.
 (descr *)
-	!!!! FROBOZZ MAGIC BALLOON COMPANY !!!! Hello, Aviator! Instructions for
-	use: To get into balloon, say 'Board' To leave balloon, say 'Disembark'
-	To land, say 'Land' Warranty: No warranty is expressed or implied.
-	You're on your own, sport! Good Luck.
-
+(div @headline) {          !!!!  FROBOZZ MAGIC BALLOON COMPANY !!!! }
+(par)
+Hello, Aviator!
+(par)
+Instructions for use:
+(par)
+   To get into balloon, say 'Board'(line)
+   To leave balloon, say 'Disembark'(line)
+   To land, say 'Land'(line)
+(par)
+Warranty:
+(par)
+   No warranty is expressed or implied.  You're on your own, sport!
+(par)
+                                        Good Luck.

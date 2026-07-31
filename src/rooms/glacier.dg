@@ -28,8 +28,8 @@
 
 %% Object action: GLACIER - throw torch at glacier to melt it
 
-(grammar [melt [object]] for [melt $])
-(grammar [melt [object] with [object]] for [melt $ with $])
+(grammar [melt [single]] for [melt $])
+(grammar [melt [single] with [held]] for [melt $ with $])
 
 (perform [melt $obj])
     How exactly are you going to melt (the $obj)?
@@ -51,8 +51,8 @@
     (now) (#torch is #in #stream)
     (now) (#glacier is nowhere)
     (now) (glacier-flag)
-    (current room $room)
-    (if) ~($room is lit) (then)
+    (recompute visibility)
+    (if) ~(player can see) (then)
         (par)
         The melting glacier seems to have carried the torch away, leaving
         you in the dark.

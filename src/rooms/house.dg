@@ -426,12 +426,15 @@
 (perform [switch on *])
     (now) (* timer running)
     (fail)
+(perform [switch off *])
+    (now) ~(* timer running)
+    (fail)
 (on * timeout)
     (now)(* is off)
     (par)I hope you have more light than from (a *).
 (prevent [switch on *])
     (* timer is 0)
-    The battery has died.
+    The battery has died.    
 
 #broken-lamp
 (name *)        broken lamp

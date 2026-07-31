@@ -1,6 +1,6 @@
 
-(grammar [inflate [object]] for [inflate $])
-(grammar [inflate [object] with [object]] for [inflate $ with $])
+(grammar [inflate [single]] for [inflate $])
+(grammar [inflate [single] with [held]] for [inflate $ with $])
 
 (instead of [inflate $obj])
     Inflate with what?

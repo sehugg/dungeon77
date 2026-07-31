@@ -4,7 +4,6 @@
 ~(riddle-flag)
 ~(dome-flag)
 ~(echo-flag)
-~(bat-disabled)
 
 (light-load)
 	(current player $Player)
@@ -229,7 +228,7 @@
 (notice #bat)
 
 (bat-disabled)
-	(#garlic is nested #in *)
+	(#garlic is nested $ #player)
 
 (enter *)
 	~(bat-disabled)

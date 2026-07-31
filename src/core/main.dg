@@ -127,9 +127,11 @@
 
 %% TODO: can't get stuff if dark
 
-%% Look at room after turning on light
+%% Look at room after turning on light (only if it was dark)
 (after [switch on $thing])
     ($thing provides light)
+    (dark-count $dc)
+    ($dc > 0)
     (tick)
     (par)
     (try [look])
@@ -151,6 +153,12 @@
     (openable $thing)
     (The $thing is) (if)($thing is open)(then)open(else)closed(endif).
     (list contents of $thing)
+
+%% Default rule - Look at a thing that is switchable
+(descr $thing)
+    (switchable $thing)
+    (The $thing) is
+    (if) ($thing is on) (then) on. (else) off. (endif)
 
 %% Melee
 
@@ -300,7 +308,7 @@
     (look $thing)
 
 %% RING BELL
-(grammar [ring [object]] for [ring $])
+(grammar [ring [single]] for [ring $])
 (perform [ring $Object])
     (ringable $Object)
     Ding, dong.
@@ -309,8 +317,8 @@
     How, exactly, can I ring that?
 
 %% LIGHT/BURN
-(grammar [light/burn [object] with [object]] for [burn $ with $])
-(grammar [light/strike/burn [object]] for [burn $])
+(grammar [light/burn [single] with [held]] for [burn $ with $])
+(grammar [light/strike/burn [single]] for [burn $])
 
 %% "Yuks"
 
@@ -358,7 +366,7 @@
 (refuse [repent])
     It could very well be too late!
 
-(grammar [knock on [object]] for [knock on $])
+(grammar [knock on [single]] for [knock on $])
 (refuse [knock on $object])
 	(door $object)
 	I don't think that anybody's home.

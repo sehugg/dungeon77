@@ -1,6 +1,42 @@
 
+(grammar [raise [single]] for [raise $])
+(grammar [lower [single]] for [lower $])
+
+%% make sure we can reference the basket in either room
+~(action [raise/lower #basket1] requires #basket1 to be present)
+(add #basket1 to scope)
+	(current room #shaft-room)
+	(or)
+	(current room #lower-shaft)
+
+(perform [lower #basket1])
+	(#basket1 has parent #shaft-room)
+	(now) (#basket1 has parent #lower-shaft)
+	The basket is lowered to the bottom of the shaft.
+
+(perform [raise #basket1])
+	(#basket1 has parent #lower-shaft)
+	(now) (#basket1 has parent #shaft-room)
+	The basket is raised to the top of the shaft.
+
 (empty-handed)
-	~(* has parent #player)
+	~($ has parent #player)
+
+(perform [turn #switch with #screwdriver])
+	The machine comes to life \(figuratively\) with a dazzling display of
+	colored lights and bizarre noises.  After a few moments, the
+	excitement abates.
+	(if) (#small-pile-of-coal is #in #machine) (then)
+		(empty machine)
+		(now) (#huge-diamond is #in #machine)
+	(else)
+		(empty machine)
+		(now) (#vitreous-slag is #in #machine)
+	(endif)
+
+(empty machine)
+	*($obj has parent #machine)
+	(now) ($obj is nowhere)
 
 %% ENTRA
 #mine-entrance
@@ -206,7 +242,6 @@
 %% TODO: room action routine NO-OBJS
 (from * go #north to #ladder-bottom)
 (from * go #southwest to #lower-shaft)
-%% TODO: conditional on flag EMPTY-HANDED
 (prevent [leave * #southwest])
 	~(empty-handed)
 		You cannot fit through this passage with that load.
@@ -242,7 +277,15 @@
 (name *)	Machine Room
 (inherently dark *)
 (look *)
-	%% TODO: description comes from room routine MACHINE-ROOM
+	You are in a large room which seems to be air-conditioned.  In one
+	corner there is a machine \(?\) which is shaped somewhat like a clothes
+	dryer.  On the 'panel' there is a switch which is labelled in a
+	dialect of Swahili.  Fortunately, I know this dialect and the label
+	translates to START.  The switch does not appear to be manipulable by
+	any human hand \(unless the fingers are about 1/16 by 1/4 inch\).  On
+	the front of the machine is a large lid.
+	The lid on the machine is
+	(if) (#machine is open) (then) open. (else) closed. (endif)
 %% TODO: room action routine MACHINE-ROOM
 (from * go #northwest to #lower-shaft)
 (notice #switch)
@@ -286,13 +329,7 @@
 (* capacity is 50)
 (appearance *)
 	At the end of the chain is a basket.
-%% TODO: object action routine DUMBWAITER
-
-%% FBASK
-#fbask
-(* is #in #lower-shaft)
-(name *)	FBASK
-(dict *)	cage dumbwaiter
+	(list contents of *)
 %% TODO: object action routine DUMBWAITER
 
 %% BRACE

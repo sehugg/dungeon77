@@ -277,7 +277,7 @@
 	The lights within the room shut off.
 	%% TODO
 
-(grammar [turn/rotate/twist/screw/unscrew [object] with [held]] for [turn $ with $])
+(grammar [turn/rotate/twist/screw/unscrew [single] with [held]] for [turn $ with $])
 
 (instead of [turn $obj])
     Turn (the $obj) with what?

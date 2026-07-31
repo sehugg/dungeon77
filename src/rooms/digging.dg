@@ -4,7 +4,7 @@
 %%     "You are covered with bat turds, cretin."]>
 %%"Digging with the " 1 <ODESC2 .PRSO> " is slow and tedious.">)
 
-(grammar [dig with [object]] for [dig with $])
+(grammar [dig with [held]] for [dig with $])
 
 (perform [dig with #shovel])
     (current room #sandy-beach)
