@@ -11,8 +11,11 @@
         ($ticks minus 1 into $newticks)
         (now) ($object timer is $newticks)
         ($newticks = 0)
-        *(on $object timeout)
+        (on $object timeout)
     }
+
+%% Player's timer is always running
+(#player timer running)
 
 %%% Flammables
 

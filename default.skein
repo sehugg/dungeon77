@@ -10,8 +10,8 @@ label: START
 [0m[1m[36mWarning:[0m[36m src/rooms/glacier.dg, line 55: Possible typo: A query is made to '($ is lit)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 318: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 326: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 317: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 325: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m
 
 [0m[1mDungeon
@@ -1092,7 +1092,7 @@ parent-id: 1785255063866
 command: get chalice
 --------------------------------------------------------------------------------
 > get chalice
-Realizing just in time that you'd be stabbed in the back if you attempted to take the chalice, you return to the fray.
+Realizing just in time that you'd be stabbed in the back if you attempted to take the chalice, you return to the fray. You slowly regain your feet.
 
 --------------------------------------------------------------------------------
 id: 1785255063868
@@ -2246,7 +2246,7 @@ parent-id: 1785495282769
 command: kill thief with knife
 --------------------------------------------------------------------------------
 > kill thief with knife
-You are still recovering from that last blow, so your attack is ineffective.
+Your knife point pinks the thief on the wrist, but it's not serious.
 
 --------------------------------------------------------------------------------
 id: 1785495282793
@@ -2254,7 +2254,7 @@ parent-id: 1785495282792
 command: again
 --------------------------------------------------------------------------------
 > again
-The blow lands, making a shallow gash in the thief's arm!
+The thief drops to his knees, staggered.
 
 --------------------------------------------------------------------------------
 id: 1785495282794
@@ -2262,7 +2262,7 @@ parent-id: 1785495282793
 command: again
 --------------------------------------------------------------------------------
 > again
-Slash! Your stroke connects! The thief could be in serious trouble!
+The thief is confused and can't fight back.
 
 --------------------------------------------------------------------------------
 id: 1785495282795
@@ -2270,7 +2270,7 @@ parent-id: 1785495282794
 command: again
 --------------------------------------------------------------------------------
 > again
-The haft of your knife knocks out the thief.
+The quickness of your thrust knocks the thief back, stunned.
 
 --------------------------------------------------------------------------------
 id: 1785495282796
@@ -2278,7 +2278,7 @@ parent-id: 1785495282795
 command: again
 --------------------------------------------------------------------------------
 > again
-The unconscious thief cannot defend himself: He dies. Almost as soon as the thief breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. Your sword is no longer glowing.
+Slash! Your stroke connects! The thief could be in serious trouble!
 
 --------------------------------------------------------------------------------
 id: 1785495282797
@@ -2286,8 +2286,8 @@ parent-id: 1785495282796
 command: again
 --------------------------------------------------------------------------------
 > again
-[0m[4m(I only understood you as far as wanting to attack something with the knife.)
-[0m
+The end for the thief as your knife severs his jugular. Almost as soon as the thief breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. Your sword is no longer glowing.
+
 --------------------------------------------------------------------------------
 id: 1785495282798
 parent-id: 1785495282797

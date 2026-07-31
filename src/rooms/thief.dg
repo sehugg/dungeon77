@@ -77,6 +77,7 @@
 (robber and player interact in $room)
     ($room = #treasure-room)
 
+%% TREASURE-ROOM (77act1.mud:623)
 (robber daemon)
     (current room #treasure-room)
     ~(#thief is nowhere)
@@ -84,6 +85,10 @@
     Using passages unknown to you, he rushes to its defense.
     (now) (#thief is #in #treasure-room)
     (now) (#thief is fighting)
+    (thief attacks)
+    %% TODO: move treasures out
+
+(robber daemon)
     (thief attacks)
 
 (thief attacks)
@@ -93,7 +98,6 @@
     (#stilletto is #heldby #thief)
     (#thief attacks #player with #stilletto)
 
-%% TODO
 (on every tick)
     (robber daemon)
 

@@ -25,7 +25,6 @@
 (interface ($<Thing can be tied))
 (interface ($<Actor is fighting))
 (interface ($<Actor is stunned))
-(interface ($<Actor recovers next turn))
 (interface ($<Actor is asleep))
 
 (interface ($<Thing capacity is $>Capacity))

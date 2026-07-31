@@ -27,6 +27,7 @@
     (now)(player combat strength is $value)
     (par)
     You feel a little better.
+    %% TODO: runs even after you die?
 
 (#player maximum strength is $result)
     (current score $score)
@@ -54,24 +55,20 @@
         (set $actor combat strength to $new)
     }
 
-%% Villain ticks
+%% Timeouts
 
-(early on every tick)
-    (exhaust) {
-        *($victim is asleep)
-        (villain $victim)
-        %% make sure we take at least 1 turn
-        (if) ($victim is stunned) (then)
-            (now) ~($victim is stunned)
-        (else)
-            (random from 1 to 2 into $wake)
-            ($wake = 1)
-            (now)~($victim is asleep)
-            (if)(player can see $victim)(then)
-                (The $victim) wake(s $victim) up.
-            (endif)
-        (endif)
-    }
+(on $actor timeout)
+    ($actor is asleep)
+    (now) ~($actor is asleep)
+    (now) ~($actor is stunned)
+    (player can see $actor)
+    (The $actor) wake(s $actor) up.
+
+(on $actor timeout)
+    ($actor is stunned)
+    (now) ~($actor is stunned)
+    (player can see $actor)
+    (The $actor) slowly regain(s $actor) (its $actor) feet.
 
 %% Attack routines
 
@@ -81,26 +78,12 @@
 
 (#player attacks $ with $)
     (#player is stunned)
-    %% TODO: reset stunned when not in combat
     You are still recovering from that last blow, so your attack is ineffective.
-    (now)~(#player is stunned)
 
 (#player attacks $defender with $)
     ($defender is asleep)
     The unconscious (name $defender) cannot defend (itself $defender):  (It $defender) dies.
     ($defender gets killed)
-
-($attacker attacks $ with $)
-    ($attacker recovers next turn)
-    (The $attacker) slowly regains (its $attacker) feet.
-    (now)~($attacker recovers next turn)
-    (now)~($attacker is stunned)
-
-($attacker attacks $ with $)
-    ($attacker is stunned)
-    (now)($attacker recovers next turn)
-
-%% Combat routines
 
 (#player attacks $ with $weapon)
     (now)(player wields $weapon)
@@ -160,32 +143,33 @@
     ($defender loses weapon)
 
 (#player gets knocked out)
-    (now)(#player is asleep)
-    (now)(#player is stunned)
+    (random from 2 to 4 into $ticks)
+    (now) (#player is asleep)
+    (now) (#player timer is $ticks)
 
 (#player gets killed)
     It appears that that last blow was too much for you.  I'm afraid you are dead.
-    (set #player combat strength to 0)
+    (now) (#player timer is 0)
+    (now) (player combat strength is 0)
     (jigs up)
 
 ($defender gets knocked out)
-    (now)($defender is asleep)
-    (now)($defender is stunned)
+    (now) ($defender is asleep)
+    (now) (#player timer is 2)
 
 ($defender gets killed)
-    %% TODO: drops weapon/loot?
     Almost as soon as (the $defender) breathes his last breath, a cloud
     of sinister black fog envelops (them $defender), and when the fog lifts, the
     carcass has disappeared.
-    (set $defender combat strength to 0)
-    %% TODO: move all items to current room
     ($defender is #in $room)
     (exhaust) {
         *($item is #heldby $defender)
         (now)($item is #in $room)
     }
-    (now)($defender is nowhere)
-    (now)~($defender is fighting)
+    (now) ($defender is nowhere)
+    (now) ~($defender is fighting)
+    (now) ($defender timer is 0)
+    (set $defender combat strength to 0)
 
 ($defender loses $delta strength)
     ($defender combat strength is $strength)
@@ -197,7 +181,8 @@
     (endif)
 
 ($defender gets stunned)
-    (now)($defender is stunned)
+    (now) ($defender is stunned)
+    (now) ($defender timer is 2)
 
 ($defender loses weapon)
     ($weapon is #heldby $defender)
