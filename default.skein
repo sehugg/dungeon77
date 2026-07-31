@@ -9,7 +9,6 @@ label: START
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/glacier.dg, line 55: Possible typo: A query is made to '($ is lit)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/thief.dg, line 50: Possible typo: A rule is defined for '(robber daemon)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/core/main.dg, line 318: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/core/main.dg, line 326: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
@@ -1083,6 +1082,8 @@ This is a large room, whose north wall is solid granite. A number of discarded b
 
 There is a silver chalice, intricately engraved, here.
 
+You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense. The butt of his stilletto cracks you on the skull, and you stagger back. Your sword has begun to glow very brightly.
+
 [0m[4m(Your score has gone up by 25 points.)
 [0m
 --------------------------------------------------------------------------------
@@ -1091,17 +1092,15 @@ parent-id: 1785255063866
 command: get chalice
 --------------------------------------------------------------------------------
 > get chalice
-You take the chalice.
+Realizing just in time that you'd be stabbed in the back if you attempted to take the chalice, you return to the fray.
 
-[0m[4m(Your score has gone up by ten points.)
-[0m
 --------------------------------------------------------------------------------
 id: 1785255063868
 parent-id: 1785255063867
 command: give egg to thief
 --------------------------------------------------------------------------------
 > give egg to thief
-[0m[4m(I only understood you as far as wanting to give something to someone.)
+[0m[4m(I only understood you as far as wanting to give something to the thief.)
 [0m
 --------------------------------------------------------------------------------
 id: 1785255063869
@@ -1114,6 +1113,8 @@ You climb down.
 [0m[1mCyclops Room[0m
 You are in a room with an exit on the west side, and a staircase leading up. On the north of the room is a wall which used to be solid, but which now has a cyclops-sized hole in it.
 
+Your sword is glowing with a faint blue glow.
+
 --------------------------------------------------------------------------------
 id: 1785255063870
 parent-id: 1785255063869
@@ -1124,6 +1125,8 @@ You walk north.
 
 [0m[1mStrange Passage[0m
 You are in a long passage. To the south is one entrance. On the east there is an old wooden door, with a large hole in it (about cyclops sized).
+
+Your sword is no longer glowing.
 
 --------------------------------------------------------------------------------
 id: 1785255063871
@@ -1184,8 +1187,6 @@ You walk north.
 [0m[1mEast-West Passage[0m
 You are in a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.
 
-Your sword is glowing with a faint blue glow.
-
 --------------------------------------------------------------------------------
 id: 1785255063876
 parent-id: 1785255063875
@@ -1199,10 +1200,6 @@ You are in a circular room with passages off in eight directions.
 
 There is a dented iron box here.
 
-There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
-
-Your sword has begun to glow very brightly.
-
 --------------------------------------------------------------------------------
 id: 1785255063877
 parent-id: 1785255063876
@@ -1215,8 +1212,6 @@ You walk east.
 You are standing in a small circular room with a pedestal. A set of stairs leads up, and passages leave to the east and west.
 
 There is an extremely valuable (perhaps original) grail here.
-
-Your sword is glowing with a faint blue glow.
 
 --------------------------------------------------------------------------------
 id: 1785255063878
@@ -1241,10 +1236,6 @@ You are in a circular room with passages off in eight directions.
 
 There is a dented iron box here.
 
-There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
-
-Your sword has begun to glow very brightly.
-
 --------------------------------------------------------------------------------
 id: 1785255063880
 parent-id: 1785255063879
@@ -1255,8 +1246,6 @@ You walk northeast.
 
 [0m[1mNorth-South Passage[0m
 You are in a high north-south passage, which forks to the northeast.
-
-Your sword is glowing with a faint blue glow.
 
 --------------------------------------------------------------------------------
 id: 1785255063881
@@ -1270,8 +1259,6 @@ You walk northeast.
 You are in a large room with a ceiling which cannot be detected from the ground. There is a narrow passage from east to west and a stone stairway leading upward. The room is extremely noisy. In fact, it is difficult to hear yourself think.
 
 There is a large platinum bar here.
-
-Your sword is no longer glowing.
 
 --------------------------------------------------------------------------------
 id: 1785255063893
@@ -1476,8 +1463,6 @@ You walk south.
 [0m[1mDeep Canyon[0m
 You are on the south edge of a deep canyon. Passages lead off to the east, south, and northwest. You can hear the sound of flowing water below.
 
-Your sword is glowing with a faint blue glow.
-
 --------------------------------------------------------------------------------
 id: 1785255063918
 parent-id: 1785255063917
@@ -1491,10 +1476,6 @@ You are in a circular room with passages off in eight directions.
 
 There is a dented iron box here.
 
-There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
-
-Your sword has begun to glow very brightly.
-
 --------------------------------------------------------------------------------
 id: 1785255063919
 parent-id: 1785255063918
@@ -1505,8 +1486,6 @@ You walk southeast.
 
 [0m[1mWinding Passage[0m
 You are in a winding passage. It seems that there is only an exit on the east end although the whirring from the round room can be heard faintly to the north.
-
-Your sword is no longer glowing.
 
 --------------------------------------------------------------------------------
 id: 1785255063920
@@ -1674,9 +1653,7 @@ The platinum bar: You put the platinum bar in the trophy case.
 
 The grail: You put the grail in the trophy case.
 
-The chalice: You put the chalice in the trophy case.
-
-[0m[4m(Your score has gone up by 36 points.)
+[0m[4m(Your score has gone up by 26 points.)
 [0m
 --------------------------------------------------------------------------------
 id: 1785255063947
@@ -1771,7 +1748,7 @@ There is a screwdriver here.
 There is a small pump here.
 
 There is a trophy case here.
-In the trophy case are a chalice, a grail, a platinum bar, a crystal trident, a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
+In the trophy case are a grail, a platinum bar, a crystal trident, a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
 
 --------------------------------------------------------------------------------
 id: 1785255063955
@@ -1780,8 +1757,6 @@ command: put loot in case
 --------------------------------------------------------------------------------
 > put loot in case
 You put the painting in the trophy case.
-
-You feel a little better.
 
 [0m[4m(Your score has gone up by seven points.)
 [0m
@@ -1830,8 +1805,6 @@ You walk north.
 [0m[1mEast-West Passage[0m
 You are in a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.
 
-Your sword is glowing with a faint blue glow.
-
 --------------------------------------------------------------------------------
 id: 1785255063961
 parent-id: 1785255063960
@@ -1845,10 +1818,6 @@ You are in a circular room with passages off in eight directions.
 
 There is a dented iron box here.
 
-There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
-
-Your sword has begun to glow very brightly.
-
 --------------------------------------------------------------------------------
 id: 1785255063962
 parent-id: 1785255063961
@@ -1859,8 +1828,6 @@ You walk east.
 
 [0m[1mGrail Room[0m
 You are standing in a small circular room with a pedestal. A set of stairs leads up, and passages leave to the east and west.
-
-Your sword is glowing with a faint blue glow.
 
 --------------------------------------------------------------------------------
 id: 1785255063963
@@ -1874,8 +1841,6 @@ You climb up.
 You are in the west end of a large temple. On the south wall is an ancient inscription, probably a prayer in a long-forgotten language. The north wall is solid granite. The entrance at the west end of the room is through huge marble pillars.
 
 There is a small brass bell here.
-
-Your sword is no longer glowing.
 
 --------------------------------------------------------------------------------
 id: 1785255063964
@@ -1926,14 +1891,10 @@ West: You walk west.
 [0m[1mGrail Room[0m
 You are standing in a small circular room with a pedestal. A set of stairs leads up, and passages leave to the east and west.
 
-Your sword is glowing with a faint blue glow.
-
 East: You walk east.
 
 [0m[1mNarrow Crawlway[0m
 You are in a narrow crawlway. The crawlway leads from north to south. However the south passage divides to the south and southwest.
-
-Your sword is no longer glowing.
 
 South: You walk south.
 
@@ -2026,7 +1987,7 @@ parent-id: 1785342514344
 command: score
 --------------------------------------------------------------------------------
 > score
-[0m[4mYou currently have 251 points out of a maximum of 500.
+[0m[4mYou currently have 231 points out of a maximum of 500.
 [0m
 --------------------------------------------------------------------------------
 id: 1785342514346
@@ -2034,7 +1995,7 @@ parent-id: 1785342514345
 command: diagnose
 --------------------------------------------------------------------------------
 > diagnose
-You are in perfect health. You are strong enough to take several wounds.
+You have a light wound. You are strong enough to take several wounds.
 
 --------------------------------------------------------------------------------
 id: 1785495282748
@@ -2133,6 +2094,8 @@ command: go to living room
 > go to living room
 The stairs are too steep for carrying the coffin.
 
+You feel a little better.
+
 [0m[4mBecause something dramatic happened, your movement was cut short.
 [0m> 
 --------------------------------------------------------------------------------
@@ -2200,7 +2163,7 @@ There is a screwdriver here.
 There is a small pump here.
 
 There is a trophy case here.
-In the trophy case are a painting, a chalice, a grail, a platinum bar, a crystal trident, a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
+In the trophy case are a painting, a grail, a platinum bar, a crystal trident, a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
 
 --------------------------------------------------------------------------------
 id: 1785495282761
@@ -2264,8 +2227,98 @@ command: go to treasure room
 
 [0m[1mCyclops Room[0m
 
+Your sword is glowing with a faint blue glow.
+
 (up)
 
 [0m[1mTreasure Room[0m
 This is a large room, whose north wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor.
 
+There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
+
+There is a silver chalice, intricately engraved, here.
+
+Your sword has begun to glow very brightly.
+
+--------------------------------------------------------------------------------
+id: 1785495282792
+parent-id: 1785495282769
+command: kill thief with knife
+--------------------------------------------------------------------------------
+> kill thief with knife
+You are still recovering from that last blow, so your attack is ineffective.
+
+--------------------------------------------------------------------------------
+id: 1785495282793
+parent-id: 1785495282792
+command: again
+--------------------------------------------------------------------------------
+> again
+The blow lands, making a shallow gash in the thief's arm!
+
+--------------------------------------------------------------------------------
+id: 1785495282794
+parent-id: 1785495282793
+command: again
+--------------------------------------------------------------------------------
+> again
+Slash! Your stroke connects! The thief could be in serious trouble!
+
+--------------------------------------------------------------------------------
+id: 1785495282795
+parent-id: 1785495282794
+command: again
+--------------------------------------------------------------------------------
+> again
+The haft of your knife knocks out the thief.
+
+--------------------------------------------------------------------------------
+id: 1785495282796
+parent-id: 1785495282795
+command: again
+--------------------------------------------------------------------------------
+> again
+The unconscious thief cannot defend himself: He dies. Almost as soon as the thief breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. Your sword is no longer glowing.
+
+--------------------------------------------------------------------------------
+id: 1785495282797
+parent-id: 1785495282796
+command: again
+--------------------------------------------------------------------------------
+> again
+[0m[4m(I only understood you as far as wanting to attack something with the knife.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785495282798
+parent-id: 1785495282797
+command: again
+--------------------------------------------------------------------------------
+> again
+[0m[4m(I only understood you as far as wanting to attack something with the knife.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785495282799
+parent-id: 1785495282798
+command: again
+--------------------------------------------------------------------------------
+> again
+[0m[4m(I only understood you as far as wanting to attack something with the knife.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785495282800
+parent-id: 1785495282799
+command: again
+--------------------------------------------------------------------------------
+> again
+[0m[4m(I only understood you as far as wanting to attack something with the knife.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785495282801
+parent-id: 1785495282800
+command: take all
+--------------------------------------------------------------------------------
+> take all
+You take the chalice.
+
+[0m[4m(Your score has gone up by ten points.)
+[0m

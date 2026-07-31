@@ -28,8 +28,8 @@
 
 #thief
 
-(global variable (thief combat strength is 7))
-(#thief maximum strength is 7)
+(global variable (thief combat strength is 4))
+(#thief maximum strength is 4)
 (#thief wields #stilletto)
 
 (#thief combat strength is $result)
@@ -42,6 +42,14 @@
     (if) (#stilletto is #in $room) (then)
         (now) (#stilletto is #heldby #thief)
     (endif)
+
+%% CHALICE (77act1.mud:1587) blocks taking it mid-fight
+(prevent [take #chalice])
+    (#thief is fighting)
+    (current room #treasure-room)
+    (#thief is #in #treasure-room)
+    Realizing just in time that you'd be stabbed in the back if you
+    attempted to take the chalice, you return to the fray.
 
 %%  1. In the Treasure Room, player elsewhere (1299) — his deposit run. If
 %%  materialized he grabs the stilletto if it's lying there and dematerializes;
@@ -62,24 +70,34 @@
 (robber daemon)
     (current room $room)
     (#thief is #in $room)
-    (robber and player in $room)
+    (robber and player interact in $room)
 
 %%  If that room is TREAS, do nothing ("Don't move, Gertrude") — he defends the
 %%  lair, he doesn't wander off.
-(robber and player in $room)
+(robber and player interact in $room)
     ($room = #treasure-room)
 
-%% TODO
-(on every tick)
+(robber daemon)
+    (current room #treasure-room)
+    ~(#thief is nowhere)
+    You hear a scream of anguish as you violate the robber's hideaway. 
+    Using passages unknown to you, he rushes to its defense.
+    (now) (#thief is #in #treasure-room)
+    (now) (#thief is fighting)
+    (thief attacks)
+
+(thief attacks)
     (#thief is fighting)
     (current room $room)
     (#thief is #in $room)
     (#stilletto is #heldby #thief)
     (#thief attacks #player with #stilletto)
 
+%% TODO
 (on every tick)
-    ~(#thief is fighting)
-    %%(thief moves to new room)
+    (robber daemon)
+
+%%(thief moves to new room)
 
 (thief moves to new room)
     (#thief is #in $Room)

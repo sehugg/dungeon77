@@ -81,6 +81,7 @@
 
 (#player attacks $ with $)
     (#player is stunned)
+    %% TODO: reset stunned when not in combat
     You are still recovering from that last blow, so your attack is ineffective.
     (now)~(#player is stunned)
 
@@ -106,6 +107,7 @@
     (fail)
 
 ($attacker attacks $defender with $weapon)
+    ~($attacker is nowhere)
     ~($attacker is asleep)
     ~($attacker is stunned)
     ($attacker wields $weapon)
@@ -183,6 +185,7 @@
         (now)($item is #in $room)
     }
     (now)($defender is nowhere)
+    (now)~($defender is fighting)
 
 ($defender loses $delta strength)
     ($defender combat strength is $strength)
