@@ -15,6 +15,14 @@
 (egypt-flag)
 	(#gold-coffin is #heldby #player)
 
+(prevent [tie #rope to #railing])
+	(when #rope isn't directly held)
+
+(perform [tie #rope to #railing])
+	(now) (#rope is #heldby #railing)
+	(now) (dome-flag)
+	The rope drops over the side and comes within ten feet of the floor.
+
 %% ==================================================================
 %% Rooms
 %% ==================================================================

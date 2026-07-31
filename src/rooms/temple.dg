@@ -27,6 +27,7 @@
 (perform [pray])
 	(current room *)
 	(move player to #in #forest1)
+	(try [look])
 
 %% TEMP2
 #altar
@@ -59,7 +60,7 @@
 (name *)	prayer
 (readable *)
 (* is sacred)
-(dict *)	inscr ancie old praye prayer
+(dict *)	inscription ancient old script
 (descr *)
 	The prayer is inscribed in an ancient script which is hardly remembered
 	these days, much less understood. What little of it can be made out

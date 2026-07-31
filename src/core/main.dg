@@ -374,7 +374,7 @@
     (at random)
 
 (understand [pray] as [pray])
-(refuse [pray])
+(perform [pray])
     If you pray enough, your prayers may be answered.
 
 (understand [foo/bletch] as [jargon])
