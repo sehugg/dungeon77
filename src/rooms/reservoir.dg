@@ -113,7 +113,7 @@
 	Lying half buried in the mud is an old trunk, bulging with jewels.
 
 %% PUMP
-#hand-held-air-pump
+#pump
 (* is #in #reservoir-north)
 (name *)	hand-held air pump
 (item *)

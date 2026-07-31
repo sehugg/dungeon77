@@ -1,0 +1,96 @@
+
+(grammar [inflate [object]] for [inflate $])
+(grammar [inflate [object] with [object]] for [inflate $ with $])
+
+(instead of [inflate $obj])
+    Inflate with what?
+	(asking for object in [inflate $obj with []])
+
+(refuse [inflate #magic-boat with #pump])
+    Inflating it further would probably burst it.
+
+%% IBOAT
+#plastic-inflatable-boat
+(* is #in #dam-base)
+(name *)	plastic inflatable boat
+(item *)
+(flammable *)
+(dict *)	pile valve
+(* size is 20)
+(appearance *)
+	There is a folded pile of plastic here which has a small valve attached.
+%% TODO: object action routine IBOAT-FUNCTION
+
+(perform [inflate * with #pump])
+    (* is $rel $room)
+    (now) (* is nowhere)
+    (now) (#magic-boat is $rel $room)
+    The boat inflates and appears seaworthy.
+
+(refuse [inflate * with #pump])
+    ~(* has parent $room)
+    ~(room $room)
+    (The *) must be on the ground to be inflated.
+
+(perform [inflate * with $])
+    You would inflate it with that?
+    (fail)
+
+
+%% DBOAT
+#plastic-boat-with-hole
+(name *)	plastic boat \(with hole\)
+(item *)
+(flammable *)
+(* size is 20)
+(appearance *)
+	There is a pile of plastic here with a large hole in it.
+%% TODO: object action routine DBOAT-FUNCTION
+
+%% RBOAT
+#magic-boat
+(name *)	magic boat
+(item *)
+(flammable *)
+(container *)
+(vehicle *)
+(actor container *)
+(dict *)	plastic
+(* size is 20)
+(* capacity is 100)
+(appearance *)
+	There is an inflated boat here.
+	(list contents of *)
+%% TODO: object action routine RBOAT-FUNCTION
+
+%% LABEL
+#tan-label
+(* is #in #magic-boat)
+(name *)	tan label
+(item *)
+(readable *)
+(flammable *)
+(* size is 2)
+(appearance *)
+	There is a tan label here.
+(descr *)
+    (div @headline) {     !!!!  FROBOZZ MAGIC BOAT COMPANY  !!!! }
+    (par)
+    Hello, Sailor!
+    (par)
+    Instructions for use:
+    (par)
+    To get into boat, say 'Board'(line)
+    To leave boat, say 'Disembark'
+    (par)
+    To get into a body of water, say 'Launch'(line)
+    To get to shore, say 'Land'
+    (par)
+    Warranty:
+    (par)
+    This boat is guaranteed against all defects in parts and
+    workmanship for a period of 76 milliseconds from date of purchase or
+    until first used, whichever comes first.
+    (par)
+    Warning:
+    This boat is made of plastic.                Good Luck!

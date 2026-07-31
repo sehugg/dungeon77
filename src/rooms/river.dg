@@ -240,3 +240,20 @@
 	Oh dear, you seem to have gone over Aragain Falls.  Not a very smart
 	thing to do, apparently.
 	(jigs up)
+
+(perform [wave #broken-sharp-stick])
+	(current room *)
+	~(rainbow is solid)
+	(now) (rainbow is solid)
+	(now) (#pot-filled-with-gold is #in #end-of-rainbow)
+	(notice #pot-filled-with-gold)
+	(notice #rainbow)
+	Suddenly, the rainbow appears to become solid and, I venture,
+	walkable \(I think the giveaway was the stairs and bannister\).
+
+(perform [wave #broken-sharp-stick])
+	(current room *)
+	(rainbow is solid)
+	(now) ~(rainbow is solid)
+	The rainbow seems to have become somewhat run-of-the-mill.
+

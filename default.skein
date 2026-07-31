@@ -2681,3 +2681,571 @@ You put the gold coffin in the trophy case.
 
 [0m[4m(Your score has gone up by seven points.)
 [0m
+--------------------------------------------------------------------------------
+id: 1785508581804
+parent-id: 1785508581797
+command: get pump
+--------------------------------------------------------------------------------
+> get pump
+You take the hand-held air pump.
+
+--------------------------------------------------------------------------------
+id: 1785508581807
+parent-id: 1785508581804
+command: d,e,n,e,nw
+--------------------------------------------------------------------------------
+> d,e,n,e,nw
+Down: You climb down through the trap door.
+
+[0m[1mCellar[0m
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+East: You walk east.
+
+[0m[1mThe Troll Room[0m
+You are in a small room with passages off in all directions. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
+
+There is an elvish sword here.
+
+There is a bloody axe here.
+
+North: You walk north.
+
+[0m[1mEast-West Passage[0m
+You are in a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.
+
+East: You walk east.
+
+[0m[1mRound room[0m
+You are in a circular room with passages off in eight directions.
+
+There is a dented iron box here.
+
+Northwest: You walk northwest.
+
+[0m[1mDeep Canyon[0m
+You are on the south edge of a deep canyon. Passages lead off to the east, south, and northwest. You can hear the sound of flowing water below.
+
+--------------------------------------------------------------------------------
+id: 1785508581808
+parent-id: 1785508581807
+command: e,e,s,e,e
+--------------------------------------------------------------------------------
+> e,e,s,e,e
+East: You walk east.
+
+[0m[1mDam[0m
+You are standing on the top of the Flood Control Dam #3, which was quite a tourist attraction in times far distant. There are paths to the north, south, east, and down. It appears that the dam has been opened since the water level behind it is low and the sluice gate has been opened. Water is rushing downstream through the gates.
+
+There is a control panel here. There is a large metal bolt on the panel. Above the bolt is a small green plastic bubble. The green bubble is glowing.
+
+There is a wrench here.
+
+East: You walk east.
+
+[0m[1mDamp Cave[0m
+You are in a cave. Passages exit to the south and to the east, but the cave narrows to a crack to the west. The earth is particularly damp here.
+
+South: You walk south.
+
+[0m[1mLoud Room[0m
+You are in a large room with a ceiling which cannot be detected from the ground. There is a narrow passage from east to west and a stone stairway leading upward. The room is extremely noisy. In fact, it is difficult to hear yourself think.
+
+East: You walk east.
+
+[0m[1mAncient Chasm[0m
+A chasm, evidently produced by an ancient river, runs through the cave here. Passages lead off in all directions.
+
+East: You walk east.
+
+[0m[1mSmall Cave[0m
+You are in a small cave whose exits are on the south and northwest.
+
+There is a large shovel here.
+
+There is a hunk of bat guano here.
+
+--------------------------------------------------------------------------------
+id: 1785508581809
+parent-id: 1785508581808
+command: get shovel
+--------------------------------------------------------------------------------
+> get shovel
+You take the shovel.
+
+--------------------------------------------------------------------------------
+id: 1785508581811
+parent-id: 1785508581809
+command: nw,s,u,e,d
+--------------------------------------------------------------------------------
+> nw,s,u,e,d
+Northwest: You walk northwest.
+
+[0m[1mAncient Chasm[0m
+A chasm, evidently produced by an ancient river, runs through the cave here. Passages lead off in all directions.
+
+South: You walk south.
+
+[0m[1mLoud Room[0m
+You are in a large room with a ceiling which cannot be detected from the ground. There is a narrow passage from east to west and a stone stairway leading upward. The room is extremely noisy. In fact, it is difficult to hear yourself think.
+
+Up: You climb up.
+
+[0m[1mDamp Cave[0m
+You are in a cave. Passages exit to the south and to the east, but the cave narrows to a crack to the west. The earth is particularly damp here.
+
+East: You walk east.
+
+[0m[1mDam[0m
+You are standing on the top of the Flood Control Dam #3, which was quite a tourist attraction in times far distant. There are paths to the north, south, east, and down. It appears that the dam has been opened since the water level behind it is low and the sluice gate has been opened. Water is rushing downstream through the gates.
+
+There is a control panel here. There is a large metal bolt on the panel. Above the bolt is a small green plastic bubble. The green bubble is glowing.
+
+There is a wrench here.
+
+Down: You climb down.
+
+[0m[1mDam Base[0m
+You are at the base of Flood Control Dam #3, which looms above you and to the north. The river Frigid is flowing by here. Across the river are the White Cliffs which seem to form a giant wall stretching from north to south along the east shore of the river as it winds its way downstream.
+
+There is a broken sharp stick here.
+
+There is a folded pile of plastic here which has a small valve attached.
+
+--------------------------------------------------------------------------------
+id: 1785508581812
+parent-id: 1785508581811
+command: inflate boat with pump
+--------------------------------------------------------------------------------
+> inflate boat with pump
+The boat inflates and appears seaworthy.
+
+--------------------------------------------------------------------------------
+id: 1785508581813
+parent-id: 1785508581812
+command: drop pump
+--------------------------------------------------------------------------------
+> drop pump
+The hand-held air pump falls to the ground.
+
+--------------------------------------------------------------------------------
+id: 1785508581814
+parent-id: 1785508581813
+command: put stick in boat
+--------------------------------------------------------------------------------
+> put stick in boat
+(first attempting to take the broken sharp stick)
+You take the broken sharp stick.
+
+You put the broken sharp stick in the magic boat.
+
+--------------------------------------------------------------------------------
+id: 1785508581815
+parent-id: 1785508581814
+command: board boat
+--------------------------------------------------------------------------------
+> board boat
+You get into the magic boat.
+
+--------------------------------------------------------------------------------
+id: 1785508581818
+parent-id: 1785508581815
+command: launch
+--------------------------------------------------------------------------------
+> launch
+You drive the magic boat launch.
+
+[0m[1mFrigid River[0m (in the magic boat)
+You are on the River Frigid in the vicinity of the Dam. The river flows quietly here. There is a landing on the west shore.
+
+There is an inflated boat here.
+In the magic boat are a broken sharp stick and a tan label.
+
+There is a broken sharp stick here.
+
+There is a tan label here.
+
+--------------------------------------------------------------------------------
+id: 1785508581819
+parent-id: 1785508581818
+command: d
+--------------------------------------------------------------------------------
+> d
+You drive the magic boat down.
+
+[0m[1mFrigid River[0m (in the magic boat)
+The River turns a corner here making it impossible to see the Dam. The White Cliffs loom on the east bank and large rocks prevent landing on the west.
+
+There is an inflated boat here.
+In the magic boat are a broken sharp stick and a tan label.
+
+There is a broken sharp stick here.
+
+There is a tan label here.
+
+--------------------------------------------------------------------------------
+id: 1785508581820
+parent-id: 1785508581819
+command: d
+--------------------------------------------------------------------------------
+> d
+You drive the magic boat down.
+
+[0m[1mFrigid River[0m (in the magic boat)
+The river descends here into a valley. There is a narrow beach on the east below the cliffs and there is some shore on the west which may be suitable. In the distance a faint rumbling can be heard.
+
+There is an inflated boat here.
+In the magic boat are a broken sharp stick and a tan label.
+
+There is a broken sharp stick here.
+
+There is a tan label here.
+
+--------------------------------------------------------------------------------
+id: 1785508581821
+parent-id: 1785508581820
+command: d
+--------------------------------------------------------------------------------
+> d
+You drive the magic boat down.
+
+[0m[1mFrigid River[0m (in the magic boat)
+The river is running faster here and the sound ahead appears to be that of rushing water. On the west shore is a sandy beach. A small area of beach can also be seen below the Cliffs.
+
+There is an inflated boat here.
+In the magic boat are a broken sharp stick and a tan label.
+
+There is a red buoy here (probably a warning).
+
+There is a broken sharp stick here.
+
+There is a tan label here.
+
+--------------------------------------------------------------------------------
+id: 1785508581824
+parent-id: 1785508581821
+command: take buoy
+--------------------------------------------------------------------------------
+> take buoy
+You take the red buoy.
+
+--------------------------------------------------------------------------------
+id: 1785508581825
+parent-id: 1785508581824
+command: w
+--------------------------------------------------------------------------------
+> w
+You drive the magic boat west.
+
+[0m[1mSandy Beach[0m (in the magic boat)
+You are on a large sandy beach at the shore of the river, which is flowing quickly by. A path runs beside the river to the south here.
+
+There is an inflated boat here.
+In the magic boat are a broken sharp stick and a tan label.
+
+There is a broken sharp stick here.
+
+There is a tan label here.
+
+--------------------------------------------------------------------------------
+id: 1785508581826
+parent-id: 1785508581825
+command: disembark
+--------------------------------------------------------------------------------
+> disembark
+You get out of the magic boat.
+
+--------------------------------------------------------------------------------
+id: 1785508581827
+parent-id: 1785508581826
+command: take shovel
+--------------------------------------------------------------------------------
+> take shovel
+You're already holding the shovel.
+
+--------------------------------------------------------------------------------
+id: 1785508581828
+parent-id: 1785508581827
+command: i
+--------------------------------------------------------------------------------
+> i
+You have a red buoy, a shovel, a wire coil, a ivory torch, a knife, and a battery-powered brass lantern.
+
+--------------------------------------------------------------------------------
+id: 1785508581829
+parent-id: 1785508581828
+command: take stick
+--------------------------------------------------------------------------------
+> take stick
+You take the broken sharp stick out of the magic boat.
+
+--------------------------------------------------------------------------------
+id: 1785508581830
+parent-id: 1785508581829
+command: dig with shovel
+--------------------------------------------------------------------------------
+> dig with shovel
+You seem to be digging a hole here.
+
+--------------------------------------------------------------------------------
+id: 1785508581831
+parent-id: 1785508581830
+command: again
+--------------------------------------------------------------------------------
+> again
+The hole is getting deeper, but that's about it.
+
+--------------------------------------------------------------------------------
+id: 1785508581832
+parent-id: 1785508581831
+command: again
+--------------------------------------------------------------------------------
+> again
+You are surrounded by a wall of sand on all sides.
+
+--------------------------------------------------------------------------------
+id: 1785508581833
+parent-id: 1785508581832
+command: again
+--------------------------------------------------------------------------------
+> again
+You can see a small statue here in the sand.
+
+--------------------------------------------------------------------------------
+id: 1785508581835
+parent-id: 1785508581833
+command: take statue
+--------------------------------------------------------------------------------
+> take statue
+You take the statue.
+
+[0m[4m(Your score has gone up by ten points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581836
+parent-id: 1785508581835
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mShore[0m
+You are on the shore of the River. The river here seems somewhat treacherous. A path travels from north to south here, the south end quickly turning around a sharp corner.
+
+--------------------------------------------------------------------------------
+id: 1785508581837
+parent-id: 1785508581836
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mAragain Falls[0m
+You are at the top of Aragain Falls, an enormous waterfall with a drop of about 450 feet. The only path here is on the north end. There is a man-sized barrel here which you could fit into. A beautiful rainbow can be seen over the falls and to the east.
+
+--------------------------------------------------------------------------------
+id: 1785508581838
+parent-id: 1785508581837
+command: wave stick
+--------------------------------------------------------------------------------
+> wave stick
+Suddenly, the rainbow appears to become solid and, I venture, walkable (I think the giveaway was the stairs and bannister).
+
+--------------------------------------------------------------------------------
+id: 1785508581840
+parent-id: 1785508581838
+command: l
+--------------------------------------------------------------------------------
+> l
+[0m[1mAragain Falls[0m
+You are at the top of Aragain Falls, an enormous waterfall with a drop of about 450 feet. The only path here is on the north end. There is a man-sized barrel here which you could fit into. A solid rainbow spans the falls.
+
+--------------------------------------------------------------------------------
+id: 1785508581841
+parent-id: 1785508581840
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mRainbow Room[0m
+You are on top of a rainbow (I bet you never thought you would walk on a rainbow), with a magnificent view of the Falls. The rainbow travels east-west here. There is an NBC Commissary here.
+
+--------------------------------------------------------------------------------
+id: 1785508581842
+parent-id: 1785508581841
+command: e
+--------------------------------------------------------------------------------
+> e
+You walk east.
+
+[0m[1mEnd of Rainbow[0m
+You are on a small beach on the continuation of the Frigid River past the Falls. The beach is narrow due to the presence of the White Cliffs. The river canyon opens here and sunlight shines in from above. A rainbow crosses over the falls to the west and a narrow path continues to the southeast.
+
+There is a pot of gold here.
+
+--------------------------------------------------------------------------------
+id: 1785508581843
+parent-id: 1785508581842
+command: get pot
+--------------------------------------------------------------------------------
+> get pot
+You take the pot filled with gold.
+
+[0m[4m(Your score has gone up by ten points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581845
+parent-id: 1785508581843
+command: se
+--------------------------------------------------------------------------------
+> se
+You walk southeast.
+
+[0m[1mCanyon Bottom[0m
+You are beneath the walls of the river canyon which may be climbable here. There is a small stream here, which is the lesser part of the runoff of Aragain Falls. To the north is a narrow path.
+
+--------------------------------------------------------------------------------
+id: 1785508581846
+parent-id: 1785508581845
+command: u
+--------------------------------------------------------------------------------
+> u
+You climb up.
+
+[0m[1mRocky Ledge[0m
+You are on a ledge about halfway up the wall of the river canyon. You can see from here that the main flow from Aragain Falls twists along a passage which it is impossible to enter. Below you is the canyon bottom. Above you is more cliff, which still appears climbable.
+
+--------------------------------------------------------------------------------
+id: 1785508581847
+parent-id: 1785508581846
+command: u
+--------------------------------------------------------------------------------
+> u
+You climb up.
+
+[0m[1mCanyon View[0m
+You are at the top of the Great Canyon on its south wall. From here there is a marvelous view of the Canyon and parts of the Frigid River upstream. Across the canyon, the walls of the White Cliffs still appear to loom far above. Following the Canyon upstream (north and northwest), Aragain Falls may be seen, complete with rainbow. Fortunately, my vision is better than average and I can discern the top of the Flood Control Dam #3 far to the distant north. To the west and south can be seen an immense forest, stretching for miles around. It is possible to climb down into the canyon from here.
+
+--------------------------------------------------------------------------------
+id: 1785508581848
+parent-id: 1785508581847
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mForest[0m
+You are in a large forest, with trees obstructing all views except to the east, where a small clearing may be seen through the trees.
+
+--------------------------------------------------------------------------------
+id: 1785508581849
+parent-id: 1785508581848
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mForest[0m
+You are in a forest, with trees in all directions around you.
+
+--------------------------------------------------------------------------------
+id: 1785508581850
+parent-id: 1785508581849
+command: go to living room
+--------------------------------------------------------------------------------
+> go to living room
+(west)
+
+[0m[1mForest[0m
+
+(north)
+
+[0m[1mSouth of House[0m
+
+(east)
+
+[0m[1mBehind House[0m
+
+(west)
+
+[0m[1mKitchen[0m
+
+(west)
+
+[0m[1mLiving Room[0m
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a rug lying beside an open trap-door.
+
+A sandwich bag is here.
+
+A bottle is sitting on the table.
+In the glass bottle is some water.
+
+There is a square brick here which feels like clay.
+
+There is an issue of US NEWS & DUNGEON REPORT dated 7/25/2026 here.
+
+There is a piece of cake here with the words 'Eat Me' on it.
+
+There is a piece of cake with red icing here.
+
+There is a piece of cake with blue (ecch) icing here.
+
+There is a matchbook whose cover says 'Visit Beautiful FCD#3' here.
+
+There is a small brass bell here.
+
+There is a large black book here.
+
+There are two candles here.
+
+There is a screwdriver here.
+
+There is a trophy case here.
+In the trophy case are a gold coffin, a chalice, a trunk with jewels, a painting, a grail, a platinum bar, a crystal trident, a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
+
+--------------------------------------------------------------------------------
+id: 1785508581851
+parent-id: 1785508581850
+command: open buoy
+--------------------------------------------------------------------------------
+> open buoy
+You open the red buoy, revealing a large emerald.
+
+--------------------------------------------------------------------------------
+id: 1785508581852
+parent-id: 1785508581851
+command: put loot in case
+--------------------------------------------------------------------------------
+> put loot in case
+The pot filled with gold: You put the pot filled with gold in the trophy case.
+
+The statue: You put the statue in the trophy case.
+
+The ivory torch: You put the ivory torch in the trophy case.
+
+[0m[4m(Your score has gone up by 29 points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581853
+parent-id: 1785508581852
+command: put emerald in case
+--------------------------------------------------------------------------------
+> put emerald in case
+(first attempting to take the large emerald)
+You take the large emerald out of the red buoy.
+
+You put the large emerald in the trophy case.
+
+[0m[4m(Your score has gone up by fifteen points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581865
+parent-id: 1785508581853
+command: open sack and get garlic
+--------------------------------------------------------------------------------
+> open sack and get garlic
+You open the sandwich bag, revealing a lunch and a clove of garlic.
+
+You take the clove of garlic out of the sandwich bag.
+

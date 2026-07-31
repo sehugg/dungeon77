@@ -777,60 +777,6 @@
 (appearance *)
 	There is a beautiful statue here.
 
-%% IBOAT
-#plastic-inflatable-boat
-(* is #in #dam-base)
-(name *)	plastic inflatable boat
-(item *)
-(flammable *)
-(dict *)	pile valve
-(* size is 20)
-(appearance *)
-	There is a folded pile of plastic here which has a small valve attached.
-%% TODO: object action routine IBOAT-FUNCTION
-
-%% DBOAT
-#plastic-boat-with-hole
-(name *)	plastic boat \(with hole\)
-(item *)
-(flammable *)
-(* size is 20)
-(appearance *)
-	There is a pile of plastic here with a large hole in it.
-%% TODO: object action routine DBOAT-FUNCTION
-
-%% RBOAT
-#magic-boat
-(name *)	magic boat
-(item *)
-(flammable *)
-(vehicle *)
-(dict *)	platic
-(* size is 20)
-(* capacity is 100)
-(appearance *)
-	There is an inflated boat here.
-	(list contents of *)
-%% TODO: object action routine RBOAT-FUNCTION
-
-%% LABEL
-#tan-label
-(* is #in #magic-boat)
-(name *)	tan label
-(item *)
-(readable *)
-(flammable *)
-(* size is 2)
-(appearance *)
-	There is a tan label here.
-(descr *)
-	!!!! FROBOZZ MAGIC BOAT COMPANY !!!! Hello, Sailor! Instructions for
-	use: To get into boat, say 'Board' To leave boat, say 'Disembark' To get
-	into a body of water, say 'Launch' To get to shore, say 'Land' Warranty:
-	This boat is guaranteed against all defects in parts and workmanship for
-	a period of 76 milliseconds from date of purchase or until first used,
-	whichever comes first. Warning: This boat is made of plastic. Good Luck!
-
 %% STICK
 #broken-sharp-stick
 (* is #in #dam-base)
@@ -870,26 +816,6 @@
 (* awards 10 points on return)
 (appearance *)
 	There is an emerald here.
-
-%% SHOVE
-#shovel
-(* is #in #small-cave)
-(name *)	shovel
-(item *)
-(tool *)
-(* size is 15)
-(appearance *)
-	There is a large shovel here.
-
-%% GUANO
-#hunk-of-bat-guano
-(* is #in #small-cave)
-(name *)	hunk of bat guano
-(item *)
-(dict *)	crap shit
-(* size is 20)
-(appearance *)
-	There is a hunk of bat guano here.
 
 %% BRICK
 #brick

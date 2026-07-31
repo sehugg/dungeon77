@@ -1,0 +1,47 @@
+
+%%   '["You are digging into a pile of bat guano."
+%%     "You seem to be getting knee deep in guano."
+%%     "You are covered with bat turds, cretin."]>
+%%"Digging with the " 1 <ODESC2 .PRSO> " is slow and tedious.">)
+
+(grammar [dig with [object]] for [dig with $])
+
+(perform [dig with #shovel])
+    (current room #sandy-beach)
+    (select)You seem to be digging a hole here.
+    (or)The hole is getting deeper, but that's about it.
+    (or)You are surrounded by a wall of sand on all sides.
+    (or)
+    You can see a small statue here in the sand.
+    (now) (#statue is in #sandy-beach)
+    (or)
+    The hole collapses, smothering you.
+    (jigs up)
+    (stopping)
+
+(perform [dig with #shovel])
+    There's nothing to dig into here.
+
+(perform [dig with $obj])
+    Digging with (a $obj) is silly.
+
+%% SHOVE
+#shovel
+(* is #in #small-cave)
+(name *)	shovel
+(item *)
+(tool *)
+(* size is 15)
+(appearance *)
+	There is a large shovel here.
+
+%% GUANO
+#hunk-of-bat-guano
+(* is #in #small-cave)
+(name *)	hunk of bat guano
+(item *)
+(dict *)	crap shit
+(* size is 20)
+(appearance *)
+	There is a hunk of bat guano here.
+
