@@ -223,6 +223,7 @@
 (item *)
 (container *)
 (openable *)
+(holds liquid *)
 ~(opaque *)
 (* capacity is 4)
 (dict *)	container pitcher
@@ -234,7 +235,8 @@
 
 #water
 (* is #in #bottle)
-(name *)        quantity of water
+(name *)        water
+(uncountable *)
 (potable *)
 (liquid *)
 (dict *)	liquid h2o

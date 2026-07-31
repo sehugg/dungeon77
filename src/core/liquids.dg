@@ -5,21 +5,42 @@
 (grammar [fill [single]] for [put #water #in $])
 (grammar [fill [single] with [single]] for [put $ #in $] reversed)
 
-~(prevent [drop $Obj])
-    (liquid $Obj)
+%% disable usual prevents for PUT and DROP
+%% (so we can fill w/o holding the water)
 
-~(prevent [put $Obj #in $])
-    (liquid $Obj)
-    %% TODO: holding bottle?
+~(prevent [drop $liquid])
+    (liquid $liquid)
 
-(perform [drop $Obj])
-    (liquid $Obj)
+~(prevent [put $liquid #in $bottle])
+    (liquid $liquid)
+
+%% this could be a prevent, but we disabled them
+
+(perform [put $liquid #in $bottle])
+    (liquid $liquid)
+    (holds liquid $bottle)
+    ($ has parent $bottle)
+    (The $bottle) is already full.
+
+(perform [drop $liquid])
+    (liquid $liquid)
     The water spills to the floor and evaporates immediately.
-    (now)($Obj is nowhere)
+    (now)($liquid is nowhere)
 
-(perform [put $Obj #in $Container])
-    (liquid $Obj)
-    ~($Container = #bottle)
-    The water leaks out of (the $Container) and evaporates immediately.
-    (now)($Obj is nowhere)
+(perform [put $liquid #in $bottle])
+    (liquid $liquid)
+    (container $bottle)
+    ~(holds liquid $bottle)
+    The water leaks out of (the $bottle) and evaporates immediately.
+    (now)($liquid is nowhere)
+
+(instead of [take $liquid])
+    (liquid $liquid)
+    (The $liquid) slips through your fingers.
+    (now) ($liquid is nowhere)
+
+(narrate putting $liquid #in $bottle)
+    (liquid $liquid)
+    (holds liquid $bottle)
+    (The $bottle) is now full of (the $liquid).
 
