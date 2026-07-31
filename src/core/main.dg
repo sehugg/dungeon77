@@ -50,16 +50,40 @@
 (treasure $Thing)
     ($Thing awards $ points on return)
 
+
+%%% Player object
+
 #player
 (current player *)
 (descr *)
     You are here.
 (* is #in #west-of-house)
 
-(narrate door is locked)
-    The door is locked, and there is evidently no key.
-(narrate windows are barred)
-    The windows are all barred.
+%%% Directions
+
+#cross
+(direction *)
+(name *)              cross
+(dict *)              across over
+(present-adverb *)    on the far side
+(from-adverb *)       the far side
+(opposite of * is #cross)
+
+#land
+(direction *)
+(name *)              land
+(dict *)              dock disembark
+(present-adverb *)    at the landing
+(from-adverb *)       the landing
+(opposite of * is #launch)
+
+#launch
+(direction *)
+(name *)              launch
+(dict *)              sail cast
+(present-adverb *)    out from the landing
+(from-adverb *)       out beyond
+(opposite of * is #land)
 
 %%% Darkness
 

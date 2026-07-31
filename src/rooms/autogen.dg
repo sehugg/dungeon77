@@ -712,7 +712,8 @@
 
 %% HANDS
 #pair-of-hands
-(name *)	pair of hands
+(name *)	hands
+(pair *)
 (tool *)
 (scenery *)
 (dict *)	hand bare

@@ -3,10 +3,7 @@ seed: 85413
 id: 0
 label: START
 --------------------------------------------------------------------------------
-[1m[36mWarning:[0m[36m Object #cross was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #launch was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #land was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
+[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 674: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
@@ -14,8 +11,8 @@ label: START
 [0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/thief.dg, line 50: Possible typo: A rule is defined for '(robber daemon)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 294: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 302: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 318: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 326: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m
 
 [0m[1mDungeon
@@ -1911,7 +1908,7 @@ command: get book and candles
 > get book and candles
 The black book: You take the black book.
 
-The pair of candles: You take the pair of candles.
+The candles: You take the candles.
 
 --------------------------------------------------------------------------------
 id: 1785255063971
@@ -1980,7 +1977,7 @@ parent-id: 1785342514340
 command: light candles with match
 --------------------------------------------------------------------------------
 > light candles with match
-The pair of candles is burning.
+The candles are burning.
 
 --------------------------------------------------------------------------------
 id: 1785342514342
@@ -2038,4 +2035,237 @@ command: diagnose
 --------------------------------------------------------------------------------
 > diagnose
 You are in perfect health. You are strong enough to take several wounds.
+
+--------------------------------------------------------------------------------
+id: 1785495282748
+parent-id: 1785342514346
+command: go to hades
+--------------------------------------------------------------------------------
+> go to hades
+(west)
+
+[0m[1mLand of the Living Dead[0m
+
+(out)
+
+[0m[1mEntrance to Hades[0m
+You are outside a large gateway, on which is inscribed:
+"Abandon every hope, all ye who enter here."
+The gate is open; through it you can see a desolation, with a pile of mangled corpses in one corner. Thousands of voices, lamenting some hideous fate, can be heard.
+
+--------------------------------------------------------------------------------
+id: 1785495282749
+parent-id: 1785495282748
+command: u
+--------------------------------------------------------------------------------
+> u
+You climb up.
+
+[0m[1mCave[0m
+You are in a tiny cave with entrances west and north, and a dark, forbidding staircase leading down.
+
+--------------------------------------------------------------------------------
+id: 1785495282750
+parent-id: 1785495282749
+command: w
+--------------------------------------------------------------------------------
+> w
+You walk west.
+
+[0m[1mMirror Room[0m
+You are in a large square room with tall ceilings. On the south wall is an enormous mirror which fills the entire wall. There are exits on the other three sides of the room.
+
+--------------------------------------------------------------------------------
+id: 1785495282751
+parent-id: 1785495282750
+command: touch mirror
+--------------------------------------------------------------------------------
+> touch mirror
+There is a rumble from deep within the earth and the room shakes.
+
+--------------------------------------------------------------------------------
+id: 1785495282753
+parent-id: 1785495282751
+command: go to reservoir
+--------------------------------------------------------------------------------
+> go to reservoir
+(east)
+
+[0m[1mCave[0m
+
+(down)
+
+[0m[1mAtlantis Room[0m
+
+(southeast)
+
+[0m[1mReservoir North[0m
+You are in the north end of a large cavernous room which was formerly a reservoir. However, with the water level lowered, there is merely a wide stream running through the center of the room. There is a tunnel leaving the room to the north.
+
+--------------------------------------------------------------------------------
+id: 1785495282754
+parent-id: 1785495282753
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mReservoir South[0m
+You are in the south end of a large cavernous room which was formerly a reservoir. However, with the water level lowered, there is merely a wide stream running through the center of the room. There is a western exit, a passageway south, and a steep pathway climbing up along the edge of a cliff.
+
+There is an old trunk here, bulging with assorted jewels.
+
+--------------------------------------------------------------------------------
+id: 1785495282755
+parent-id: 1785495282754
+command: get trunk
+--------------------------------------------------------------------------------
+> get trunk
+You take the trunk with jewels.
+
+[0m[4m(Your score has gone up by fifteen points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785495282756
+parent-id: 1785495282755
+command: go to living room
+--------------------------------------------------------------------------------
+> go to living room
+The stairs are too steep for carrying the coffin.
+
+[0m[4mBecause something dramatic happened, your movement was cut short.
+[0m> 
+--------------------------------------------------------------------------------
+id: 1785495282757
+parent-id: 1785495282756
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mReservoir North[0m
+You are in the north end of a large cavernous room which was formerly a reservoir. However, with the water level lowered, there is merely a wide stream running through the center of the room. There is a tunnel leaving the room to the north.
+
+--------------------------------------------------------------------------------
+id: 1785495282758
+parent-id: 1785495282757
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mAtlantis Room[0m
+You are in an ancient room, long buried by the Reservoir. There are exits here to the southeast and upward.
+
+--------------------------------------------------------------------------------
+id: 1785495282759
+parent-id: 1785495282758
+command: u
+--------------------------------------------------------------------------------
+> u
+You climb up.
+
+[0m[1mCave[0m
+You are in a small cave with an entrance to the north and a stairway leading down.
+
+--------------------------------------------------------------------------------
+id: 1785495282760
+parent-id: 1785495282759
+command: go to living room
+--------------------------------------------------------------------------------
+> go to living room
+(north)
+
+[0m[1mMirror Room[0m
+
+(west)
+
+[0m[1mCold Passage[0m
+
+(west)
+
+[0m[1mSlide Room[0m
+
+(down)
+
+[0m[1mCellar[0m
+
+(up)
+
+[0m[1mLiving Room[0m
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a rug lying beside an open trap-door.
+
+There is a screwdriver here.
+
+There is a small pump here.
+
+There is a trophy case here.
+In the trophy case are a painting, a chalice, a grail, a platinum bar, a crystal trident, a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
+
+--------------------------------------------------------------------------------
+id: 1785495282761
+parent-id: 1785495282760
+command: put trunk in case
+--------------------------------------------------------------------------------
+> put trunk in case
+You put the trunk with jewels in the trophy case.
+
+[0m[4m(Your score has gone up by eight points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785495282766
+parent-id: 1785495282761
+command: drop all then get lamp and knife
+--------------------------------------------------------------------------------
+> drop all then get lamp and knife
+The candles: The candles fall to the ground.
+
+The black book: The black book falls to the ground.
+
+The brass bell: The brass bell falls to the ground.
+
+The matchbook: The matchbook falls to the ground.
+
+The piece of cake with blue icing: The piece of cake with blue icing falls to the ground.
+
+The piece of cake with red icing: The piece of cake with red icing falls to the ground.
+
+The piece of 'Eat Me' cake: The piece of 'Eat Me' cake falls to the ground.
+
+The newspaper: The newspaper falls to the ground.
+
+The battery-powered brass lantern: The battery-powered brass lantern falls to the ground.
+
+The knife: The knife falls to the ground.
+
+The rope: The rope falls to the ground.
+
+The brick: The brick falls to the ground.
+
+The glass bottle: The glass bottle falls to the ground.
+
+The sandwich bag: The sandwich bag falls to the ground.
+
+The battery-powered brass lantern: You take the battery-powered brass lantern.
+
+The knife: You take the knife. The candles has gone out.
+
+--------------------------------------------------------------------------------
+id: 1785495282769
+parent-id: 1785495282766
+command: go to treasure room
+--------------------------------------------------------------------------------
+> go to treasure room
+(west)
+
+[0m[1mStrange Passage[0m
+
+(south)
+
+[0m[1mCyclops Room[0m
+
+(up)
+
+[0m[1mTreasure Room[0m
+This is a large room, whose north wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor.
 

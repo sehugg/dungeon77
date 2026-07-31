@@ -110,7 +110,8 @@
 %% CANDL
 #candles
 (* is #in #altar)
-(name *)	pair of candles
+(name *)	candles
+(pair *)
 (item *)
 (dict *)	candle
 (flammable *)
