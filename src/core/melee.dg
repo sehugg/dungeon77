@@ -17,8 +17,6 @@
 %% Global variables (for efficiency)
 
 (global variable (player combat strength is 3)) %% Dungeon has 2
-(global variable (troll combat strength is 2))
-
 (global variable (player wields $weapon))   %% last weapon wielded
 
 (interface ($actor wields $weapon))
@@ -27,24 +25,25 @@
     (player combat strength is $result)
 (set #player combat strength to $value)
     (now)(player combat strength is $value)
+    (par)
+    You feel a little better.
+
 (#player maximum strength is $result)
     (current score $score)
     ($score divided by 70 into $adjust) %% TODO: performance
     (3 plus $adjust into $result)
+
 (#player wields $weapon)
     (player wields $weapon)
     ($weapon is #heldby #player)
 
-(#troll combat strength is $result)
-    (troll combat strength is $result)
-(set #troll combat strength to $value)
-    (now)(troll combat strength is $value)
-(#troll maximum strength is 2)
-(#troll wields #axe)
+($attacker wields $weapon)
+    ($weapon is #heldby $attacker)
+
 
 %% Healing ticks
 
-(early on every tick)
+(late on every tick)
     (random from 1 to 30 into $rnd)
     ($rnd = 1)
     (exhaust) {
@@ -56,16 +55,6 @@
     }
 
 %% Villain ticks
-
-(on every tick in #troll-room)
-    (#troll is #in #troll-room)
-    (#troll attacks #player with #axe)
-
-(on every tick)
-    (#thief is fighting)
-    (current player $room)
-    (#thief is #in $room)
-    (#thief attacks #player with #stilletto)
 
 (early on every tick)
     (exhaust) {
@@ -119,7 +108,7 @@
 ($attacker attacks $defender with $weapon)
     ~($attacker is asleep)
     ~($attacker is stunned)
-    ($weapon is #heldby $attacker)
+    ($attacker wields $weapon)
     ($attacker combat strength is $attacker-strength)
     ($defender combat strength is $defender-strength)
     ($attacker-strength > 0)
@@ -207,10 +196,6 @@
 ($defender gets stunned)
     (now)($defender is stunned)
 
-%% TODO: this fails?
-(#troll loses weapon)
-    %% troll can't lose weapon, but the narration makes it seem like they did
-
 ($defender loses weapon)
     ($weapon is #heldby $defender)
     ($defender is $Rel $Loc)
@@ -249,16 +234,6 @@
         (fail)
     (endif)
 
-%% TODO: unused
-(clamp $value from $lo to $hi into $result)
-    (if)($value < $lo)(then)
-        ($result = $lo)
-    (elseif)($value > $hi)(then)
-        ($result = $hi)
-    (else)
-        ($result = $value)
-    (endif)
-
 (compute outcome of $attacker-strength vs $defender-strength roll $roll into $outcome)
     (get combat table for defender $defender-strength into $table)
     (if)($attacker-strength > $defender-strength)(then)
@@ -283,53 +258,6 @@
 
 %% Messages
 
-(narrate #troll attacking #player with outcome 0)
-    (select)The troll swings his axe, but it misses.
-    (or)The troll's axe barely misses your ear.
-    (or)The axe sweeps past as you jump aside.
-    (or)The axe crashes against the rock, throwing sparks!
-    (at random)
-
-(narrate #troll attacking #player with outcome 1)
-    The flat of the troll's axe hits you delicately on the head, knocking you out.
-
-(narrate #troll attacking #player with outcome 2)
-    (select)The troll lands a killing blow.  You are dead.
-    (or)The troll neatly removes your head.
-    (or)The troll's axe stroke cleaves you from the nave to the chops.
-    (or)The troll's axe removes your head.
-    (at random)
-
-(narrate #troll attacking #player with outcome 3)
-    (select)The axe gets you right in the side.  Ouch!
-    (or)The flat of the troll's axe skins across your forearm.
-    (or)The troll's swing almost knocks you over as you barely parry in time.
-    (or)The troll swings his axe, and it nicks your arm as you dodge.
-    (at random)
-
-(narrate #troll attacking #player with outcome 4)
-    (select)The troll charges, and his axe slashes you on your arm.
-    (or)An axe stroke makes a deep wound in your leg.
-    (or)The troll's axe swings down, gashing your shoulder.
-    (or)The troll sees a hole in your defense, and a lightning stroke opens a wound in your left side.
-    (at random)
-
-(narrate #troll attacking #player with outcome 5)
-    (select)The troll hits you with a glancing blow, and you are momentarily stunned.
-    (or)The troll swings; the blade turns on your armor but crashes broadside into your head.
-    (or)You stagger back under a hail of axe strokes.
-    (or)The troll's mighty blow drops you to your knees.
-    (at random)
-
-(narrate #troll attacking #player with outcome 6)
-    (player wields $weapon)
-    (select)The axe hits your (name $weapon) and knocks it spinning.
-    (or)The troll swings, you parry, but the force of his blow disarms you.
-    (or)The axe knocks your (name $weapon) out of your hand.  It falls to the floor.
-    (or)Your (name $weapon) is knocked out of your hands, but you parried the blow.
-    (at random)
-    ~(narrate alternate player weapon besides $weapon)
-
 (narrate alternate player weapon besides $weapon)
     (at most once) {
         *($alt is #heldby #player)
@@ -338,16 +266,6 @@
     }
     Fortunately, you still have (a $alt).
     (fail)
-
-(narrate #troll attacking #player with outcome 7)
-    (select)The troll strikes at your unconscious form, but misses in his rage.
-    (or)The troll hesitates, fingering his axe.
-    (or)The troll scratches his head ruminatively:  Might you be magically protected, he wonders?
-    (or)The troll seems afraid to approach your crumpled form.
-    (at random)
-
-(narrate #troll attacking #player with outcome 8)
-    Conquering his fears, the troll puts you to death.
 
 (narrate #player attacking $victim with outcome 0)
     (player wields #knife)
@@ -439,10 +357,6 @@
     (or)(The $victim) is momentarily disoriented and can't fight back.
     (or)The force of your blow knocks (the $victim) back, stunned.
     (at random)
-
-(narrate #player attacking #troll with outcome 6)
-    (The #troll)(no space)'s weapon is knocked to the floor, leaving (them #troll) unarmed.
-    The troll, now worried about this encounter, recovers his bloody axe.
 
 (narrate #player attacking $victim with outcome 6)
     (The $victim)(no space)'s weapon is knocked to the floor, leaving (them $victim) unarmed.

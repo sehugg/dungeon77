@@ -3,25 +3,19 @@ seed: 85413
 id: 0
 label: START
 --------------------------------------------------------------------------------
-[1m[36mWarning:[0m[36m Object #grating2 was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m Object #cross was used, but never declared as topic.
+[1m[36mWarning:[0m[36m Object #cross was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #launch was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #land was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 456: Possible typo: A query is made to '(light-load)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-autogen.dg, line 661: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-glacier.dg, line 52: Possible typo: A query is made to '($ is lit)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-hades.dg, line 43: Possible typo: A query is made to '(on-pole)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-machine.dg, line 37: Possible typo: A query is made to '(frobozz)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-maze.dg, line 156: Possible typo: A query is made to '(key-flag)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 89: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-river.dg, line 232: Possible typo: A query is made to '(rainbow)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/rooms-volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 48: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/etc.dg, line 56: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/melee.dg, line 246: Possible typo: A rule is defined for '(clamp $ from $ to $ into $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 674: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/glacier.dg, line 55: Possible typo: A query is made to '($ is lit)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/thief.dg, line 50: Possible typo: A rule is defined for '(robber daemon)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 294: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 302: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m
 
 [0m[1mDungeon
@@ -73,7 +67,7 @@ This is the kitchen of the white house. A table seems to have been used recently
 On the table is an enlongated brown sack, smelling of hot peppers.
 
 A bottle is sitting on the table.
-In the glass bottle is a quantity of water.
+In the glass bottle is some water.
 
 [0m[4m(Your score has gone up by ten points.)
 [0m
@@ -217,23 +211,26 @@ You are in a small room with passages off in all directions. Bloodstains and dee
 
 A nasty-looking troll, brandishing a bloody axe, blocks all passages out of the room.
 
-The troll's swing almost knocks you over as you barely parry in time. Your sword has begun to glow very brightly.
+The troll sees a hole in your defense, and a lightning stroke opens a wound in your left side.
+
+You feel a little better. Your sword has begun to glow very brightly.
 
 --------------------------------------------------------------------------------
 id: 1785098749852
 parent-id: 1785098749851
-command: kill troll with sword
+command: (set #player combat strength to 5)
 --------------------------------------------------------------------------------
-> kill troll with sword
-A mighty blow, but it misses the troll by a mile. The troll swings his axe, but it misses.
+> (set #player combat strength to 5)
 
+You feel a little better.
+Query succeeded: (set #player combat strength to 5)
 --------------------------------------------------------------------------------
 id: 1785098749853
 parent-id: 1785098749852
-command: again
+command: kill troll with sword
 --------------------------------------------------------------------------------
-> again
-The force of your blow knocks the troll back, stunned.
+> kill troll with sword
+A mighty blow, but it misses the troll by a mile. The axe sweeps past as you jump aside.
 
 --------------------------------------------------------------------------------
 id: 1785098749854
@@ -241,7 +238,7 @@ parent-id: 1785098749853
 command: again
 --------------------------------------------------------------------------------
 > again
-A good stroke, but it's too slow, the troll dodges. The troll slowly regains his feet.
+The troll is struck on the arm, blood begins to trickle down. The troll swings his axe, but it misses.
 
 --------------------------------------------------------------------------------
 id: 1785098749855
@@ -249,7 +246,7 @@ parent-id: 1785098749854
 command: again
 --------------------------------------------------------------------------------
 > again
-The troll is momentarily disoriented and can't fight back.
+The fatal blow strikes the troll square in the heart: He dies. Almost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. Your sword is no longer glowing.
 
 --------------------------------------------------------------------------------
 id: 1785098749856
@@ -257,11 +254,11 @@ parent-id: 1785098749855
 command: again then again then again
 --------------------------------------------------------------------------------
 > again then again then again
-Your stroke lands, but it was only the flat of the blade. The troll slowly regains his feet.
+You consider attacking this location, but reject the idea.
 
-Your elvish sword crashes down, knocking the troll into dreamland.
+You consider attacking this location, but reject the idea.
 
-The unconscious troll cannot defend himself: He dies. Almost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. Your sword is no longer glowing.
+You consider attacking this location, but reject the idea.
 
 --------------------------------------------------------------------------------
 id: 1785254175414
@@ -390,7 +387,7 @@ parent-id: 1785254175423
 command: open bottle
 --------------------------------------------------------------------------------
 > open bottle
-You open the glass bottle, revealing a quantity of water.
+You open the glass bottle, revealing some water.
 
 --------------------------------------------------------------------------------
 id: 1785254175425
@@ -729,7 +726,7 @@ parent-id: 1785255063817
 command: fill bottle
 --------------------------------------------------------------------------------
 > fill bottle
-You put the quantity of water in the glass bottle. The bucket descends and comes to a stop.
+The glass bottle is now full of the water. The bucket descends and comes to a stop.
 
 [0m[1mCircular Room[0m (in the wooden bucket)
 You are in a damp circular room, whose walls are made of brick and mortar. The roof of this room is not visible, but there appear to be some etchings on the walls. There is a passageway to the west.
@@ -1787,6 +1784,8 @@ command: put loot in case
 > put loot in case
 You put the painting in the trophy case.
 
+You feel a little better.
+
 [0m[4m(Your score has gone up by seven points.)
 [0m
 --------------------------------------------------------------------------------
@@ -1890,15 +1889,6 @@ command: get bell
 You take the brass bell.
 
 --------------------------------------------------------------------------------
-id: 1785255063968
-parent-id: 1785255063965
-command: g
---------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-> g
-[0m[4m(I'm sorry, I didn't understand what you wanted to do.)
-[0m
---------------------------------------------------------------------------------
 id: 1785255063969
 parent-id: 1785255063964
 command: e
@@ -1966,7 +1956,7 @@ parent-id: 1785255063971
 command: open bottle
 --------------------------------------------------------------------------------
 > open bottle
-You open the glass bottle, revealing a quantity of water.
+You open the glass bottle, revealing some water.
 
 --------------------------------------------------------------------------------
 id: 1785255063973

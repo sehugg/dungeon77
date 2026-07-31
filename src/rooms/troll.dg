@@ -1,0 +1,114 @@
+
+#troll
+(* is #in #troll-room)
+(name *)        troll
+(animate *)
+(male *)
+(villain *)
+(* capacity is 2)
+(* weakness is #sword)
+(appearance *)
+    (if)~(* is asleep)(then)
+        A nasty-looking troll, brandishing a bloody axe, blocks all passages
+        out of the room.
+    (else)
+        An unconscious troll is sprawled on the floor.  All passages out of
+        the room are open.
+    (endif)
+(descr *)
+    (appearance *)
+(prevent [leave #troll-room #east/#north/#south])
+    (#troll is #in #troll-room)
+    ~(#troll is asleep)
+    The troll fends you off with a menacing gesture.
+
+#axe
+(* is #heldby #troll)
+(name *)        bloody axe
+(item *)
+(weapon *)
+(* size is 25)
+(appearance *)  There is a bloody axe here.
+
+%%%
+
+#troll
+
+(global variable (troll combat strength is 2))
+(#troll maximum strength is 2)
+(#troll wields #axe)
+
+(#troll combat strength is $result)
+    (troll combat strength is $result)
+(set #troll combat strength to $value)
+    (now)(troll combat strength is $value)
+
+(on every tick in #troll-room)
+    (#troll is #in #troll-room)
+    (#troll attacks #player with #axe)
+
+%% TODO: this fails?
+(#troll loses weapon)
+    %% troll can't lose weapon, but the narration makes it seem like they did
+
+(narrate #troll attacking #player with outcome 0)
+    (select)The troll swings his axe, but it misses.
+    (or)The troll's axe barely misses your ear.
+    (or)The axe sweeps past as you jump aside.
+    (or)The axe crashes against the rock, throwing sparks!
+    (at random)
+
+(narrate #troll attacking #player with outcome 1)
+    The flat of the troll's axe hits you delicately on the head, knocking you out.
+
+(narrate #troll attacking #player with outcome 2)
+    (select)The troll lands a killing blow.  You are dead.
+    (or)The troll neatly removes your head.
+    (or)The troll's axe stroke cleaves you from the nave to the chops.
+    (or)The troll's axe removes your head.
+    (at random)
+
+(narrate #troll attacking #player with outcome 3)
+    (select)The axe gets you right in the side.  Ouch!
+    (or)The flat of the troll's axe skins across your forearm.
+    (or)The troll's swing almost knocks you over as you barely parry in time.
+    (or)The troll swings his axe, and it nicks your arm as you dodge.
+    (at random)
+
+(narrate #troll attacking #player with outcome 4)
+    (select)The troll charges, and his axe slashes you on your arm.
+    (or)An axe stroke makes a deep wound in your leg.
+    (or)The troll's axe swings down, gashing your shoulder.
+    (or)The troll sees a hole in your defense, and a lightning stroke opens a wound in your left side.
+    (at random)
+
+(narrate #troll attacking #player with outcome 5)
+    (select)The troll hits you with a glancing blow, and you are momentarily stunned.
+    (or)The troll swings; the blade turns on your armor but crashes broadside into your head.
+    (or)You stagger back under a hail of axe strokes.
+    (or)The troll's mighty blow drops you to your knees.
+    (at random)
+
+(narrate #troll attacking #player with outcome 6)
+    (player wields $weapon)
+    (select)The axe hits your (name $weapon) and knocks it spinning.
+    (or)The troll swings, you parry, but the force of his blow disarms you.
+    (or)The axe knocks your (name $weapon) out of your hand.  It falls to the floor.
+    (or)Your (name $weapon) is knocked out of your hands, but you parried the blow.
+    (at random)
+    ~(narrate alternate player weapon besides $weapon)
+
+(narrate #troll attacking #player with outcome 7)
+    (select)The troll strikes at your unconscious form, but misses in his rage.
+    (or)The troll hesitates, fingering his axe.
+    (or)The troll scratches his head ruminatively:  Might you be magically protected, he wonders?
+    (or)The troll seems afraid to approach your crumpled form.
+    (at random)
+
+(narrate #troll attacking #player with outcome 8)
+    Conquering his fears, the troll puts you to death.
+
+(narrate #player attacking #troll with outcome 6)
+    (The #troll)(no space)'s weapon is knocked to the floor, leaving (them #troll) unarmed.
+    The troll, now worried about this encounter, recovers his bloody axe.
+

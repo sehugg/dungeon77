@@ -1,0 +1,182 @@
+%% THIEF
+#thief
+(* is #in #round-room)
+(name *)	thief
+(villain *)
+(animate *)
+(male *)
+(* weakness is #knife)
+(dict *)	robber crook crime criminal bandit man shady thug bagman mafia suspicious
+(* capacity is 4)
+(appearance *)
+    %%TODO
+	There is a suspicious-looking individual, holding a bag, leaning against
+	one wall. He is armed with a vicious-looking stilletto.
+%% TODO: object action routine ROBBER-FUNCTION
+
+%% STILL
+#stilletto
+(* is #heldby #thief)
+(name *)	stilletto
+(weapon *)
+(dict *)	vicious still stiletto knife
+(* size is 10)
+(appearance *)
+	There is a vicious-looking stilletto here.
+
+%%%
+
+#thief
+
+(global variable (thief combat strength is 7))
+(#thief maximum strength is 7)
+(#thief wields #stilletto)
+
+(#thief combat strength is $result)
+    (thief combat strength is $result)
+(set #thief combat strength to $value)
+    (now)(thief combat strength is $value)
+
+(thief grabs weapon)
+    (#thief is #in $room)
+    (if) (#stilletto is #in $room) (then)
+        (now) (#stilletto is #heldby #thief)
+    (endif)
+
+%%  1. In the Treasure Room, player elsewhere (1299) — his deposit run. If
+%%  materialized he grabs the stilletto if it's lying there and dematerializes;
+%%  then every bag item with OTVAL > 0 is inserted into TREAS. Junk stays in the
+%%  bag.
+(robber daemon)
+    (#thief is #in #treasure-room)
+    ~(current room #treasure-room)
+    (thief grabs weapon)
+    (exhaust) {
+        *($item is #heldby #thief)
+        ~(weapon $item)
+        ($item awards $ points on return)
+        (now) ($item is #in #treasure-room)
+    }
+
+%%  2. In the player's room (1313) — "CHOMP, CHOMP":
+(robber daemon)
+    (current room $room)
+    (#thief is #in $room)
+    (robber and player in $room)
+
+%%  If that room is TREAS, do nothing ("Don't move, Gertrude") — he defends the
+%%  lair, he doesn't wander off.
+(robber and player in $room)
+    ($room = #treasure-room)
+
+%% TODO
+(on every tick)
+    (#thief is fighting)
+    (current room $room)
+    (#thief is #in $room)
+    (#stilletto is #heldby #thief)
+    (#thief attacks #player with #stilletto)
+
+(on every tick)
+    ~(#thief is fighting)
+    %%(thief moves to new room)
+
+(thief moves to new room)
+    (#thief is #in $Room)
+    (collect $Dir)
+		*(from $Room go $Dir to room $NewRoom)
+        ~($NewRoom is sacred)
+	(into $Exits)
+	(randomly select $Dir from $Exits)
+	(let #thief go $Dir)
+
+%% When the thief is disarmed and the stilletto is nearby,
+%% he retrieves it rather than leaving it on the floor.
+(#thief wields $weapon)
+    (#thief is #in $room)
+    ($weapon is #in $room)
+    (now) ($weapon is #heldby #thief)
+    (player can see #thief)
+    The thief, somewhat surprised at this turn of events, nimbly retrieves (its $weapon).
+
+%% If the stilletto is truly gone, the thief slips away.
+(#thief wields $weapon)
+    ~($weapon is #heldby #thief)
+    (now) ~(#thief is fighting)
+    (thief moves to new room)
+    (player can see #thief)
+    Annoyed to be left unarmed in such an obviously dangerous neighborhood, the thief slips off into the shadows.
+
+%% Outcome 0 -- missed
+(narrate #thief attacking #player with outcome 0)
+    (select)The thief stabs nonchalantly with his stilletto and misses.
+    (or)You dodge as the thief comes in low.
+    (or)You parry a lightning thrust, and the thief salutes you with a grim nod.
+    (or)The thief tries to sneak past your guard, but you twist away.
+    (at random)
+
+%% Outcome 1 -- unconscious
+(narrate #thief attacking #player with outcome 1)
+    (select)Shifting in the midst of a thrust, the thief knocks you unconscious with the haft of his stilletto.
+    (or)The thief knocks you out.
+    (at random)
+
+%% Outcome 2 -- killed
+(narrate #thief attacking #player with outcome 2)
+    (select)Finishing you off, a lightning throw right to the heart.
+    (or)The stilletto severs your jugular. It looks like the end.
+    (or)The thief comes in from the side, feints, and inserts the blade into your ribs.
+    (or)The thief bows formally, raises his stilletto, and with a wry grin, ends the battle and your life.
+    (at random)
+
+%% Outcome 3 -- light wound
+(narrate #thief attacking #player with outcome 3)
+    (select)A quick thrust pinks your left arm, and blood starts to trickle down.
+    (or)The thief draws blood, raking his stilletto across your arm.
+    (or)The stilletto flashes faster than you can follow, and blood wells from your leg.
+    (or)The thief slowly approaches, strikes like a snake, and leaves you wounded.
+    (at random)
+
+%% Outcome 4 -- serious wound
+(narrate #thief attacking #player with outcome 4)
+    (select)The thief strikes like a snake! The resulting wound is serious.
+    (or)The thief stabs a deep cut in your upper arm.
+    (or)The stilletto touches your forehead, and the blood obscures your vision.
+    (or)The thief strikes at your wrist, and suddenly your grip is slippery with blood.
+    (at random)
+
+%% Outcome 5 -- staggered
+(narrate #thief attacking #player with outcome 5)
+    (select)The butt of his stilletto cracks you on the skull, and you stagger back.
+    (or)You are forced back, and trip over your own feet, falling heavily to the floor.
+    (or)The thief rams the haft of his blade into your stomach, leaving you out of breath.
+    (or)The thief attacks, and you fall back desperately.
+    (at random)
+
+%% Outcome 6 -- lose weapon
+(narrate #thief attacking #player with outcome 6)
+    (player wields $weapon)
+    (select)A long, theatrical slash. You catch it on your (name $weapon), but the thief twists his knife, and the (name $weapon) goes flying.
+    (or)The thief neatly flips your (name $weapon) out of your hands, and it drops to the floor.
+    (or)You parry a low thrust, and your (name $weapon) slips out of your hand.
+    (or)Avoiding the thief's stilletto, you stumble to the floor, dropping your (name $weapon).
+    (at random)
+    ~(narrate alternate player weapon besides $weapon)
+
+%% Outcome 7 -- hesitate
+(narrate #thief attacking #player with outcome 7)
+    (select)The thief, a man of good breeding, refrains from attacking a helpless opponent.
+    (or)The thief amuses himself by searching your pockets.
+    (or)The thief entertains himself by rifling your pack.
+    (at random)
+
+%% Outcome 8 -- sitting duck
+(narrate #thief attacking #player with outcome 8)
+    (select)The thief, noticing you begin to stir, reluctantly finishes you off.
+    (or)The thief, forgetting his essentially genteel upbringing, cuts your throat.
+    (or)The thief, who is essentially a pragmatist, dispatches you as a threat to his livelihood.
+    (at random)
+
+%% Player attack narration when the thief loses his weapon
+(narrate #player attacking #thief with outcome 6)
+    (The #thief)(no space)'s weapon is knocked to the floor, leaving (them #thief) unarmed.

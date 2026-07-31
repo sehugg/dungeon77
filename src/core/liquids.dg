@@ -13,6 +13,7 @@
 
 ~(prevent [put $liquid #in $bottle])
     (liquid $liquid)
+    (holds liquid $bottle)
 
 %% this could be a prevent, but we disabled them
 
