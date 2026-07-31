@@ -18,9 +18,15 @@
 	(when #rope isn't directly held)
 
 (perform [tie #rope to #railing])
-	(now) (#rope is #heldby #railing)
+	(now) (#rope is #tiedto #railing)
 	(now) (dome-flag)
 	The rope drops over the side and comes within ten feet of the floor.
+
+(add #sailor to scope)
+~(action [greet #sailor] requires $ to be touched)
+
+(add #flyer to scope)
+~(action [greet #flyer] requires $ to be touched)
 
 %% ==================================================================
 %% Rooms
@@ -702,6 +708,7 @@
 %% SAILO
 #sailor
 (name *)	sailor
+(animate *)
 (scenery *)
 (treasure *)
 

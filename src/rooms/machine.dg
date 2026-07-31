@@ -131,7 +131,7 @@
 	(div @headline) {
             !!!!  FROBOZZ MAGIC ROBOT COMPANY  !!!!
 	}
-    Hello, Master!
+    Hello Master!
 	(par)
     I am a late-model robot, trained at MIT Tech to perform various
     simple household functions. 

@@ -14,6 +14,10 @@
 	margin-bottom: 1em;
     text-indent: 2em;
 	text-align: left;
+(style class @right)
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: right;
 
 (interface (flammable $>Thing))
 (interface (tool $>Thing))
@@ -57,6 +61,12 @@
 (descr *)
     You are here.
 (* is #in #west-of-house)
+
+%%% Relations
+
+#tiedto
+(relation *)
+(name *)        tied to
 
 %%% Directions
 
@@ -397,3 +407,20 @@
     (or)Tough shit, asshole.
     (or)Oh, dear.  Such language from a supposed winning adventurer!
     (at random)
+
+(perform [greet #sailor])
+    (select)Nothing happens here.
+    (or)Nothing happens here.
+    (or)Nothing happens here.
+    (or)Nothing happens here.
+    (or)You seem to be repeating yourself.
+    (or)You seem to be repeating yourself.
+    (or)You seem to be repeating yourself.
+    (or)I think that phrase is getting a bit worn out.
+    (stopping)
+
+(perform [greet #flyer])
+    Here, nothing happens.
+
+(perform [greet $obj])
+    I think that only schizophrenics say 'Hello' to (a $obj).

@@ -1,4 +1,52 @@
 
+~(binf-flag)
+
+(perform [burn $obj with $])
+	($obj is #in #receptacle)
+	(The $obj) burns inside the receptacle.
+	The cloth bag inflates as it fills with hot air.
+	(now) (binf-flag)
+
+(balloon is anchored)
+	(#braided-wire is #tiedto $)
+
+(balloon stops $stops)
+	($stops = [#volcano-bottom #volcano-core1 #volcano-core2 #volcano-core3 #volcano-core4])
+
+(balloon rises)
+	(#basket2 is #in #volcano-core4)
+	Your balloon has hit the rim of the volcano, ripping the cloth and
+	causing you a 500 foot drop.  Did you get your flight insurance?
+	(jigs up)
+
+(balloon rises)
+	(#basket2 is #in $room)
+	(balloon stops $stops)
+	(split $stops by $room into $ and [$newroom | $])
+	(par)
+	The balloon ascends.
+	(enter $newroom by #basket2)
+
+(balloon falls)
+	(#basket2 is #in $room)
+	(balloon stops $stops)
+	(split $stops by $room into $prev and $)
+	(last $prev $newroom)
+	(par)
+	The balloon descends.
+	(enter $newroom by #basket2)
+
+(on every tick)
+	(#player is #in #basket2)
+	(binf-flag)
+	(if) (#receptacle is open) (then)
+		(balloon rises)
+	(else)
+		(balloon falls)
+	(endif)
+
+%%%
+
 %% VLBOT
 #volcano-bottom
 (room *)
@@ -139,6 +187,7 @@
 #volcano-gnome
 (name *)	Volcano Gnome
 (dict *)	troll gnome volcano
+(animate *)
 (appearance *)
 	There is a nervous Volcano Gnome here.
 %% TODO: object action routine GNOME-FUNCTION
@@ -148,43 +197,50 @@
 (* is #in #volcano-bottom)
 (name *)	basket
 (vehicle *)
-(dict *)	baske wicke ballo basket
+(actor container *)
+(dict *)	wicker balloon
 (* size is 70)
 (* capacity is 100)
 (appearance *)
 	There is a very large and extremely heavy wicker basket with a cloth bag
 	here. Inside the basket is a metal receptacle of some kind. Attached to
 	the basket on the outside is a piece of wire.
-	(list contents of *)
+	(if) (binf-flag) ($what is #in #receptacle) (then)
+		The cloth bag is inflated and there is (a $what) burning in the receptacle.
+	(else)
+        The cloth bag is draped over the the basket.
+	(endif)
+	(if) (balloon is anchored) (then)
+		The balloon is tied to the hook.
+	(endif)
+
 %% TODO: object action routine BALLOON
 
 %% RECEP
 #receptacle
-(* is #in #basket2)
+(* is #partof #basket2)
 (name *)	receptacle
 (container *)
 (openable *)
-(dict *)	recep receptacle
+(dict *)	recep metal
 (* capacity is 6)
 
 %% CBAG
 #cloth-bag
-(* is #in #basket2)
+(* is #partof #basket2)
 (name *)	cloth bag
-(dict *)	bag cloth cbag
 
 %% BROPE
 #braided-wire
-(* is #in #basket2)
+(* is #tiedto #basket2)
 (name *)	braided wire
-(dict *)	wire braid brope braided
+(dict *)	braid
 %% TODO: object action routine WIRE-FUNCTION
 
 %% HOOK1
 #hook1
 (* is #in #narrow-ledge)
 (name *)	hook
-(dict *)	hook hook1
 (appearance *)
 	There is a small hook attached to the rock here.
 
@@ -192,7 +248,6 @@
 #hook2
 (* is #in #wide-ledge)
 (name *)	hook
-(dict *)	hook hook2
 (appearance *)
 	There is a small hook attached to the rock here.
 
@@ -202,7 +257,7 @@
 (name *)	priceless zorkmid
 (item *)
 (readable *)
-(dict *)	coin gold zorkm priceless zorkmid
+(dict *)	coin gold
 (* size is 10)
 (* awards 10 points on first take)
 (* awards 12 points on return)
@@ -377,18 +432,18 @@
 (appearance *)
 	There is a blue label here.
 (descr *)
-(div @headline) {          !!!!  FROBOZZ MAGIC BALLOON COMPANY !!!! }
-(par)
-Hello, Aviator!
-(par)
-Instructions for use:
-(par)
-   To get into balloon, say 'Board'(line)
-   To leave balloon, say 'Disembark'(line)
-   To land, say 'Land'(line)
-(par)
-Warranty:
-(par)
-   No warranty is expressed or implied.  You're on your own, sport!
-(par)
-                                        Good Luck.
+	(div @headline) {          !!!!  FROBOZZ MAGIC BALLOON COMPANY !!!! }
+	(par)
+	Hello, Aviator!
+	(par)
+	Instructions for use:
+	(par)
+	To get into balloon, say 'Board'(line)
+	To leave balloon, say 'Disembark'(line)
+	To land, say 'Land'(line)
+	(par)
+	Warranty:
+	(par)
+	No warranty is expressed or implied.  You're on your own, sport!
+	(par)
+	(div @right) {										Good Luck. }

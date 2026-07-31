@@ -23,6 +23,27 @@ You are in an open field west of a big white house, with a boarded front door.
 
 There is a small mailbox here.
 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 688: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 325: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 333: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m
+
+[0m[1mDungeon
+[0mA Computerized Fantasy Simulation by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling.
+Release 1. Serial number DEBUG.
+Dialog Interactive Debugger (dgdebug) version 1c/02. Library version 1.2.2. Debugging extension 1.2.2-dev.
+
+[0m[1mWest of House[0m
+You are in an open field west of a big white house, with a boarded front door.
+
+There is a small mailbox here.
+
 --------------------------------------------------------------------------------
 id: 1784976588565
 parent-id: 0
@@ -4005,3 +4026,213 @@ command: score
 > score
 [0m[4mYou currently have 390 points out of a maximum of 500.
 [0m
+--------------------------------------------------------------------------------
+id: 1785508581962
+parent-id: 1785508581959
+command: get newspaper
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> get newspaper
+You take the newspaper.
+
+--------------------------------------------------------------------------------
+id: 1785508581963
+parent-id: 1785508581962
+command: hello sailor
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> hello sailor
+Nothing happens here.
+
+--------------------------------------------------------------------------------
+id: 1785508581964
+parent-id: 1785508581963
+command: hello aviator
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> hello aviator
+Here, nothing happens.
+
+--------------------------------------------------------------------------------
+id: 1785508581966
+parent-id: 1785508581964
+command: d,e,n,d,d
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> d,e,n,d,d
+Down: You climb down through the trap door.
+
+[0m[1mCellar[0m
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+East: You walk east.
+
+[0m[1mThe Troll Room[0m
+You are in a small room with passages off in all directions. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
+
+There is an elvish sword here.
+
+There is a bloody axe here.
+
+North: You walk north.
+
+[0m[1mEast-West Passage[0m
+You are in a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.
+
+Down: You climb down.
+
+[0m[1mDeep Ravine[0m
+You are in a deep ravine at a crossing with an east-west crawlway. Some stone steps are at the south of the ravine and a steep staircase descends.
+
+Down: You climb down.
+
+[0m[1mReservoir South[0m
+You are in the south end of a large cavernous room which was formerly a reservoir. However, with the water level lowered, there is merely a wide stream running through the center of the room. There is a western exit, a passageway south, and a steep pathway climbing up along the edge of a cliff.
+
+--------------------------------------------------------------------------------
+id: 1785508581967
+parent-id: 1785508581966
+command: w,n
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> w,n
+West: You walk west.
+
+[0m[1mStream[0m
+You are standing on a path beside a flowing stream. The path travels to the north and the east.
+
+North: You walk north.
+
+[0m[1mGlacier Room[0m
+You are in a large room, with giant icicles hanging from the walls and ceiling. There are passages to the north and east.
+
+A mass of ice fills the western half of the room.
+
+--------------------------------------------------------------------------------
+id: 1785508581968
+parent-id: 1785508581967
+command: throw torch at glacier
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> throw torch at glacier
+The torch hits the glacier and explodes into a great ball of flame, devouring the glacier. The water from the melting glacier rushes downstream, carrying the torch with it. In the place of the glacier, there is a passageway leading west.
+
+--------------------------------------------------------------------------------
+id: 1785508581972
+parent-id: 1785508581968
+command: turn on lamp
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> turn on lamp
+You switch the battery-powered brass lantern on.
+
+--------------------------------------------------------------------------------
+id: 1785508581973
+parent-id: 1785508581972
+command: w
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> w
+You walk west.
+
+[0m[1mRuby Room[0m
+You are in a small chamber behind the remains of the Great Glacier. To the south and west are small passageways.
+
+There is a moby ruby lying here.
+
+--------------------------------------------------------------------------------
+id: 1785508581974
+parent-id: 1785508581973
+command: get ruby
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> get ruby
+You take the ruby.
+
+[0m[4m(Your score has gone up by fifteen points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508581975
+parent-id: 1785508581974
+command: w,s
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> w,s
+West: You walk west.
+
+[0m[1mLava Room[0m
+You are in a small room, whose walls are formed by an old lava flow. There are exits here to the west and the south.
+
+South: You walk south.
+
+[0m[1mVolcano Bottom[0m
+You are at the bottom of a large dormant volcano. High above you light may be seen entering from the cone of the volcano. The only exit here is to the north.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire.
+In the basket are a receptacle, a cloth bag, a braided wire, and a blue label.
+
+--------------------------------------------------------------------------------
+id: 1785508581976
+parent-id: 1785508581975
+command: hello aviator
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> hello aviator
+Here, nothing happens.
+
+--------------------------------------------------------------------------------
+id: 1785508581977
+parent-id: 1785508581976
+command: board basket
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> board basket
+You get into the basket.
+
+--------------------------------------------------------------------------------
+id: 1785508581978
+parent-id: 1785508581977
+command: open receptacle
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> open receptacle
+You open the receptacle.
+
+--------------------------------------------------------------------------------
+id: 1785508581982
+parent-id: 1785508581978
+command: put paper in it
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> put paper in it
+You put the newspaper in the receptacle.
+
+--------------------------------------------------------------------------------
+id: 1785508581983
+parent-id: 1785508581982
+command: light match
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> light match
+One of the matches starts to burn.
+
+--------------------------------------------------------------------------------
+id: 1785508581984
+parent-id: 1785508581983
+command: light paper with match
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> light paper with match
+The newspaper catches fire and is consumed.
+
+I hope you have more light than from a battery-powered brass lantern.
+
+--------------------------------------------------------------------------------
+id: 1785508581985
+parent-id: 1785508581984
+command: light candles with match
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> light candles with match
+The candles are burning. The match has gone out.
+
