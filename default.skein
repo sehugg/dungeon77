@@ -4,13 +4,13 @@ id: 0
 label: START
 --------------------------------------------------------------------------------
 [1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 681: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 687: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 325: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 333: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 162: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 341: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 349: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m
 
 [0m[1mDungeon
@@ -25,13 +25,13 @@ There is a small mailbox here.
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 [1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 688: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 687: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 79: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 325: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 333: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 163: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 341: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 349: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m
 
 [0m[1mDungeon
@@ -2873,7 +2873,7 @@ parent-id: 1785508581815
 command: launch
 --------------------------------------------------------------------------------
 > launch
-You drive the magic boat launch.
+You launch the magic boat.
 
 [0m[1mFrigid River[0m (in the magic boat)
 You are on the River Frigid in the vicinity of the Dam. The river flows quietly here. There is a landing on the west shore.
@@ -4029,18 +4029,22 @@ command: score
 --------------------------------------------------------------------------------
 id: 1785508581962
 parent-id: 1785508581959
-command: get newspaper
+command: get newspaper and brick
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-> get newspaper
+> get newspaper and brick
 You take the newspaper.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> get newspaper and brick
+The newspaper: You take the newspaper.
+
+The brick: You take the brick.
 
 --------------------------------------------------------------------------------
 id: 1785508581963
 parent-id: 1785508581962
 command: hello sailor
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > hello sailor
 Nothing happens here.
 
@@ -4049,7 +4053,6 @@ id: 1785508581964
 parent-id: 1785508581963
 command: hello aviator
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > hello aviator
 Here, nothing happens.
 
@@ -4058,7 +4061,6 @@ id: 1785508581966
 parent-id: 1785508581964
 command: d,e,n,d,d
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > d,e,n,d,d
 Down: You climb down through the trap door.
 
@@ -4094,7 +4096,6 @@ id: 1785508581967
 parent-id: 1785508581966
 command: w,n
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > w,n
 West: You walk west.
 
@@ -4113,7 +4114,6 @@ id: 1785508581968
 parent-id: 1785508581967
 command: throw torch at glacier
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > throw torch at glacier
 The torch hits the glacier and explodes into a great ball of flame, devouring the glacier. The water from the melting glacier rushes downstream, carrying the torch with it. In the place of the glacier, there is a passageway leading west.
 
@@ -4122,7 +4122,6 @@ id: 1785508581972
 parent-id: 1785508581968
 command: turn on lamp
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > turn on lamp
 You switch the battery-powered brass lantern on.
 
@@ -4131,7 +4130,6 @@ id: 1785508581973
 parent-id: 1785508581972
 command: w
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > w
 You walk west.
 
@@ -4145,7 +4143,6 @@ id: 1785508581974
 parent-id: 1785508581973
 command: get ruby
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > get ruby
 You take the ruby.
 
@@ -4156,7 +4153,6 @@ id: 1785508581975
 parent-id: 1785508581974
 command: w,s
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > w,s
 West: You walk west.
 
@@ -4168,15 +4164,13 @@ South: You walk south.
 [0m[1mVolcano Bottom[0m
 You are at the bottom of a large dormant volcano. High above you light may be seen entering from the cone of the volcano. The only exit here is to the north.
 
-There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire.
-In the basket are a receptacle, a cloth bag, a braided wire, and a blue label.
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is draped over the the basket.
 
 --------------------------------------------------------------------------------
 id: 1785508581976
 parent-id: 1785508581975
 command: hello aviator
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > hello aviator
 Here, nothing happens.
 
@@ -4185,7 +4179,6 @@ id: 1785508581977
 parent-id: 1785508581976
 command: board basket
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > board basket
 You get into the basket.
 
@@ -4194,7 +4187,6 @@ id: 1785508581978
 parent-id: 1785508581977
 command: open receptacle
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > open receptacle
 You open the receptacle.
 
@@ -4203,7 +4195,6 @@ id: 1785508581982
 parent-id: 1785508581978
 command: put paper in it
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > put paper in it
 You put the newspaper in the receptacle.
 
@@ -4212,7 +4203,6 @@ id: 1785508581983
 parent-id: 1785508581982
 command: light match
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > light match
 One of the matches starts to burn.
 
@@ -4221,9 +4211,17 @@ id: 1785508581984
 parent-id: 1785508581983
 command: light paper with match
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > light paper with match
-The newspaper catches fire and is consumed.
+The newspaper burns inside the receptacle. The cloth bag inflates as it fills with hot air.
+
+The balloon ascends.
+
+[0m[1mVolcano Core[0m (in the basket)
+You are about one hundred feet above the bottom of the volcano. The top of the volcano is clearly visible here.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a blue label here.
 
 I hope you have more light than from a battery-powered brass lantern.
 
@@ -4232,7 +4230,256 @@ id: 1785508581985
 parent-id: 1785508581984
 command: light candles with match
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > light candles with match
-The candles are burning. The match has gone out.
+The candles are burning.
+
+The balloon ascends.
+
+[0m[1mVolcano Core[0m (in the basket)
+You are about two hundred feet above the volcano floor. Looming above is the rim of the volcano. There is a small ledge on the west side.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a blue label here.
+
+The match has gone out.
+
+--------------------------------------------------------------------------------
+id: 1785508582007
+parent-id: 1785508581985
+command: w
+--------------------------------------------------------------------------------
+> w
+You drive the basket west.
+
+[0m[1mNarrow Ledge[0m (in the basket)
+You are on a narrow ledge overlooking the inside of an old dormant volcano. This ledge appears to be about in the middle between the floor below and the rim above. There is an exit here to the south.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a small hook attached to the rock here.
+
+There is an engraved zorkmid coin here.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+id: 1785508582009
+parent-id: 1785508582007
+command: w
+--------------------------------------------------------------------------------
+> w
+You can't go that way.
+
+--------------------------------------------------------------------------------
+id: 1785508582015
+parent-id: 1785508582009
+command: tie wire to hook
+--------------------------------------------------------------------------------
+> tie wire to hook
+The balloon is fastened to the hook.
+
+--------------------------------------------------------------------------------
+id: 1785508582017
+parent-id: 1785508582015
+command: again
+--------------------------------------------------------------------------------
+> again
+The balloon is already tied up.
+
+--------------------------------------------------------------------------------
+id: 1785508582020
+parent-id: 1785508582017
+command: look
+--------------------------------------------------------------------------------
+> look
+[0m[1mNarrow Ledge[0m (in the basket)
+You are on a narrow ledge overlooking the inside of an old dormant volcano. This ledge appears to be about in the middle between the floor below and the rim above. There is an exit here to the south.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle. The balloon is tied to the hook.
+
+There is a small hook attached to the rock here.
+
+There is an engraved zorkmid coin here.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+id: 1785508582021
+parent-id: 1785508582020
+command: take coin
+--------------------------------------------------------------------------------
+> take coin
+You take the priceless zorkmid.
+
+[0m[4m(Your score has gone up by ten points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785508582024
+parent-id: 1785508582021
+command: disembark
+--------------------------------------------------------------------------------
+> disembark
+You get out of the basket.
+
+--------------------------------------------------------------------------------
+id: 1785508582025
+parent-id: 1785508582024
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mLibrary[0m
+You are in a room which must have been a large library, probably for the royal family. All of the shelves appear to have been gnawed to pieces by unfriendly gnomes. To the north is an exit.
+
+There is a blue book here.
+
+There is a green book here.
+
+There is a purple book here.
+
+There is a white book here.
+
+--------------------------------------------------------------------------------
+id: 1785508582026
+parent-id: 1785508582025
+command: take purple
+--------------------------------------------------------------------------------
+> take purple
+You take the purple book.
+
+--------------------------------------------------------------------------------
+id: 1785508582027
+parent-id: 1785508582026
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mNarrow Ledge[0m
+You are on a narrow ledge overlooking the inside of an old dormant volcano. This ledge appears to be about in the middle between the floor below and the rim above. There is an exit here to the south.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle. The balloon is tied to the hook.
+
+There is a small hook attached to the rock here.
+
+--------------------------------------------------------------------------------
+id: 1785508582028
+parent-id: 1785508582027
+command: board basket
+--------------------------------------------------------------------------------
+> board basket
+You get into the basket.
+
+--------------------------------------------------------------------------------
+id: 1785508582029
+parent-id: 1785508582028
+command: untie wire
+--------------------------------------------------------------------------------
+> untie wire
+The wire falls off the hook.
+
+--------------------------------------------------------------------------------
+id: 1785508582031
+parent-id: 1785508582029
+command: e
+--------------------------------------------------------------------------------
+> e
+You drive the basket east.
+
+[0m[1mVolcano Core[0m (in the basket)
+You are about two hundred feet above the volcano floor. Looming above is the rim of the volcano. There is a small ledge on the west side.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a blue label here.
+
+The balloon ascends.
+
+[0m[1mVolcano Core[0m (in the basket)
+You are high above the floor of the volcano. From here the rim of the volcano looks very narrow and you are very near it. To the east is what appears to be a viewing ledge, too thin to land on.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+id: 1785508582032
+parent-id: 1785508582031
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+The balloon ascends.
+
+[0m[1mVolcano Core[0m (in the basket)
+You are near the rim of the volcano which is only about 15 feet across. To the west, there is a place to land on a wide ledge.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+id: 1785508582033
+parent-id: 1785508582032
+command: land
+--------------------------------------------------------------------------------
+> land
+You land the basket.
+
+[0m[1mWide Ledge[0m (in the basket)
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a small hook attached to the rock here.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+id: 1785508582034
+parent-id: 1785508582033
+command: tie wire to hook
+--------------------------------------------------------------------------------
+> tie wire to hook
+The balloon is fastened to the hook.
+
+--------------------------------------------------------------------------------
+id: 1785508582039
+parent-id: 1785508582034
+command: disembark
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> disembark
+You get out of the basket.
+
+--------------------------------------------------------------------------------
+id: 1785508582040
+parent-id: 1785508582039
+command: s
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> s
+You walk south.
+
+[0m[1mDusty Room[0m
+
+--------------------------------------------------------------------------------
+id: 1785508582041
+parent-id: 1785508582040
+command: put brick in hole
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> put brick in hole
+You can't put things in the hole.
+
+--------------------------------------------------------------------------------
+id: 1785508582042
+parent-id: 1785508582041
+command: put wire in brick
+--------------------------------------------------------------------------------
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> put wire in brick
+You can't put things in the brick.
 

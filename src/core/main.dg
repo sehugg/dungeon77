@@ -94,6 +94,12 @@
 (from-adverb *)       out beyond
 (opposite of * is #land)
 
+(narrate leaving $ #launch by $Vehicle)
+    You launch (the $Vehicle).
+
+(narrate leaving $ #land by $Vehicle)
+    You land (the $Vehicle).
+
 %%% Darkness
 
 (narrate darkness)

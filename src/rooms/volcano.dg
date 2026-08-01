@@ -1,5 +1,38 @@
 
 ~(binf-flag)
+~(safe-flag)
+
+%% The balloon leaves the ledge.
+
+(unlikely [tie #wire-coil to $])
+(unlikely [untie #wire-coil])
+
+(refuse [tie #braided-wire to $hook])
+	(hook $hook)
+	(#braided-wire is #tiedto $hook)
+	The balloon is already tied up.
+
+(perform [tie #braided-wire to $hook])
+	(hook $hook)
+	(now) (#braided-wire is #tiedto $hook)
+	The balloon is fastened to the hook.
+
+(perform [untie #braided-wire])
+	(#braided-wire is #tiedto $)
+	(now) (#braided-wire is #partof #basket2)
+	The wire falls off the hook.
+
+(refuse [leave $Room $Dir by $Vehicle])
+	($Vehicle = #basket2)
+	(current room $Here)
+	(from $Here go $Dir to $Room)
+	~(* is midair)
+	I'm afraid you can't control the balloon in this way.
+
+(prevent [leave $ $ by $Vehicle])
+	($Vehicle = #basket2)
+	(balloon is anchored)
+	The balloon is tied to the hook.
 
 (perform [burn $obj with $])
 	($obj is #in #receptacle)
@@ -38,6 +71,7 @@
 
 (on every tick)
 	(#player is #in #basket2)
+	~(balloon is anchored)
 	(binf-flag)
 	(if) (#receptacle is open) (then)
 		(balloon rises)
@@ -52,6 +86,7 @@
 (room *)
 (name *)	Volcano Bottom
 (inherently dark *)
+(* is midair)
 (look *)
 	You are at the bottom of a large dormant volcano. High above you light
 	may be seen entering from the cone of the volcano. The only exit here is
@@ -114,12 +149,14 @@
 (room *)
 (name *)	Narrow Ledge
 (inherently dark *)
+(* is midair)
 (look *)
 	You are on a narrow ledge overlooking the inside of an old dormant
 	volcano. This ledge appears to be about in the middle between the floor
 	below and the rim above. There is an exit here to the south.
 (narrate failing to leave * #down)
 	I wouldn't jump from here.
+(from * go #east to #volcano-core2)
 (from * go #launch to #volcano-core2)
 (from * go #west to #volcano-bottom)
 %% TODO: conditional on flag GNOME-DOOR
@@ -150,6 +187,7 @@
 (room *)
 (name *)	Wide Ledge
 (inherently dark *)
+(* is midair)
 (look *)
 	%% TODO: description comes from room routine LEDGE-FUNCTION
 %% TODO: room action routine LEDGE-FUNCTION
@@ -168,7 +206,16 @@
 (room *)
 (name *)	Dusty Room
 (look *)
-	%% TODO: description comes from room routine SAFE-ROOM
+	You are in a dusty old room which is virtually featureless, except
+	for an exit on the north side.
+	(par)
+	(if) ~(safe-flag) (then)
+		Imbedded in the far wall, there is a rusty old box.  It appears that
+		the box is somewhat damaged, since an oblong hole has been chipped
+		out of the front of it.
+	(else)
+		On the far wall is a rusty box, whose door has been blown off.
+	(endif)
 %% TODO: room action routine SAFE-ROOM
 (from * go #north to #wide-ledge)
 
@@ -232,15 +279,16 @@
 
 %% BROPE
 #braided-wire
-(* is #tiedto #basket2)
+(* is #partof #basket2)
 (name *)	braided wire
-(dict *)	braid
+(dict *)	braid rope
 %% TODO: object action routine WIRE-FUNCTION
 
 %% HOOK1
 #hook1
 (* is #in #narrow-ledge)
 (name *)	hook
+(hook *)
 (appearance *)
 	There is a small hook attached to the rock here.
 
@@ -248,6 +296,7 @@
 #hook2
 (* is #in #wide-ledge)
 (name *)	hook
+(hook *)
 (appearance *)
 	There is a small hook attached to the rock here.
 
