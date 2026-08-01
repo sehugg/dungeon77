@@ -266,13 +266,27 @@
 (initial appearance *)
 	On the floor is a gold zorkmid coin \(a valuable collector's item\).
 (descr *)
-	-------------------------- / Gold Zorkmid \\ / T e n T h o u s a n d \\
-	/ Z O R K M I D S \\ / \\ / \|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\| \\ /
-	!\|\|\|\| \|\|\|\|! \\ \| \|\|\| ^^ ^^ \|\|\| \| \| \|\|\| OO OO \|\|\|
-	\| \| In Frobs \|\|\| << \|\|\| We Trust \| \| \|\| \(______\) \|\| \|
-	\| \| \| \| \| \|__________\| \| \\ / \\ -- Lord Dimwit Flathead -- / \\
-	-- Beloved of Zorkers -- / \\ / \\ \* 722 G.U.E. \* / \\ /
-	--------------------------
+	(line)(space 15)--------------------------(line)(space 14)/(space
+	6)Gold(space 1)Zorkmid(space 8)\\(line)(space 13)/(space 2)T(space
+	1)e(space 1)n(space 3)T(space 1)h(space 1)o(space 1)u(space 1)s(space
+	1)a(space 1)n(space 1)d(space 3)\\(line)(space 12)/(space 8)Z(space
+	1)O(space 1)R(space 1)K(space 1)M(space 1)I(space 1)D(space 1)S(space
+	7)\\(line)(space 11)/(space 32)\\(line)(space 10)/(space
+	8)\|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\|\|(space 8)\\(line)(space 9)/(space
+	8)!\|\|\|\|(space 10)\|\|\|\|!(space 8)\\(line)(space 8)\|(space
+	10)\|\|\|(space 3)^^(space 2)^^(space 3)\|\|\|(space 10)\|(line)(space
+	8)\|(space 10)\|\|\|(space 3)OO(space 2)OO(space 3)\|\|\|(space
+	10)\|(line)(space 8)\|(space 1)In(space 1)Frobs(space 2)\|\|\|(space
+	4)<<(space 4)\|\|\|(space 2)We(space 1)Trust(space 1)\|(line)(space
+	8)\|(space 12)\|\|(space 1)\(______\)(space 1)\|\|(space
+	12)\|(line)(space 8)\|(space 13)\|(space 10)\|(space 13)\|(line)(space
+	8)\|(space 13)\|__________\|(space 13)\|(line)(space 9)\\(space
+	36)/(line)(space 10)\\(space 4)--(space 1)Lord(space 1)Dimwit(space
+	1)Flathead(space 1)--(space 4)/(line)(space 11)\\(space 4)--(space
+	1)Beloved(space 1)of(space 1)Zorkers(space 1)--(space 4)/(line)(space
+	12)\\(space 30)/(line)(space 13)\\(space 7)\*(space 1)722(space
+	1)G.U.E.(space 1)\*(space 7)/(line)(space 14)\\(space 26)/(line)(space
+	15)--------------------------(line)
 
 %% SAFE
 #box
@@ -412,13 +426,20 @@
 (appearance *)
 	There is a Flathead Commemorative stamp here.
 (descr *)
-	---v----v----v----v----v----v----v----v--- \| \| \| \|\|\|\|\|\|\|\|\|\|
-	LORD \| > !\|\|\|\| \| DIMWIT < \| \|\|\|\| ---\| FLATHEAD \| \| \|\|\|C
-	CC \\ \| > \|\|\|\| _\\ < \| \|\|\| \(____\| \| \| \|\| \| \| >
-	\|______\| Our < \| / \\ Excessive \| \| / \\ Leader \| > \| \| < \| \|
-	\| \| \| \| > G.U.E. POSTAGE 3 Zorkmids < \| \|
-	---^----^----^----^----^----^----^----^---
-%%TODO
+	(line)---v----v----v----v----v----v----v----v---(line)\|(space
+	40)\|(line)\|(space 10)\|\|\|\|\|\|\|\|\|\|(space 8)LORD(space
+	8)\|(line)>(space 9)!\|\|\|\|(space 6)\|(space 6)DIMWIT(space
+	7)<(line)\|(space 9)\|\|\|\|(space 4)---\|(space 5)FLATHEAD(space
+	6)\|(line)\|(space 9)\|\|\|C(space 5)CC(space 1)\\(space
+	18)\|(line)>(space 10)\|\|\|\|(space 7)_\\(space 17)<(line)\|(space
+	11)\|\|\|(space 1)\(____\|(space 19)\|(line)\|(space 12)\|\|(space
+	6)\|(space 19)\|(line)>(space 13)\|______\|(space 7)Our(space
+	9)<(line)\|(space 15)/(space 3)\\(space 5)Excessive(space
+	6)\|(line)\|(space 14)/(space 5)\\(space 6)Leader(space
+	7)\|(line)>(space 13)\|(space 7)\|(space 18)<(line)\|(space 13)\|(space
+	7)\|(space 18)\|(line)\|(space 40)\|(line)>(space 4)G.U.E.(space
+	1)POSTAGE(space 8)3(space 1)Zorkmids(space 4)<(line)\|(space
+	40)\|(line)---^----^----^----^----^----^----^----^---(line)
 
 %% BLABE
 #blue-label
