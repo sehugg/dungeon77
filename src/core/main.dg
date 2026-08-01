@@ -1,3 +1,7 @@
+
+%% https://eblong.com/infocom/maps/Dungeon-Map-Jeremy-Kapp.png
+%% https://web.archive.org/web/20110110000447/http://ifarchive.flavorplex.com/if-archive/solutions/dungeon.sol
+
 (scoring enabled)
 (maximum score 500)
 
@@ -198,7 +202,7 @@
 (global variable (new glow level is 0))
 
 (#sword provides light)
-    ~(new glow level is 0)
+    (current glow level is 2)
 
 ($object is adjacent to $room)
     *(from $room go $ to $dest)
@@ -215,12 +219,6 @@
             (now)(new glow level is 1)
         (endif)
     }
-    (current glow level is $current)
-    (new glow level is $new)
-    (now)(current glow level is $new)
-    (if) ~($new = $current) (then)
-        (narrate glow level changing from $current to $new)
-    (endif)
 
 (narrate glow level changing from $ to 2)
     Your sword has begun to glow very brightly.
@@ -230,8 +228,17 @@
     Your sword is no longer glowing.
 (narrate glow level changing from $ to $)
 
-(late on every tick)
+(recompute visibility)
     (update glow level)
+    (fail) %% fall through to stdlib
+
+(late on every tick)
+    (current glow level is $current)
+    (new glow level is $new)
+    (now)(current glow level is $new)
+    (if) ~($new = $current) (then)
+        (narrate glow level changing from $current to $new)
+    (endif)
 
 %% Death
 

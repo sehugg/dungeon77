@@ -398,7 +398,15 @@
     (else)
         There is an elvish sword here.
     (endif)
-%% TODO: sword glow
+(descr *)
+    (current glow level is 0)
+    (The *) is not glowing.
+(descr *)
+    (current glow level is 1)
+    (The *) is glowing faintly.
+(descr *)
+    (current glow level is 2)
+    (The *) is glowing brightly, providing light.
 
 #lamp
 (* is #on #trophy-case)

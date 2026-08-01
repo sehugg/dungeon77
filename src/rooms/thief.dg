@@ -85,6 +85,7 @@
     Using passages unknown to you, he rushes to its defense.
     (now) (#thief is #in #treasure-room)
     (now) (#thief is fighting)
+    (update glow level)
     (thief attacks)
     %% TODO: move treasures out
 
