@@ -19,7 +19,7 @@
 	climbing up along the edge of a cliff.
 (from * go #south to #deep-ravine)
 (prevent [leave * #south])
-	~(egypt-flag)
+	(player has coffin)
 		The coffin will not fit through this passage.
 (from * go #west to #stream)
 (from * go #cross to #reservoir-north)
@@ -32,7 +32,7 @@
 		You are not equipped for swimming.
 (from * go #up to #deep-canyon)
 (prevent [leave * #up])
-	~(egypt-flag)
+	(player has coffin)
 		The stairs are too steep for carrying the coffin.
 
 %% RESEN
@@ -120,16 +120,4 @@
 (tool *)
 (appearance *)
 	There is a small pump here.
-
-%% FUSE
-#wire-coil
-(* is #in #stream)
-(name *)	wire coil
-(item *)
-(flammable *)
-(dict *)	shiny thin fuse
-(* size is 1)
-(appearance *)
-	There is a coil of thin shiny wire here.
-%% TODO: object action routine FUSE-FUNCTION
 

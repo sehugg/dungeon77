@@ -156,11 +156,12 @@
 
 %% Not exactly like Zork
 (list contents of $thing)
-    (if){ ($thing is open) (or) ~(opaque $thing) }(then)
+    (if) ($ has parent $thing) { ($thing is open) (or) ~(opaque $thing) } (then)
         (line)
         (list objects #in $thing)
         (list objects #on $thing)
         (list objects #under $thing)
+        (list objects #tiedto $thing)
     (endif)
 
 %% Default rule - Look at a thing that is an openable container

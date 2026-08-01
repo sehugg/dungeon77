@@ -11,8 +11,8 @@
     (length of $HeldList into $NumItems)
     ($NumItems < 3)
 
-(egypt-flag)
-	(#gold-coffin is #heldby #player)
+(player has coffin)
+	(#coffin has parent #player)
 
 (prevent [tie #rope to #railing])
 	(when #rope isn't directly held)
@@ -85,7 +85,7 @@
 (from * go #south to #volcano-view)
 (from * go #east to #rocky-crawl)
 (prevent [leave * #east])
-	~(egypt-flag)
+	(player has coffin)
 		The passage is too narrow to accomodate coffins.
 
 %% RUBYR
@@ -591,7 +591,7 @@
 	On the shore lies Neptune's own crystal trident.
 
 %% COFFI
-#gold-coffin
+#coffin
 (* is #in #egyptian-room)
 (name *)	gold coffin
 (item *)
@@ -822,26 +822,6 @@
 (* awards 10 points on return)
 (appearance *)
 	There is an emerald here.
-
-%% BRICK
-#brick
-(* is #in #attic)
-(name *)	brick
-(item *)
-(flammable *)
-(dict *)	square clay
-(* size is 9)
-(* capacity is 2)
-(appearance *)
-	There is a square brick here which feels like clay.
-
-%% DBALL
-#broken-balloon
-(name *)	broken balloon
-(item *)
-(* size is 40)
-(appearance *)
-	There is a balloon here, broken into pieces.
 
 %% LCASE
 #large-case

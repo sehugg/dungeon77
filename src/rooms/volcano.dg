@@ -1,13 +1,15 @@
 
 ~(binf-flag)
-~(safe-flag)
 
-%% The balloon leaves the ledge.
+%% TODO: The balloon leaves the ledge.
 
-(unlikely [tie #wire-coil to $])
+%% Anchoring the balloon
+
+(unlikely [tie #wire-coil to $hook])
+	(hook $hook)
 (unlikely [untie #wire-coil])
 
-(refuse [tie #braided-wire to $hook])
+(prevent [tie #braided-wire to $hook])
 	(hook $hook)
 	(#braided-wire is #tiedto $hook)
 	The balloon is already tied up.
@@ -22,17 +24,18 @@
 	(now) (#braided-wire is #partof #basket2)
 	The wire falls off the hook.
 
-(refuse [leave $Room $Dir by $Vehicle])
+(prevent [leave $Here $Dir by $Vehicle])
 	($Vehicle = #basket2)
-	(current room $Here)
 	(from $Here go $Dir to $Room)
-	~(* is midair)
+	~($Room is midair)
 	I'm afraid you can't control the balloon in this way.
 
 (prevent [leave $ $ by $Vehicle])
 	($Vehicle = #basket2)
 	(balloon is anchored)
 	The balloon is tied to the hook.
+
+%% Moving the balloon
 
 (perform [burn $obj with $])
 	($obj is #in #receptacle)
@@ -201,24 +204,6 @@
 		You can't go that way.
 (from * go #south to #dusty-room)
 
-%% SAFE
-#dusty-room
-(room *)
-(name *)	Dusty Room
-(look *)
-	You are in a dusty old room which is virtually featureless, except
-	for an exit on the north side.
-	(par)
-	(if) ~(safe-flag) (then)
-		Imbedded in the far wall, there is a rusty old box.  It appears that
-		the box is somewhat damaged, since an oblong hole has been chipped
-		out of the front of it.
-	(else)
-		On the far wall is a rusty box, whose door has been blown off.
-	(endif)
-%% TODO: room action routine SAFE-ROOM
-(from * go #north to #wide-ledge)
-
 %% LAVA
 #lava-room
 (room *)
@@ -269,7 +254,7 @@
 (name *)	receptacle
 (container *)
 (openable *)
-(dict *)	recep metal
+(dict *)	recep metal cover burner
 (* capacity is 6)
 
 %% CBAG
@@ -336,39 +321,6 @@
 	12)\\(space 30)/(line)(space 13)\\(space 7)\*(space 1)722(space
 	1)G.U.E.(space 1)\*(space 7)/(line)(space 14)\\(space 26)/(line)(space
 	15)--------------------------(line)
-
-%% SAFE
-#box
-(* is #in #dusty-room)
-(name *)	box
-(container *)
-(openable *)
-(dict *)	box safe
-(* capacity is 15)
-%% TODO: object action routine SAFE-FUNCTION
-
-%% CARD
-#card
-(* is #in #box)
-(name *)	card
-(item *)
-(readable *)
-(flammable *)
-(dict *)	note card
-(* size is 1)
-(appearance *)
-	There is a card with writing on it here.
-(descr *)
-	Warning: This room was constructed over very weak rock strata.
-	Detonation of explosives in this room is strictly prohibited! Frobozz
-	Magic Cave Company per M. Agrippa, foreman
-
-%% SSLOT
-#hole
-(* is #in #dusty-room)
-(name *)	hole
-(dict *)	slot hole sslot
-(* capacity is 10)
 
 %% CROWN
 #crown
@@ -517,3 +469,12 @@
 	No warranty is expressed or implied.  You're on your own, sport!
 	(par)
 	(div @right) {										Good Luck. }
+
+%% DBALL
+#broken-balloon
+(name *)	broken balloon
+(item *)
+(* size is 40)
+(appearance *)
+	There is a balloon here, broken into pieces.
+

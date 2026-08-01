@@ -189,7 +189,7 @@
 	}
 	(jigs up)
 
-(refuse [take #pile-of-bodies])
+(prevent [take #pile-of-bodies])
 	A force keeps you from taking the bodies.
 
 (perform [attack/feel #pile-of-bodies])

@@ -1,0 +1,148 @@
+
+#brick
+
+~(unlikely [tie #wire-coil to #brick])
+
+(instead of [put $obj #in *])
+	(try [tie $obj to *])
+
+(perform [tie #wire-coil to *])
+	You insert the wire coil into the brick.
+	(now) (#wire-coil is #tiedto *)
+
+(on #wire-coil timeout)
+    (#brick has parent $container)
+    (now) (#brick is nowhere)
+    (explosion in $container)
+
+(explosion in $container)
+    ($container is in the house)
+    (current room $room)
+    ($room is in the house)
+    The house shakes, and the ceiling of the room you're in collapses,
+    turning you into a pancake.
+    (jigs up)
+
+(explosion in $container)
+    { (current room $container) (or) (current player $container) }
+    Now you've done it.  It seems that the brick has other properties
+    than weight, namely the ability to blow you to smithereens.
+
+(explosion in #hole)
+    (#hole is in room $room)
+    (now) ~(#box is closed)
+    (now) (#hole is nowhere)
+    (narrate explosion in room $room)
+
+(explosion in $container)
+    ($container is in room #dusty-room)
+    The room trembles and 50,000 pounds of rock fall on you, turning you
+    into a pancake.
+    (jigs up)
+
+(narrate explosion in room $room)
+    (current room $here)
+    (from $here go $ to $room)
+    There is an explosion nearby.
+
+%%%
+
+%% SAFE
+#dusty-room
+(room *)
+(name *)	Dusty Room
+(look *)
+	You are in a dusty old room which is virtually featureless, except
+	for an exit on the north side.
+	(par)
+	(if) (#box is closed) (then)
+		Imbedded in the far wall, there is a rusty old box.  It appears that
+		the box is somewhat damaged, since an oblong hole has been chipped
+		out of the front of it.
+		(list contents of #hole)
+	(else)
+		On the far wall is a rusty box, whose door has been blown off.
+		(list contents of #box)
+	(endif)
+%% TODO: room action routine SAFE-ROOM
+(from * go #north to #wide-ledge)
+
+%% FUSE
+#wire-coil
+(* is #in #stream)
+(name *)	wire coil
+(item *)
+(flammable *)
+(dict *)	shiny thin fuse
+(* size is 1)
+(appearance *)
+	There is a coil of thin shiny wire here.
+%% TODO: object action routine FUSE-FUNCTION
+(* timer is 2)
+
+%% BRICK
+#brick
+(* is #in #attic)
+(name *)	brick
+(item *)
+(flammable *)
+(dict *)	square clay
+(* size is 9)
+(* capacity is 2)
+(appearance *)
+	There is a square brick here which feels like clay.
+(descr *)
+	The brick is square and soft like clay.
+	(list contents of *)
+
+%% SAFE
+#box
+(* is #in #dusty-room)
+(name *)	box
+(container *)
+(* is closed)
+(dict *)	safe
+(* capacity is 15)
+
+(prevent [take *])
+    The box is imbedded in the wall.
+(prevent [open/close *])
+	~(* is closed)
+	The box has no door!
+(prevent [open *])
+	(* is closed)
+	The box is rusted and will not open.
+(prevent [close *])
+	(* is closed)
+	The box is not open, chomper!
+
+(grammar [blast/explode/detonate [object]] for [blast $])
+(grammar [blow up [object]] for [blast $])
+(prevent [blast *])
+	What do you expect, BOOM?
+
+%% CARD
+#card
+(* is #in #box)
+(name *)	card
+(item *)
+(readable *)
+(flammable *)
+(dict *)	note card
+(* size is 1)
+(appearance *)
+	There is a card with writing on it here.
+(descr *)
+	Warning:(line)
+	This room was constructed over very weak rock strata.
+	Detonation of explosives in this room is strictly prohibited!
+	(div @right) { Frobozz Magic Cave Company(line)per M. Agrippa, foreman }
+
+%% SSLOT
+#hole
+(* is #in #dusty-room)
+(name *)	hole
+(dict *)	slot
+(container *)
+(* capacity is 10)
+

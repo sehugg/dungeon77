@@ -8,30 +8,9 @@ label: START
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 162: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 341: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 349: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
-[0m
-
-[0m[1mDungeon
-[0mA Computerized Fantasy Simulation by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling.
-Release 1. Serial number DEBUG.
-Dialog Interactive Debugger (dgdebug) version 1c/02. Library version 1.2.2. Debugging extension 1.2.2-dev.
-
-[0m[1mWest of House[0m
-You are in an open field west of a big white house, with a boarded front door.
-
-There is a small mailbox here.
-
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-[1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 687: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 163: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 341: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 349: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 167: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 342: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 350: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m
 
 [0m[1mDungeon
@@ -2109,15 +2088,13 @@ You take the trunk with jewels.
 --------------------------------------------------------------------------------
 id: 1785495282756
 parent-id: 1785495282755
-command: go to living room
+command: inventory
 --------------------------------------------------------------------------------
-> go to living room
-The stairs are too steep for carrying the coffin.
+> inventory
+You have a trunk with jewels, a pair of candles, a black book, a brass bell, a matchbook, a piece of cake with blue icing, a piece of cake with red icing, a piece of 'Eat Me' cake, a newspaper, a battery-powered brass lantern, a knife, a rope, a brick, a glass bottle, and a sandwich bag.
 
 You feel a little better.
 
-[0m[4mBecause something dramatic happened, your movement was cut short.
-[0m> 
 --------------------------------------------------------------------------------
 id: 1785495282757
 parent-id: 1785495282756
@@ -2587,30 +2564,59 @@ You feel a little better.
 --------------------------------------------------------------------------------
 id: 1785508581791
 parent-id: 1785508581779
-command: go to temple
+command: u,n,e,n,n,u,n,touch mirror,n,n,go to temple
 --------------------------------------------------------------------------------
-> go to temple
-(east)
+> u,n,e,n,n,u,n,touch mirror,n,n,go to temple
+You climb up.
 
-[0m[1mRocky Crawl[0m
+[0m[1mGlacier Room[0m
+You are in a large room, with giant icicles hanging from the walls and ceiling. There are passages to the north and east.
 
-(west)
+A mass of ice fills the western half of the room.
 
-[0m[1mDeep Ravine[0m
+You walk north.
 
-(south)
+[0m[1mStream[0m
+You are standing on a path beside a flowing stream. The path travels to the north and the east.
 
-[0m[1mEast-West Passage[0m
+You walk east.
 
-(east)
+[0m[1mReservoir South[0m
+You are in the south end of a large cavernous room which was formerly a reservoir. However, with the water level lowered, there is merely a wide stream running through the center of the room. There is a western exit, a passageway south, and a steep pathway climbing up along the edge of a cliff.
 
-[0m[1mRound room[0m
+You walk north.
 
-(east)
+[0m[1mReservoir North[0m
+You are in the north end of a large cavernous room which was formerly a reservoir. However, with the water level lowered, there is merely a wide stream running through the center of the room. There is a tunnel leaving the room to the north.
+
+You walk north.
+
+[0m[1mAtlantis Room[0m
+You are in an ancient room, long buried by the Reservoir. There are exits here to the southeast and upward.
+
+You climb up.
+
+[0m[1mCave[0m
+You are in a small cave with an entrance to the north and a stairway leading down.
+
+You walk north.
+
+[0m[1mMirror Room[0m
+You are in a large square room with tall ceilings. On the south wall is an enormous mirror which fills the entire wall. There are exits on the other three sides of the room.
+
+There is a rumble from deep within the earth and the room shakes.
+
+You walk north.
+
+[0m[1mNarrow Crawlway[0m
+You are in a narrow crawlway. The crawlway leads from north to south. However the south passage divides to the south and southwest.
+
+You walk north.
 
 [0m[1mGrail Room[0m
+You are standing in a small circular room with a pedestal. A set of stairs leads up, and passages leave to the east and west.
 
-(up)
+You climb up.
 
 [0m[1mTemple[0m
 You are in the west end of a large temple. On the south wall is an ancient inscription, probably a prayer in a long-forgotten language. The north wall is solid granite. The entrance at the west end of the room is through huge marble pillars.
@@ -3255,6 +3261,8 @@ command: put emerald in case
 (first attempting to take the large emerald)
 You take the large emerald out of the red buoy.
 
+You feel a little better.
+
 You put the large emerald in the trophy case.
 
 [0m[4m(Your score has gone up by fifteen points.)
@@ -3278,8 +3286,6 @@ command: get candles and matches
 The candles: You take the candles.
 
 The matchbook: You take the matchbook.
-
-You feel a little better.
 
 --------------------------------------------------------------------------------
 id: 1785508581878
@@ -4032,10 +4038,6 @@ parent-id: 1785508581959
 command: get newspaper and brick
 --------------------------------------------------------------------------------
 > get newspaper and brick
-You take the newspaper.
-
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-> get newspaper and brick
 The newspaper: You take the newspaper.
 
 The brick: You take the brick.
@@ -4450,7 +4452,6 @@ id: 1785508582039
 parent-id: 1785508582034
 command: disembark
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > disembark
 You get out of the basket.
 
@@ -4459,27 +4460,345 @@ id: 1785508582040
 parent-id: 1785508582039
 command: s
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > s
 You walk south.
 
 [0m[1mDusty Room[0m
+You are in a dusty old room which is virtually featureless, except for an exit on the north side.
+
+Imbedded in the far wall, there is a rusty old box. It appears that the box is somewhat damaged, since an oblong hole has been chipped out of the front of it.
 
 --------------------------------------------------------------------------------
 id: 1785508582041
 parent-id: 1785508582040
 command: put brick in hole
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > put brick in hole
-You can't put things in the hole.
+You put the brick in the hole.
 
 --------------------------------------------------------------------------------
 id: 1785508582042
 parent-id: 1785508582041
 command: put wire in brick
 --------------------------------------------------------------------------------
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > put wire in brick
-You can't put things in the brick.
+You insert the wire coil into the brick.
 
+--------------------------------------------------------------------------------
+id: 1785583520791
+parent-id: 1785508582042
+command: open safe
+--------------------------------------------------------------------------------
+> open safe
+The box is rusted and will not open.
+
+--------------------------------------------------------------------------------
+id: 1785583520793
+parent-id: 1785583520791
+command: close safe
+--------------------------------------------------------------------------------
+> close safe
+The box is not open, chomper!
+
+--------------------------------------------------------------------------------
+id: 1785583520794
+parent-id: 1785583520793
+command: light match
+--------------------------------------------------------------------------------
+> light match
+One of the matches starts to burn.
+
+--------------------------------------------------------------------------------
+id: 1785583520797
+parent-id: 1785583520794
+command: light fuse with match
+--------------------------------------------------------------------------------
+> light fuse with match
+The wire coil is burning.
+
+--------------------------------------------------------------------------------
+id: 1785583520798
+parent-id: 1785583520797
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mWide Ledge[0m
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle. The balloon is tied to the hook.
+
+There is a small hook attached to the rock here.
+
+There is an explosion nearby. The match has gone out.
+
+--------------------------------------------------------------------------------
+id: 1785583520799
+parent-id: 1785583520798
+command: s
+--------------------------------------------------------------------------------
+> s
+You walk south.
+
+[0m[1mDusty Room[0m
+You are in a dusty old room which is virtually featureless, except for an exit on the north side.
+
+On the far wall is a rusty box, whose door has been blown off.
+In the box are a card and a crown.
+
+--------------------------------------------------------------------------------
+id: 1785583520800
+parent-id: 1785583520799
+command: read card
+--------------------------------------------------------------------------------
+> read card
+(first attempting to take the card)
+You take the card out of the box.
+
+It reads:
+
+Warning:
+This room was constructed over very weak rock strata. Detonation of explosives in this room is strictly prohibited!
+
+Frobozz Magic Cave Company
+per M. Agrippa, foreman
+
+--------------------------------------------------------------------------------
+id: 1785583520801
+parent-id: 1785583520800
+command: get crown
+--------------------------------------------------------------------------------
+> get crown
+You take the crown out of the box.
+
+[0m[4m(Your score has gone up by fifteen points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785583520802
+parent-id: 1785583520801
+command: n
+--------------------------------------------------------------------------------
+> n
+You walk north.
+
+[0m[1mWide Ledge[0m
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle. The balloon is tied to the hook.
+
+There is a small hook attached to the rock here.
+
+--------------------------------------------------------------------------------
+id: 1785583520803
+parent-id: 1785583520802
+command: board basket
+--------------------------------------------------------------------------------
+> board basket
+You get into the basket.
+
+--------------------------------------------------------------------------------
+id: 1785583520804
+parent-id: 1785583520803
+command: untie rope
+--------------------------------------------------------------------------------
+> untie rope
+The wire falls off the hook.
+
+--------------------------------------------------------------------------------
+id: 1785583520805
+parent-id: 1785583520804
+command: close receptacle
+--------------------------------------------------------------------------------
+> close receptacle
+You close the receptacle.
+
+--------------------------------------------------------------------------------
+id: 1785583520808
+parent-id: 1785583520805
+command: launch
+--------------------------------------------------------------------------------
+> launch
+You launch the basket.
+
+[0m[1mVolcano Core[0m (in the basket)
+You are near the rim of the volcano which is only about 15 feet across. To the west, there is a place to land on a wide ledge.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a blue label here.
+
+The balloon descends.
+
+[0m[1mVolcano Core[0m (in the basket)
+You are high above the floor of the volcano. From here the rim of the volcano looks very narrow and you are very near it. To the east is what appears to be a viewing ledge, too thin to land on.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+id: 1785583520809
+parent-id: 1785583520808
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+The balloon descends.
+
+[0m[1mVolcano Core[0m (in the basket)
+You are about two hundred feet above the volcano floor. Looming above is the rim of the volcano. There is a small ledge on the west side.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+id: 1785583520810
+parent-id: 1785583520809
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+The balloon descends.
+
+[0m[1mVolcano Core[0m (in the basket)
+You are about one hundred feet above the bottom of the volcano. The top of the volcano is clearly visible here.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+id: 1785583520811
+parent-id: 1785583520810
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+The balloon descends.
+
+[0m[1mVolcano Bottom[0m (in the basket)
+You are at the bottom of a large dormant volcano. High above you light may be seen entering from the cone of the volcano. The only exit here is to the north.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+id: 1785583520812
+parent-id: 1785583520811
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+id: 1785583520817
+parent-id: 1785583520812
+command: n
+--------------------------------------------------------------------------------
+> n
+I'm afraid you can't control the balloon in this way.
+
+--------------------------------------------------------------------------------
+id: 1785583520821
+parent-id: 1785583520817
+command: leave
+--------------------------------------------------------------------------------
+> leave
+You get out of the basket.
+
+--------------------------------------------------------------------------------
+id: 1785583520822
+parent-id: 1785583520821
+command: go to living room
+--------------------------------------------------------------------------------
+> go to living room
+(north)
+
+[0m[1mLava Room[0m
+
+(west)
+
+[0m[1mRuby Room[0m
+
+(south)
+
+[0m[1mGlacier Room[0m
+
+(north)
+
+[0m[1mStream[0m
+
+(east)
+
+[0m[1mReservoir South[0m
+
+(south)
+
+[0m[1mDeep Ravine[0m
+
+(south)
+
+[0m[1mEast-West Passage[0m
+
+(west)
+
+[0m[1mThe Troll Room[0m
+
+(west)
+
+[0m[1mCellar[0m
+
+(up)
+
+[0m[1mLiving Room[0m
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a rug lying beside an open trap-door.
+
+There is a screwdriver here.
+
+There is a clove of garlic here.
+
+A sandwich bag is here.
+In the sandwich bag is a lunch.
+
+A bottle is sitting on the table.
+In the glass bottle is some water.
+
+There is a piece of cake here with the words 'Eat Me' on it.
+
+There is a piece of cake with red icing here.
+
+There is a piece of cake with blue (ecch) icing here.
+
+There is a small brass bell here.
+
+There is a large black book here.
+
+There is a trophy case here.
+In the trophy case are a jade figurine, a sapphire bracelet, a huge diamond, a large emerald, a statue, a pot filled with gold, a gold coffin, a chalice, a trunk with jewels, a painting, a grail, a platinum bar, a crystal trident, a crystal sphere, a pearl necklace, a tin of spices, a fancy violin, and a bag of coins.
+
+--------------------------------------------------------------------------------
+id: 1785583520823
+parent-id: 1785583520822
+command: put loot in case
+--------------------------------------------------------------------------------
+> put loot in case
+The crown: You put the crown in the trophy case.
+
+The priceless zorkmid: You put the priceless zorkmid in the trophy case.
+
+The ruby: You put the ruby in the trophy case.
+
+[0m[4m(Your score has gone up by 30 points.)
+[0m
+--------------------------------------------------------------------------------
+id: 1785583520824
+parent-id: 1785583520823
+command: score
+--------------------------------------------------------------------------------
+> score
+[0m[4mYou currently have 460 points out of a maximum of 500.
+[0m

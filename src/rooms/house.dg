@@ -280,13 +280,6 @@
         There is a nasty-looking knife lying here.
     (endif)
 
-#brick
-(* is #in #attic)
-(name *)        brick
-(item *)
-(appearance *)
-    There is a square brick here which feels like clay.
-
 #living-room
 (name *)        Living Room
 (room *)

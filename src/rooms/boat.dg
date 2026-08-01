@@ -6,7 +6,7 @@
     Inflate with what?
 	(asking for object in [inflate $obj with []])
 
-(refuse [inflate #magic-boat with #pump])
+(prevent [inflate #magic-boat with #pump])
     Inflating it further would probably burst it.
 
 %% IBOAT
@@ -27,15 +27,14 @@
     (now) (#magic-boat is $rel $room)
     The boat inflates and appears seaworthy.
 
-(refuse [inflate * with #pump])
-    ~(* has parent $room)
-    ~(room $room)
-    (The *) must be on the ground to be inflated.
-
 (perform [inflate * with $])
     You would inflate it with that?
     (fail)
 
+(prevent [inflate * with #pump])
+    ~(* has parent $room)
+    ~(room $room)
+    (The *) must be on the ground to be inflated.
 
 %% DBOAT
 #plastic-boat-with-hole

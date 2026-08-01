@@ -103,7 +103,7 @@
 	land of the dead shalt thou be sent at last. Surely thou shalt repent of
 	thy cunning.
 %% object action routine BLACK-BOOK
-(refuse [burn *])
+(prevent [burn *])
 	A booming voice says 'Wrong, cretin!' and you notice that you have
 	turned into a pile of dust.
 	(jigs up)
