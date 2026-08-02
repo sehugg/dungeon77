@@ -162,10 +162,13 @@
     of sinister black fog envelops (them $defender), and when the fog lifts, the
     carcass has disappeared.
     ($defender is #in $room)
-    (exhaust) {
+    (collect $item)
         *($item is #heldby $defender)
         (now)($item is #in $room)
-    }
+    (into $items)
+    (if) (nonempty $items) (then)
+        (narrate $defender leaving behind $items)
+    (endif)
     (now) ($defender is nowhere)
     (now) ~($defender is fighting)
     (now) ($defender timer is 0)
@@ -356,6 +359,9 @@
     %%TODO
     (player wields $weapon)
     You attack (the $victim) with (the $weapon), outcome is { $outcome }.
+
+(narrate $defender leaving behind $items)
+    (The $defender) leaves behind (a $items).
 
 %% DIAGNOSE
 

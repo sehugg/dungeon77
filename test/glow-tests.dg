@@ -6,8 +6,8 @@
     (#troll is adjacent to #cellar)
     (move player to #in #cellar)
     (current room #cellar)
-    (current glow level is 1)
+    (new glow level is 1)
     (move player to #in #troll-room)
     (current room #troll-room)
-    (current glow level is 2)
+    (new glow level is 2)
 

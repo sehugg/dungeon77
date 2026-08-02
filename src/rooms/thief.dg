@@ -85,9 +85,22 @@
     Using passages unknown to you, he rushes to its defense.
     (now) (#thief is #in #treasure-room)
     (now) (#thief is fighting)
+    (treasures vanish)
     (update glow level)
     (thief attacks)
     %% TODO: move treasures out
+
+(treasures vanish)
+    (collect $thing)
+        *($thing is #in #treasure-room)
+        (treasure $thing)
+        ~($thing = #chalice)
+        (now) ($thing is #heldby #thief)
+    (into $list)
+    (if) (nonempty $list) (then)
+        The thief gestures mysteriously, and the treasures in the room
+        suddenly vanish.
+    (endif)
 
 (robber daemon)
     (thief attacks)
@@ -101,6 +114,13 @@
 
 (on every tick)
     (robber daemon)
+
+#hidden-treasures
+(room *)
+
+(narrate #thief leaving behind $items)
+    As the thief dies, the power of his magic decreases, and his
+    treasures reappear: (a $items).
 
 %%(thief moves to new room)
 
