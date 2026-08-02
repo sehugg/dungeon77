@@ -22,10 +22,7 @@
 	(now) (dome-flag)
 	The rope drops over the side and comes within ten feet of the floor.
 
-(add #sailor to scope)
 ~(action [greet #sailor] requires $ to be touched)
-
-(add #flyer to scope)
 ~(action [greet #flyer] requires $ to be touched)
 
 %% ==================================================================
@@ -710,28 +707,30 @@
 (name *)	sailor
 (animate *)
 (scenery *)
-(treasure *)
+(add * to scope)
 
 %% TEETH
-#set-of-teeth
-(name *)	set of teeth
+#teeth
+(name *)	teeth
 (scenery *)
-(treasure *)
+(your *)
+(plural *)
+(add * to scope)
 
 %% WALL
 #wall
 (name *)	wall
 (scenery *)
-(treasure *)
+(add * to scope)
 
 %% HANDS
-#pair-of-hands
-(name *)	hands
-(pair *)
+#hands
+(name *)	bare hands
 (tool *)
 (scenery *)
-(dict *)	hand bare
-(treasure *)
+(dict *)	hand mitts fists fist
+(add * to scope)
+(your *)
 
 %% LUNGS
 #breath
@@ -739,14 +738,15 @@
 (tool *)
 (scenery *)
 (dict *)	lung air lungs breathe
-(treasure *)
+(add * to scope)
+(your *)
 
 %% AVIAT
 #flyer
 (name *)	flyer
 (scenery *)
 (dict *)	aviator
-(treasure *)
+(add * to scope)
 
 %% BAT
 #bat

@@ -57,7 +57,6 @@
 (treasure $Thing)
     ($Thing awards $ points on return)
 
-
 %%% Player object
 
 #player
@@ -111,7 +110,7 @@
     (notice #grue)
 
 #grue
-(add #grue to scope)
+(add * to scope)
 (name *)    lurking grue
 (descr *)
     The grue is a sinister, lurking presence in the dark places of the
@@ -191,6 +190,11 @@
 (perform [attack $victim with $weapon])
     (weapon $weapon) %% TODO?
     (#player attacks $victim with $weapon)
+
+(refuse [attack $victim with $thing])
+    (villain $victim)
+    ~(weapon $thing)
+    Trying to kill (a $victim) with (a $thing) is suicidal.
 
 (prevent $)
     (#player is asleep)
@@ -309,6 +313,12 @@
 		~(excluded from all $Obj)
 		~($Obj is hidden)
 		(verify object policy $Policy $Obj)
+	(into $Result)
+
+(uncollected treasure into $Result)
+	(collect $Obj)
+        *(treasure $Obj)
+        ~($Obj has parent #trophy-case)
 	(into $Result)
 
 (rewrite [say | $Words] into $result)

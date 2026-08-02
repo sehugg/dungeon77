@@ -27,6 +27,9 @@
     (now) (#magic-boat is $rel $room)
     The boat inflates and appears seaworthy.
 
+(perform [inflate * with #breath])
+    I don't think you have enough lung-power to inflate this boat.
+
 (perform [inflate * with $])
     You would inflate it with that?
     (fail)
