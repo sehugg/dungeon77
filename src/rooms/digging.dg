@@ -13,7 +13,7 @@
     (or)You are surrounded by a wall of sand on all sides.
     (or)
     You can see a small statue here in the sand.
-    (now) (#statue is in #sandy-beach)
+    (now) (#statue is #in #sandy-beach)
     (or)
     The hole collapses, smothering you.
     (jigs up)
