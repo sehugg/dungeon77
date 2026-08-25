@@ -4,17 +4,19 @@ id: 0
 label: START
 --------------------------------------------------------------------------------
 [1m[36mWarning:[0m[36m Object #rainbow was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 687: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/rooms/autogen.dg, line 684: Possible typo: A rule is defined for '(scenery $)', but this predicate is never queried and has no interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 68: Possible typo: A query is made to '($ is thirsty)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/cyclops.dg, line 72: Possible typo: A query is made to '($ is hungry)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/river.dg, line 91: Possible typo: A query is made to '(deflate)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m src/rooms/volcano.dg, line 167: Possible typo: A query is made to '(gnome-door)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 342: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
-[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 350: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 318: Possible typo: A rule is defined for '(uncollected treasure into $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 359: Possible typo: A rule is defined for '(yuk)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/core/main.dg, line 367: Possible typo: A rule is defined for '(swimyuk)', but this predicate is never queried and has no interface definition.
 [0m
 
-[0m[1mDungeon
+[0m[1mDungeon '77
 [0mA Computerized Fantasy Simulation by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling.
+Ported to Dialog by Steven Hugg.
 Release 1. Serial number DEBUG.
 Dialog Interactive Debugger (dgdebug) version 1c/02. Library version 1.2.2. Debugging extension 1.2.2-dev.
 
@@ -241,7 +243,7 @@ parent-id: 1785098749854
 command: again
 --------------------------------------------------------------------------------
 > again
-The fatal blow strikes the troll square in the heart: He dies. Almost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. Your sword is no longer glowing.
+The fatal blow strikes the troll square in the heart: He dies. Almost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. The troll leaves behind a bloody axe. Your sword is no longer glowing.
 
 --------------------------------------------------------------------------------
 id: 1785098749856
@@ -2283,7 +2285,7 @@ parent-id: 1785495282796
 command: again
 --------------------------------------------------------------------------------
 > again
-The end for the thief as your knife severs his jugular. Almost as soon as the thief breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. Your sword is no longer glowing.
+The end for the thief as your knife severs his jugular. Almost as soon as the thief breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared. The thief leaves behind a stilletto. Your sword is no longer glowing.
 
 --------------------------------------------------------------------------------
 id: 1785495282798
@@ -3502,7 +3504,7 @@ You are in a narrow tunnel with large wooden beams running across the ceiling an
 Northeast: You walk northeast.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are in a non-descript part of a coal mine.
+You are here.
 
 --------------------------------------------------------------------------------
 id: 1785508581899
@@ -3513,17 +3515,17 @@ command: n,ne,nw
 North: You walk north.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are in a non-descript part of a coal mine.
+You are here.
 
 Northeast: You walk northeast.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are in a non-descript part of a coal mine.
+You are here.
 
 Northwest: You walk northwest.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are in a non-descript part of a coal mine.
+You are here.
 
 --------------------------------------------------------------------------------
 id: 1785508581900
@@ -3575,7 +3577,7 @@ You are in a very small room. In the corner is a rickety wooden ladder, leading 
 Up: You climb up.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are in a non-descript part of a coal mine.
+You are here.
 
 --------------------------------------------------------------------------------
 id: 1785508581903
@@ -3586,7 +3588,7 @@ command: e,e,s
 East: You walk east.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are in a non-descript part of a coal mine.
+You are here.
 
 East: You walk east.
 
@@ -3895,7 +3897,7 @@ You are in a very small room. In the corner is a rickety wooden ladder, leading 
 Up: You climb up.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are in a non-descript part of a coal mine.
+You are here.
 
 --------------------------------------------------------------------------------
 id: 1785508581951
@@ -3906,7 +3908,7 @@ command: e,e,s
 East: You walk east.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are in a non-descript part of a coal mine.
+You are here.
 
 East: You walk east.
 

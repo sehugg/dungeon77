@@ -119,6 +119,10 @@
 (room *)
 
 (narrate #thief leaving behind $items)
+	*($Obj is one of $items)
+	{
+        (treasure $Obj)
+	}
     As the thief dies, the power of his magic decreases, and his
     treasures reappear: (a $items).
 

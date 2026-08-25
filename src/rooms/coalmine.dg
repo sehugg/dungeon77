@@ -129,8 +129,6 @@
 (room *)
 (name *)	You are in a non-descript part of a coal mine.
 (inherently dark *)
-(look *)
-	You are in a non-descript part of a coal mine.
 (from * go #north to #coalmine4)
 (from * go #southwest to #coalmine2)
 (from * go #east to #wooden-tunnel)
@@ -140,8 +138,6 @@
 (room *)
 (name *)	You are in a non-descript part of a coal mine.
 (inherently dark *)
-(look *)
-	You are in a non-descript part of a coal mine.
 (from * go #south to #coalmine1)
 (from * go #west to #coalmine5)
 (from * go #up to #coalmine3)
@@ -152,8 +148,6 @@
 (room *)
 (name *)	You are in a non-descript part of a coal mine.
 (inherently dark *)
-(look *)
-	You are in a non-descript part of a coal mine.
 (from * go #west to #coalmine2)
 (from * go #northeast to #coalmine5)
 (from * go #east to #coalmine5)
@@ -163,8 +157,6 @@
 (room *)
 (name *)	You are in a non-descript part of a coal mine.
 (inherently dark *)
-(look *)
-	You are in a non-descript part of a coal mine.
 (from * go #up to #coalmine5)
 (from * go #northeast to #coalmine6)
 (from * go #south to #coalmine1)
@@ -175,8 +167,6 @@
 (room *)
 (name *)	You are in a non-descript part of a coal mine.
 (inherently dark *)
-(look *)
-	You are in a non-descript part of a coal mine.
 (from * go #down to #coalmine6)
 (from * go #north to #coalmine7)
 (from * go #west to #coalmine2)
@@ -189,8 +179,6 @@
 (room *)
 (name *)	You are in a non-descript part of a coal mine.
 (inherently dark *)
-(look *)
-	You are in a non-descript part of a coal mine.
 (from * go #southeast to #coalmine4)
 (from * go #up to #coalmine5)
 (from * go #northwest to #coalmine7)
@@ -200,8 +188,6 @@
 (room *)
 (name *)	You are in a non-descript part of a coal mine.
 (inherently dark *)
-(look *)
-	You are in a non-descript part of a coal mine.
 (from * go #east to #coalmine1)
 (from * go #west to #coalmine5)
 (from * go #down to #ladder-top)
