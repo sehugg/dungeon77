@@ -852,5 +852,10 @@
 (scenery *)
 (dict *)	etch
 (descr *)
-	o b o A G I E L m p a
+	(line)(space 23)o(space 2)b(space 2)o(line)
+	(line)
+	(space 24)A(space 2)G(space 2)I(line)
+	(space 25)E(space 3)L(line)
+	(line)
+	(space 24)m(space 2)p(space 2)a(line)
 

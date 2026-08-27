@@ -120,8 +120,7 @@ STRING: "                       o  b  o
                                   
                         m  p  a
 "
-  NEEDSWORK in 1 file(s):
-    - src/rooms/autogen.dg
+  ADDED to src/rooms/autogen.dg
 
 STRING: "                       o  b  o
                     r             z
@@ -130,8 +129,7 @@ STRING: "                       o  b  o
                     o             n
                         m  p  a
 "
-  NEEDSWORK in 1 file(s):
-    - src/rooms/bucket.dg
+  ADDED to src/rooms/bucket.dg
 
 STRING: "               COMMANDMENT #12592
 Oh ye who go about saying unto each:   "Hello sailor":
@@ -283,7 +281,7 @@ STRING: " and evaporates immediately."
 STRING: " breathes his last breath, a cloud
 of sinister black fog envelops him, and when the fog lifts, the
 carcass has disappeared."
-  NOT FOUND in any .dg file
+  ADDED in melee.dg
 
 STRING: " burning in the receptacle."
   FOUND in 1 file(s):
@@ -494,7 +492,7 @@ processors, and nearly one million dead trees.
 of FCD#3 as we conduct you on a guided tour of the facilities:
         1) You start your tour here in the Dam Lobby.
            You will notice on your right that ........."
-  NOT FOUND in any .dg file
+  ADDED in dam.dg
 
 STRING: ""I am only a stupid robot and cannot perform that command.""
   NOT FOUND in any .dg file

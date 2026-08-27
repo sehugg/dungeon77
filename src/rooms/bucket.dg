@@ -52,7 +52,13 @@
 (readable *)
 (scenery *)
 (descr *)
-	o b o r z f M A G I C z c W E L L y o n m p a
+	(line)(space 23)o(space 2)b(space 2)o(line)
+	(space 20)r(space 13)z(line)
+	(space 17)f(space 3)M(space 2)A(space 2)G(space 2)I(space 2)C(space 3)z
+	(line)
+	(space 17)c(space 4)W(space 2)E(space 3)L(space 2)L(space 4)y(line)
+	(space 20)o(space 13)n(line)
+	(space 24)m(space 2)p(space 2)a(line)
 
 %%%
 
