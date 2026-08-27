@@ -495,13 +495,13 @@ of FCD#3 as we conduct you on a guided tour of the facilities:
   ADDED in dam.dg
 
 STRING: ""I am only a stupid robot and cannot perform that command.""
-  NOT FOUND in any .dg file
+  ADDED to machine.dg
 
 STRING: ""I am sorry but that action is difficult in the absence of a mouth.""
-  NOT FOUND in any .dg file
+  ADDED to machine.dg
 
 STRING: ""My vision is not that good without eyes.""
-  NOT FOUND in any .dg file
+  ADDED to machine.dg
 
 
 STRING: "'That wasn't quite what I had in mind', he says, crunching the

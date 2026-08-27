@@ -185,6 +185,15 @@
 	(now)~(carousel-flip)
 	(move iron box)
 
+(perform [tell * to eat $])
+	"I am sorry but that action is difficult in the absence of a mouth."
+(perform [tell * to drink $])
+	"I am sorry but that action is difficult in the absence of a mouth."
+(perform [tell * to read $])
+	"My vision is not that good without eyes."
+(perform [tell * to | $])
+	"I am only a stupid robot and cannot perform that command."
+
 (move iron box)
 	A dull thump is heard in the distance.
 	(now)(#iron-box is #in #round-room)
