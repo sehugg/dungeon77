@@ -1,4 +1,6 @@
 
+%% These run last so that we don't care about side effects.
+
 #melee-troll-test
 (test *)
 (run *)
