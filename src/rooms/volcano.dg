@@ -192,7 +192,14 @@
 (inherently dark *)
 (* is midair)
 (look *)
-	%% TODO: description comes from room routine LEDGE-FUNCTION
+	You are on a wide ledge high into the volcano.  The rim of the
+   	volcano is about 200 feet above and there is a precipitous drop below
+   	to the bottom.
+	(if)(#dusty-room has been munged)(then)
+		The way to the south is blocked by rubble.
+	(else)
+		There is a small door to the south.
+	(endif)
 %% TODO: room action routine LEDGE-FUNCTION
 (narrate failing to leave * #down)
 	It's a long way down.

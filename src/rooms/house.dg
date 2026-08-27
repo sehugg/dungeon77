@@ -180,7 +180,7 @@
     (if)(#window is open)(then)
         open.
     (else)
-        closed.
+        slightly ajar.
     (endif)
 
 (prevent [go #down])

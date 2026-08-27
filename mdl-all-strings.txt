@@ -1,0 +1,5490 @@
+STRING: "
+               --------------------------
+              /      Gold Zorkmid        \
+             /  T e n   T h o u s a n d   \
+            /        Z O R K M I D S       \
+           /                                \
+          /        ||||||||||||||||||        \
+         /        !||||          ||||!        \
+        |          |||   ^^  ^^   |||          |
+        |          |||   OO  OO   |||          |
+        | In Frobs  |||    <<    |||  We Trust |
+        |            || (______) ||            |
+        |             |          |             |
+        |             |__________|             |
+         \                                    /
+          \    -- Lord Dimwit Flathead --    /
+           \    -- Beloved of Zorkers --    /
+            \                              /
+             \       * 722 G.U.E. *       /
+              \                          /
+               --------------------------
+"
+  ADDED in volcano.dg
+
+STRING: "
+          !!!!  FROBOZZ MAGIC BALLOON COMPANY !!!!
+
+Hello, Aviator!
+
+Instructions for use:
+   
+   To get into balloon, say 'Board'
+   To leave balloon, say 'Disembark'
+   To land, say 'Land'
+    
+Warranty:
+   
+   No warranty is expressed or implied.  You're on your own, sport!
+
+                                        Good Luck.
+"
+  ADDED in volcano.dg
+
+STRING: "
+---v----v----v----v----v----v----v----v---
+|                                        |
+|          ||||||||||        LORD        |
+>         !||||      |      DIMWIT       <
+|         ||||    ---|     FLATHEAD      |
+|         |||C     CC \                  |
+>          ||||       _\                 <
+|           ||| (____|                   |
+|            ||      |                   |
+>             |______|       Our         <
+|               /   \     Excessive      |
+|              /     \      Leader       |
+>             |       |                  <
+|             |       |                  |
+|                                        |
+>    G.U.E. POSTAGE        3 Zorkmids    <
+|                                        |
+---^----^----^----^----^----^----^----^---
+"
+  ADDED in volcano.dg
+
+STRING: "
+Imbedded in the far wall, there is a rusty old box.  It appears that
+the box is somewhat damaged, since an oblong hole has been chipped
+out of the front of it."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "
+On the far wall is a rusty box, whose door has been blown off."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "
+Warning:
+    This room was constructed over very weak rock strata.  Detonation
+of explosives in this room is strictly prohibited!
+                        Frobozz Magic Cave Company
+                        per M. Agrippa, foreman
+"
+  ADDED in brick.dg
+
+STRING: "
+and nods his head-like appendage in thanks."
+  NOT FOUND in any .dg file
+
+
+STRING: "                       WELCOME TO DUNGEON
+
+    DUNGEON is a game of adventure, danger, and low cunning.  In it
+you will explore some of the most amazing territory ever seen by
+mortal man. Hardened adventurers have run screaming from the terrors
+contained within!
+
+    In DUNGEON the intrepid explorer delves into the forgotten
+secrets of a lost labyrinth deep in the bowels of the earth,
+searching for vast treasures long hidden from prying eyes, treasures
+guarded by fearsome monsters and diabolical traps!
+
+    No PDP-10 should be without one!
+
+    DUNGEON was created at the Programming Technology Division of the
+MIT Laboratory for Computer Science, by Tim Anderson, Marc Blank,
+Bruce Daniels, and Dave Lebling.  It was inspired by the ADVENTURE
+game of Crowther and Woods, and Dungeons and Dragons, by Gygax and
+Arneson.  DUNGEON is written in MDL (alias MUDDLE).
+
+    Direct inquiries by Net mail to DUNGEON@MIT-DMS.
+"
+  ADDED in house.dg
+
+STRING: "                       o  b  o
+                                  
+                        A  G  I  
+                         E   L  
+                                  
+                        m  p  a
+"
+  NEEDSWORK in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "                       o  b  o
+                    r             z
+                 f   M  A  G  I  C   z
+                 c    W  E   L  L    y
+                    o             n
+                        m  p  a
+"
+  NEEDSWORK in 1 file(s):
+    - src/rooms/bucket.dg
+
+STRING: "               COMMANDMENT #12592
+Oh ye who go about saying unto each:   "Hello sailor":
+dost thou know the magnitude of thy sin before the gods?
+Yea, verily, thou shalt be ground between two stones.
+Shall the angry gods cast thy body into the whirlpool?
+Surely, thy eye shall be put out with a sharp stick!
+Even unto the ends of the earth shalt thou wander and
+unto the land of the dead shalt thou be sent at last.
+Surely thou shalt repent of thy cunning."
+  ADDED in temple.dg
+
+STRING: "               US NEWS & DUNGEON REPORT
+12/12/77                                       Late Dungeon Edition
+
+     In order to get a more-or-less working version, we have
+installed one with some known bugs.  In particular, the following
+sequence will not work correctly, nor will anything resembling it:
+>take
+take what?
+>frob
+what do you want me to do with it?
+     Note that if you now respond 'take', the right thing will
+happen. In short, the current parser can't handle verbs with missing
+objects.  Since it is completely new, we'd appreciate reports of any
+other bugs encountered.
+
+FLASH!
+     An important change has been made.  When you have been killed,
+and the 'patch' question is asked, or if you are confirming a 'quit',
+it is now necessary to terminate the response to the question with a
+carriage return (you may be surprised to find that this wasn't true
+before).  Also, the answer to the 'patch' question is taken to be yes
+unless something starting with n, N, f, or F is typed; the answer to
+the 'quit' question is no unless something starting with y, Y, t, or
+T is typed.
+
+FLASH!
+     Another FLAG DAY has been declared for save files.  Yes, ladies
+and gentlemen, yet another incompatible change has been made to the
+save/restore code.  When will it end?
+
+     Things like the bucket should resume working in this version.
+
+     Many people have reported the following message:
+'GIN FREE STORAGE- VECTOR ...GOUT TIME= n.nn'
+This indicates that a garbage collection is occurring.  Some reports
+have this taking up to 30 sec. of cpu time, during which your dungeon
+will refuse to respond.  We have added a feature which should prevent
+this; if you see such a message, please send mail to DUNGEON@DM
+describing the circumstances (particularly number of moves,
+save/restore status, and the TIME).  A garbage collection is not
+fatal:  your dungeon should be perfectly all right once it finishes
+(after the GOUT TIME= message is printed).
+"
+  ADDED in house.dg
+
+STRING: "         !!!!  FROBOZZ MAGIC BOAT COMPANY  !!!!
+
+Hello, Sailor!
+
+Instructions for use:
+   
+   To get into boat, say 'Board'
+   To leave boat, say 'Disembark'
+
+   To get into a body of water, say 'Launch'
+   To get to shore, say 'Land'
+    
+Warranty:
+
+  This boat is guaranteed against all defects in parts and
+workmanship for a period of 76 milliseconds from date of purchase or
+until first used, whichever comes first.
+
+Warning:
+   This boat is made of plastic.                Good Luck!
+"
+  ADDED in boat.dg
+
+STRING: "         !!!!  FROBOZZ MAGIC ROBOT COMPANY  !!!!
+
+Hello, Master!
+   
+   I am a late-model robot, trained at MIT Tech to perform various
+simple household functions. 
+
+Instructions for use:
+   To activate me, use the following formula:
+        >TELL ROBOT '<something to do>' <cr>
+   The quotation marks are required!
+       
+Warranty:
+   No warranty is expressed or implied.
+                                
+                                        At your service!
+"
+  ADDED in machine.dg
+
+STRING: "       [close cover before striking BKD]
+
+You too can make BIG MONEY in the exciting field of
+                PAPER SHUFFLING!
+Mr. TAA of Muddle, Mass. says: "Before I took
+this course I used to be a lowly bit twiddler.
+Now with what I learned at MIT Tech I feel really
+important and can obfuscate and confuse with the best."
+Mr. MARC had this to say: "Ten short days ago all I could
+look forward to was a dead-end job as a doctor.  Now
+I have a promising future and make really big Zorkmids."
+
+MIT Tech can't promise these fantastic results to everyone.
+But when you earn your MDL degree from MIT Tech your future
+will be brighter. Send for our free brochure today."
+  ADDED in dam.dg
+
+STRING: "   BOOOOOOOOOOOM      "
+  NOT FOUND in any .dg file
+
+STRING: "  His booty remains."
+  NOT FOUND in any .dg file
+
+STRING: " Amid the desolation, you spot what
+appears to be your head, at the end of a long pole."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: " The way to the south is blocked by rubble."
+  ADDED to volcano.dg
+
+STRING: " There is a small door to the south."
+  ADDED to volcano.dg
+
+STRING: " [in the room]"
+  FOUND in 5 file(s):
+    - src/rooms/dam.dg
+    - src/rooms/thief.dg
+    - src/rooms/autogen.dg
+    - src/rooms/maze.dg
+    - src/rooms/machine.dg
+
+STRING: " [total of "
+  NOT FOUND in any .dg file
+
+STRING: " and evaporates immediately."
+  FOUND in 1 file(s):
+    - src/core/liquids.dg
+
+STRING: " breathes his last breath, a cloud
+of sinister black fog envelops him, and when the fog lifts, the
+carcass has disappeared."
+  NOT FOUND in any .dg file
+
+STRING: " burning in the receptacle."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: " burns inside the receptacle."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: " can be melted."
+  NOT FOUND in any .dg file
+
+STRING: " cannot be opened."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: " cannot defend himself:  He dies."
+  NOT FOUND in any .dg file
+
+STRING: " catches fire and is consumed."
+  FOUND in 1 file(s):
+    - src/core/timer.dg
+
+STRING: " catches fire."
+  FOUND in 1 file(s):
+    - src/core/timer.dg
+
+STRING: " contains:"
+  NOT FOUND in any .dg file
+
+STRING: " death"
+  FOUND in 1 file(s):
+    - src/rooms/troll.dg
+
+STRING: " does not seem to do anything."
+  NOT FOUND in any .dg file
+
+STRING: " doesn't appear worthwhile."
+  NOT FOUND in any .dg file
+
+STRING: " doesn't do anything."
+  NOT FOUND in any .dg file
+
+STRING: " has burned out, and the cloth
+bag starts to collapse."
+  NOT FOUND in any .dg file
+
+STRING: " has died."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: " has no effect."
+  NOT FOUND in any .dg file
+
+STRING: " hour"
+  NOT FOUND in any .dg file
+
+STRING: " in a room which reeks of coal gas.
+Fortunately, there is justice in the world."
+  NOT FOUND in any .dg file
+
+STRING: " in his bag and thanks
+you politely."
+  NOT FOUND in any .dg file
+
+STRING: " in his rock-hard hands."
+  NOT FOUND in any .dg file
+
+STRING: " is carrying:"
+  NOT FOUND in any .dg file
+
+STRING: " is doing here.""
+  NOT FOUND in any .dg file
+
+STRING: " is not notably useful."
+  NOT FOUND in any .dg file
+
+STRING: " is now off."
+  NOT FOUND in any .dg file
+
+STRING: " is now on."
+  NOT FOUND in any .dg file
+
+STRING: " is pointless."
+  NOT FOUND in any .dg file
+
+STRING: " is quite self-destructive."
+  NOT FOUND in any .dg file
+
+STRING: " is silly."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: " is slow and tedious."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: " is suicidal."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: " isn't sleeping."
+  NOT FOUND in any .dg file
+
+STRING: " isn't very interesting."
+  NOT FOUND in any .dg file
+
+STRING: " minute"
+  NOT FOUND in any .dg file
+
+STRING: " move."
+  FOUND in 10 file(s):
+    - src/core/melee.dg
+    - src/core/main.dg
+    - src/rooms/mirror.dg
+    - src/rooms/thief.dg
+    - src/rooms/autogen.dg
+    - src/rooms/glacier.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/machine.dg
+    - src/rooms/troll.dg
+
+STRING: " moves, "
+  FOUND in 3 file(s):
+    - src/core/melee.dg
+    - src/rooms/thief.dg
+    - src/rooms/troll.dg
+
+STRING: " moves."
+  FOUND in 3 file(s):
+    - src/core/melee.dg
+    - src/rooms/thief.dg
+    - src/rooms/troll.dg
+
+STRING: " must be on the ground to be boarded."
+  NOT FOUND in any .dg file
+
+STRING: " points, "
+  FOUND in 15 file(s):
+    - src/core/main.dg
+    - src/rooms/bucket.dg
+    - src/rooms/thief.dg
+    - src/rooms/volcano.dg
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/dungeon.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/tearoom.dg
+    - src/rooms/maze.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/machine.dg
+    - src/rooms/reservoir.dg
+
+STRING: " points], in "
+  NOT FOUND in any .dg file
+
+STRING: " reveals "
+  NOT FOUND in any .dg file
+
+STRING: " second"
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: " slowly regains his feet."
+  NOT FOUND in any .dg file
+
+STRING: " vanished."
+  NOT FOUND in any .dg file
+
+STRING: " which will be cured after "
+  NOT FOUND in any .dg file
+
+STRING: " with your bare hands is suicidal."
+  NOT FOUND in any .dg file
+
+STRING: " won't do."
+  NOT FOUND in any .dg file
+
+STRING: " would agree with you."
+  NOT FOUND in any .dg file
+
+STRING: ""                Guide Book to
+                Flood Control Dam #3
+
+  Flood Control Dam #3 (FCD#3) was constructed in year 783 of the
+Great Underground Empire to harness the destructive power of the
+Frigid River.  This work was supported by a grant of 37 million
+zorkmids from the Central Bureaucracy and your omnipotent local
+tyrant Lord Dimwit Flathead the Excessive. This impressive
+structure is composed of 3.7 cubic feet of concrete, is 256 feet
+tall at the center, and 193 feet wide at the top.  The reservoir
+created behind the dam has a volume of 37 billion cubic feet, an
+area of 12 million square feet, and a shore line of 36 thousand
+feet.
+
+  The construction of FCD#3 took 112 days from ground breaking to
+the dedication. It required a work force of 384 slaves, 34 slave
+drivers, 12 engineers, 2 turtle doves, and a partridge in a pear
+tree. The work was managed by a command team composed of 2345
+bureaucrats, 2347 secretaries (at least two of which can type),
+12,256 paper shufflers, 52,469 rubber stampers, 245,193 red tape
+processors, and nearly one million dead trees.
+
+  We will now point out some of the more interesting features
+of FCD#3 as we conduct you on a guided tour of the facilities:
+        1) You start your tour here in the Dam Lobby.
+           You will notice on your right that ........."
+  NOT FOUND in any .dg file
+
+STRING: ""I am only a stupid robot and cannot perform that command.""
+  NOT FOUND in any .dg file
+
+STRING: ""I am sorry but that action is difficult in the absence of a mouth.""
+  NOT FOUND in any .dg file
+
+STRING: ""My vision is not that good without eyes.""
+  NOT FOUND in any .dg file
+
+
+STRING: "'That wasn't quite what I had in mind', he says, crunching the
+"
+  NOT FOUND in any .dg file
+
+STRING: ", but the contents of his bag fall on the floor."
+  NOT FOUND in any .dg file
+
+STRING: ", cretin!"
+  FOUND in 3 file(s):
+    - src/rooms/digging.dg
+    - src/rooms/hades.dg
+    - src/rooms/temple.dg
+
+STRING: ", which is in the room."
+  NOT FOUND in any .dg file
+
+STRING: ", which you are carrying."
+  NOT FOUND in any .dg file
+
+STRING: ".  I don't believe 
+I've ever seen one as beautiful. 'Follow me', he says, and a door 
+appears on the west end of the ledge.  Through the door, you can see
+a narrow chimney sloping steeply downward."
+  NOT FOUND in any .dg file
+
+STRING: ". Died."
+  NOT FOUND in any .dg file
+
+STRING: ". Quit."
+  NOT FOUND in any .dg file
+
+STRING: ". Saved."
+  NOT FOUND in any .dg file
+
+STRING: "<DEFINE FEEL-FREE (LOSER)
+                   <TELL "FEEL FREE, CHOMPER!">>
+                        ...
+The rest is, alas, unintelligible (as were the implementers)."
+  ADDED in hades.dg
+
+STRING: "A 'lean and hungry' gentleman just wandered through.  Finding
+nothing of value, he left disgruntled."
+  NOT FOUND in any .dg file
+
+STRING: "A battery-powered brass lantern is on the trophy case."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "A beautiful rainbow can be seen over the falls and to the east."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "A booming voice says 'Wrong, cretin!' and you notice that you have
+turned into a pile of dust."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "A bottle is sitting on the table."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "A brilliant maneuver destroys the bottle."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "A chasm runs southwest to northeast.  You are on the south edge; the
+path exits to the south and to the east."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "A chasm, evidently produced by an ancient river, runs through the
+cave here.  Passages lead off in all directions."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "A clear glass bottle is here."
+  NOT FOUND in any .dg file
+
+STRING: "A cyclops, who looks prepared to eat horses (much less mere
+adventurers), blocks the staircase.  From his state of health, and
+the bloodstains on the walls, you gather that he is not very
+friendly, though he likes people."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "A deranged giant vampire bat (a reject from WUMPUS) swoops down
+from his belfry and lifts you away...."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "A dull thump is heard in the distance."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "A force keeps you from taking the bodies."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "A ghost appears in the room and is appalled at your having
+desecrated the remains of a fellow adventurer.  He casts a curse
+on all of your valuables and orders them banished to the Land of
+the Living Dead.  The ghost leaves, muttering obscenities."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "A grating appears on the ground."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "A hot pepper sandwich is here."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "A large coil of rope is lying in the corner."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "A large piece of rope descends from the railing above, ending some
+five feet above your head."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "A mass of ice fills the western half of the room."
+  FOUND in 1 file(s):
+    - src/rooms/glacier.dg
+
+STRING: "A masterpiece by a neglected genius is here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "A nasty-looking troll, brandishing a bloody axe, blocks all passages
+out of the room."
+  FOUND in 1 file(s):
+    - src/rooms/troll.dg
+
+STRING: "A nice idea, but with a "
+  NOT FOUND in any .dg file
+
+STRING: "A sandwich bag is here."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "A seedy-looking individual with a large bag just wandered through
+the room.  On the way through, he quietly abstracted all valuables
+from the room and from your possession, mumbling something about
+"Doing unto others before..""
+  NOT FOUND in any .dg file
+
+STRING: "A sharp stick, which appears to have been broken at one end, is here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "A skeleton, probably the remains of a luckless adventurer, lies here."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "A solid rainbow spans the falls."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "A stoppered glass flask with a skull-and-crossbones marking is here.
+The flask is filled with some clear liquid."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "A volcano gnome seems to walk straight out of the wall and says
+'I have a very busy appointment schedule and little time to waste on
+tresspassers, but for a small fee, I'll show you the way out.'  You
+notice the gnome nervously glancing at his watch."
+  NOT FOUND in any .dg file
+
+STRING: "Aaaarrrrrrrrgggggggggggggghhhhhhhhhhhhhh!"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Above you is a grating locked with a skull-and-crossbones lock."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "Above you is a grating."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "Above you is an open grating with sunlight pouring in."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "According to Prof. TAA of MIT Tech, the rapidly changing magnetic
+fields in the room are so intense as to cause you to be electrocuted. 
+I really don't know, but in any event, something just killed you."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "Adventurer"
+  NOT FOUND in any .dg file
+
+STRING: "Alas, there's not much left of the candles.  Certainly not enough to
+burn."
+  NOT FOUND in any .dg file
+
+STRING: "All of the objects spill onto the floor."
+  NOT FOUND in any .dg file
+
+STRING: "Almost as soon as the "
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "Altar"
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "Although the implementers are dead, they foresaw that some cretin
+would tamper with their remains.  Therefore, they took steps to
+prevent this."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "Although you tied it incorrectly, the rope becomes free."
+  NOT FOUND in any .dg file
+
+STRING: "Amateur Adventurer"
+  NOT FOUND in any .dg file
+
+STRING: "An old leather bag, bulging with coins, is here."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "An unconscious troll is sprawled on the floor.  All passages out of
+the room are open."
+  FOUND in 1 file(s):
+    - src/rooms/troll.dg
+
+STRING: "Ancient Chasm"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Annoyed to be left unarmed in such an obviously dangerous
+neighborhood, the thief slips off into the shadows."
+  FOUND in 1 file(s):
+    - src/rooms/thief.dg
+
+STRING: "April"
+  NOT FOUND in any .dg file
+
+STRING: "Aragain Falls"
+  FOUND in 2 file(s):
+    - src/rooms/outside.dg
+    - src/rooms/river.dg
+
+STRING: "Are you enjoying yourself?"
+  NOT FOUND in any .dg file
+
+STRING: "As the knife approaches its victim, your mind is submerged by an
+overmastering will.  Slowly, your hand turns, until the rusty blade
+is an inch from your neck.  The knife seems to sing as it savagely
+slits your throat."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "As the robot reaches for the sphere, an iron cage falls from the
+ceiling.  The robot attempts to fend it off, but is trapped below it.
+Alas, the robot short-circuits in his vain attempt to escape, and
+crushes the sphere beneath him as he falls to the floor."
+  NOT FOUND in any .dg file
+
+STRING: "As the thief dies, the power of his magic decreases, and his
+treasures reappear:"
+  FOUND in 1 file(s):
+    - src/rooms/thief.dg
+
+STRING: "As you enter, your compass starts spinning wildly."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "As you pick up the rusty knife, your sword gives a single pulse
+of blinding blue light."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "As you reach for the sphere, an iron cage falls from the ceiling
+to entrap you.  To make matters worse, poisonous gas starts coming
+into the room."
+  NOT FOUND in any .dg file
+
+STRING: "At the end of the chain is a basket."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "At the end of the rainbow is a pot of gold."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "At your service!"
+  FOUND in 2 file(s):
+    - src/core/main.dg
+    - src/rooms/machine.dg
+
+STRING: "Atlantis Room"
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "Attack"
+  FOUND in 2 file(s):
+    - src/core/melee.dg
+    - src/core/main.dg
+
+STRING: "Attacking a "
+  NOT FOUND in any .dg file
+
+STRING: "Attacking a dead "
+  NOT FOUND in any .dg file
+
+STRING: "Attic"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "August"
+  NOT FOUND in any .dg file
+
+STRING: "Barrel"
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "Bat Room"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Beg pardon?"
+  NOT FOUND in any .dg file
+
+STRING: "Beginner"
+  NOT FOUND in any .dg file
+
+STRING: "Behind House"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "Behind you, the walls of the safe room collapse into rubble."
+  NOT FOUND in any .dg file
+
+STRING: "Beside the skeleton is a rusty knife."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "Board"
+  FOUND in 2 file(s):
+    - src/rooms/volcano.dg
+    - src/rooms/boat.dg
+
+STRING: "Brief descriptions."
+  NOT FOUND in any .dg file
+
+STRING: "Brush"
+  NOT FOUND in any .dg file
+
+STRING: "Burn"
+  NOT FOUND in any .dg file
+
+STRING: "By some miracle of elven technology, you have managed to stop the
+leak in the dam."
+  NOT FOUND in any .dg file
+
+STRING: "CEVENT DEFINITIONS"
+  NOT FOUND in any .dg file
+
+STRING: "Cage"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Can you unlock a grating with a "
+  NOT FOUND in any .dg file
+
+STRING: "Can't open channel for save."
+  NOT FOUND in any .dg file
+
+STRING: "Canyon Bottom"
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "Canyon View"
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "Cave"
+  FOUND in 3 file(s):
+    - src/rooms/autogen.dg
+    - src/rooms/brick.dg
+    - src/rooms/river.dg
+
+STRING: "Cellar"
+  FOUND in 1 file(s):
+    - src/rooms/dungeon.dg
+
+STRING: "Chasm"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Cheater"
+  NOT FOUND in any .dg file
+
+STRING: "Chomp, Chomp."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Circular Room"
+  FOUND in 1 file(s):
+    - src/rooms/bucket.dg
+
+STRING: "Clearing"
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "Click."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "Close"
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "Closed."
+  NOT FOUND in any .dg file
+
+STRING: "Cold Passage"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Come on, now!"
+  NOT FOUND in any .dg file
+
+STRING: "Congratulations!  Unlike the other vandals, who merely stole the
+artist's masterpieces, you have destroyed one."
+  NOT FOUND in any .dg file
+
+STRING: "Congratulations!  You've managed to break all those bottles.
+Fortunately for your feet, they were made of magic glass and disappear
+immediately."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "Cyclops Room"
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "Dam"
+  FOUND in 4 file(s):
+    - src/rooms/dam.dg
+    - src/rooms/outside.dg
+    - src/rooms/autogen.dg
+    - src/rooms/river.dg
+
+STRING: "Dam Base"
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "Dam Lobby"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "Damp Cave"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Dead End"
+  FOUND in 2 file(s):
+    - src/rooms/maze.dg
+    - src/rooms/coalmine.dg
+
+STRING: "Dead end"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "December"
+  NOT FOUND in any .dg file
+
+STRING: "Deep Canyon"
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "Deep Ravine"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Deflate"
+  NOT FOUND in any .dg file
+
+STRING: "Dental hygiene is highly recommended, but I'm not sure what you want
+to brush them with."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "Dig"
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "Digging with a "
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "Digging with the "
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "Ding, dong."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Dingy Closet"
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "Disembark from"
+  NOT FOUND in any .dg file
+
+STRING: "Do you expect me to applaud?"
+  NOT FOUND in any .dg file
+
+STRING: "Do you want me to try to patch you?"
+  NOT FOUND in any .dg file
+
+STRING: "Do you wish to leave the game? (Y is affirmative): "
+  NOT FOUND in any .dg file
+
+STRING: "Dome Room"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Done."
+  NOT FOUND in any .dg file
+
+STRING: "Drink"
+  NOT FOUND in any .dg file
+
+STRING: "Drop"
+  NOT FOUND in any .dg file
+
+STRING: "Dropped."
+  NOT FOUND in any .dg file
+
+STRING: "Dusty Room"
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "East-West Passage"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Eat"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "Egyptian Room"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "End of Rainbow"
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "Engravings Cave"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Enlarge"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "Entrance to Hades"
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "Evaporate"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "Examine"
+  NOT FOUND in any .dg file
+
+STRING: "Explode"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "February"
+  NOT FOUND in any .dg file
+
+STRING: "Fiddling with a "
+  NOT FOUND in any .dg file
+
+STRING: "File not found."
+  NOT FOUND in any .dg file
+
+STRING: "Fill"
+  NOT FOUND in any .dg file
+
+STRING: "Find"
+  NOT FOUND in any .dg file
+
+STRING: "Forest"
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "Fortunately, there is still one chance for you to be a vandal, for on
+the far wall is a work of unparalleled beauty."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Fortunately, you still have a "
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "Frigid River"
+  FOUND in 3 file(s):
+    - src/rooms/dam.dg
+    - src/rooms/outside.dg
+    - src/rooms/river.dg
+
+STRING: "GET-ATOM TAKES A VALUE AND SEARCHES INITIAL FOR FIRST ATOM
+SETG'ED TO THAT."
+  NOT FOUND in any .dg file
+
+STRING: "GIVE LONG DESCRIPTION OF OBJECT"
+  NOT FOUND in any .dg file
+
+STRING: "GUTS OF FROB:  BASIC VERBS, COMMAND READER, PARSER, VOCABULARY HACKERS."
+  NOT FOUND in any .dg file
+
+STRING: "Gallery"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Gas Room"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "Geronimo....."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "Give"
+  NOT FOUND in any .dg file
+
+STRING: "Glacier Room"
+  FOUND in 1 file(s):
+    - src/rooms/glacier.dg
+
+STRING: "Good day."
+  NOT FOUND in any .dg file
+
+STRING: "Goodbye."
+  NOT FOUND in any .dg file
+
+STRING: "Grail Room"
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "Granite"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Grating Room"
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "Hacker"
+  NOT FOUND in any .dg file
+
+STRING: "Hanging down from the railing is a rope which ends about ten feet
+from the floor below."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Have you tried hopping around the dungeon, too?"
+  NOT FOUND in any .dg file
+
+STRING: "Haven't you done enough already?"
+  FOUND in 1 file(s):
+    - src/rooms/mirror.dg
+
+STRING: "Having moved the carpet previously, you find it impossible to move
+it again."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "He who puts his hand to the plow and looks back is not fit for the
+kingdom of winners.  In any case, "back" doesn't work."
+  NOT FOUND in any .dg file
+
+STRING: "Hello"
+  FOUND in 5 file(s):
+    - src/core/main.dg
+    - src/rooms/volcano.dg
+    - src/rooms/temple.dg
+    - src/rooms/boat.dg
+    - src/rooms/machine.dg
+
+STRING: "Hello."
+  FOUND in 5 file(s):
+    - src/core/main.dg
+    - src/rooms/volcano.dg
+    - src/rooms/temple.dg
+    - src/rooms/boat.dg
+    - src/rooms/machine.dg
+
+STRING: "Here lie the implementers, whose heads were placed on poles by the
+Keeper of the Dungeon for amazing untastefulness."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "Here, nothing happens."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "How are you?"
+  NOT FOUND in any .dg file
+
+STRING: "How can I drink that?"
+  NOT FOUND in any .dg file
+
+STRING: "How can I read a "
+  NOT FOUND in any .dg file
+
+STRING: "How can you attack a spirit with material objects?"
+  NOT FOUND in any .dg file
+
+STRING: "How can you do that?"
+  NOT FOUND in any .dg file
+
+STRING: "How can you inflate that?"
+  NOT FOUND in any .dg file
+
+STRING: "How can you tie that to anything."
+  NOT FOUND in any .dg file
+
+STRING: "How does one look through a "
+  NOT FOUND in any .dg file
+
+STRING: "How exactly are you going to melt this glacier?"
+  NOT FOUND in any .dg file
+
+STRING: "How, exactly, can I ring that?"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "However, with the water level lowered, there is merely a wide stream
+running through the center of the room."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "I can't do everything, because I ran out of room."
+  NOT FOUND in any .dg file
+
+STRING: "I can't do that."
+  NOT FOUND in any .dg file
+
+STRING: "I can't find any water here."
+  NOT FOUND in any .dg file
+
+STRING: "I can't get to that to move it."
+  NOT FOUND in any .dg file
+
+STRING: "I can't open the script channel."
+  NOT FOUND in any .dg file
+
+STRING: "I can't parse that."
+  NOT FOUND in any .dg file
+
+STRING: "I can't reach inside."
+  NOT FOUND in any .dg file
+
+STRING: "I can't reach that."
+  NOT FOUND in any .dg file
+
+STRING: "I can't reach the "
+  NOT FOUND in any .dg file
+
+STRING: "I can't see one here."
+  NOT FOUND in any .dg file
+
+STRING: "I can't see that here."
+  NOT FOUND in any .dg file
+
+STRING: "I couldn't find any valuables."
+  NOT FOUND in any .dg file
+
+STRING: "I couldn't find anything."
+  NOT FOUND in any .dg file
+
+STRING: "I didn't realize that adventurers are stupid enough to light a 
+"
+  NOT FOUND in any .dg file
+
+STRING: "I didn't think you would REALLY try to go over the falls in a
+barrel. It seems that some 450 feet below, you were met by a number
+of  unfriendly rocks and boulders, causing your immediate demise.  Is
+this what 'over a barrel' means?"
+  NOT FOUND in any .dg file
+
+STRING: "I don't know how to do that.  I win in all cases!"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "I don't know what that is."
+  NOT FOUND in any .dg file
+
+STRING: "I don't really know how to do that."
+  NOT FOUND in any .dg file
+
+STRING: "I don't really see how."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "I don't think so."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "I don't think that anybody's home."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "I don't think that the "
+  NOT FOUND in any .dg file
+
+STRING: "I don't think you can burn a "
+  FOUND in 1 file(s):
+    - src/core/timer.dg
+
+STRING: "I don't think you have enough lung-power to inflate this boat."
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "I hope you have more light than from a "
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "I see nothing special about the "
+  NOT FOUND in any .dg file
+
+STRING: "I suppose you have a theory on boarding "
+  NOT FOUND in any .dg file
+
+STRING: "I think that only schizophrenics say 'Hello' to a "
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "I think that phrase is getting a bit worn out."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "I think that swimming is best performed in water."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "I think you are taking this thing for granite."
+  NOT FOUND in any .dg file
+
+STRING: "I think you should get that first."
+  NOT FOUND in any .dg file
+
+STRING: "I think you've already done that."
+  NOT FOUND in any .dg file
+
+STRING: "I'd like to, but I can't get to it."
+  NOT FOUND in any .dg file
+
+STRING: "I'm afraid that leap was a bit much for your weak frame."
+  NOT FOUND in any .dg file
+
+STRING: "I'm afraid that the leap you attempted has done you in."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "I'm afraid that you have run out of matches."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "I'm afraid you can't control the balloon in this way."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "I'm afraid you have done drowned yourself."
+  NOT FOUND in any .dg file
+
+STRING: "I'm not sure that a "
+  NOT FOUND in any .dg file
+
+STRING: "I'm sorry, you seem to have encountered an error in the program.
+Send mail to DUNGEON@MIT-DMS describing what it was you tried to do."
+  NOT FOUND in any .dg file
+
+STRING: "I'm too simple-minded for that."
+  NOT FOUND in any .dg file
+
+STRING: "ILLEGAL CHR AFTER CNTRL P ON TTY DISPLAY"
+  NOT FOUND in any .dg file
+
+STRING: "If you pray enough, your prayers may be answered."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "If you wish, but I can't understand why??"
+  NOT FOUND in any .dg file
+
+STRING: "In the corner of the room on the ceiling is a large vampire bat who
+is obviously deranged and holding his nose."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "In the movies, your life would be passing in front of your eyes."
+  NOT FOUND in any .dg file
+
+STRING: "Inflate"
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "Inflating it further would probably burst it."
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "It appears that that last blow was too much for you.  I'm afraid you
+are dead."
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "It appears that the dam has been opened since the water level behind
+it is low and the sluice gate has been opened.  Water is rushing
+downstream through the gates."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "It could very well be too late!"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "It doesn't seem to work."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "It is already closed."
+  NOT FOUND in any .dg file
+
+STRING: "It is already off."
+  NOT FOUND in any .dg file
+
+STRING: "It is already on."
+  NOT FOUND in any .dg file
+
+STRING: "It is already open."
+  NOT FOUND in any .dg file
+
+STRING: "It is impossible to read in the dark."
+  NOT FOUND in any .dg file
+
+STRING: "It is in the "
+  NOT FOUND in any .dg file
+
+STRING: "It is not tied to anything."
+  NOT FOUND in any .dg file
+
+STRING: "It is now pitch black."
+  NOT FOUND in any .dg file
+
+STRING: "It is pitch black.  You are likely to be eaten by a grue."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "It seems that a "
+  NOT FOUND in any .dg file
+
+STRING: "It seems that the "
+  FOUND in 3 file(s):
+    - src/rooms/autogen.dg
+    - src/rooms/tearoom.dg
+    - src/rooms/brick.dg
+
+STRING: "It sounds like there is something inside the "
+  NOT FOUND in any .dg file
+
+STRING: "It won't fit."
+  NOT FOUND in any .dg file
+
+STRING: "It's closed."
+  NOT FOUND in any .dg file
+
+STRING: "It's open."
+  NOT FOUND in any .dg file
+
+STRING: "It's too soon."
+  NOT FOUND in any .dg file
+
+STRING: "Its not so bad.  You could have been killed already."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "January"
+  NOT FOUND in any .dg file
+
+STRING: "July"
+  NOT FOUND in any .dg file
+
+STRING: "June"
+  NOT FOUND in any .dg file
+
+STRING: "Junior Adventurer"
+  NOT FOUND in any .dg file
+
+STRING: "Just before you pass out, you notice that the vapors from the
+flask's contents are fatal."
+  NOT FOUND in any .dg file
+
+STRING: "Kick"
+  NOT FOUND in any .dg file
+
+STRING: "Kill"
+  NOT FOUND in any .dg file
+
+STRING: "Kitchen"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "Knock"
+  NOT FOUND in any .dg file
+
+STRING: "LISTS OF CRUFT:  WEAPONS, AND IMMOVABLE OBJECTS"
+  NOT FOUND in any .dg file
+
+STRING: "Ladder Bottom"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "Ladder Top"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "Land of the Living Dead"
+  FOUND in 2 file(s):
+    - src/rooms/hades.dg
+    - src/rooms/maze.dg
+
+STRING: "Lava Room"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "Library"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "Light"
+  NOT FOUND in any .dg file
+
+STRING: "Living Room"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "Lock"
+  NOT FOUND in any .dg file
+
+STRING: "Long descriptions."
+  NOT FOUND in any .dg file
+
+STRING: "Look"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Look around."
+  NOT FOUND in any .dg file
+
+STRING: "Lord Dimwit's crown is here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "Loud Room"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Low Room"
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "Lower"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "Lower Shaft"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "Lying half buried in the mud is an old trunk, bulging with jewels."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "Lying in a corner of the room is a small brass bell."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "MADMAN;MADADV SAVE"
+  NOT FOUND in any .dg file
+
+STRING: "MIRROR ROOM HACKERY"
+  NOT FOUND in any .dg file
+
+STRING: "MORE VOCABULARY"
+  NOT FOUND in any .dg file
+
+STRING: "Machine Room"
+  FOUND in 2 file(s):
+    - src/rooms/coalmine.dg
+    - src/rooms/machine.dg
+
+STRING: "Maintenance Room"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "Many empty Coke bottles are here.  Alas, they can't hold water."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "March"
+  NOT FOUND in any .dg file
+
+STRING: "Master"
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "May"
+  NOT FOUND in any .dg file
+
+STRING: "Melt"
+  NOT FOUND in any .dg file
+
+STRING: "Mine Entrance"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "Mirror Room"
+  FOUND in 1 file(s):
+    - src/rooms/mirror.dg
+
+STRING: "Moby lossage"
+  NOT FOUND in any .dg file
+
+STRING: "Move"
+  NOT FOUND in any .dg file
+
+STRING: "Munging a "
+  NOT FOUND in any .dg file
+
+STRING: "Narrow Crawlway"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Narrow Ledge"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "Naturally!"
+  FOUND in 2 file(s):
+    - src/core/main.dg
+    - src/rooms/machine.dg
+
+STRING: "Neptune's own crystal trident is here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Nice try."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Nice weather we've been having lately"
+  NOT FOUND in any .dg file
+
+STRING: "No long descriptions."
+  NOT FOUND in any .dg file
+
+STRING: "Nobody but a greedy surgeon would allow you to attempt that trick."
+  FOUND in 1 file(s):
+    - src/rooms/mirror.dg
+
+STRING: "North of House"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "North-South Crawlway"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "North-South Passage"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Not a prayer."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Nothing happens here."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Nothing happens."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Nothing seems to happen."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "November"
+  NOT FOUND in any .dg file
+
+STRING: "Novice Adventurer"
+  NOT FOUND in any .dg file
+
+STRING: "Now you've done it.  It seems that the brick has other properties
+than weight, namely the ability to blow you to smithereens."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "Now, let me see...
+Well, we weren't quite able to restore your state.  You can't have
+everything."
+  NOT FOUND in any .dg file
+
+STRING: "Noxious vapors prevent your entry."
+  NOT FOUND in any .dg file
+
+STRING: "October"
+  NOT FOUND in any .dg file
+
+STRING: "Oh dear, you seem to have gone over Aragain Falls.  Not a very smart
+thing to do, apparently."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "Oh dear.  It appears that the smell coming from this room was coal
+gas.  I would have thought twice about carrying a "
+  NOT FOUND in any .dg file
+
+STRING: "Oh, dear.  Such language from a supposed winning adventurer!"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Oh, no!  A fearsome grue slithered into the room and devoured you."
+  NOT FOUND in any .dg file
+
+STRING: "Oh, no!  You walked into the slavering fangs of a lurking grue."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "On a table is a nasty-looking knife."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "On hooks above the mantelpiece hangs an elvish sword of great
+antiquity."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "On the altar is a large black book, open to page 569."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "On the floor is a gold zorkmid coin (a valuable collector's item)."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "On the floor lies a moby ruby."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "On the north of the room is a wall which used to be solid, but which
+now has a cyclops-sized hole in it."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "On the shore lies Neptune's own crystal trident."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "On the table is an elongated brown sack, smelling of hot peppers."
+  NOT FOUND in any .dg file
+
+STRING: "On the two ends of the altar are burning candles."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "Once you got him, what would you do with him?"
+  NOT FOUND in any .dg file
+
+STRING: "One of the matches starts to burn."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "Open"
+  NOT FOUND in any .dg file
+
+STRING: "Opened."
+  NOT FOUND in any .dg file
+
+STRING: "Opening the "
+  NOT FOUND in any .dg file
+
+STRING: "PARSER & AUXILIARIES"
+  NOT FOUND in any .dg file
+
+STRING: "PRINT OUT DESCRIPTION OF LOSSAGE:  WHEN PLAYED, SCORE, # MOVES, ETC."
+  NOT FOUND in any .dg file
+
+STRING: "Pearl Room"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Perhaps it is your head that is swimming."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Pick"
+  NOT FOUND in any .dg file
+
+STRING: "Played for "
+  NOT FOUND in any .dg file
+
+STRING: "Playing in this way with a "
+  NOT FOUND in any .dg file
+
+STRING: "Please input entire command again."
+  NOT FOUND in any .dg file
+
+STRING: "Plug"
+  NOT FOUND in any .dg file
+
+STRING: "Poke"
+  NOT FOUND in any .dg file
+
+STRING: "Pool Room"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "Posts Room"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "Pour"
+  NOT FOUND in any .dg file
+
+STRING: "Push"
+  NOT FOUND in any .dg file
+
+STRING: "Pushing the "
+  NOT FOUND in any .dg file
+
+STRING: "Put"
+  NOT FOUND in any .dg file
+
+STRING: "RUNS ONLY IF PARSE WON, TO PREVENT SCREWS FROM TYPOS."
+  NOT FOUND in any .dg file
+
+STRING: "Rainbow Room"
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "Raise"
+  NOT FOUND in any .dg file
+
+STRING: "Read"
+  FOUND in 2 file(s):
+    - src/core/main.dg
+    - src/rooms/tearoom.dg
+
+STRING: "Realizing just in time that you'd be stabbed in the back if you
+attempted to take the chalice, you return to the fray."
+  FOUND in 1 file(s):
+    - src/rooms/thief.dg
+
+STRING: "Reservoir North"
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "Reservoir South"
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "Restore failed."
+  NOT FOUND in any .dg file
+
+STRING: "Restored."
+  NOT FOUND in any .dg file
+
+STRING: "Riddle Room"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Ring"
+  NOT FOUND in any .dg file
+
+STRING: "Rocky Crawl"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Rocky Ledge"
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "Rocky Shore"
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "Round room"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Rub"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Ruby Room"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "SIMPLE OBJ-HERE:  IS IT IN THE ROOM OR IN THE GUY'S HAND.  TO DO FULL
+SEARCH, USE GET-OBJECT"
+  NOT FOUND in any .dg file
+
+STRING: "STUDIO:  LET PEOPLE UP THE CHIMNEY IF THEY DON'T HAVE MUCH STUFF"
+  NOT FOUND in any .dg file
+
+STRING: "STUFF FOR 'EVERYTHING' AND 'VALUABLES'"
+  NOT FOUND in any .dg file
+
+STRING: "Sandy Beach"
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "Save failed."
+  NOT FOUND in any .dg file
+
+STRING: "Saving."
+  NOT FOUND in any .dg file
+
+STRING: "Scripting off."
+  NOT FOUND in any .dg file
+
+STRING: "Scripting to "
+  NOT FOUND in any .dg file
+
+STRING: "Scripting to <"
+  NOT FOUND in any .dg file
+
+STRING: "Scripting wasn't on."
+  NOT FOUND in any .dg file
+
+STRING: "September"
+  NOT FOUND in any .dg file
+
+STRING: "Shaft Room"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "Shore"
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "Sitting on the pedestal is a flaming torch, made of ivory."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Slide Room"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Small Cave"
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "Smelly Room"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "Some guidebooks entitled 'Flood Control Dam #3' are on the reception
+desk."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "Some invisible force prevents you from passing through the gate."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "Some long descriptions."
+  NOT FOUND in any .dg file
+
+STRING: "Someone carrying a large bag is casually leaning against one of the
+walls here.  He does not speak, but it is clear from his aspect that
+the bag will be taken only over his dead body."
+  NOT FOUND in any .dg file
+
+STRING: "Something seems funny about the feel of the buoy."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "South of House"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "Squeaky Room"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "Steep Crawlway"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Strange Passage"
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "Stream"
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "Strike"
+  NOT FOUND in any .dg file
+
+STRING: "Studio"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Stuff for diverting gc's"
+  NOT FOUND in any .dg file
+
+STRING: "Such language in a high-class establishment like this!"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Suddenly, a sinister, wraithlike figure appears before you, seeming
+to float in the air.  He glows with an eldritch light.  In a barely
+audible voice he says, "Begone, defiler!  Your presence upsets the
+very balance of the System itself!"  With a sinister chuckle, he
+raises his oaken staff, taps you on the head, and fades into the
+gloom.  In his place appears a tastefully lettered sign reading:
+
+                        DUNGEON CLOSED
+
+At that instant, you disappear, and all your belongings clatter to
+the ground.
+"
+  NOT FOUND in any .dg file
+
+STRING: "Suddenly, the rainbow appears to become solid and, I venture,
+walkable (I think the giveaway was the stairs and bannister)."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "Suddenly, the room appears to have become very large."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "Swimming is not allowed in this dungeon."
+  NOT FOUND in any .dg file
+
+STRING: "Swing"
+  NOT FOUND in any .dg file
+
+STRING: "TRUE IF PARSER WON:  OTHERWISE INHIBITS OBJECT ACTIONS, CLOCKS (BUT NOT THIEF)."
+  NOT FOUND in any .dg file
+
+STRING: "Take"
+  NOT FOUND in any .dg file
+
+STRING: "Taken."
+  NOT FOUND in any .dg file
+
+STRING: "Tea Room"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "Tell"
+  NOT FOUND in any .dg file
+
+STRING: "Temple"
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "Thank you very much for the "
+  NOT FOUND in any .dg file
+
+STRING: "Thank you very much.  I was rather thirsty (from all this talking,
+probably)."
+  NOT FOUND in any .dg file
+
+STRING: "Thank you very much.  It really hit the spot."
+  NOT FOUND in any .dg file
+
+STRING: "That word is replaced henceforth with DUNGEON."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "The "
+  FOUND in 28 file(s):
+    - src/core/melee.dg
+    - src/core/liquids.dg
+    - src/core/timer.dg
+    - src/core/meta.dg
+    - src/core/main.dg
+    - src/rooms/bucket.dg
+    - src/rooms/mirror.dg
+    - src/rooms/dam.dg
+    - src/rooms/thief.dg
+    - src/rooms/volcano.dg
+    - src/rooms/digging.dg
+    - src/rooms/outside.dg
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/dungeon.dg
+    - src/rooms/glacier.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/tearoom.dg
+    - src/rooms/boat.dg
+    - src/rooms/maze.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/machine.dg
+    - src/rooms/troll.dg
+    - src/rooms/brick.dg
+    - src/rooms/reservoir.dg
+    - src/rooms/river.dg
+
+STRING: "The FROBOZZ Corporation created, owns, and operates this dungeon."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "The River turns a corner here making it impossible to see the
+Dam.  The White Cliffs loom on the east bank and large rocks prevent
+landing on the west."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "The Troll Room"
+  FOUND in 1 file(s):
+    - src/rooms/dungeon.dg
+
+STRING: "The acoustics of the room change subtly."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "The balloon ascends."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "The balloon descends."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "The balloon has landed."
+  NOT FOUND in any .dg file
+
+STRING: "The balloon is fastened to the hook."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "The balloon is tied to the hook."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "The balloon leaves the ledge."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "The balloon rises slowly from the ground."
+  NOT FOUND in any .dg file
+
+STRING: "The basket is lowered to the bottom of the shaft."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "The basket is raised to the top of the shaft."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "The blue button appears to be jammed."
+  NOT FOUND in any .dg file
+
+STRING: "The boat deflates."
+  NOT FOUND in any .dg file
+
+STRING: "The boat inflates and appears seaworthy."
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "The boat must be on the ground to be deflated."
+  NOT FOUND in any .dg file
+
+STRING: "The boat must be on the ground to be inflated."
+  NOT FOUND in any .dg file
+
+STRING: "The bolt won't turn using the "
+  NOT FOUND in any .dg file
+
+STRING: "The bolt won't turn with your best effort."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "The bottle hits the far wall and is decimated."
+  NOT FOUND in any .dg file
+
+STRING: "The bottle is already full."
+  FOUND in 1 file(s):
+    - src/core/liquids.dg
+
+STRING: "The bottle is closed."
+  NOT FOUND in any .dg file
+
+STRING: "The bottle is now full of water."
+  NOT FOUND in any .dg file
+
+STRING: "The box has no door!"
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "The box is imbedded in the wall."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "The box is not open, chomper!"
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "The box is rusted and will not open."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "The bucket descends and comes to a stop."
+  FOUND in 1 file(s):
+    - src/rooms/bucket.dg
+
+STRING: "The bucket rises and comes to a stop."
+  FOUND in 1 file(s):
+    - src/rooms/bucket.dg
+
+STRING: "The cage is securely fastened to the iron chain."
+  NOT FOUND in any .dg file
+
+STRING: "The cage shakes and is hurled across the room."
+  NOT FOUND in any .dg file
+
+STRING: "The candles are already lighted."
+  NOT FOUND in any .dg file
+
+STRING: "The candles are lighted."
+  NOT FOUND in any .dg file
+
+STRING: "The candles are not lighted."
+  NOT FOUND in any .dg file
+
+STRING: "The candles are very short."
+  NOT FOUND in any .dg file
+
+STRING: "The candles grow shorter."
+  NOT FOUND in any .dg file
+
+STRING: "The cave is very windy at the moment and your candles have blown out."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "The chimney is too narrow for you and all of your baggage."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "The cloth bag inflates as it fills with hot air."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "The cloth bag is draped over the the basket."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "The cloth bag is inflated and there is a "
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "The coffin will not fit through this passage."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "The cyclops apparently was not thirsty at the time and refuses your
+generous gesture."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops appears to be getting more agitated."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops doesn't look like he'll let you past."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "The cyclops ignores all injury to his body with a shrug."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops is moving about the room, looking for something."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops is moving toward you in an unfriendly manner."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops is not so stupid as to eat THAT!"
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops is rather heavy and doesn't take kindly to being grabbed."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops is standing in the corner, eyeing you closely.  I don't
+think he likes you very much.  He looks extremely hungry even for a
+cyclops."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "The cyclops looks tired and quickly falls fast asleep (what did you
+put in that drink, anyway?)."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops may be hungry, but there is a limit."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops says 'Mmm Mmm.  I love hot peppers!  But oh, could I use
+a drink.  Perhaps I could drink the blood of that thing'.  From the
+gleam in his eye, it could be surmised that you are 'that thing'."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops seems somewhat agitated."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops was looking for salt and pepper.  I think he is gathering
+condiments for his upcoming snack."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops yawns and stares at the thing that woke him up."
+  NOT FOUND in any .dg file
+
+STRING: "The cyclops, having eaten the hot peppers, appears to be gasping.
+His enflamed tongue protrudes from his man-sized mouth."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "The cyclops, hearing the name of his deadly nemesis, flees the room
+by knocking down the wall on the north of the room."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "The cyclops, perhaps affected by a drug in your drink, is sleeping
+blissfully at the foot of the stairs."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "The cyclops, tired of all of your games and trickery, eats you.
+The cyclops says 'Mmm.  Just like mom used to make 'em.'"
+  NOT FOUND in any .dg file
+
+STRING: "The deceased adventurer's useless lantern is here."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "The door cannot be opened."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "The door is invulnerable."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "The door is locked from above."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "The door is nailed shut."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "The door is still under warranty."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "The door reluctantly opens to reveal a rickety staircase descending
+into darkness."
+  NOT FOUND in any .dg file
+
+STRING: "The door swings shut and closes."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "The door to the room seems to be blocked by sticky orange rubble
+from an explosion.  Probably some careless adventurer was playing
+with blasting cakes."
+  NOT FOUND in any .dg file
+
+STRING: "The engravings translate to 'This space intentionally left blank'"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "The engravings were incised in the living rock of the cave wall by
+an unknown hand.  They depict, in symbolic form, the beliefs of the
+ancient peoples of Zork.  Skillfully interwoven with the bas reliefs
+are excerpts illustrating the major tenets expounded by the sacred
+texts of the religion of that time.  Unfortunately a later age seems
+to have considered them blasphemous and just as skillfully excised
+them."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "The excessively gaudy crown of Lord Dimwit Flathead is here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "The flame is extinguished."
+  NOT FOUND in any .dg file
+
+STRING: "The flask breaks into pieces."
+  NOT FOUND in any .dg file
+
+STRING: "The force of the explosion has caused the ledge to collapse
+belatedly."
+  NOT FOUND in any .dg file
+
+STRING: "The glacier is unmoved by your ridiculous attempt."
+  FOUND in 1 file(s):
+    - src/rooms/glacier.dg
+
+STRING: "The gnome appears increasingly nervous."
+  NOT FOUND in any .dg file
+
+STRING: "The gnome glances at his watch.  'Oops.  I'm late for an
+appointment!' He disappears, leaving you alone on the ledge."
+  NOT FOUND in any .dg file
+
+STRING: "The grate is closed."
+  NOT FOUND in any .dg file
+
+STRING: "The grate is locked."
+  NOT FOUND in any .dg file
+
+STRING: "The grate is unlocked."
+  NOT FOUND in any .dg file
+
+STRING: "The grating is closed."
+  NOT FOUND in any .dg file
+
+STRING: "The grating is locked"
+  FOUND in 2 file(s):
+    - src/rooms/outside.dg
+    - src/rooms/maze.dg
+
+STRING: "The grating is locked."
+  FOUND in 2 file(s):
+    - src/rooms/outside.dg
+    - src/rooms/maze.dg
+
+STRING: "The grating opens to reveal trees above you."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "The grating opens."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "The green bubble is glowing."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "The grue is a sinister, lurking presence in the dark places of the
+earth.  Its favorite diet is adventurers, but its insatiable
+appetite is tempered by its fear of light.  No grue has ever been
+seen by the light of day, and few have survived its fearsome jaws
+to tell the tale."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "The heat from the torch is so intense that the candles are vaporised."
+  NOT FOUND in any .dg file
+
+STRING: "The holder of the large bag just left, looking disgusted. 
+Fortunately, he took nothing."
+  NOT FOUND in any .dg file
+
+STRING: "The hole collapses, smothering you."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "The hole is getting deeper, but that's about it."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "The house shakes, and the ceiling of the room you're in collapses,
+turning you into a pancake."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "The icing, now visible, says '"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "The lamp appears to be getting dimmer."
+  NOT FOUND in any .dg file
+
+STRING: "The lamp has smashed into the floor and the light has gone out."
+  NOT FOUND in any .dg file
+
+STRING: "The lamp is dying."
+  NOT FOUND in any .dg file
+
+STRING: "The leak has submerged the depressed area in a pool of sewage."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "The leaves burn and the neighbors start to complain."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "The ledge collapses, giving you a narrow escape."
+  NOT FOUND in any .dg file
+
+STRING: "The ledge collapses, leaving you with no place to land."
+  NOT FOUND in any .dg file
+
+STRING: "The ledge collapses, probably as a result of the explosion.  A large
+chunk of it, which is attached to the hook, drags you down to the
+ground.  Fatally."
+  NOT FOUND in any .dg file
+
+STRING: "The ledge has collapsed and cannot be landed on."
+  NOT FOUND in any .dg file
+
+STRING: "The letters appear larger, but still are too small to be read."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "The lid closes."
+  NOT FOUND in any .dg file
+
+STRING: "The lid on the machine is closed."
+  NOT FOUND in any .dg file
+
+STRING: "The lid on the machine is open."
+  NOT FOUND in any .dg file
+
+STRING: "The lid opens."
+  NOT FOUND in any .dg file
+
+STRING: "The lights within the room come on."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "The lights within the room shut off."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "The machine comes to life (figuratively) with a dazzling display of
+colored lights and bizarre noises.  After a few moments, the
+excitement abates."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "The machine doesn't seem to want to do anything."
+  NOT FOUND in any .dg file
+
+STRING: "The match has gone out."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "The match is out."
+  NOT FOUND in any .dg file
+
+STRING: "The melting glacier seems to have carried the torch away, leaving
+you in the dark."
+  FOUND in 1 file(s):
+    - src/rooms/glacier.dg
+
+STRING: "The mirror is broken into many pieces."
+  FOUND in 1 file(s):
+    - src/rooms/mirror.dg
+
+STRING: "The north wall is solid rock."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "The only writing legible is a capital E.  The rest is too small to
+be clearly visible."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "The other occupant (he of the large bag), finding nothing of value,
+left disgusted."
+  NOT FOUND in any .dg file
+
+STRING: "The other occupant just left, still carrying his large bag.  You may
+not have noticed that he robbed you blind first."
+  NOT FOUND in any .dg file
+
+STRING: "The passage is too narrow to accomodate coffins."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "The path is too narrow."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "The pool of water evaporates, revealing a tin of rare spices."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "The prayer is inscribed in an ancient script which is hardly
+remembered these days, much less understood.  What little of it can
+be made out seems to be a phillipic against small insects,
+absent-mindedness, and the picking up and dropping of small objects. 
+The final verse seems to consign trespassers to the land of the
+dead.  All evidence indicates that the beliefs of the ancient
+Zorkers were obscure."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "The rainbow seems to have become somewhat run-of-the-mill."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "The receptacle is already occupied."
+  NOT FOUND in any .dg file
+
+STRING: "The river descends here into a valley.  There is a narrow beach on
+the east below the cliffs and there is some shore on the west which
+may be suitable.  In the distance a faint rumbling can be heard."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "The river is running faster here and the sound ahead appears to be
+that of rushing water.  On the west shore is a sandy beach.  A small
+area of beach can also be seen below the Cliffs."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "The robber revives, briefly feigning continued unconsciousness, and
+when he sees his moment, scrambles away from you."
+  NOT FOUND in any .dg file
+
+STRING: "The robber, rummaging through his bag, dropped a few items he found
+valueless."
+  NOT FOUND in any .dg file
+
+STRING: "The robber, somewhat surprised at this turn of events, nimbly
+retrieves his stilletto."
+  NOT FOUND in any .dg file
+
+STRING: "The robot gladly takes the "
+  NOT FOUND in any .dg file
+
+STRING: "The robot is injured (being of shoddy construction) and falls to the
+floor in a pile of garbage, which disintegrates before your eyes."
+  NOT FOUND in any .dg file
+
+STRING: "The room around you seems to be getting smaller."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "The room is full of water and cannot be entered."
+  NOT FOUND in any .dg file
+
+STRING: "The room seems to have become too small to hold you.  It seems that
+the  walls are not as compressible as your body, which is somewhat
+demolished."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "The room trembles and 50,000 pounds of rock fall on you, turning you
+into a pancake."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "The rope drops gently to the floor below."
+  NOT FOUND in any .dg file
+
+STRING: "The rope drops over the side and comes within ten feet of the floor."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "The rope is already attached."
+  NOT FOUND in any .dg file
+
+STRING: "The rope is tied to the railing."
+  NOT FOUND in any .dg file
+
+STRING: "The rug is extremely heavy and cannot be carried."
+  NOT FOUND in any .dg file
+
+STRING: "The rug is too heavy to lift, but in trying to take it you have 
+noticed an irregularity beneath it."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "The sight of someone carrying a pile of burning leaves so offends
+the neighbors that they come over and put you out."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "The slag turns out to be rather insubstantial, and crumbles into dust
+at your touch.  It must not have been very valuable."
+  NOT FOUND in any .dg file
+
+STRING: "The sluice gates close and water starts to collect behind the dam."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "The sluice gates on the dam are closed.  Behind the dam, there can be
+seen a wide lake.  A small stream is formed by the runoff from the
+lake."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "The sluice gates open and water pours through the dam."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "The sound of rushing water is nearly unbearable here.  On the west
+shore is a large landing area."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "The stairs are too steep for carrying the coffin."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "The structural integrity of the rainbow seems to have left it,
+leaving you about 450 feet in the air, supported by water vapor."
+  NOT FOUND in any .dg file
+
+STRING: "The thief gestures mysteriously, and the treasures in the room
+suddenly vanish."
+  FOUND in 1 file(s):
+    - src/rooms/thief.dg
+
+STRING: "The thief places the "
+  NOT FOUND in any .dg file
+
+STRING: "The thief seems rather offended by your offer.  Do you think he's as
+stupid as you are?"
+  NOT FOUND in any .dg file
+
+STRING: "The torch hits the glacier and explodes into a great ball of flame,
+devouring the glacier.  The water from the melting glacier rushes
+downstream, carrying the torch with it.  In the place of the glacier,
+there is a passageway leading west."
+  FOUND in 1 file(s):
+    - src/rooms/glacier.dg
+
+STRING: "The trap door crashes shut, and you hear someone barring it."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "The trap door has been barred from the other side."
+  FOUND in 1 file(s):
+    - src/rooms/dungeon.dg
+
+STRING: "The troll fends you off with a menacing gesture."
+  FOUND in 1 file(s):
+    - src/rooms/troll.dg
+
+STRING: "The troll laughs at your puny gesture."
+  NOT FOUND in any .dg file
+
+STRING: "The troll spits in your face, saying "Better luck next time.""
+  NOT FOUND in any .dg file
+
+STRING: "The troll stirs, quickly resuming a fighting stance."
+  NOT FOUND in any .dg file
+
+STRING: "The troll, disarmed, cowers in terror, pleading for his life in
+the guttural tongue of the trolls."
+  NOT FOUND in any .dg file
+
+STRING: "The troll, now worried about this encounter, recovers his bloody
+axe."
+  FOUND in 1 file(s):
+    - src/rooms/troll.dg
+
+STRING: "The troll, who is not overly proud, graciously accepts the gift"
+  NOT FOUND in any .dg file
+
+STRING: "The troll, who is remarkably coordinated, catches the "
+  NOT FOUND in any .dg file
+
+STRING: "The trophy case is securely fastened to the wall (perhaps to foil any
+attempt by robbers to remove it)."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "The tube refuses to accept anything."
+  NOT FOUND in any .dg file
+
+STRING: "The unconscious "
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "The voice of the guardian of the dungeon booms out from the darkness 
+'Your disrespect costs you your life!' and places your head on a pole."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "The water leaks out of the "
+  FOUND in 1 file(s):
+    - src/core/liquids.dg
+
+STRING: "The water level here is now "
+  NOT FOUND in any .dg file
+
+STRING: "The water slips through your fingers."
+  NOT FOUND in any .dg file
+
+STRING: "The water spills to the floor and evaporates immediately."
+  FOUND in 1 file(s):
+    - src/core/liquids.dg
+
+STRING: "The water splashes on the walls, and evaporates immediately."
+  NOT FOUND in any .dg file
+
+STRING: "The way is blocked by debris from an explosion."
+  NOT FOUND in any .dg file
+
+STRING: "The way through the gate is barred by evil spirits, who jeer at your
+attempts to pass."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "The whirring decreases in intensity slightly."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "The whirring increases in intensity slightly."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "The window closes (more easily than it opened)."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "The wire falls off of the hook."
+  NOT FOUND in any .dg file
+
+STRING: "The wire is not tied to anything."
+  NOT FOUND in any .dg file
+
+STRING: "The wire rapidly burns into nothingness."
+  NOT FOUND in any .dg file
+
+STRING: "The wire starts to burn."
+  NOT FOUND in any .dg file
+
+STRING: "There appears before you a threatening figure clad all over
+in heavy black armor.  His legs seem like the massive trunk
+of the oak tree.  His broad shoulders and helmeted head loom
+high over your own puny frame and you realize that his powerful
+arms could easily crush the very life from your body.  There
+hangs from his belt a veritable arsenal of deadly weapons:
+sword, mace, ball and chain, dagger, lance, and trident.
+He speaks with a commanding voice:
+
+                "YOU SHALL NOT PASS "
+
+As he grabs you by the neck all grows dim about you."
+  NOT FOUND in any .dg file
+
+STRING: "There are four heads here, mounted securely on poles."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "There are old engravings on the walls here."
+  NOT FOUND in any .dg file
+
+STRING: "There are tour guidebooks here."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "There are two candles here."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "There is a "
+  FOUND in 22 file(s):
+    - src/rooms/bucket.dg
+    - src/rooms/mirror.dg
+    - src/rooms/dam.dg
+    - src/rooms/thief.dg
+    - src/rooms/volcano.dg
+    - src/rooms/digging.dg
+    - src/rooms/outside.dg
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/glacier.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/tearoom.dg
+    - src/rooms/boat.dg
+    - src/rooms/maze.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/machine.dg
+    - src/rooms/troll.dg
+    - src/rooms/brick.dg
+    - src/rooms/reservoir.dg
+    - src/rooms/river.dg
+
+STRING: "There is a Flathead Commemorative stamp here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is a Stradavarius here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a balloon here, broken into pieces."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is a beautiful crystal sphere here."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "There is a beautiful statue here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a bloody axe here."
+  FOUND in 1 file(s):
+    - src/rooms/troll.dg
+
+STRING: "There is a blue book here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is a blue label here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is a brass lantern (battery-powered) here."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "There is a broken brass lantern here."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "There is a broken sharp stick here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a burned out ivory torch here."
+  NOT FOUND in any .dg file
+
+STRING: "There is a burned-out lantern here."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "There is a card with writing on it here."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "There is a clap of thunder and the east door opens."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a clap of thunder, and a voice echoes through the
+cavern: "Begone, chomper!"  Apparently, the voice thinks you
+are an evil spirit, and dismisses you from the realm of the living."
+  NOT FOUND in any .dg file
+
+STRING: "There is a clap of thunder, and a voice echoes through the cavern: 
+"Begone, fiends!"  The spirits, sensing the presence of a greater
+power, flee through the walls."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "There is a clove of garlic here."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "There is a coil of thin shiny wire here."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "There is a control panel here.  There is a large metal bolt on the 
+panel. Above the bolt is a small green plastic bubble."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "There is a dented iron box here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a folded pile of plastic here which has a small valve
+attached."
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "There is a giant spark and you are fried to a crisp."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "There is a gigantic pile of line-printer output here.  Although the
+paper once contained useful information, almost nothing can be
+distinguished now."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "There is a grating securely fastened into the ground."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "There is a green book here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is a green piece of paper here."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "There is a hissing sound and the boat deflates."
+  NOT FOUND in any .dg file
+
+STRING: "There is a hunk of bat guano here."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "There is a large black book here."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "There is a large case here, containing objects which you used to
+possess."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a large coil of rope here."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "There is a large passageway leading westward."
+  FOUND in 1 file(s):
+    - src/rooms/glacier.dg
+
+STRING: "There is a large pile of empty Coke bottles here, evidently produced
+by the implementers during their long struggle to win totally."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "There is a large platinum bar here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a large shovel here."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "There is a mangled cage here."
+  NOT FOUND in any .dg file
+
+STRING: "There is a matchbook whose cover says 'Visit Beautiful FCD#3' here."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "There is a moby ruby lying here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a nasty-looking knife lying here."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "There is a nervous Volcano Gnome here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is a pearl necklace here with hundreds of large pearls."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a piece of cake here with the words 'Eat Me' on it."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "There is a piece of cake with blue (ecch) icing here."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "There is a piece of cake with orange icing here."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "There is a piece of cake with red icing here."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "There is a pile of leaves on the ground."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "There is a pile of plastic here with a large hole in it."
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "There is a pot of gold here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a purple book here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is a red buoy here (probably a warning)."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a robot here."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "There is a rumble from deep within the earth and the room shakes."
+  FOUND in 1 file(s):
+    - src/rooms/mirror.dg
+
+STRING: "There is a rumbling sound and a stream of water appears to burst
+from the east wall of the room (apparently, a leak has occurred in a
+pipe.)"
+  NOT FOUND in any .dg file
+
+STRING: "There is a rusty knife here."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "There is a sapphire-encrusted bracelet here."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "There is a screwdriver here."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "There is a set of skeleton keys here."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "There is a silver chalice, intricately engraved, here."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "There is a small brass bell here."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "There is a small heap of coal here."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "There is a small hook attached to the rock here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is a small leaflet here."
+  NOT FOUND in any .dg file
+
+STRING: "There is a small mailbox here."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "There is a small piece of vitreous slag here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a small pump here."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "There is a solid-gold coffin, used for the burial of Ramses II, here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is a square brick here which feels like clay."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "There is a suspicious-looking individual lying unconscious on the
+ground.  His bag and stilletto seem to have vanished."
+  NOT FOUND in any .dg file
+
+STRING: "There is a suspicious-looking individual, holding a bag, leaning
+against one wall.  He is armed with a vicious-looking stilletto."
+  FOUND in 1 file(s):
+    - src/rooms/thief.dg
+
+STRING: "There is a tan label here."
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "There is a tin of rare spices here."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "There is a tomb here, made of the finest marble, and large enough
+for four headless corpses.  On one end is the cryptic inscription:
+                    
+                      "Feel Free."
+"
+  NOT FOUND in any .dg file
+
+STRING: "There is a trophy case here."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "There is a tunnel leaving the room to the north."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "There is a very large and extremely heavy wicker basket with a cloth
+bag here. Inside the basket is a metal receptacle of some kind. 
+Attached to the basket on the outside is a piece of wire."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is a vicious-looking stilletto here."
+  FOUND in 1 file(s):
+    - src/rooms/thief.dg
+
+STRING: "There is a western exit, a passageway south, and a steep pathway
+climbing up along the edge of a cliff."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "There is a white book here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is a wooden bucket here, 3 feet in diameter and 3 feet high."
+  FOUND in 1 file(s):
+    - src/rooms/bucket.dg
+
+STRING: "There is a worthless piece of canvas here."
+  NOT FOUND in any .dg file
+
+STRING: "There is a wrench here."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "There is an elvish sword here."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "There is an emerald here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is an engraved zorkmid coin here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "There is an enormous diamond (perfectly cut) here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is an enormous stack of line-printer paper here.  It is barely
+readable."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "There is an explosion nearby."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "There is an exquisite jade figurine here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is an extremely valuable (perhaps original) grail here."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "There is an inflated boat here."
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "There is an iron cage in the middle of the room."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is an issue of US NEWS & DUNGEON REPORT dated "
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "There is an ivory torch here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "There is an object which looks like a tube of toothpaste here."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "There is an old trunk here, bulging with assorted jewels."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "There is an open grating, descending into darkness."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "There is an ugly person staring at you."
+  FOUND in 1 file(s):
+    - src/rooms/mirror.dg
+
+STRING: "There is no grue here, but I'm sure there is at least one lurking
+in the darkness nearby.  I wouldn't let my light go out if I were
+you!"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "There is no way to go in that direction."
+  NOT FOUND in any .dg file
+
+STRING: "There is nothing here to attack."
+  NOT FOUND in any .dg file
+
+STRING: "There is nothing here to kill."
+  NOT FOUND in any .dg file
+
+STRING: "There is nothing it can be tied to."
+  NOT FOUND in any .dg file
+
+STRING: "There is now a puddle in the bottom of the "
+  FOUND in 1 file(s):
+    - src/rooms/bucket.dg
+
+STRING: "There is some gunk here"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "There is some water here"
+  NOT FOUND in any .dg file
+
+STRING: "There's nothing to dig into here."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "This boat will not inflate since some moron put a hole in it."
+  NOT FOUND in any .dg file
+
+STRING: "This book is written in a tongue with which I am unfamiliar."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "This cannot be tied, so it cannot be untied!"
+  NOT FOUND in any .dg file
+
+STRING: "This has no effect."
+  NOT FOUND in any .dg file
+
+STRING: "This is a former broom closet.  The exits are to the east and west."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "This is a large room, whose north wall is solid granite.  A number
+of discarded bags, which crumble at your touch, are scattered about
+on the floor."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "This is a room which is bare on all sides.  There is an exit down. 
+To the east is a great door made of stone.  Above the stone, the
+following words are written: 'No man shall enter this room without
+solving this riddle:
+  What is tall as a house,
+          round as a cup, 
+          and all the king's horses can't draw it up?'"
+  NOT FOUND in any .dg file
+
+STRING: "This is getting you nowhere."
+  NOT FOUND in any .dg file
+
+STRING: "This room appears to have been the waiting room for groups touring
+the dam.  There are exits here to the north and east marked
+'Private', though the doors are open, and an exit to the south."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "This score gives you the rank of "
+  NOT FOUND in any .dg file
+
+STRING: "This version created "
+  NOT FOUND in any .dg file
+
+STRING: "Throw"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "Thrown."
+  NOT FOUND in any .dg file
+
+STRING: "Tie"
+  NOT FOUND in any .dg file
+
+STRING: "Timber Room"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "Time passes..."
+  NOT FOUND in any .dg file
+
+STRING: "Time passes...and you die from some obscure poisoning."
+  NOT FOUND in any .dg file
+
+STRING: "Tomb of the Unknown Implementer"
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "Top of Well"
+  FOUND in 1 file(s):
+    - src/rooms/bucket.dg
+
+STRING: "Torch Room"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Tough shit, asshole."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Treasure Room"
+  FOUND in 2 file(s):
+    - src/rooms/thief.dg
+    - src/rooms/cyclops.dg
+
+STRING: "Trying to kill a "
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Turn"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "Turn off"
+  NOT FOUND in any .dg file
+
+STRING: "Underneath the pile of leaves is a grating."
+  NOT FOUND in any .dg file
+
+STRING: "Underneath the rug is a closed trap door."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "Unfortunately, it is impossible to tell directions in here."
+  NOT FOUND in any .dg file
+
+STRING: "Unfortunately, that leaves you in the water, where you drown."
+  NOT FOUND in any .dg file
+
+STRING: "Unfortunately, we've run out of poles.  Therefore, in punishment for
+your most grievous sin, we shall deprive you of all your valuables,
+and of your life."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "Unfortunately, you have managed to destroy it by your reckless
+actions."
+  FOUND in 1 file(s):
+    - src/rooms/mirror.dg
+
+STRING: "Unfortunately, you were holding it at the time."
+  NOT FOUND in any .dg file
+
+STRING: "Unlock"
+  NOT FOUND in any .dg file
+
+STRING: "Untie"
+  NOT FOUND in any .dg file
+
+STRING: "VOCABULARY, ACTION FUNCTIONS, MAZE (NORMALLY ENCODED)"
+  NOT FOUND in any .dg file
+
+STRING: "Very good."
+  NOT FOUND in any .dg file
+
+STRING: "Very good.  Now you can go to the second grade."
+  NOT FOUND in any .dg file
+
+STRING: "Volcano Bottom"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "Volcano Core"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "Volcano Gnome"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "Volcano View"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "WEIGHT:  Get sum of OSIZEs of supplied list, recursing to the nth level."
+  NOT FOUND in any .dg file
+
+STRING: "Wake"
+  NOT FOUND in any .dg file
+
+STRING: "Walk"
+  NOT FOUND in any .dg file
+
+STRING: "Wasn't he a sailor?"
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "Wasn't he an Indian?"
+  NOT FOUND in any .dg file
+
+STRING: "Water"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "Wave"
+  NOT FOUND in any .dg file
+
+STRING: "Waving a "
+  NOT FOUND in any .dg file
+
+STRING: "Welcome to Dungeon.
+"
+  NOT FOUND in any .dg file
+
+STRING: "Well done.  The boat is repaired."
+  NOT FOUND in any .dg file
+
+STRING: "Well what?"
+  NOT FOUND in any .dg file
+
+STRING: "Well, FOO, BAR, and BLETCH to you too!"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Well, you really did it that time.  Is suicide painless?"
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "Well, you seem to have been brushing your teeth with some sort of
+glue. As a result, your mouth gets glued together (with your nose)
+and you die of respiratory failure."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "West of Chasm"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "West of House"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "What do you expect, BOOM?"
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "What?  You don't trust me?  Why, only last week I patched a running ITS
+and it survived for over 30 seconds.  Oh, well."
+  NOT FOUND in any .dg file
+
+STRING: "Wheeeeeeeeee!!!!!"
+  NOT FOUND in any .dg file
+
+STRING: "White Cliffs Beach"
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "Why knock on a "
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Wide Ledge"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "Winding Passage"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Winner"
+  NOT FOUND in any .dg file
+
+STRING: "With a "
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "With a great effort, the rug is moved to one side of the room.
+With the rug moved, the dusty cover of a closed trap-door appears."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "With great effort, you open the window far enough to allow entry."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "With what?"
+  NOT FOUND in any .dg file
+
+STRING: "Wizard"
+  NOT FOUND in any .dg file
+
+STRING: "Wooden Tunnel"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You already have it."
+  NOT FOUND in any .dg file
+
+STRING: "You are a small room.  Strange squeaky sounds may be heard coming from
+the passage at the west end.  You may also escape to the south."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are about one hundred feet above the bottom of the volcano.  The
+top of the volcano is clearly visible here."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "You are about two hundred feet above the volcano floor.  Looming
+above is the rim of the volcano.  There is a small ledge on the west
+side."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "You are already in a "
+  NOT FOUND in any .dg file
+
+STRING: "You are already scripting."
+  NOT FOUND in any .dg file
+
+STRING: "You are at the base of Flood Control Dam #3, which looms above you
+and to the north.  The river Frigid is flowing by here.  Across the
+river are the White Cliffs which seem to form a giant wall stretching
+from north to south along the east shore of the river as it winds its
+way downstream."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "You are at the bottom of a large dormant volcano.  High above you
+light may be seen entering from the cone of the volcano.  The only
+exit here is to the north."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "You are at the north end of a large reservoir."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "You are at the periphery of a large dome, which forms the ceiling
+of another room below.  Protecting you from a precipitous drop is a
+wooden railing which circles the dome."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are at the south end of a large reservoir."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "You are at the top of Aragain Falls, an enormous waterfall with a
+drop of about 450 feet.  The only path here is on the north end.
+There is a man-sized barrel here which you could fit into."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "You are at the top of the Great Canyon on its south wall.  From here
+there is a marvelous view of the Canyon and parts of the Frigid River
+upstream.  Across the canyon, the walls of the White Cliffs still
+appear to loom far above.  Following the Canyon upstream (north and
+northwest), Aragain Falls may be seen, complete with rainbow. 
+Fortunately, my vision is better than average and I can discern the
+top of the Flood Control Dam #3 far to the distant north.  To the
+west and south can be seen an immense forest, stretching for miles
+around.  It is possible to climb down into the canyon from here."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "You are at the top of the well.  Well done.  There are etchings on
+the side of the well. There is a small crack across the floor at the
+entrance to a room on the east, but it can be crossed easily."
+  FOUND in 1 file(s):
+    - src/rooms/bucket.dg
+
+STRING: "You are behind the white house.  In one corner of the house there
+is a small window which is "
+  NOT FOUND in any .dg file
+
+STRING: "You are beneath the walls of the river canyon which may be climbable
+here.  There is a small stream here, which is the lesser part of the
+runoff of Aragain Falls. To the north is a narrow path."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "You are carrying a "
+  NOT FOUND in any .dg file
+
+STRING: "You are carrying:"
+  NOT FOUND in any .dg file
+
+STRING: "You are covered with bat turds, cretin."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "You are dead."
+  FOUND in 2 file(s):
+    - src/core/melee.dg
+    - src/rooms/troll.dg
+
+STRING: "You are digging into a pile of bat guano."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "You are empty handed."
+  NOT FOUND in any .dg file
+
+STRING: "You are facing the north side of a white house.  There is no door here,
+and all the windows are barred."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "You are facing the south side of a white house. There is no door here,
+and all the windows are barred."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "You are here"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "You are high above the floor of the volcano.  From here the rim of
+the volcano looks very narrow and you are very near it.  To the 
+east is what appears to be a viewing ledge, too thin to land on."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "You are in a barrel.  Congratulations.  Etched into the side of the
+barrel is the word 'Geronimo!'."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "You are in a cave.  Passages exit to the south and to the east, but
+the cave narrows to a crack to the west.  The earth is particularly
+damp here."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a circular room with passages off in eight directions."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a clearing, with a forest surrounding you on the west
+and south."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "You are in a cold and damp corridor where a long east-west passageway
+intersects with a northward path."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a crawlway with a three-foot high ceiling.  Your footing
+is very unsure here due to the assortment of rocks underfoot. 
+Passages can be seen in the east, west, and northwest corners of the
+passage."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a damp circular room, whose walls are made of brick and
+mortar.  The roof of this room is not visible, but there appear to be
+some etchings on the walls.  There is a passageway to the west."
+  FOUND in 1 file(s):
+    - src/rooms/bucket.dg
+
+STRING: "You are in a dark and damp cellar with a narrow passageway leading
+east, and a crawlway to the south.  On the west is the bottom of a
+steep metal ramp which is unclimbable."
+  FOUND in 1 file(s):
+    - src/rooms/dungeon.dg
+
+STRING: "You are in a deep ravine at a crossing with an east-west crawlway. 
+Some stone steps are at the south of the ravine and a steep staircase
+descends."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a dimly lit forest, with large trees all around.  To the
+east, there appears to be sunlight."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "You are in a dingy closet adjacent to the machine room.  On one wall
+is a small sticker which says
+                Protected by
+                  FROBOZZ
+             Magic Alarm Company
+              (Hello, footpad!)
+"
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "You are in a dusty old room which is virtually featureless, except
+for an exit on the north side."
+  FOUND in 1 file(s):
+    - src/rooms/brick.dg
+
+STRING: "You are in a forest, with trees in all directions around you."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "You are in a high north-south passage, which forks to the northeast."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a large forest, with trees obstructing all views except
+to the east, where a small clearing may be seen through the trees."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "You are in a large room full of assorted heavy machinery.  The room
+smells of burned resistors. The room is noisy from the whirring
+sounds of the machines. Along one wall of the room are three buttons
+which are, respectively, round, triangular, and square.  Naturally,
+above these buttons are instructions written in EBCDIC.  A large sign
+in English above all the buttons says
+                'DANGER -- HIGH VOLTAGE '.
+There are exits to the west and the south."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "You are in a large room which seems to be air-conditioned.  In one
+corner there is a machine (?) which is shaped somewhat like a clothes
+dryer.  On the 'panel' there is a switch which is labelled in a
+dialect of Swahili.  Fortunately, I know this dialect and the label
+translates to START.  The switch does not appear to be manipulable by
+any human hand (unless the fingers are about 1/16 by 1/4 inch).  On
+the front of the machine is a large lid."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are in a large room with a ceiling which cannot be detected from
+the ground. There is a narrow passage from east to west and a stone
+stairway leading upward.  The room is extremely noisy.  In fact, it is
+difficult to hear yourself think."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a large room with a prominent doorway leading to a down
+staircase. To the west is a narrow twisting tunnel.  Above you is a
+large dome painted with scenes depicting elfin hacking rites. Up
+around the edge of the dome (20 feet up) is a wooden railing. In the
+center of the room there is a white marble pedestal."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a large room, in the middle of which is a small shaft
+descending through the floor into darkness below.  To the west and
+the north are exits from this room.  Constructed over the top of the
+shaft is a metal framework to which a heavy iron chain is attached."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are in a large room, one half of which is depressed.  There is a
+large leak in the ceiling through which brown colored goop is
+falling.  The only exit to this room is to the west."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "You are in a large room, with giant icicles hanging from the walls
+and ceiling.  There are passages to the north and east."
+  FOUND in 1 file(s):
+    - src/rooms/glacier.dg
+
+STRING: "You are in a large square room with tall ceilings.  On the south wall
+is an enormous mirror which fills the entire wall.  There are exits
+on the other three sides of the room."
+  FOUND in 1 file(s):
+    - src/rooms/mirror.dg
+
+STRING: "You are in a long and narrow passage, which is cluttered with broken
+timbers.  A wide passage comes from the north and turns at the 
+southwest corner of the room into a very narrow passageway."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are in a long passage.  To the south is one entrance.  On the
+east there is an old wooden door, with a large hole in it (about
+cyclops sized)."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "You are in a maze of twisty little passages, all alike."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "You are in a narrow crawlway.  The crawlway leads from north to south.
+However the south passage divides to the south and southwest."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a narrow east-west passageway.  There is a narrow stairway
+leading down at the north end of the room."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a narrow tunnel with large wooden beams running across
+the ceiling and around the walls.  A path from the south splits into
+paths running west and northeast."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are in a non-descript part of a coal mine."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are in a north-south crawlway; a passage goes to the east also.
+There is a hole above, but it provides no opportunities for climbing."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a rather wide room.  On one side is the bottom of a
+narrow wooden ladder.  To the northeast and the south are passages
+leaving the room."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are in a room which looks like an Egyptian tomb.  There is an
+ascending staircase in the room as well as doors, east and south."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a room which must have been a large library, probably
+for the royal family.  All of the shelves appear to have been gnawed
+to pieces by unfriendly gnomes.  To the north is an exit."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "You are in a room with a low ceiling which is circular in shape. 
+There are exits to the east and the southeast."
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "You are in a room with an exit on the west side, and a staircase
+leading up."
+  FOUND in 1 file(s):
+    - src/rooms/cyclops.dg
+
+STRING: "You are in a small cave whose exits are on the south and northwest."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "You are in a small cave with an entrance to the north and a stairway
+leading down."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a small chamber behind the remains of the Great Glacier.
+To the south and west are small passageways."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a small chamber, which appears to have been part of a
+coal mine. On the south wall of the chamber the letters "Granite
+Wall" are etched in the rock. To the east is a long passage and
+there is a steep metal slide twisting downward. From the appearance
+of the slide, an attempt to climb up it would be impossible.  To the
+north is a small opening."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a small non-descript room.  However, from the direction
+of a small descending staircase a foul odor can be detected.  To the
+east is a narrow path."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are in a small room near the maze. There are twisty passages
+in the immediate vicinity."
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "You are in a small room which has only one door, to the east."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a small room which smells strongly of coal gas."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are in a small room with passages off in all directions. 
+Bloodstains and deep scratches (perhaps made by an axe) mar the
+walls."
+  FOUND in 1 file(s):
+    - src/rooms/dungeon.dg
+
+STRING: "You are in a small room, whose walls are formed by an old lava flow.
+There are exits here to the west and the south."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "You are in a small square room which is at the bottom of a long
+shaft. To the east is a passageway and to the northeast a very narrow
+passage. In the shaft can be seen a heavy iron chain."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are in a small square room, in the center of which is a large
+oblong table, no doubt set for afternoon tea.  It is clear from the
+objects on the table that the users were indeed mad.  In the eastern
+corner of the room is a small hole (no more that four inches high). 
+There are passageways leading away to the west and the northwest."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "You are in a steep and narrow crawlway.  There are two exits nearby to
+the south and southwest."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a tiny cave with entrances west and north, and a dark,
+forbidding staircase leading down."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in a very small room.  In the corner is a rickety wooden
+ladder, leading downward.  It might be safe to descend.  There is
+also a staircase leading upward."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are in a winding passage.  It seems that there is only an exit
+on the east end although the whirring from the round room can be
+heard faintly to the north."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in an ancient room, long buried by the Reservoir.  There are
+exits here to the southeast and upward."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "You are in an art gallery.  Most of the paintings which were here
+have been stolen by vandals with exceptional taste.  The vandals
+left through either the north or south exits."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in an enormous room, in the center of which are four wooden
+posts delineating a rectanular area, above which is what appears to
+be a wooden roof.  In fact, all objects in this room appear to be
+abnormally large. To the east is a passageway.  There is a large
+chasm on the west and the northwest."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "You are in an open field west of a big white house, with a boarded
+front door."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "You are in it, loser!"
+  NOT FOUND in any .dg file
+
+STRING: "You are in perfect health."
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "You are in the "
+  FOUND in 4 file(s):
+    - src/rooms/hades.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/reservoir.dg
+
+STRING: "You are in the Tomb of the Unknown Implementer.
+A hollow voice says:  "That's not a bug, it's a feature!""
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "You are in the attic.  The only exit is stairs that lead down."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "You are in the east end of a large temple.  In front of you is what
+appears to be an altar."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "You are in the kitchen of the white house.  A table seems to have
+been used recently for the preparation of food.  A passage leads to
+the west and a dark staircase can be seen leading upward.  To the
+east is a small window which is "
+  NOT FOUND in any .dg file
+
+STRING: "You are in the living room.  There is a door to the east, a wooden
+door with strange gothic lettering to the west, which appears to be
+nailed shut, "
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "You are in the living room.  There is a door to the east.  To the
+west is a cyclops-shaped hole in an old wooden door, above which is
+some strange gothic lettering "
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "You are in the north end of a large cavernous room which was formerly
+a reservoir."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "You are in the south end of a large cavernous room which was formerly
+a reservoir."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "You are in the west end of a large temple.  On the south wall is an 
+ancient inscription, probably a prayer in a long-forgotten language. 
+The north wall is solid granite.  The entrance at the west end of the
+room is through huge marble pillars."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "You are in what appears to have been an artist's studio.  The walls
+and floors are splattered with paints of 69 different colors. 
+Strangely enough, nothing of value is hanging here.  At the north and
+northwest of the room are open doors (also covered with paint).  An
+extremely dark and narrow chimney leads up from a fireplace; although
+you might be able to get up it, it seems unlikely you could get back
+down."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are in what appears to have been the maintenance room for Flood
+Control Dam #3, judging by the assortment of tool chests around the
+room.  Apparently, this room has been ransacked recently, for most of
+the valuable equipment is gone. On the wall in front of you is a
+panel of buttons, which are labelled in EBCDIC. However, they are of
+different colors:  Blue, Yellow, Brown, and Red. The doors to this
+room are in the west and south ends."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "You are near the rim of the volcano which is only about 15 feet
+across.  To the west, there is a place to land on a wide ledge."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "You are not carrying that."
+  NOT FOUND in any .dg file
+
+STRING: "You are not equipped for an exorcism."
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "You are not equipped for swimming."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "You are on a large sandy beach at the shore of the river, which is
+flowing quickly by.  A path runs beside the river to the south here."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "You are on a ledge about halfway up the wall of the river canyon.
+You can see from here that the main flow from Aragain Falls twists
+along a passage which it is impossible to enter.  Below you is the
+canyon bottom.  Above you is more cliff, which still appears
+climbable."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "You are on a ledge in the middle of a large volcano.  Below you
+the volcano bottom can be seen and above is the rim of the volcano.
+A couple of ledges can be seen on the other side of the volcano;
+it appears that this ledge is intermediate in elevation between
+those on the other side.  The exit from this room is to the east."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "You are on a narrow ledge overlooking the inside of an old dormant
+volcano.  This ledge appears to be about in the middle between the
+floor below and the rim above. There is an exit here to the south."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "You are on a narrow strip of beach which runs along the base of the
+White Cliffs. The only path here is a narrow one, heading south
+along the Cliffs."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "You are on a rocky, narrow strip of beach beside the Cliffs.  A
+narrow path leads north along the shore."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "You are on a small beach on the continuation of the Frigid River
+past the Falls.  The beach is narrow due to the presence of the White
+Cliffs.  The river canyon opens here and sunlight shines in from
+above. A rainbow crosses over the falls to the west and a narrow path
+continues to the southeast."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "You are on a wide ledge high into the volcano.  The rim of the
+volcano is about 200 feet above and there is a precipitous drop below
+to the bottom."
+  ADDED to volcano.dg
+
+STRING: "You are on the River Frigid in the vicinity of the Dam.  The river
+flows quietly here.  There is a landing on the west shore."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "You are on the shore of the River.  The river here seems somewhat
+treacherous.  A path travels from north to south here, the south end
+quickly turning around a sharp corner."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "You are on the south edge of a deep canyon.  Passages lead off
+to the east, south, and northwest.  You can hear the sound of
+flowing water below."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "You are on the west edge of a chasm, the bottom of which cannot be
+seen. The east side is sheer rock, providing no exits.  A narrow
+passage goes west, and the path you are on continues to the north and
+south."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You are on the west shore of the river.  An entrance to a cave is
+to the northwest.  The shore is very rocky here."
+  FOUND in 1 file(s):
+    - src/rooms/river.dg
+
+STRING: "You are on top of a rainbow (I bet you never thought you would walk
+on a rainbow), with a magnificent view of the Falls.  The rainbow
+travels east-west here.  There is an NBC Commissary here."
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "You are on your own feet again."
+  NOT FOUND in any .dg file
+
+STRING: "You are outside a large gateway, on which is inscribed 
+        "Abandon every hope, all ye who enter here."  
+The gate is open; through it you can see a desolation, with a pile of
+mangled corpses in one corner.  Thousands of voices, lamenting some
+hideous fate, can be heard."
+  NOT FOUND in any .dg file
+
+STRING: "You are standing at the entrance of what might have been a coal
+mine. To the northeast and the northwest are entrances to the mine,
+and there is another exit on the south end of the room."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You are standing in a small circular room with a pedestal.  A set of
+stairs leads up, and passages leave to the east and west."
+  FOUND in 1 file(s):
+    - src/rooms/temple.dg
+
+STRING: "You are standing on a path beside a flowing stream.  The path
+travels to the north and the east."
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "You are standing on the top of the Flood Control Dam #3, which was
+quite a tourist attraction in times far distant.  There are paths to
+the north, south, east, and down."
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "You are still recovering from that last blow, so your attack is
+ineffective."
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "You are stopped by a cloud of poisonous gas."
+  NOT FOUND in any .dg file
+
+STRING: "You are strong enough to take several wounds."
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "You are surrounded by a wall of sand on all sides."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "You are tied to the ledge."
+  NOT FOUND in any .dg file
+
+STRING: "You are trapped inside an iron cage."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You aren't in that!"
+  NOT FOUND in any .dg file
+
+STRING: "You can be killed by a serious wound."
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "You can be killed by one more light wound."
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "You can see a small statue here in the sand."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "You can survive one serious wound."
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "You can't be serious."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "You can't deflate the boat while you're in it."
+  NOT FOUND in any .dg file
+
+STRING: "You can't go there in a "
+  NOT FOUND in any .dg file
+
+STRING: "You can't go there without a vehicle."
+  NOT FOUND in any .dg file
+
+STRING: "You can't see through that!"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "You can't tie it to that."
+  NOT FOUND in any .dg file
+
+STRING: "You can't turn that off."
+  NOT FOUND in any .dg file
+
+STRING: "You can't turn that on."
+  NOT FOUND in any .dg file
+
+STRING: "You can't turn that!"
+  NOT FOUND in any .dg file
+
+STRING: "You can't use that!"
+  NOT FOUND in any .dg file
+
+STRING: "You cannot burn this door."
+  NOT FOUND in any .dg file
+
+STRING: "You cannot close that."
+  NOT FOUND in any .dg file
+
+STRING: "You cannot damage this door."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "You cannot fit through this passage with that load."
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "You cannot get your bearings..."
+  NOT FOUND in any .dg file
+
+STRING: "You cannot go down without fracturing many bones."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You cannot talk through another person!"
+  NOT FOUND in any .dg file
+
+STRING: "You cannot talk to that!"
+  NOT FOUND in any .dg file
+
+STRING: "You cannot tie the cyclops, although he is fit to be tied."
+  NOT FOUND in any .dg file
+
+STRING: "You certainly can't turn it with a "
+  NOT FOUND in any .dg file
+
+STRING: "You clearly are a suicidal maniac.  We don't allow psychotics in the
+cave, since they may harm other adventurers.  Your remains will
+installed in the Land of the Living Dead, where your fellow adventurers 
+may gloat over them."
+  NOT FOUND in any .dg file
+
+STRING: "You don't have that."
+  NOT FOUND in any .dg file
+
+STRING: "You don't really want to hold a burning "
+  NOT FOUND in any .dg file
+
+STRING: "You evidently frightened the robber, though you didn't hit him.  He
+flees"
+  NOT FOUND in any .dg file
+
+STRING: "You have a light wound,"
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "You have a serious wound,"
+  NOT FOUND in any .dg file
+
+STRING: "You have been blasted to smithereens (wherever they are)."
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "You have been killed "
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "You have been playing DUNGEON for "
+  NOT FOUND in any .dg file
+
+STRING: "You have broken the mirror.  I hope you have a seven years supply of
+good luck handy."
+  FOUND in 1 file(s):
+    - src/rooms/mirror.dg
+
+STRING: "You have destroyed the bottle.  Well done."
+  NOT FOUND in any .dg file
+
+STRING: "You have entered a cave with passages leading north and southeast."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "You have entered the Land of the Living Dead, a large desolate room.
+Although it is apparently uninhabited, you can hear the sounds of
+thousands of lost souls weeping and moaning.  In the east corner are
+stacked the remains of dozens of previous adventurers who were less
+fortunate than yourself.  To the east is an ornate passage,
+apparently recently constructed. "
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "You have landed, but the balloon did not survive."
+  NOT FOUND in any .dg file
+
+STRING: "You have serious wounds,"
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "You have several wounds,"
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "You have to light them with something that's burning, you know."
+  NOT FOUND in any .dg file
+
+STRING: "You have two choices: 1. Leave  2. Become dinner."
+  NOT FOUND in any .dg file
+
+STRING: "You hear a boom and notice that the balloon is falling to the ground."
+  NOT FOUND in any .dg file
+
+STRING: "You hear a scream of anguish as you violate the robber's hideaway. 
+Using passages unknown to you, he rushes to its defense."
+  FOUND in 1 file(s):
+    - src/rooms/thief.dg
+
+STRING: "You hear, off in the distance, someone saying "My, I wonder what
+this fine "
+  NOT FOUND in any .dg file
+
+STRING: "You may recall your recent explosion.  Well, probably as a result of
+that, you hear an ominous rumbling, as if one of the rooms in the
+dungeon had collapsed."
+  NOT FOUND in any .dg file
+
+STRING: "You missed.  The thief makes no attempt to take the knife, though it
+would be a fine addition to the collection in his bag.  He does seem
+angered by your attempt."
+  NOT FOUND in any .dg file
+
+STRING: "You must tell me how to do that to a "
+  NOT FOUND in any .dg file
+
+STRING: "You ought to be ashamed of yourself."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "You realize, just in time, that disembarking here would probably be
+fatal."
+  NOT FOUND in any .dg file
+
+STRING: "You realize, just in time, that the candles are already lighted."
+  NOT FOUND in any .dg file
+
+STRING: "You seem to be digging a hole here."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "You seem to be getting knee deep in guano."
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "You seem to be repeating yourself."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "You seem unable to affect these spirits."
+  NOT FOUND in any .dg file
+
+STRING: "You should have looked before you leaped."
+  NOT FOUND in any .dg file
+
+STRING: "You suddenly notice that the "
+  NOT FOUND in any .dg file
+
+STRING: "You think it isn't?"
+  NOT FOUND in any .dg file
+
+STRING: "You watch as the balloon slowly "
+  NOT FOUND in any .dg file
+
+STRING: "You would inflate it with that?"
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "You'll have to speak up if you expect me to hear you!"
+  NOT FOUND in any .dg file
+
+STRING: "Your actions don't appear to be doing much harm to the cyclops, but
+they do not exactly lower your insurance premiums, either."
+  NOT FOUND in any .dg file
+
+STRING: "Your balloon has hit the rim of the volcano, ripping the cloth and
+causing you a 500 foot drop.  Did you get your flight insurance?"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "Your collection of treasures consists of:"
+  NOT FOUND in any .dg file
+
+STRING: "Your compass needle spins wildly, and you can't get your bearings."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "Your load is too heavy.  You will have to leave something behind."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Your opponent, determining discretion to be the better part of
+valor, decides to terminate this little contretemps.  With a rueful
+nod of his head, he steps backward into the gloom and disappears."
+  NOT FOUND in any .dg file
+
+STRING: "Your proposed victim suddenly recovers consciousness."
+  NOT FOUND in any .dg file
+
+STRING: "Your score is "
+  NOT FOUND in any .dg file
+
+STRING: "Your score would be "
+  NOT FOUND in any .dg file
+
+STRING: "Your sword has begun to glow very brightly."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Your sword is glowing with a faint blue glow."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Your sword is no longer glowing."
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "Your way is blocked by an invisible force."
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "___"
+  FOUND in 28 file(s):
+    - src/core/melee.dg
+    - src/core/liquids.dg
+    - src/core/timer.dg
+    - src/core/meta.dg
+    - src/core/main.dg
+    - src/rooms/bucket.dg
+    - src/rooms/mirror.dg
+    - src/rooms/dam.dg
+    - src/rooms/thief.dg
+    - src/rooms/volcano.dg
+    - src/rooms/digging.dg
+    - src/rooms/outside.dg
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/dungeon.dg
+    - src/rooms/glacier.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/tearoom.dg
+    - src/rooms/boat.dg
+    - src/rooms/maze.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/machine.dg
+    - src/rooms/troll.dg
+    - src/rooms/brick.dg
+    - src/rooms/reservoir.dg
+    - src/rooms/river.dg
+
+STRING: "a "
+  FOUND in 28 file(s):
+    - src/core/melee.dg
+    - src/core/liquids.dg
+    - src/core/timer.dg
+    - src/core/meta.dg
+    - src/core/main.dg
+    - src/rooms/bucket.dg
+    - src/rooms/mirror.dg
+    - src/rooms/dam.dg
+    - src/rooms/thief.dg
+    - src/rooms/volcano.dg
+    - src/rooms/digging.dg
+    - src/rooms/outside.dg
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/dungeon.dg
+    - src/rooms/glacier.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/tearoom.dg
+    - src/rooms/boat.dg
+    - src/rooms/maze.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/machine.dg
+    - src/rooms/troll.dg
+    - src/rooms/brick.dg
+    - src/rooms/reservoir.dg
+    - src/rooms/river.dg
+
+STRING: "and a closed trap-door at your feet."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "and a large oriental rug in the center of the room."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "and a rug lying beside an open trap-door."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "and an open trap-door at your feet."
+  NOT FOUND in any .dg file
+
+STRING: "and being for the moment sated, throws it back.  Fortunately, the
+troll has poor control, and the knife falls to the floor.  He does
+not look pleased."
+  NOT FOUND in any .dg file
+
+STRING: "and not having the most discriminating tastes, gleefully eats it."
+  NOT FOUND in any .dg file
+
+STRING: "ascends."
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "bag of coins"
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "barrel"
+  FOUND in 2 file(s):
+    - src/rooms/autogen.dg
+    - src/rooms/river.dg
+
+STRING: "basket"
+  FOUND in 2 file(s):
+    - src/rooms/volcano.dg
+    - src/rooms/coalmine.dg
+
+STRING: "bat"
+  FOUND in 8 file(s):
+    - src/core/melee.dg
+    - src/core/main.dg
+    - src/rooms/thief.dg
+    - src/rooms/digging.dg
+    - src/rooms/autogen.dg
+    - src/rooms/house.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/troll.dg
+
+STRING: "bell"
+  FOUND in 4 file(s):
+    - src/rooms/dam.dg
+    - src/rooms/hades.dg
+    - src/rooms/temple.dg
+    - src/rooms/coalmine.dg
+
+STRING: "bloody axe"
+  FOUND in 1 file(s):
+    - src/rooms/troll.dg
+
+STRING: "blue book"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "blue label"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "bolt"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "book"
+  FOUND in 5 file(s):
+    - src/rooms/dam.dg
+    - src/rooms/volcano.dg
+    - src/rooms/hades.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+
+STRING: "box"
+  FOUND in 5 file(s):
+    - src/rooms/volcano.dg
+    - src/rooms/autogen.dg
+    - src/rooms/house.dg
+    - src/rooms/machine.dg
+    - src/rooms/brick.dg
+
+STRING: "braided wire"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "breath"
+  FOUND in 4 file(s):
+    - src/core/melee.dg
+    - src/rooms/thief.dg
+    - src/rooms/autogen.dg
+    - src/rooms/boat.dg
+
+STRING: "brick"
+  FOUND in 2 file(s):
+    - src/rooms/bucket.dg
+    - src/rooms/brick.dg
+
+STRING: "broken balloon"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "broken lamp"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "broken sharp stick"
+  FOUND in 2 file(s):
+    - src/rooms/autogen.dg
+    - src/rooms/river.dg
+
+STRING: "bubble"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "bunch of Coke bottles"
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "burned out ivory torch"
+  NOT FOUND in any .dg file
+
+STRING: "burned-out lantern"
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "button"
+  FOUND in 3 file(s):
+    - src/rooms/dam.dg
+    - src/rooms/autogen.dg
+    - src/rooms/machine.dg
+
+STRING: "card"
+  FOUND in 2 file(s):
+    - src/rooms/cyclops.dg
+    - src/rooms/brick.dg
+
+STRING: "carpet"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "chalice"
+  FOUND in 2 file(s):
+    - src/rooms/thief.dg
+    - src/rooms/cyclops.dg
+
+STRING: "cloth bag"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "clove of garlic"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "corpses"
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "cretin"
+  FOUND in 3 file(s):
+    - src/rooms/digging.dg
+    - src/rooms/hades.dg
+    - src/rooms/temple.dg
+
+STRING: "crown"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "crystal sphere"
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "crystal trident"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "cyclops"
+  FOUND in 3 file(s):
+    - src/rooms/cyclops.dg
+    - src/rooms/house.dg
+    - src/rooms/maze.dg
+
+STRING: "dam"
+  FOUND in 10 file(s):
+    - src/core/melee.dg
+    - src/core/main.dg
+    - src/rooms/bucket.dg
+    - src/rooms/dam.dg
+    - src/rooms/autogen.dg
+    - src/rooms/dungeon.dg
+    - src/rooms/boat.dg
+    - src/rooms/brick.dg
+    - src/rooms/reservoir.dg
+    - src/rooms/river.dg
+
+STRING: "descends."
+  FOUND in 4 file(s):
+    - src/rooms/bucket.dg
+    - src/rooms/volcano.dg
+    - src/rooms/autogen.dg
+    - src/rooms/river.dg
+
+STRING: "door"
+  FOUND in 9 file(s):
+    - src/core/main.dg
+    - src/rooms/dam.dg
+    - src/rooms/volcano.dg
+    - src/rooms/outside.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/dungeon.dg
+    - src/rooms/house.dg
+    - src/rooms/brick.dg
+
+STRING: "everything"
+  NOT FOUND in any .dg file
+
+STRING: "fancy violin"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "floats away.  It seems to be ascending,
+due to its light load."
+  NOT FOUND in any .dg file
+
+STRING: "flyer"
+  FOUND in 2 file(s):
+    - src/core/main.dg
+    - src/rooms/autogen.dg
+
+STRING: "glacier"
+  FOUND in 3 file(s):
+    - src/rooms/autogen.dg
+    - src/rooms/glacier.dg
+    - src/rooms/reservoir.dg
+
+STRING: "glass bottle"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "glass flask filled with liquid"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "gold coffin"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "grail"
+  FOUND in 2 file(s):
+    - src/rooms/autogen.dg
+    - src/rooms/temple.dg
+
+STRING: "grating"
+  FOUND in 2 file(s):
+    - src/rooms/outside.dg
+    - src/rooms/maze.dg
+
+STRING: "green book"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "green piece of paper"
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "hand-held air pump"
+  FOUND in 1 file(s):
+    - src/rooms/reservoir.dg
+
+STRING: "head on a pole"
+  FOUND in 2 file(s):
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+
+STRING: "high in your lungs."
+  NOT FOUND in any .dg file
+
+STRING: "hole"
+  FOUND in 10 file(s):
+    - src/core/main.dg
+    - src/rooms/dam.dg
+    - src/rooms/digging.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/house.dg
+    - src/rooms/tearoom.dg
+    - src/rooms/boat.dg
+    - src/rooms/troll.dg
+    - src/rooms/brick.dg
+
+STRING: "hook"
+  FOUND in 2 file(s):
+    - src/rooms/volcano.dg
+    - src/rooms/house.dg
+
+STRING: "huge diamond"
+  FOUND in 2 file(s):
+    - src/rooms/autogen.dg
+    - src/rooms/coalmine.dg
+
+STRING: "hunk of bat guano"
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "iron box"
+  FOUND in 2 file(s):
+    - src/rooms/autogen.dg
+    - src/rooms/machine.dg
+
+STRING: "iron cage"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "jade figurine"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "knife"
+  FOUND in 4 file(s):
+    - src/core/melee.dg
+    - src/rooms/thief.dg
+    - src/rooms/house.dg
+    - src/rooms/maze.dg
+
+STRING: "lamp"
+  FOUND in 2 file(s):
+    - src/rooms/house.dg
+    - src/rooms/maze.dg
+
+STRING: "lands."
+  FOUND in 3 file(s):
+    - src/core/melee.dg
+    - src/rooms/volcano.dg
+    - src/rooms/troll.dg
+
+STRING: "large case"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "large emerald"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "large oblong table"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "leaflet"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "leak"
+  FOUND in 3 file(s):
+    - src/core/liquids.dg
+    - src/rooms/dam.dg
+    - src/rooms/tearoom.dg
+
+STRING: "lifts off."
+  NOT FOUND in any .dg file
+
+STRING: "lurking grue"
+  FOUND in 1 file(s):
+    - src/core/main.dg
+
+STRING: "machine"
+  FOUND in 2 file(s):
+    - src/rooms/coalmine.dg
+    - src/rooms/machine.dg
+
+STRING: "magic boat"
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "mailbox"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "mangled cage"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "matchbook"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "mirror"
+  FOUND in 2 file(s):
+    - src/rooms/mirror.dg
+    - src/rooms/autogen.dg
+
+STRING: "newspaper"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "once."
+  FOUND in 2 file(s):
+    - src/core/melee.dg
+    - src/rooms/hades.dg
+
+STRING: "open."
+  FOUND in 15 file(s):
+    - src/core/timer.dg
+    - src/core/main.dg
+    - src/rooms/bucket.dg
+    - src/rooms/dam.dg
+    - src/rooms/volcano.dg
+    - src/rooms/outside.dg
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/maze.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/troll.dg
+    - src/rooms/brick.dg
+
+STRING: "over your head."
+  NOT FOUND in any .dg file
+
+STRING: "painting"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "pair of candles"
+  NOT FOUND in any .dg file
+
+STRING: "pair of hands"
+  NOT FOUND in any .dg file
+
+STRING: "pearl necklace"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "piece of 'Eat Me' cake"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "piece of cake with blue icing"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "piece of cake with orange icing"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "piece of cake with red icing"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "piece of vitreous slag"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "pile of bodies"
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "pile of leaves"
+  FOUND in 1 file(s):
+    - src/rooms/outside.dg
+
+STRING: "plastic boat (with hole)"
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "plastic inflatable boat"
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "platinum bar"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "pool of sewage"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "pot filled with gold"
+  FOUND in 2 file(s):
+    - src/rooms/autogen.dg
+    - src/rooms/river.dg
+
+STRING: "prayer"
+  FOUND in 2 file(s):
+    - src/core/main.dg
+    - src/rooms/temple.dg
+
+STRING: "priceless zorkmid"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "purple book"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "quantity of water"
+  NOT FOUND in any .dg file
+
+STRING: "railing"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "rainbow"
+  FOUND in 3 file(s):
+    - src/rooms/outside.dg
+    - src/rooms/autogen.dg
+    - src/rooms/river.dg
+
+STRING: "receptacle"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "red buoy"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "robot"
+  FOUND in 1 file(s):
+    - src/rooms/machine.dg
+
+STRING: "rope"
+  FOUND in 9 file(s):
+    - src/rooms/dam.dg
+    - src/rooms/volcano.dg
+    - src/rooms/outside.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/brick.dg
+
+STRING: "ruby"
+  FOUND in 3 file(s):
+    - src/rooms/volcano.dg
+    - src/rooms/autogen.dg
+    - src/rooms/glacier.dg
+
+STRING: "rusty knife"
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "s"
+  FOUND in 28 file(s):
+    - src/core/melee.dg
+    - src/core/liquids.dg
+    - src/core/timer.dg
+    - src/core/meta.dg
+    - src/core/main.dg
+    - src/rooms/bucket.dg
+    - src/rooms/mirror.dg
+    - src/rooms/dam.dg
+    - src/rooms/thief.dg
+    - src/rooms/volcano.dg
+    - src/rooms/digging.dg
+    - src/rooms/outside.dg
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/dungeon.dg
+    - src/rooms/glacier.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/tearoom.dg
+    - src/rooms/boat.dg
+    - src/rooms/maze.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/machine.dg
+    - src/rooms/troll.dg
+    - src/rooms/brick.dg
+    - src/rooms/reservoir.dg
+    - src/rooms/river.dg
+
+STRING: "s."
+  FOUND in 28 file(s):
+    - src/core/melee.dg
+    - src/core/liquids.dg
+    - src/core/timer.dg
+    - src/core/meta.dg
+    - src/core/main.dg
+    - src/rooms/bucket.dg
+    - src/rooms/mirror.dg
+    - src/rooms/dam.dg
+    - src/rooms/thief.dg
+    - src/rooms/volcano.dg
+    - src/rooms/digging.dg
+    - src/rooms/outside.dg
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/dungeon.dg
+    - src/rooms/glacier.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/tearoom.dg
+    - src/rooms/boat.dg
+    - src/rooms/maze.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/machine.dg
+    - src/rooms/troll.dg
+    - src/rooms/brick.dg
+    - src/rooms/reservoir.dg
+    - src/rooms/river.dg
+
+STRING: "sailor"
+  FOUND in 5 file(s):
+    - src/core/main.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/temple.dg
+    - src/rooms/boat.dg
+
+STRING: "sandwich bag"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "sapphire bracelet"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "screwdriver"
+  FOUND in 2 file(s):
+    - src/rooms/dam.dg
+    - src/rooms/coalmine.dg
+
+STRING: "set of poled heads"
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "set of skeleton keys"
+  FOUND in 1 file(s):
+    - src/rooms/maze.dg
+
+STRING: "set of teeth"
+  NOT FOUND in any .dg file
+
+STRING: "shovel"
+  FOUND in 1 file(s):
+    - src/rooms/digging.dg
+
+STRING: "slightly ajar."
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "small pile of coal"
+  FOUND in 1 file(s):
+    - src/rooms/coalmine.dg
+
+STRING: "stack of listings"
+  FOUND in 1 file(s):
+    - src/rooms/hades.dg
+
+STRING: "stamp"
+  FOUND in 2 file(s):
+    - src/rooms/dam.dg
+    - src/rooms/volcano.dg
+
+STRING: "statue"
+  FOUND in 2 file(s):
+    - src/rooms/digging.dg
+    - src/rooms/autogen.dg
+
+STRING: "stilletto"
+  FOUND in 1 file(s):
+    - src/rooms/thief.dg
+
+STRING: "switch"
+  FOUND in 4 file(s):
+    - src/core/main.dg
+    - src/rooms/autogen.dg
+    - src/rooms/house.dg
+    - src/rooms/coalmine.dg
+
+STRING: "sword"
+  FOUND in 4 file(s):
+    - src/core/main.dg
+    - src/rooms/house.dg
+    - src/rooms/maze.dg
+    - src/rooms/troll.dg
+
+STRING: "tan label"
+  FOUND in 1 file(s):
+    - src/rooms/boat.dg
+
+STRING: "thief"
+  FOUND in 1 file(s):
+    - src/rooms/thief.dg
+
+STRING: "tin of spices"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "tomb"
+  FOUND in 2 file(s):
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+
+STRING: "torch"
+  FOUND in 2 file(s):
+    - src/rooms/autogen.dg
+    - src/rooms/glacier.dg
+
+STRING: "tour guidebook"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "troll"
+  FOUND in 6 file(s):
+    - src/core/melee.dg
+    - src/rooms/volcano.dg
+    - src/rooms/autogen.dg
+    - src/rooms/dungeon.dg
+    - src/rooms/maze.dg
+    - src/rooms/troll.dg
+
+STRING: "trophy case"
+  FOUND in 3 file(s):
+    - src/core/main.dg
+    - src/rooms/hades.dg
+    - src/rooms/house.dg
+
+STRING: "trunk with jewels"
+  FOUND in 2 file(s):
+    - src/rooms/dam.dg
+    - src/rooms/reservoir.dg
+
+STRING: "tube"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "twice."
+  FOUND in 1 file(s):
+    - src/core/melee.dg
+
+STRING: "unknown "
+  FOUND in 3 file(s):
+    - src/rooms/thief.dg
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+
+STRING: "up to your ankles."
+  NOT FOUND in any .dg file
+
+STRING: "up to your chest."
+  NOT FOUND in any .dg file
+
+STRING: "up to your hips."
+  NOT FOUND in any .dg file
+
+STRING: "up to your knees."
+  NOT FOUND in any .dg file
+
+STRING: "up to your neck."
+  NOT FOUND in any .dg file
+
+STRING: "up to your shin."
+  NOT FOUND in any .dg file
+
+STRING: "up to your waist."
+  NOT FOUND in any .dg file
+
+STRING: "valuables"
+  FOUND in 3 file(s):
+    - src/core/main.dg
+    - src/rooms/hades.dg
+    - src/rooms/maze.dg
+
+STRING: "viscous material"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
+STRING: "wall"
+  FOUND in 19 file(s):
+    - src/rooms/bucket.dg
+    - src/rooms/mirror.dg
+    - src/rooms/dam.dg
+    - src/rooms/thief.dg
+    - src/rooms/volcano.dg
+    - src/rooms/digging.dg
+    - src/rooms/outside.dg
+    - src/rooms/hades.dg
+    - src/rooms/autogen.dg
+    - src/rooms/cyclops.dg
+    - src/rooms/dungeon.dg
+    - src/rooms/glacier.dg
+    - src/rooms/house.dg
+    - src/rooms/temple.dg
+    - src/rooms/tearoom.dg
+    - src/rooms/coalmine.dg
+    - src/rooms/machine.dg
+    - src/rooms/brick.dg
+    - src/rooms/river.dg
+
+STRING: "wall with engravings"
+  FOUND in 1 file(s):
+    - src/rooms/autogen.dg
+
+STRING: "wall with etchings"
+  FOUND in 2 file(s):
+    - src/rooms/bucket.dg
+    - src/rooms/autogen.dg
+
+STRING: "white book"
+  FOUND in 1 file(s):
+    - src/rooms/volcano.dg
+
+STRING: "window"
+  FOUND in 1 file(s):
+    - src/rooms/house.dg
+
+STRING: "wire coil"
+  FOUND in 2 file(s):
+    - src/rooms/volcano.dg
+    - src/rooms/brick.dg
+
+STRING: "wooden bucket"
+  FOUND in 1 file(s):
+    - src/rooms/bucket.dg
+
+STRING: "wooden posts"
+  FOUND in 1 file(s):
+    - src/rooms/tearoom.dg
+
+STRING: "worthless piece of canvas"
+  NOT FOUND in any .dg file
+
+STRING: "wrench"
+  FOUND in 1 file(s):
+    - src/rooms/dam.dg
+
