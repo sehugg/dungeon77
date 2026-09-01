@@ -350,10 +350,6 @@
     ~(ringable $Object)
     How, exactly, can I ring that?
 
-%% LIGHT/BURN
-(grammar [light/burn [single] with [held]] for [burn $ with $])
-(grammar [light/strike/burn [single]] for [burn $])
-
 %% "Yuks"
 
 (yuk)

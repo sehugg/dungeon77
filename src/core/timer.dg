@@ -19,6 +19,10 @@
 
 %%% Flammables
 
+%% LIGHT/BURN
+(grammar [light/burn [single] with [held]] for [burn $ with $])
+(grammar [light/strike/burn [single]] for [burn $])
+
 (descr $Flammable)
  	(flammable $Flammable)
     ($Flammable is burning)
@@ -68,4 +72,7 @@
  	~($Lit is burning)
     You have to light (the $Flammable) with something that's burning, you know.
 
-
+(perform [burn $Flammable])
+ 	(flammable $Flammable)
+    Burn (them $Flammable) with what?
+	(asking for object in [burn $Flammable with []])
