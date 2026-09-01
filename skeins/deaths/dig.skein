@@ -1,0 +1,68 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: purloin battery-powered brass lantern
+--------------------------------------------------------------------------------
+> purloin battery-powered brass lantern
+
+
+--------------------------------------------------------------------------------
+command: turn on lantern
+--------------------------------------------------------------------------------
+> turn on lantern
+You switch the battery-powered brass lantern on.
+
+--------------------------------------------------------------------------------
+command: teleport sandy beach
+--------------------------------------------------------------------------------
+> teleport sandy beach
+
+Sandy Beach
+You are on a large sandy beach at the shore of the river, which is flowing quickly by. A path runs beside the river to the south here.
+
+--------------------------------------------------------------------------------
+command: purloin shovel
+--------------------------------------------------------------------------------
+> purloin shovel
+
+
+--------------------------------------------------------------------------------
+command: dig with shovel
+--------------------------------------------------------------------------------
+> dig with shovel
+You seem to be digging a hole here.
+
+--------------------------------------------------------------------------------
+command: dig with shovel
+--------------------------------------------------------------------------------
+> dig with shovel
+The hole is getting deeper, but that's about it.
+
+--------------------------------------------------------------------------------
+command: dig with shovel
+--------------------------------------------------------------------------------
+> dig with shovel
+You are surrounded by a wall of sand on all sides.
+
+--------------------------------------------------------------------------------
+command: dig with shovel
+--------------------------------------------------------------------------------
+> dig with shovel
+You can see a small statue here in the sand.
+
+--------------------------------------------------------------------------------
+command: dig with shovel
+--------------------------------------------------------------------------------
+> dig with shovel
+The hole collapses, smothering you.
+
+     *** You have died ***     
+
+Game over. You scored 10 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+

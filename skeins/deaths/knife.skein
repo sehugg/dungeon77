@@ -1,0 +1,23 @@
+parent-id: default.skein#1785098749852
+--------------------------------------------------------------------------------
+command: purloin rusty knife
+--------------------------------------------------------------------------------
+> purloin rusty knife
+
+
+--------------------------------------------------------------------------------
+command: attack troll with rusty knife
+--------------------------------------------------------------------------------
+> attack troll with rusty knife
+As the knife approaches its victim, your mind is submerged by an overmastering will. Slowly, your hand turns, until the rusty blade is an inch from your neck. The knife seems to sing as it savagely slits your throat.
+
+     *** You have died ***     
+
+Game over. You scored 35 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+

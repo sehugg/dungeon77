@@ -1,0 +1,42 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: teleport altar
+--------------------------------------------------------------------------------
+> teleport altar
+
+Altar
+You are in the east end of a large temple. In front of you is what appears to be an altar.
+
+There is a large black book here.
+
+There are two candles here.
+
+--------------------------------------------------------------------------------
+command: purloin matchbook
+--------------------------------------------------------------------------------
+> purloin matchbook
+
+
+--------------------------------------------------------------------------------
+command: burn matchbook
+--------------------------------------------------------------------------------
+> burn matchbook
+One of the matches starts to burn.
+
+--------------------------------------------------------------------------------
+command: burn book with matchbook
+--------------------------------------------------------------------------------
+> burn book with matchbook
+A booming voice says 'Wrong, cretin!' and you notice that you have turned into a pile of dust.
+
+     *** You have died ***     
+
+Game over. You scored 10 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+

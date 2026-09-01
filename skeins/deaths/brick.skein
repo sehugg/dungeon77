@@ -1,0 +1,69 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: purloin brick
+--------------------------------------------------------------------------------
+> purloin brick
+
+
+--------------------------------------------------------------------------------
+command: purloin wire coil
+--------------------------------------------------------------------------------
+> purloin wire coil
+
+
+--------------------------------------------------------------------------------
+command: tie wire to brick
+--------------------------------------------------------------------------------
+> tie wire to brick
+You insert the wire coil into the brick.
+
+--------------------------------------------------------------------------------
+command: purloin matchbook
+--------------------------------------------------------------------------------
+> purloin matchbook
+
+
+--------------------------------------------------------------------------------
+command: burn matchbook
+--------------------------------------------------------------------------------
+> burn matchbook
+One of the matches starts to burn.
+
+--------------------------------------------------------------------------------
+command: light wire with matchbook
+--------------------------------------------------------------------------------
+> light wire with matchbook
+The wire coil is burning.
+
+--------------------------------------------------------------------------------
+command: teleport living room
+--------------------------------------------------------------------------------
+> teleport living room
+
+Living Room
+You are in the living room. There is a door to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, and a large oriental rug in the center of the room.
+
+There is a trophy case here.
+On the trophy case is a battery-powered brass lantern.
+
+On hooks above the mantelpiece hangs an elvish sword of great antiquity.
+
+There is an issue of US NEWS & DUNGEON REPORT dated 7/25/2026 here.
+
+--------------------------------------------------------------------------------
+command: drop brick
+--------------------------------------------------------------------------------
+> drop brick
+The brick falls to the ground. The house shakes, and the ceiling of the room you're in collapses, turning you into a pancake.
+
+     *** You have died ***     
+
+Game over. You scored 10 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+

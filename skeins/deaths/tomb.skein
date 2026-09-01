@@ -1,0 +1,49 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: purloin battery-powered brass lantern
+--------------------------------------------------------------------------------
+> purloin battery-powered brass lantern
+
+
+--------------------------------------------------------------------------------
+command: turn on lantern
+--------------------------------------------------------------------------------
+> turn on lantern
+You switch the battery-powered brass lantern on.
+
+--------------------------------------------------------------------------------
+command: teleport tomb of the unknown implementer
+--------------------------------------------------------------------------------
+> teleport tomb of the unknown implementer
+
+Tomb of the Unknown Implementer
+You are in the Tomb of the Unknown Implementer. A hollow voice says: "That's not a bug, it's a feature!"
+
+There is a tomb here, made of the finest marble, and large enough for four headless corpses. On one end is the cryptic inscription:
+"Feel Free."
+
+There are four heads here, mounted securely on poles.
+
+Many empty Coke bottles are here. Alas, they can't hold water.
+
+There is an enormous stack of line-printer paper here. It is barely readable.
+
+--------------------------------------------------------------------------------
+command: attack tomb
+--------------------------------------------------------------------------------
+> attack tomb
+Although the implementers are dead, they foresaw that some cretin would tamper with their remains. Therefore, they took steps to prevent this.
+
+Unfortunately, we've run out of poles. Therefore, in punishment for your most grievous sin, we shall deprive you of all your valuables, and of your life.
+
+     *** You have died ***     
+
+Game over. You scored 10 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+

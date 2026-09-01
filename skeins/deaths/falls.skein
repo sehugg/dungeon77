@@ -1,0 +1,95 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: purloin battery-powered brass lantern
+--------------------------------------------------------------------------------
+> purloin battery-powered brass lantern
+
+
+--------------------------------------------------------------------------------
+command: turn on lantern
+--------------------------------------------------------------------------------
+> turn on lantern
+You switch the battery-powered brass lantern on.
+
+--------------------------------------------------------------------------------
+command: teleport dam base
+--------------------------------------------------------------------------------
+> teleport dam base
+
+Dam Base
+You are at the base of Flood Control Dam #3, which looms above you and to the north. The river Frigid is flowing by here. Across the river are the White Cliffs which seem to form a giant wall stretching from north to south along the east shore of the river as it winds its way downstream.
+
+There is a broken sharp stick here.
+
+There is a folded pile of plastic here which has a small valve attached.
+
+--------------------------------------------------------------------------------
+command: launch
+--------------------------------------------------------------------------------
+> launch
+You walk launch.
+
+Frigid River
+You are on the River Frigid in the vicinity of the Dam. The river flows quietly here. There is a landing on the west shore.
+
+--------------------------------------------------------------------------------
+command: down
+--------------------------------------------------------------------------------
+> down
+You climb down.
+
+Frigid River
+The River turns a corner here making it impossible to see the Dam. The White Cliffs loom on the east bank and large rocks prevent landing on the west.
+
+--------------------------------------------------------------------------------
+command: down
+--------------------------------------------------------------------------------
+> down
+You climb down.
+
+Frigid River
+The river descends here into a valley. There is a narrow beach on the east below the cliffs and there is some shore on the west which may be suitable. In the distance a faint rumbling can be heard.
+
+--------------------------------------------------------------------------------
+command: down
+--------------------------------------------------------------------------------
+> down
+You climb down. Something seems funny about the feel of the buoy.
+
+--------------------------------------------------------------------------------
+command: down
+--------------------------------------------------------------------------------
+> down
+You climb down.
+
+Frigid River
+The river is running faster here and the sound ahead appears to be that of rushing water. On the west shore is a sandy beach. A small area of beach can also be seen below the Cliffs.
+
+There is a red buoy here (probably a warning).
+
+--------------------------------------------------------------------------------
+command: down
+--------------------------------------------------------------------------------
+> down
+You climb down.
+
+Frigid River
+The sound of rushing water is nearly unbearable here. On the west shore is a large landing area.
+
+--------------------------------------------------------------------------------
+command: down
+--------------------------------------------------------------------------------
+> down
+Oh dear, you seem to have gone over Aragain Falls. Not a very smart thing to do, apparently.
+
+     *** You have died ***     
+
+Game over. You scored 10 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+

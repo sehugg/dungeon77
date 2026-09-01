@@ -1,0 +1,17 @@
+parent-id: default.skein#1785255063834
+--------------------------------------------------------------------------------
+command: attack bones
+--------------------------------------------------------------------------------
+> attack bones
+A ghost appears in the room and is appalled at your having desecrated the remains of a fellow adventurer. He casts a curse on all of your valuables and orders them banished to the Land of the Living Dead. The ghost leaves, muttering obscenities.
+
+     *** You have died ***     
+
+Game over. You scored 80 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+
