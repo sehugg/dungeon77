@@ -4220,15 +4220,12 @@ The newspaper burns inside the receptacle. The cloth bag inflates as it fills wi
 
 The balloon ascends.
 
-[0m[1mVolcano Core[0m (in the basket)
+Volcano Core (in the basket)
 You are about one hundred feet above the bottom of the volcano. The top of the volcano is clearly visible here.
 
 There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
 
 There is a blue label here.
-
-I hope you have more light than from a battery-powered brass lantern.
-
 --------------------------------------------------------------------------------
 id: 1785508581985
 parent-id: 1785508581984
@@ -4516,8 +4513,7 @@ parent-id: 1785583520794
 command: light fuse with match
 --------------------------------------------------------------------------------
 > light fuse with match
-The wire coil is burning.
-
+The wire coil is burning. The lamp appears to be getting dimmer.
 --------------------------------------------------------------------------------
 id: 1785583520798
 parent-id: 1785583520797

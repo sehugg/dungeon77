@@ -423,19 +423,68 @@
     (endif)
 (* provides light)
     (* is on)
-(* timer is 325)
+%% LNTIN/LIGHT-INT (77act1.mud): a 350-tick battery fuse starts when the
+%% lamp is first switched on (CLOCK-DISABLE at init in 77dung.mud) and
+%% pauses while the lamp is off (TURN-OFF = CLOCK-DISABLE). When it
+%% expires the LIGHT-INT stages begin: "getting dimmer" after 50, 30,
+%% 20 and 10 more ticks, "The lamp is dying." after 4 more, and the
+%% light goes out 4 ticks after that. Messages print only while the
+%% lamp is carried or in the current room (OROOM check).
+(* timer is 350)
 (perform [switch on *])
     (now) (* timer running)
     (fail)
 (perform [switch off *])
     (now) ~(* timer running)
     (fail)
-(on * timeout)
-    (now)(* is off)
-    (par)I hope you have more light than from (a *).
+(on #lamp timeout)
+    (now) (lamp stage tick pending)
 (prevent [switch on *])
     (* timer is 0)
     The battery has died.    
+
+%% The stage advance is deferred to (late on every tick) because arming
+%% the next stage's timer from inside the timeout exhaust would make the
+%% exhaust re-enumerate it and count it down in the same pass.
+(global variable (lamp stage 0))
+
+(lamp next interval 1 50)
+(lamp next interval 2 30)
+(lamp next interval 3 20)
+(lamp next interval 4 10)
+(lamp next interval 5 4)
+(lamp next interval 6 0)
+
+(lamp can be seen)
+    (#lamp is #heldby #player)
+(lamp can be seen)
+    (#lamp is in room $R)
+    (current room $R)
+
+(late on every tick)
+    (lamp stage tick pending)
+    (now) ~(lamp stage tick pending)
+    (lamp stage $stage)
+    ($stage plus 1 into $newstage)
+    (now) (lamp stage $newstage)
+    (if) ($newstage = 6) (then)
+        (now) ~(#lamp is on)
+        (now) ~(#lamp timer running)
+    (endif)
+    (if) (lamp can be seen) (then)
+        (narrate lamp warning $newstage)
+    (endif)
+    (lamp next interval $newstage $interval)
+    ($interval > 0)
+    (now) (#lamp timer is $interval)
+
+(narrate lamp warning $stage)
+    ($stage < 5)
+	The lamp appears to be getting dimmer.
+(narrate lamp warning 5)
+	The lamp is dying.
+(narrate lamp warning 6)
+	(par)I hope you have more light than from (a *).
 
 #broken-lamp
 (name *)        broken lamp

@@ -13,6 +13,8 @@ Designed to be easy for an LLM (or a human) to call and read:
     tools/skein.py list                            # node ids + commands
     tools/skein.py list --tree                     # branch structure
     tools/skein.py show 1785098749839              # recorded output
+    tools/skein.py find "getting dimmer"           # nodes matching a regex
+    tools/skein.py path 1785098749839              # "n,e,open window" selector
     tools/skein.py --skein skeins/ diff            # merged directory of skeins
 
 A skein is a tree: nodes carry a parent-id, and a node with several children
@@ -66,10 +68,19 @@ selector, bless reports it instead of letting the skein silently drift.
 
 `record` writes such a fragment for you: it resolves the parent, replays the
 path down to it, runs your new commands, and saves the result with the
-selector already in the header:
+selector already in the header.  Turns recorded after a game over (the
+UNDO/RESTORE menu and anything typed past it) are dropped automatically;
+pass `--keep-junk` to keep them:
 
     tools/skein.py --skein skeins/ record --parent-command "open window" \\
         --into puzzles/kitchen.skein "take sack" "open sack"
+
+Two lookup helpers make attach points easy to pick:
+
+    tools/skein.py find "maintenance room"    # nodes whose command or
+                                              # output matches a regex
+    tools/skein.py path <node-id>             # the command chain, in exactly
+                                              # the parent-path: syntax
 """
 
 import argparse
@@ -596,13 +607,14 @@ def compare_path(chain, seed, sources, args, seen):
         if i >= len(live_by_index):
             results.append({
                 "id": node.id, "command": node.command, "match": False,
-                "branch": chain[-1].id,
+                "branch": chain[-1].id, "origin": node.origin,
                 "diff": ["live run ended before this node (dgdebug quit early?)"],
             })
             continue
         live = normalize(live_by_index[i])
         entry = {"id": node.id, "command": node.command,
-                 "match": live == recorded, "branch": chain[-1].id}
+                 "match": live == recorded, "branch": chain[-1].id,
+                 "origin": node.origin}
         if not entry["match"]:
             entry["diff"] = unified(recorded, live, label)
             entry["recorded"] = recorded
@@ -640,9 +652,10 @@ def cmd_diff(args, sources):
     else:
         for r in bad:
             print("=" * 80)
-            print("node %s  command: %s%s" % (
+            print("node %s  command: %s%s%s" % (
                 r["id"], r["command"] or "(start)",
-                "  [branch %s]" % r["branch"] if branched else ""))
+                "  [branch %s]" % r["branch"] if branched else "",
+                "  [from %s]" % r["origin"] if r.get("origin") else ""))
             print("=" * 80)
             for line in r["diff"]:
                 print(line)
@@ -797,6 +810,61 @@ def cmd_show(args, sources):
     return 0
 
 
+# Matches the end of a game (death or any other (game over)): the death
+# banner, the UNDO/RESTORE menu, or the post-death parse-error prompt.
+GAME_OVER = re.compile(r"\*\*\* You have died \*\*\*"
+                       r"|Would you like to:"
+                       r"|Please type one of the given words")
+
+
+def cmd_find(args, sources):
+    """List every node whose command or output matches a regex."""
+    _, nodes = load_skein(args.skein)
+    rx = re.compile(args.pattern, 0 if args.case else re.IGNORECASE)
+    hits = []
+    for n in nodes:
+        where = None
+        if n.command and rx.search(n.command):
+            where = n.command
+        if where is None:
+            for line in normalize(n.output).splitlines():
+                if rx.search(line):
+                    where = line.strip()
+                    break
+        if where is not None:
+            hits.append((n, where))
+
+    if args.json:
+        json.dump([{"id": n.id, "command": n.command, "label": n.label,
+                    "origin": n.origin, "match": where}
+                   for n, where in hits], sys.stdout, indent=2)
+        print()
+        return 0
+    for n, where in hits:
+        print("%s  %s" % (n.id, n.command or "(start)"))
+        print("    %s" % where)
+        if n.origin:
+            print("    from %s" % n.origin)
+    print("%d node(s) match /%s/" % (len(hits), args.pattern))
+    return 0 if hits else 1
+
+
+def cmd_path(args, sources):
+    """Print a node's command chain in parent-path: selector syntax."""
+    _, nodes = load_skein(args.skein)
+    node = resolve(nodes, args.node)
+    chain = path_to(nodes, node.id)
+    commands = [n.command for n in chain if n.command]
+    if args.json:
+        json.dump({"id": node.id, "origin": node.origin,
+                   "path": ",".join(commands), "commands": commands},
+                  sys.stdout, indent=2)
+        print()
+    else:
+        print(",".join(commands))
+    return 0
+
+
 def selector_from_args(args):
     pairs = (
         ("parent-id", args.parent_id),
@@ -845,6 +913,19 @@ def cmd_record(args, sources):
         sys.exit("dgdebug produced %d turns for %d commands; the game may have "
                  "ended early" % (len(segments), len(prefix) + len(args.commands)))
     turns = [(cmd, out) for cmd, out in segments[len(prefix):]]
+
+    # Death transcripts record the post-death UNDO/RESTORE menu and any
+    # commands typed past it turn into junk nodes.  Keep the turn that ends
+    # the game, drop the rest, unless asked not to.
+    if not args.keep_junk:
+        for i, (cmd, out) in enumerate(turns):
+            if GAME_OVER.search(normalize(out)):
+                dropped = len(turns) - i - 1
+                turns = turns[:i + 1]
+                if dropped:
+                    print("dropped %d turn(s) after game over (--keep-junk keeps them)"
+                          % dropped, file=sys.stderr)
+                break
 
     parent_dir = os.path.dirname(out_path)
     if parent_dir and not os.path.isdir(parent_dir):
@@ -931,6 +1012,8 @@ def main():
     p.add_argument("--into", required=True,
                    help="fragment file to write (relative to the skein directory)")
     p.add_argument("--force", action="store_true", help="overwrite an existing file")
+    p.add_argument("--keep-junk", action="store_true",
+                   help="keep turns recorded after a game over (default: drop them)")
     for flag in SELECTOR_KEYS:
         p.add_argument("--" + flag, default=None,
                        help="parent constraint: %s" % flag)
@@ -941,6 +1024,20 @@ def main():
     p.add_argument("node")
     common(p, sub=True)
     p.set_defaults(func=cmd_show)
+
+    p = sub.add_parser("find",
+                       help="list nodes whose command or output matches a regex")
+    p.add_argument("pattern", help="regular expression over commands and output")
+    p.add_argument("--case", action="store_true",
+                   help="case-sensitive matching (default: insensitive)")
+    common(p, sub=True)
+    p.set_defaults(func=cmd_find)
+
+    p = sub.add_parser("path",
+                       help="print a node's command chain as a parent-path: selector")
+    p.add_argument("node", help="node id or label")
+    common(p, sub=True)
+    p.set_defaults(func=cmd_path)
 
     args = ap.parse_args()
 
