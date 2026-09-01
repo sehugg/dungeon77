@@ -295,4 +295,16 @@
 	desecrated the remains of a fellow adventurer.  He casts a curse
 	on all of your valuables and orders them banished to the Land of
 	the Living Dead.  The ghost leaves, muttering obscenities.
-	(jigs up)
+	%% SKELETON (77act1.mud) does NOT kill: it robs everything the player
+	%% carries plus everything takeable in the room, banishing it all to
+	%% the Land of the Living Dead (LLD2).
+	(exhaust) {
+		*($obj is #heldby #player)
+		(now) ($obj is #in #land-of-the-living-dead)
+	}
+	(current room $here)
+	(exhaust) {
+		*(item $obj)
+		($obj is #in $here)
+		(now) ($obj is #in #land-of-the-living-dead)
+	}

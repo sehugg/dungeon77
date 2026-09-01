@@ -1,6 +1,17 @@
 
 #brick
 
+%% (explosion in $Container) is dispatched when the fuse burns down.
+%% The dispatch is deferred to (late on every tick) because setting a
+%% new (timer running) fact from inside the timer exhaust loop makes the
+%% exhaust re-enumerate it and count it down to zero in the same pass.
+(interface (explosion in $>Container))
+(interface (explosion pending in $>Container))
+%% Marks a room whose delayed collapse fuse (SAFE-MUNG) is ticking.
+%% The (on $room timeout) rules below also see EVERY object timeout
+%% (matchbook fuses, knockouts...), so they must be guarded by this.
+(interface ($<Room collapsing))
+
 ~(unlikely [tie #wire-coil to #brick])
 
 (instead of [put $obj #in *])
@@ -13,37 +24,79 @@
 (on #wire-coil timeout)
     (#brick has parent $container)
     (now) (#brick is nowhere)
+    (now) (explosion pending in $container)
+
+(late on every tick)
+    (explosion pending in $container)
+    (now) ~(explosion pending in $container)
     (explosion in $container)
 
-(explosion in $container)
-    ($container is in the house)
-    (current room $room)
-    ($room is in the house)
-    The house shakes, and the ceiling of the room you're in collapses,
-    turning you into a pancake.
-    (jigs up)
-
+%% Player at the blast site (brick's parent is the current room, or the
+%% player holds the brick): FUSE-FUNCTION's <==? .BRICK-ROOM ,HERE> branch,
+%% <JIGS-UP ,BRICK-BOOM>.
 (explosion in $container)
     { (current room $container) (or) (current player $container) }
     Now you've done it.  It seems that the brick has other properties
     than weight, namely the ability to blow you to smithereens.
+    (jigs up)
 
+%% Brick in the hole of the rusty box: the safe opens (original SAFE
+%% branch of FUSE-FUNCTION).  No death - the delayed collapse fuse below
+%% handles the consequences.
 (explosion in #hole)
     (#hole is in room $room)
     (now) ~(#box is closed)
     (now) (#hole is nowhere)
+    (now) (collapsing $room)
+    (now) ($room timer is 5)
+    (now) ($room timer running)
     (narrate explosion in room $room)
 
+%% Explosion somewhere else: SAFE-MUNG is registered 5 turns out
+%% (<CLOCK-INT ,SAFIN 5>); it kills anyone still in the room then.
 (explosion in $container)
-    ($container is in room #dusty-room)
-    The room trembles and 50,000 pounds of rock fall on you, turning you
-    into a pancake.
+    ($container is in room $room)
+    (now) (collapsing $room)
+    (now) ($room timer is 5)
+    (now) ($room timer running)
+    (narrate explosion in room $room)
+
+%% Same, when the brick's parent is a room itself.
+(explosion in $container)
+    (now) (collapsing $container)
+    (now) ($container timer is 5)
+    (now) ($container timer running)
+    (narrate explosion in room $container)
+
+%% The original TELLs this unconditionally (no adjacency check).
+(narrate explosion in room $room)
+    There is an explosion nearby.
+
+%% SAFE-MUNG, 5 turns after an explosion away from the player.
+(on $room timeout)
+    (collapsing $room)
+    (current room $room)
+    (if) ($room is in the house) (then)
+		The house shakes, and the ceiling of the room you're in collapses,
+		turning you into a pancake.
+	(else)
+		The room trembles and 50,000 pounds of rock fall on you, turning you
+		into a pancake.
+	(endif)
     (jigs up)
 
-(narrate explosion in room $room)
-    (current room $here)
-    (from $here go $ to $room)
-    There is an explosion nearby.
+(on $room timeout)
+    (collapsing $room)
+    (now) ($room has been munged)
+    You may recall your recent explosion.  Well, probably as a result of
+    that, you hear an ominous rumbling, as if one of the rooms in the
+    dungeon had collapsed.
+
+%% MUNG-ROOM blocks the exits of the munged room (leaving it; entering
+%% from the wide ledge is blocked in volcano.dg).
+(prevent [leave $room $dir])
+    ($room has been munged)
+    The way is blocked by debris from an explosion.
 
 %%%
 

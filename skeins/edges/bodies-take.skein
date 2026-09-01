@@ -1,0 +1,18 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: teleport land of the living dead
+--------------------------------------------------------------------------------
+> teleport land of the living dead
+
+Land of the Living Dead
+You have entered the Land of the Living Dead, a large desolate room. Although it is apparently uninhabited, you can hear the sounds of thousands of lost souls weeping and moaning. In the east corner are stacked the remains of dozens of previous adventurers who were less fortunate than yourself. To the east is an ornate passage, apparently recently constructed.
+
+(Your score has gone up by 30 points.)
+
+--------------------------------------------------------------------------------
+command: take bodies
+--------------------------------------------------------------------------------
+> take bodies
+A force keeps you from taking the bodies.
+

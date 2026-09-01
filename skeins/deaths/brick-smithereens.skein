@@ -1,0 +1,62 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: purloin brick
+--------------------------------------------------------------------------------
+> purloin brick
+
+
+--------------------------------------------------------------------------------
+command: purloin wire coil
+--------------------------------------------------------------------------------
+> purloin wire coil
+
+
+--------------------------------------------------------------------------------
+command: tie wire to brick
+--------------------------------------------------------------------------------
+> tie wire to brick
+You insert the wire coil into the brick.
+
+--------------------------------------------------------------------------------
+command: purloin matchbook
+--------------------------------------------------------------------------------
+> purloin matchbook
+
+
+--------------------------------------------------------------------------------
+command: burn matchbook
+--------------------------------------------------------------------------------
+> burn matchbook
+One of the matches starts to burn.
+
+--------------------------------------------------------------------------------
+command: light wire with matchbook
+--------------------------------------------------------------------------------
+> light wire with matchbook
+The wire coil is burning.
+
+--------------------------------------------------------------------------------
+command: teleport volcano bottom
+--------------------------------------------------------------------------------
+> teleport volcano bottom
+
+In the dark
+It is pitch black. You are likely to be eaten by a grue.
+
+--------------------------------------------------------------------------------
+command: drop brick
+--------------------------------------------------------------------------------
+> drop brick
+The brick falls to the ground. The match has gone out. Now you've done it. It seems that the brick has other properties than weight, namely the ability to blow you to smithereens.
+
+     *** You have died ***     
+
+Game over. You scored 10 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+

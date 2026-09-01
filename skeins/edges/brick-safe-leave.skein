@@ -1,0 +1,93 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: purloin brick
+--------------------------------------------------------------------------------
+> purloin brick
+
+
+--------------------------------------------------------------------------------
+command: purloin wire coil
+--------------------------------------------------------------------------------
+> purloin wire coil
+
+
+--------------------------------------------------------------------------------
+command: tie wire to brick
+--------------------------------------------------------------------------------
+> tie wire to brick
+You insert the wire coil into the brick.
+
+--------------------------------------------------------------------------------
+command: purloin matchbook
+--------------------------------------------------------------------------------
+> purloin matchbook
+
+
+--------------------------------------------------------------------------------
+command: burn matchbook
+--------------------------------------------------------------------------------
+> burn matchbook
+One of the matches starts to burn.
+
+--------------------------------------------------------------------------------
+command: light wire with matchbook
+--------------------------------------------------------------------------------
+> light wire with matchbook
+The wire coil is burning.
+
+--------------------------------------------------------------------------------
+command: teleport dusty room
+--------------------------------------------------------------------------------
+> teleport dusty room
+
+Dusty Room
+You are in a dusty old room which is virtually featureless, except for an exit on the north side.
+
+Imbedded in the far wall, there is a rusty old box. It appears that the box is somewhat damaged, since an oblong hole has been chipped out of the front of it.
+
+--------------------------------------------------------------------------------
+command: put brick in hole
+--------------------------------------------------------------------------------
+> put brick in hole
+You put the brick in the hole. The match has gone out. There is an explosion nearby.
+
+--------------------------------------------------------------------------------
+command: north
+--------------------------------------------------------------------------------
+> north
+You walk north.
+
+In the dark
+It is pitch black. You are likely to be eaten by a grue.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. You may recall your recent explosion. Well, probably as a result of that, you hear an ominous rumbling, as if one of the rooms in the dungeon had collapsed.
+
+--------------------------------------------------------------------------------
+command: south
+--------------------------------------------------------------------------------
+> south
+The way is blocked by debris from an explosion.
+

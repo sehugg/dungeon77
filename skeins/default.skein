@@ -4533,7 +4533,7 @@ There is a very large and extremely heavy wicker basket with a cloth bag here. I
 
 There is a small hook attached to the rock here.
 
-There is an explosion nearby. The match has gone out.
+The match has gone out. There is an explosion nearby.
 --------------------------------------------------------------------------------
 id: 1785583520799
 parent-id: 1785583520798
@@ -4589,6 +4589,8 @@ You are on a wide ledge high into the volcano. The rim of the volcano is about 2
 There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle. The balloon is tied to the hook.
 
 There is a small hook attached to the rock here.
+
+You may recall your recent explosion. Well, probably as a result of that, you hear an ominous rumbling, as if one of the rooms in the dungeon had collapsed.
 --------------------------------------------------------------------------------
 id: 1785583520803
 parent-id: 1785583520802

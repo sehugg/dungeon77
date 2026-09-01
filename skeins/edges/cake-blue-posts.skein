@@ -1,0 +1,50 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: purloin battery-powered brass lantern
+--------------------------------------------------------------------------------
+> purloin battery-powered brass lantern
+
+
+--------------------------------------------------------------------------------
+command: turn on lantern
+--------------------------------------------------------------------------------
+> turn on lantern
+You switch the battery-powered brass lantern on.
+
+--------------------------------------------------------------------------------
+command: teleport tea room
+--------------------------------------------------------------------------------
+> teleport tea room
+
+Tea Room
+You are in a small square room, in the center of which is a large oblong table, no doubt set for afternoon tea. It is clear from the objects on the table that the users were indeed mad. In the eastern corner of the room is a small hole (no more that four inches high). There are passageways leading away to the west and the northwest.
+
+There is a piece of cake here with the words 'Eat Me' on it.
+
+There is a piece of cake with orange icing here.
+
+There is a piece of cake with red icing here.
+
+There is a piece of cake with blue (ecch) icing here.
+
+--------------------------------------------------------------------------------
+command: take blue cake
+--------------------------------------------------------------------------------
+> take blue cake
+You take the piece of cake with blue icing.
+
+--------------------------------------------------------------------------------
+command: teleport posts room
+--------------------------------------------------------------------------------
+> teleport posts room
+
+Posts Room
+You are in an enormous room, in the center of which are four wooden posts delineating a rectanular area, above which is what appears to be a wooden roof. In fact, all objects in this room appear to be abnormally large. To the east is a passageway. There is a large chasm on the west and the northwest.
+
+--------------------------------------------------------------------------------
+command: eat blue cake
+--------------------------------------------------------------------------------
+> eat blue cake
+The room around you seems to be getting smaller.
+

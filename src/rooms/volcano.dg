@@ -210,6 +210,10 @@
 	~(gnome-door)
 		You can't go that way.
 (from * go #south to #dusty-room)
+%% MUNGED-ROOM blocks re-entry (77act2.mud SAFE-MUNG/MUNG-ROOM)
+(prevent [leave * #south])
+	(#dusty-room has been munged)
+	The way is blocked by debris from an explosion.
 
 %% LAVA
 #lava-room
