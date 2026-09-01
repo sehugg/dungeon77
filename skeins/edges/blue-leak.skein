@@ -1,0 +1,49 @@
+parent-id: default.skein#1785255063907
+--------------------------------------------------------------------------------
+command: push blue button
+--------------------------------------------------------------------------------
+> push blue button
+There is a rumbling sound and a stream of water appears to burst from the east wall of the room (apparently, a leak has occurred in a pipe.) The water level here is now up to your shin.
+
+--------------------------------------------------------------------------------
+command: push blue button
+--------------------------------------------------------------------------------
+> push blue button
+The blue button appears to be jammed. The water level here is now up to your shin.
+
+--------------------------------------------------------------------------------
+command: take wrench
+--------------------------------------------------------------------------------
+> take wrench
+You take the wrench. The water level here is now up to your knees.
+
+--------------------------------------------------------------------------------
+command: plug leak with wrench
+--------------------------------------------------------------------------------
+> plug leak with wrench
+With a wrench? The water level here is now up to your knees.
+
+--------------------------------------------------------------------------------
+command: open tube
+--------------------------------------------------------------------------------
+> open tube
+You open the tube, revealing a viscous material. The water level here is now up to your hips.
+
+--------------------------------------------------------------------------------
+command: take putty
+--------------------------------------------------------------------------------
+> take putty
+You take the viscous material out of the tube. The water level here is now up to your hips.
+
+--------------------------------------------------------------------------------
+command: plug leak with putty
+--------------------------------------------------------------------------------
+> plug leak with putty
+By some miracle of elven technology, you have managed to stop the leak in the dam.
+
+--------------------------------------------------------------------------------
+command: push blue button
+--------------------------------------------------------------------------------
+> push blue button
+The blue button appears to be jammed.
+

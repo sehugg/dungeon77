@@ -864,7 +864,7 @@ STRING: "Burn"
 
 STRING: "By some miracle of elven technology, you have managed to stop the
 leak in the dam."
-  NOT FOUND in any .dg file
+  ADDED to src/rooms/dam.dg
 
 STRING: "CEVENT DEFINITIONS"
   NOT FOUND in any .dg file
@@ -1384,7 +1384,7 @@ STRING: "I'm afraid you can't control the balloon in this way."
     - src/rooms/volcano.dg
 
 STRING: "I'm afraid you have done drowned yourself."
-  NOT FOUND in any .dg file
+  ADDED to src/rooms/dam.dg
 
 STRING: "I'm not sure that a "
   NOT FOUND in any .dg file
@@ -2182,7 +2182,7 @@ STRING: "The basket is raised to the top of the shaft."
     - src/rooms/coalmine.dg
 
 STRING: "The blue button appears to be jammed."
-  NOT FOUND in any .dg file
+  ADDED to src/rooms/dam.dg
 
 STRING: "The boat deflates."
   NOT FOUND in any .dg file
@@ -2663,7 +2663,7 @@ STRING: "The room around you seems to be getting smaller."
     - src/rooms/tearoom.dg
 
 STRING: "The room is full of water and cannot be entered."
-  NOT FOUND in any .dg file
+  ADDED to src/rooms/dam.dg
 
 STRING: "The room seems to have become too small to hold you.  It seems that
 the  walls are not as compressible as your body, which is somewhat
@@ -2810,7 +2810,7 @@ STRING: "The water leaks out of the "
     - src/core/liquids.dg
 
 STRING: "The water level here is now "
-  NOT FOUND in any .dg file
+  ADDED to src/rooms/dam.dg
 
 STRING: "The water slips through your fingers."
   NOT FOUND in any .dg file
@@ -3129,7 +3129,7 @@ STRING: "There is a rumble from deep within the earth and the room shakes."
 STRING: "There is a rumbling sound and a stream of water appears to burst
 from the east wall of the room (apparently, a leak has occurred in a
 pipe.)"
-  NOT FOUND in any .dg file
+  ADDED to src/rooms/dam.dg
 
 STRING: "There is a rusty knife here."
   FOUND in 1 file(s):

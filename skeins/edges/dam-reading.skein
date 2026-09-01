@@ -1,0 +1,46 @@
+parent-id: default.skein#1785255063907
+--------------------------------------------------------------------------------
+command: south
+--------------------------------------------------------------------------------
+> south
+You walk south.
+
+Dam Lobby
+This room appears to have been the waiting room for groups touring the dam. There are exits here to the north and east marked 'Private', though the doors are open, and an exit to the south.
+
+There are tour guidebooks here.
+
+--------------------------------------------------------------------------------
+command: read guidebook
+--------------------------------------------------------------------------------
+> read guidebook
+(first attempting to take the tour guidebook)
+You take the tour guidebook.
+
+It reads:
+
+Guide Book to Flood Control Dam #3
+
+Flood Control Dam #3 (FCD#3) was constructed in year 783 of the Great Underground Empire to harness the destructive power of the Frigid River. This work was supported by a grant of 37 million zorkmids from the Central Bureaucracy and your omnipotent local tyrant Lord Dimwit Flathead the Excessive. This impressive structure is composed of 3.7 cubic feet of concrete, is 256 feet tall at the center, and 193 feet wide at the top. The reservoir created behind the dam has a volume of 37 billion cubic feet, an area of 12 million square feet, and a shore line of 36 thousand feet.
+
+The construction of FCD#3 took 112 days from ground breaking to the dedication. It required a work force of 384 slaves, 34 slave drivers, 12 engineers, 2 turtle doves, and a partridge in a pear tree. The work was managed by a command team composed of 2345 bureaucrats, 2347 secretaries (at least two of which can type), 12,256 paper shufflers, 52,469 rubber stampers, 245,193 red tape processors, and nearly one million dead trees.
+
+We will now point out some of the more interesting features of FCD#3 as we conduct you on a guided tour of the facilities:
+1) You start your tour here in the Dam Lobby. You will notice on your right that.........
+
+--------------------------------------------------------------------------------
+command: read matchbook
+--------------------------------------------------------------------------------
+> read matchbook
+It reads:
+
+[close cover before striking BKD]
+
+You too can make BIG MONEY in the exciting field of
+
+PAPER SHUFFLING!
+
+Mr. TAA of Muddle, Mass. says: "Before I took this course I used to be a lowly bit twiddler. Now with what I learned at MIT Tech I feel really important and can obfuscate and confuse with the best." Mr. MARC had this to say: "Ten short days ago all I could look forward to was a dead-end job as a doctor. Now I have a promising future and make really big Zorkmids."
+
+MIT Tech can't promise these fantastic results to everyone. But when you earn your MDL degree from MIT Tech your future will be brighter. Send for our free brochure today.
+

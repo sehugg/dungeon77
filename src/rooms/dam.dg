@@ -272,10 +272,115 @@
 (perform [push #button5])
 	Click.
 	(now)~(gate-flag)
+
+%% Red button (RBUTT): toggles the room light (RLIGHT? in MAINT-ROOM,
+%% 77act1.mud). The room itself is inherently dark until it is on.
+(interface (maintenance lights are on))
+
+(light reaches ceiling (room $Ceil))
+	(maintenance lights are on)
+	($Ceil = #maintenance-room)
+
 (perform [push #button2])
-	The lights within the room come on.
+	(maintenance lights are on)
+	(now) ~(maintenance lights are on)
 	The lights within the room shut off.
-	%% TODO
+
+(perform [push #button2])
+	~(maintenance lights are on)
+	(now) (maintenance lights are on)
+	The lights within the room come on.
+
+%% Blue button (BLBUT): the first push bursts a leak in the east wall;
+%% afterwards the button is jammed (MAINT-ROOM, 77act1.mud).
+(interface (maintenance leak is flowing))
+(global variable (maintenance flood count 0))
+
+(perform [push #button4])
+	(maintenance flood count 0)
+	(now) (maintenance leak is flowing)
+	(now) (maintenance flood count 1)
+	There is a rumbling sound and a stream of water appears to burst
+	from the east wall of the room \(apparently, a leak has occurred in
+	a pipe.\)
+
+(perform [push #button4])
+	~(maintenance flood count 0)
+	The blue button appears to be jammed.
+
+%% The MNTIN daemon advances the water level at the end of every tick,
+%% including the turn the button was pushed (CLOCK-DEMON fires a -1
+%% daemon in the same command cycle). Messages print only while the
+%% player stays in the room; at count 16 the room is munged whether or
+%% not the player is still here.
+(late on every tick)
+	(maintenance leak is flowing)
+	(maintenance flood count $count)
+	($count plus 1 into $newcount)
+	(now) (maintenance flood count $newcount)
+	(if) (current room #maintenance-room) (then)
+		(narrate water level $newcount)
+	(endif)
+	($newcount = 16)
+	(now) ~(maintenance leak is flowing)
+	(now) (#maintenance-room has been munged)
+	(if) (current room #maintenance-room) (then)
+		I'm afraid you have done drowned yourself.
+		(jigs up)
+	(endif)
+
+%% DROWNINGS table, indexed by 1 + count/2 (MDL integer division), so
+%% each level is shown for two consecutive ticks.
+(narrate water level $count)
+	($count < 4)
+	The water level here is now up to your shin.
+(narrate water level $count)
+	($count < 6)
+	The water level here is now up to your knees.
+(narrate water level $count)
+	($count < 8)
+	The water level here is now up to your hips.
+(narrate water level $count)
+	($count < 10)
+	The water level here is now up to your waist.
+(narrate water level $count)
+	($count < 12)
+	The water level here is now up to your chest.
+(narrate water level $count)
+	($count < 14)
+	The water level here is now up to your neck.
+(narrate water level $count)
+	($count < 16)
+	The water level here is now over your head.
+(narrate water level 16)
+	The water level here is now high in your lungs.
+
+%% MUNG-ROOM: the flooded room can't be re-entered.
+(prevent [leave #dam-lobby #north])
+	(#maintenance-room has been munged)
+	The room is full of water and cannot be entered.
+
+(prevent [leave #dam-lobby #east])
+	(#maintenance-room has been munged)
+	The room is full of water and cannot be entered.
+
+%% Plug the leak (LEAK-FUNCTION, 77act1.mud). Plugging stops the flood
+%% permanently; RVARS goes to -1, so the blue button stays jammed.
+(grammar [plug/glue/patch [single] with [held]] for [plug $ with $])
+
+(perform [plug #leak with #putty])
+	(maintenance leak is flowing)
+	(now) ~(maintenance leak is flowing)
+	(now) (maintenance flood count -1)
+	By some miracle of elven technology, you have managed to stop the
+	leak in the dam.
+
+(perform [plug #leak with $obj])
+	(maintenance leak is flowing)
+	With (a $obj)?
+
+(perform [plug * | $])
+	This has no effect.
 
 (grammar [turn/rotate/twist/screw/unscrew [single] with [held]] for [turn $ with $])
 

@@ -1,0 +1,107 @@
+parent-id: default.skein#1785255063907
+--------------------------------------------------------------------------------
+command: push red button
+--------------------------------------------------------------------------------
+> push red button
+The lights within the room come on.
+
+--------------------------------------------------------------------------------
+command: push blue button
+--------------------------------------------------------------------------------
+> push blue button
+There is a rumbling sound and a stream of water appears to burst from the east wall of the room (apparently, a leak has occurred in a pipe.) The water level here is now up to your shin.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your shin.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your knees.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your knees.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your hips.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your hips.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your waist.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your waist.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your chest.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your chest.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your neck.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now up to your neck.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now over your head.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now over your head.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. The water level here is now high in your lungs. I'm afraid you have done drowned yourself.
+
+     *** You have died ***     
+
+Game over. You scored 160 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+
