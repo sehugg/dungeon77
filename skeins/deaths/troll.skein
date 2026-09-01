@@ -1,0 +1,100 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: take lantern
+--------------------------------------------------------------------------------
+> take lantern
+You take the battery-powered brass lantern off the trophy case.
+
+--------------------------------------------------------------------------------
+command: turn on lantern
+--------------------------------------------------------------------------------
+> turn on lantern
+You switch the battery-powered brass lantern on.
+
+--------------------------------------------------------------------------------
+command: move rug
+--------------------------------------------------------------------------------
+> move rug
+With a great effort, the rug is moved to one side of the room. With the rug moved, the dusty cover of a closed trap-door appears.
+
+--------------------------------------------------------------------------------
+command: down
+--------------------------------------------------------------------------------
+> down
+(first attempting to open the trap door below)
+The door reluctantly opens to reveal a rickety staircase...
+
+You climb down through the trap door.
+
+Cellar
+You are in a dark and damp cellar with a narrow passageway leading east, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+
+The trap door crashes shut, and you hear someone barring it. Your sword is glowing with a faint blue glow.
+
+(Your score has gone up by 25 points.)
+
+--------------------------------------------------------------------------------
+command: east
+--------------------------------------------------------------------------------
+> east
+You walk east.
+
+The Troll Room
+You are in a small room with passages off in all directions. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
+
+A nasty-looking troll, brandishing a bloody axe, blocks all passages out of the room.
+
+The troll sees a hole in your defense, and a lightning stroke opens a wound in your left side.
+
+You feel a little better. Your sword has begun to glow very brightly.
+
+--------------------------------------------------------------------------------
+command: east
+--------------------------------------------------------------------------------
+> east
+The troll fends you off with a menacing gesture. The troll's axe removes your head. It appears that that last blow was too much for you. I'm afraid you are dead.
+
+     *** You have died ***     
+
+Game over. You scored 35 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+
+--------------------------------------------------------------------------------
+command: wait
+--------------------------------------------------------------------------------
+> wait
+Please type one of the given words.
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+
+--------------------------------------------------------------------------------
+command: wait
+--------------------------------------------------------------------------------
+> wait
+Please type one of the given words.
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+
+--------------------------------------------------------------------------------
+command: wait
+--------------------------------------------------------------------------------
+> wait
+Please type one of the given words.
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+

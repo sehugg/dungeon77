@@ -1,0 +1,40 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: move rug
+--------------------------------------------------------------------------------
+> move rug
+With a great effort, the rug is moved to one side of the room. With the rug moved, the dusty cover of a closed trap-door appears.
+
+--------------------------------------------------------------------------------
+command: down
+--------------------------------------------------------------------------------
+> down
+(first attempting to open the trap door below)
+The door reluctantly opens to reveal a rickety staircase...
+
+You climb down through the trap door.
+
+In the dark
+It is pitch black. You are likely to be eaten by a grue.
+
+The trap door crashes shut, and you hear someone barring it. Your sword is glowing with a faint blue glow.
+
+(Your score has gone up by 25 points.)
+
+--------------------------------------------------------------------------------
+command: east
+--------------------------------------------------------------------------------
+> east
+You feel your way east. Oh, no! You walked into the slavering fangs of a lurking grue.
+
+     *** You have died ***     
+
+Game over. You scored 35 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
+

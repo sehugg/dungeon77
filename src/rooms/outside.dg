@@ -86,14 +86,15 @@
 (after [take *])
     (grating appears)
 
-(after [burn *])
+(perform [burn * | $])
     (* is #heldby #player)
     (grating appears)
+    (par)
     The sight of someone carrying a pile of burning leaves so offends
     the neighbors that they come over and put you out.
     (jigs up)
 
-(after [burn *])
+(after [burn * | $])
     (#grating is hidden)
     The leaves burn and the neighbors start to complain.
     (grating appears)

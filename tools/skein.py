@@ -891,6 +891,14 @@ def main():
     common(ap)
     sub = ap.add_subparsers(dest="verb", required=True)
 
+    p = sub.add_parser("diff", help="replay and diff against the recording")
+    p.add_argument("node", nargs="?",
+                   help="node id or label (default: every branch of the tree)")
+    p.add_argument("--full", action="store_true",
+                   help="include full live text in --json output")
+    common(p, sub=True)
+    p.set_defaults(func=cmd_diff)
+
     p = sub.add_parser("play", help="run commands from a fresh start")
     p.add_argument("commands", nargs="+")
     common(p, sub=True)
@@ -900,14 +908,6 @@ def main():
     p.add_argument("node", nargs="?", help="node id or label (default: leaf)")
     common(p, sub=True)
     p.set_defaults(func=cmd_replay)
-
-    p = sub.add_parser("diff", help="replay and diff against the recording")
-    p.add_argument("node", nargs="?",
-                   help="node id or label (default: every branch of the tree)")
-    p.add_argument("--full", action="store_true",
-                   help="include full live text in --json output")
-    common(p, sub=True)
-    p.set_defaults(func=cmd_diff)
 
     p = sub.add_parser("bless",
                        help="accept live output as the new recording")

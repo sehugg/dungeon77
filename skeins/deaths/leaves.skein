@@ -1,0 +1,47 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: teleport clearing
+--------------------------------------------------------------------------------
+> teleport clearing
+
+Clearing
+You are in a clearing, with a forest surrounding you on the west and south.
+
+There is a pile of leaves on the ground.
+
+--------------------------------------------------------------------------------
+command: take leaves
+--------------------------------------------------------------------------------
+> take leaves
+You take the pile of leaves. A grating appears on the ground.
+
+--------------------------------------------------------------------------------
+command: purloin matchbook
+--------------------------------------------------------------------------------
+> purloin matchbook
+
+
+--------------------------------------------------------------------------------
+command: burn matchbook
+--------------------------------------------------------------------------------
+> burn matchbook
+One of the matches starts to burn.
+
+--------------------------------------------------------------------------------
+command: burn leaves with matchbook
+--------------------------------------------------------------------------------
+> burn leaves with matchbook
+A grating appears on the ground.
+
+The sight of someone carrying a pile of burning leaves so offends the neighbors that they come over and put you out.
+
+     *** You have died ***
+
+Game over. You scored 10 points out of 500.
+
+Would you like to:
+     UNDO the last move,
+     RESTORE a saved position,
+     QUIT the program,
+     or RESTART from the beginning?
