@@ -4433,14 +4433,14 @@ command: land
 > land
 You land the basket.
 
-[0m[1mWide Ledge[0m (in the basket)
+Wide Ledge (in the basket)
+You are on a wide ledge high into the volcano. The rim of the volcano is about 200 feet above and there is a precipitous drop below to the bottom. There is a small door to the south.
 
 There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle.
 
 There is a small hook attached to the rock here.
 
 There is a blue label here.
-
 --------------------------------------------------------------------------------
 id: 1785508582034
 parent-id: 1785508582033
@@ -4526,14 +4526,14 @@ command: n
 > n
 You walk north.
 
-[0m[1mWide Ledge[0m
+Wide Ledge
+You are on a wide ledge high into the volcano. The rim of the volcano is about 200 feet above and there is a precipitous drop below to the bottom. There is a small door to the south.
 
 There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle. The balloon is tied to the hook.
 
 There is a small hook attached to the rock here.
 
 There is an explosion nearby. The match has gone out.
-
 --------------------------------------------------------------------------------
 id: 1785583520799
 parent-id: 1785583520798
@@ -4583,12 +4583,12 @@ command: n
 > n
 You walk north.
 
-[0m[1mWide Ledge[0m
+Wide Ledge
+You are on a wide ledge high into the volcano. The rim of the volcano is about 200 feet above and there is a precipitous drop below to the bottom. There is a small door to the south.
 
 There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a newspaper burning in the receptacle. The balloon is tied to the hook.
 
 There is a small hook attached to the rock here.
-
 --------------------------------------------------------------------------------
 id: 1785583520803
 parent-id: 1785583520802

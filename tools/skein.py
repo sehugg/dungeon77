@@ -6,6 +6,9 @@ Designed to be easy for an LLM (or a human) to call and read:
     tools/skein.py play n e "open window" w        # ad-hoc transcript
     tools/skein.py diff                            # check every branch
     tools/skein.py diff 1785098749839              # ...just the path to one node
+    tools/skein.py bless --dry-run                 # preview what blessing changes
+    tools/skein.py bless                           # accept live output as the recording
+    tools/skein.py bless 1785098749839             # ...just the path to one node
     tools/skein.py replay --json                   # transcript as JSON
     tools/skein.py list                            # node ids + commands
     tools/skein.py list --tree                     # branch structure
@@ -46,6 +49,20 @@ re-checks every selector against the finished tree, so file order can never
 change the result.  Inside a fragment `id:` and `parent-id:` are optional --
 a node chains onto the previous node in the same file, so a linear sub-skein
 is just a header plus a run of command blocks.
+
+`bless` is the other half of `diff`: once you have reviewed a diff and decided
+the live behavior is the correct one, `bless` replays the same paths and
+rewrites each mismatched node's transcript in place -- in whichever fragment
+file supplies that node.  The written transcript is the normalized live text
+(colors and volatile lines such as warnings and the version banner removed,
+trailing whitespace trimmed), which is exactly what `diff` compares against,
+so a bless followed by a diff is always clean.  Afterwards the merged tree is
+re-loaded; if a changed transcript breaks a fragment's `parent-output:`
+selector, bless reports it instead of letting the skein silently drift.
+
+    tools/skein.py bless                # bless every branch
+    tools/skein.py bless <node-id>      # bless only the path to one node
+    tools/skein.py bless --dry-run      # list what would change, write nothing
 
 `record` writes such a fragment for you: it resolves the parent, replays the
 path down to it, runs your new commands, and saves the result with the
@@ -487,6 +504,40 @@ def unified(recorded, live, label):
     ))
 
 
+def rewrite_skein(path, updates):
+    """Rewrite recorded outputs in a .skein file, preserving everything else.
+
+    `updates` maps file-local node id -> (command, new_output).  Returns the
+    number of nodes changed.  The file is split on the same separator regex
+    the parser uses and joined back with the identical separator, so node
+    order, headers, labels and every untouched byte survive unchanged.
+    """
+    with open(path, encoding="utf-8", errors="replace") as fp:
+        text = fp.read()
+    chunks = re.split(r"^-{10,}$\n?", text, flags=re.M)
+    changed = 0
+    for i in range(1, len(chunks) - 1, 2):
+        meta = {}
+        for line in chunks[i].splitlines():
+            if ":" in line:
+                k, _, v = line.partition(":")
+                meta[k.strip()] = v.strip()
+        local = meta.get("id") or "n%d" % ((i - 1) // 2 + 1)
+        if local in updates:
+            cmd, out = updates[local]
+            # A node with no command (the start node) has no "> " echo line;
+            # its body is pure preamble, exactly as parse_skein expects.
+            chunks[i + 1] = (("> " + cmd + "\n") if cmd else "") + out + "\n"
+            changed += 1
+    if changed:
+        new_text = ("-" * 80 + "\n").join(chunks)
+        if not new_text.endswith("\n"):
+            new_text += "\n"
+        with open(path, "w", encoding="utf-8") as fp:
+            fp.write(new_text)
+    return changed
+
+
 # -------------------------------------------------------------------- output
 
 def print_transcript(preamble, segments):
@@ -624,6 +675,85 @@ def render_tree(node, kids, prefix="", is_last=True, only=True, out=None):
         render_tree(child, kids, child_prefix,
                     i == len(children) - 1, len(children) == 1, out)
     return out
+
+
+def cmd_bless(args, sources):
+    header, nodes = load_skein(args.skein)
+    seed = args.seed if args.seed is not None else int(header.get("seed", 0))
+    paths = all_paths(nodes, args.node)
+
+    seen = set()
+    results = []
+    for chain in paths:
+        results += compare_path(chain, seed, sources, args, seen)
+    bad = [r for r in results if not r["match"]]
+
+    by_file = {}    # origin file -> {file-local id: (command, normalized output)}
+    skipped = []
+    by_id = {n.id: n for n in nodes}
+    for r in bad:
+        node = by_id[r["id"]]
+        if "live" not in r:
+            skipped.append(r)      # dgdebug quit early; nothing to bless
+            continue
+        if node.origin:
+            # origin is relative to the --skein directory (which may itself
+            # be a single file's directory when --skein names a file).
+            target = node.origin if os.path.isabs(node.origin) else \
+                os.path.join(args.skein, node.origin)
+        else:
+            target = args.skein      # single-file skein: nodes have no origin
+        by_file.setdefault(target, {})[node.local_id] = (
+            node.command, normalize(r["live"]))
+
+    if args.json:
+        json.dump({
+            "seed": seed,
+            "branches": len(paths),
+            "nodes": len(results),
+            "mismatched": len(bad),
+            "blessed": [r["id"] for r in bad if "live" in r],
+            "skipped": [r["id"] for r in skipped],
+            "files": sorted(by_file),
+        }, sys.stdout, indent=2)
+        print()
+        return 0
+
+    for r in skipped:
+        print("cannot bless %s (%s): %s" % (r["id"], r["command"], r["diff"][0]),
+              file=sys.stderr)
+    if not by_file:
+        print("nothing to bless: %d/%d nodes match" % (len(results), len(results)))
+        return 0
+
+    if args.dry_run:
+        for path in sorted(by_file):
+            for local, (cmd, _) in sorted(by_file[path].items(),
+                                          key=lambda kv: kv[1][0] or ""):
+                print("would bless %s in %s (%s)"
+                      % (local, path, cmd or "(start)"))
+        print("%d node(s) would change (dry run; use without --dry-run to write)"
+              % sum(len(u) for u in by_file.values()))
+        return 0
+
+    total = 0
+    for path in sorted(by_file):
+        n = rewrite_skein(path, by_file[path])
+        total += n
+        print("blessed %d node(s) in %s" % (n, path))
+
+    # Re-validate: a changed transcript can break a fragment's parent-output
+    # selector.  load_skein exits with a message when that happens; surface it
+    # as a warning rather than a failure, since the bless itself succeeded.
+    try:
+        load_skein(args.skein)
+    except SystemExit as exc:
+        print("\nwarning: skein no longer loads after blessing -- a parent-* "
+              "selector may no longer match:\n%s" % exc, file=sys.stderr)
+
+    print("%d node(s) blessed; re-run `tools/skein.py diff` to confirm clean"
+          % total)
+    return 0
 
 
 def cmd_list(args, sources):
@@ -778,6 +908,15 @@ def main():
                    help="include full live text in --json output")
     common(p, sub=True)
     p.set_defaults(func=cmd_diff)
+
+    p = sub.add_parser("bless",
+                       help="accept live output as the new recording")
+    p.add_argument("node", nargs="?",
+                   help="node id or label (default: every branch of the tree)")
+    p.add_argument("--dry-run", action="store_true",
+                   help="list what would change without writing any file")
+    common(p, sub=True)
+    p.set_defaults(func=cmd_bless)
 
     p = sub.add_parser("list", help="list nodes along a path, or the whole tree")
     p.add_argument("node", nargs="?")
