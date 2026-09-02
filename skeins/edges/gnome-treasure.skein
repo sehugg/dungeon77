@@ -1,0 +1,211 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: purloin battery-powered brass lantern
+--------------------------------------------------------------------------------
+> purloin battery-powered brass lantern
+
+
+--------------------------------------------------------------------------------
+command: turn on lantern
+--------------------------------------------------------------------------------
+> turn on lantern
+You switch the battery-powered brass lantern on.
+
+--------------------------------------------------------------------------------
+command: teleport volcano bottom
+--------------------------------------------------------------------------------
+> teleport volcano bottom
+
+Volcano Bottom
+You are at the bottom of a large dormant volcano. High above you light may be seen entering from the cone of the volcano. The only exit here is to the north.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is draped over the the basket.
+
+--------------------------------------------------------------------------------
+command: board basket
+--------------------------------------------------------------------------------
+> board basket
+You get into the basket.
+
+--------------------------------------------------------------------------------
+command: open receptacle
+--------------------------------------------------------------------------------
+> open receptacle
+You open the receptacle.
+
+--------------------------------------------------------------------------------
+command: purloin matchbook
+--------------------------------------------------------------------------------
+> purloin matchbook
+
+
+--------------------------------------------------------------------------------
+command: burn matchbook
+--------------------------------------------------------------------------------
+> burn matchbook
+One of the matches starts to burn.
+
+--------------------------------------------------------------------------------
+command: put matchbook in receptacle
+--------------------------------------------------------------------------------
+> put matchbook in receptacle
+You put the matchbook in the receptacle.
+
+--------------------------------------------------------------------------------
+command: burn matchbook with matchbook
+--------------------------------------------------------------------------------
+> burn matchbook with matchbook
+The matchbook burns inside the receptacle. The cloth bag inflates as it fills with hot air.
+
+The balloon ascends.
+
+Volcano Core (in the basket)
+You are about one hundred feet above the bottom of the volcano. The top of the volcano is clearly visible here.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a matchbook burning in the receptacle.
+
+There is a blue label here.
+
+The match has gone out.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+The balloon ascends.
+
+Volcano Core (in the basket)
+You are about two hundred feet above the volcano floor. Looming above is the rim of the volcano. There is a small ledge on the west side.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a matchbook burning in the receptacle.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+command: west
+--------------------------------------------------------------------------------
+> west
+You drive the basket west.
+
+Narrow Ledge (in the basket)
+You are on a narrow ledge overlooking the inside of an old dormant volcano. This ledge appears to be about in the middle between the floor below and the rim above. There is an exit here to the south.
+
+There is a very large and extremely heavy wicker basket with a cloth bag here. Inside the basket is a metal receptacle of some kind. Attached to the basket on the outside is a piece of wire. The cloth bag is inflated and there is a matchbook burning in the receptacle.
+
+There is a small hook attached to the rock here.
+
+There is an engraved zorkmid coin here.
+
+There is a blue label here.
+
+--------------------------------------------------------------------------------
+command: disembark
+--------------------------------------------------------------------------------
+> disembark
+You get out of the basket. You watch as the balloon slowly floats away. It seems to be ascending, due to its light load.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away. A volcano gnome seems to walk straight out of the wall and says 'I have a very busy appointment schedule and little time to waste on tresspassers, but for a small fee, I'll show you the way out.' You notice the gnome nervously glancing at his watch.
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+
+--------------------------------------------------------------------------------
+command: purloin lunch
+--------------------------------------------------------------------------------
+> purloin lunch
+
+
+--------------------------------------------------------------------------------
+command: give lunch to gnome
+--------------------------------------------------------------------------------
+> give lunch to gnome
+'That wasn't quite what I had in mind', he says, crunching the lunch in his rock-hard hands.
+
+--------------------------------------------------------------------------------
+command: take coin
+--------------------------------------------------------------------------------
+> take coin
+You take the priceless zorkmid.
+
+(Your score has gone up by ten points.)
+
+--------------------------------------------------------------------------------
+command: give coin to gnome
+--------------------------------------------------------------------------------
+> give coin to gnome
+Thank you very much for the priceless zorkmid. I don't believe I've ever seen one as beautiful. 'Follow me', he says, and a door appears on the west end of the ledge. Through the door, you can see a narrow chimney sloping steeply downward.
+
+--------------------------------------------------------------------------------
+command: west
+--------------------------------------------------------------------------------
+> west
+You walk west.
+
+Volcano Bottom
+You are at the bottom of a large dormant volcano. High above you light may be seen entering from the cone of the volcano. The only exit here is to the north.
+
+--------------------------------------------------------------------------------
+command: look
+--------------------------------------------------------------------------------
+> look
+Volcano Bottom
+You are at the bottom of a large dormant volcano. High above you light may be seen entering from the cone of the volcano. The only exit here is to the north.
+

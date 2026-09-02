@@ -1,7 +1,6 @@
 
 ~(binf-flag)
-
-%% TODO: The balloon leaves the ledge.
+~(gnome-door)
 
 %% Anchoring the balloon
 
@@ -81,6 +80,27 @@
 	(else)
 		(balloon falls)
 	(endif)
+
+%% RISE-AND-SHINE (77act2.mud:532): if the balloon is left inflated and
+%% untied on a ledge, it drifts off on its own, stranding whoever got out.
+%% This is what arms the volcano gnome's appearance timer (VLGIN).
+(ledge room #narrow-ledge)
+(ledge room #volcano-view)
+(ledge room #wide-ledge)
+
+(on every tick)
+	~(#player is #in #basket2)
+	(#basket2 is #in $ledge)
+	(ledge room $ledge)
+	(binf-flag)
+	~(balloon is anchored)
+	(if) (current room $ledge) (then)
+		You watch as the balloon slowly floats away.  It seems to be
+		ascending, due to its light load.
+	(endif)
+	(now) (#basket2 is nowhere)
+	(now) (#volcano-gnome timer is 10)
+	(now) (#volcano-gnome timer running)
 
 %%%
 
@@ -162,7 +182,6 @@
 (from * go #east to #volcano-core2)
 (from * go #launch to #volcano-core2)
 (from * go #west to #volcano-bottom)
-%% TODO: conditional on flag GNOME-DOOR
 (prevent [leave * #west])
 	~(gnome-door)
 		You can't go that way.
@@ -205,7 +224,6 @@
 	It's a long way down.
 (from * go #launch to #volcano-core4)
 (from * go #west to #volcano-bottom)
-%% TODO: conditional on flag GNOME-DOOR
 (prevent [leave * #west])
 	~(gnome-door)
 		You can't go that way.
@@ -233,7 +251,102 @@
 (animate *)
 (appearance *)
 	There is a nervous Volcano Gnome here.
-%% TODO: object action routine GNOME-FUNCTION
+
+%% VOLGNOME (77act2.mud:756): once the appearance timer (armed above, when
+%% the balloon drifts off empty) runs out, the gnome walks out of the wall
+%% the next time the player is standing on a ledge - polling forever, one
+%% tick at a time, until that's true.
+~(gnome has appeared)
+~(gnome has departed)
+~(gnome is nervous)
+
+(on #volcano-gnome timeout)
+	~(gnome has appeared)
+	(now) (gnome ready to appear)
+
+(late on every tick)
+	(gnome ready to appear)
+	~(gnome has appeared)
+	(current room $room)
+	(ledge room $room)
+	(now) ~(gnome ready to appear)
+	(now) (gnome has appeared)
+	(now) (#volcano-gnome is #in $room)
+	(notice #volcano-gnome)
+	A volcano gnome seems to walk straight out of the wall and says
+	'I have a very busy appointment schedule and little time to waste on
+	tresspassers, but for a small fee, I'll show you the way out.'  You
+	notice the gnome nervously glancing at his watch.
+
+%% GNOME-FUNCTION (77act2.mud:768): give/throw a treasure, and he opens the
+%% west door; give/throw anything else, and he crunches it; anything else
+%% you try on him makes him more nervous, arming a one-shot 5-turn fuse
+%% (GNOME-FLAG guards it from being rearmed) after which he leaves for good.
+(gnome accepts $Treasure)
+	(current room $room)
+	(now) ($Treasure is #in $room)
+	(now) (gnome-door)
+	Thank you very much for (the $Treasure).  I don't believe I've ever
+	seen one as beautiful.  'Follow me', he says, and a door appears on
+	the west end of the ledge.  Through the door, you can see a narrow
+	chimney sloping steeply downward.
+
+(gnome crunches $Obj)
+	(now) ($Obj is nowhere)
+	'That wasn't quite what I had in mind', he says, crunching (the
+	$Obj) in his rock-hard hands.
+
+(instead of [give $Treasure to #volcano-gnome])
+	~(gnome has departed)
+	(treasure $Treasure)
+	($Treasure has ancestor #player)
+	(gnome accepts $Treasure)
+	(tick) (stop)
+
+(instead of [throw $Treasure at #volcano-gnome])
+	~(gnome has departed)
+	(treasure $Treasure)
+	($Treasure has ancestor #player)
+	(gnome accepts $Treasure)
+	(tick) (stop)
+
+(instead of [give $Obj to #volcano-gnome])
+	~(gnome has departed)
+	~(treasure $Obj)
+	($Obj has ancestor #player)
+	(gnome crunches $Obj)
+	(tick) (stop)
+
+(instead of [throw $Obj at #volcano-gnome])
+	~(gnome has departed)
+	~(treasure $Obj)
+	(gnome crunches $Obj)
+	(tick) (stop)
+
+(gnome grows nervous)
+	The gnome appears increasingly nervous.
+	(if) ~(gnome is nervous) (then)
+		(now) (gnome is nervous)
+		(now) (#volcano-gnome timer is 5)
+		(now) (#volcano-gnome timer running)
+	(endif)
+
+(instead of [attack #volcano-gnome with $])
+	(gnome grows nervous)
+
+(instead of [attack #volcano-gnome])
+	(gnome grows nervous)
+
+(instead of [take #volcano-gnome])
+	(gnome grows nervous)
+
+(on #volcano-gnome timeout)
+	(gnome has appeared)
+	~(gnome has departed)
+	(now) (gnome has departed)
+	(now) (#volcano-gnome is nowhere)
+	The gnome glances at his watch.  'Oops.  I'm late for an
+	appointment!'  He disappears, leaving you alone on the ledge.
 
 %% BALLO
 #basket2
