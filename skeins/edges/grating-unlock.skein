@@ -1,0 +1,73 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: teleport grating room
+--------------------------------------------------------------------------------
+> teleport grating room
+
+In the dark
+It is pitch black. You are likely to be eaten by a grue.
+
+--------------------------------------------------------------------------------
+command: purloin skeleton keys
+--------------------------------------------------------------------------------
+> purloin skeleton keys
+
+
+--------------------------------------------------------------------------------
+command: unlock grating with keys
+--------------------------------------------------------------------------------
+> unlock grating with keys
+You unlock the grating with the set of skeleton keys.
+
+--------------------------------------------------------------------------------
+command: open grating
+--------------------------------------------------------------------------------
+> open grating
+The grating opens to reveal trees above you.
+
+--------------------------------------------------------------------------------
+command: up
+--------------------------------------------------------------------------------
+> up
+You climb up through the grating.
+
+Clearing
+You are in a clearing, with a forest surrounding you on the west and south.
+
+There is an open grating, descending into darkness.
+
+There is a pile of leaves on the ground.
+
+--------------------------------------------------------------------------------
+command: look
+--------------------------------------------------------------------------------
+> look
+Clearing
+You are in a clearing, with a forest surrounding you on the west and south.
+
+There is an open grating, descending into darkness.
+
+There is a pile of leaves on the ground.
+
+--------------------------------------------------------------------------------
+command: down
+--------------------------------------------------------------------------------
+> down
+You climb down through the grating.
+
+In the dark
+It is pitch black. You are likely to be eaten by a grue.
+
+--------------------------------------------------------------------------------
+command: close grating
+--------------------------------------------------------------------------------
+> close grating
+You close the grating.
+
+--------------------------------------------------------------------------------
+command: lock grating with keys
+--------------------------------------------------------------------------------
+> lock grating with keys
+You lock the grating with the set of skeleton keys.
+

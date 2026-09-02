@@ -1,0 +1,38 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: teleport clearing
+--------------------------------------------------------------------------------
+> teleport clearing
+
+Clearing
+You are in a clearing, with a forest surrounding you on the west and south.
+
+There is a pile of leaves on the ground.
+
+--------------------------------------------------------------------------------
+command: purloin skeleton keys
+--------------------------------------------------------------------------------
+> purloin skeleton keys
+
+
+--------------------------------------------------------------------------------
+command: unlock grating with keys
+--------------------------------------------------------------------------------
+> unlock grating with keys
+It doesn't seem to work.
+
+--------------------------------------------------------------------------------
+command: lock grating with keys
+--------------------------------------------------------------------------------
+> lock grating with keys
+It doesn't seem to work.
+
+--------------------------------------------------------------------------------
+command: down
+--------------------------------------------------------------------------------
+> down
+(first attempting to open the grating below)
+(first attempting to unlock the grating below with the set of skeleton keys)
+It doesn't seem to work.
+

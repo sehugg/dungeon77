@@ -169,6 +169,17 @@
     (current room #grating-room)
 	The grating opens to reveal trees above you.
 
+%% MDL's LOCKER/UNLOCKER only recognize GRAT2 (the grating room's side of
+%% the door): the skull-and-crossbones lock can't be worked from the
+%% clearing above.
+(prevent [lock #grating | $])
+	(current room #clearing)
+	It doesn't seem to work.
+
+(prevent [unlock #grating | $])
+	(current room #clearing)
+	It doesn't seem to work.
+
 %% MAZ12
 #maze12
 (room *)
@@ -242,6 +253,7 @@
 (* size is 10)
 (appearance *)
 	There is a set of skeleton keys here.
+(* unlocks #grating)
 
 %% BONES
 #bones
