@@ -1,0 +1,103 @@
+parent-command: w
+parent-output: /living room/
+--------------------------------------------------------------------------------
+command: teleport cyclops room
+--------------------------------------------------------------------------------
+> teleport cyclops room
+
+In the dark
+It is pitch black. You are likely to be eaten by a grue.
+
+--------------------------------------------------------------------------------
+command: purloin battery-powered brass lantern
+--------------------------------------------------------------------------------
+> purloin battery-powered brass lantern
+
+
+--------------------------------------------------------------------------------
+command: turn on lantern
+--------------------------------------------------------------------------------
+> turn on lantern
+You switch the battery-powered brass lantern on. Your sword has begun to glow very brightly.
+
+Cyclops Room
+You are in a room with an exit on the west side, and a staircase leading up.
+
+A cyclops, who looks prepared to eat horses (much less mere adventurers), blocks the staircase. From his state of health, and the bloodstains on the walls, you gather that he is not very friendly, though he likes people.
+
+--------------------------------------------------------------------------------
+command: purloin lunch
+--------------------------------------------------------------------------------
+> purloin lunch
+
+
+--------------------------------------------------------------------------------
+command: purloin bottle
+--------------------------------------------------------------------------------
+> purloin bottle
+
+
+--------------------------------------------------------------------------------
+command: open bottle
+--------------------------------------------------------------------------------
+> open bottle
+You open the glass bottle, revealing some water.
+
+--------------------------------------------------------------------------------
+command: give lunch to cyclops
+--------------------------------------------------------------------------------
+> give lunch to cyclops
+The cyclops says 'Mmm Mmm. I love hot peppers! But oh, could I use a drink. Perhaps I could drink the blood of that thing'. From the gleam in his eye, it could be surmised that you are 'that thing'.
+
+--------------------------------------------------------------------------------
+command: look
+--------------------------------------------------------------------------------
+> look
+Cyclops Room
+You are in a room with an exit on the west side, and a staircase leading up.
+
+The cyclops, having eaten the hot peppers, appears to be gasping. His enflamed tongue protrudes from his man-sized mouth.
+
+--------------------------------------------------------------------------------
+command: give water to cyclops
+--------------------------------------------------------------------------------
+> give water to cyclops
+The cyclops looks tired and quickly falls fast asleep (what did you put in that drink, anyway?).
+
+--------------------------------------------------------------------------------
+command: look
+--------------------------------------------------------------------------------
+> look
+Cyclops Room
+You are in a room with an exit on the west side, and a staircase leading up.
+
+The cyclops, perhaps affected by a drug in your drink, is sleeping blissfully at the foot of the stairs.
+
+--------------------------------------------------------------------------------
+command: up
+--------------------------------------------------------------------------------
+> up
+You climb up.
+
+Treasure Room
+This is a large room, whose north wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor.
+
+There is a silver chalice, intricately engraved, here.
+
+You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense. A quick thrust pinks your left arm, and blood starts to trickle down.
+
+You feel a little better.
+
+(Your score has gone up by 25 points.)
+
+--------------------------------------------------------------------------------
+command: look
+--------------------------------------------------------------------------------
+> look
+Treasure Room
+This is a large room, whose north wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor.
+
+There is a suspicious-looking individual, holding a bag, leaning against one wall. He is armed with a vicious-looking stilletto.
+
+There is a silver chalice, intricately engraved, here.
+

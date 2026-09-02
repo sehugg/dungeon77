@@ -2,6 +2,8 @@
 ~(cyclops-flag)
 ~(magic-flag)
 
+(global variable (cyclops temper is 0))
+
 %% CYCLO
 #cyclops-room
 (room *)
@@ -23,6 +25,12 @@
 	The north wall is solid rock.
 (narrate failing to leave * #up)
 	The cyclops doesn't look like he'll let you past.
+%% "cyclops" alone should mean the monster, not the room, when it's
+%% the target of these verbs.
+(unlikely [throw $ at *])
+(unlikely [tie $ to *])
+(unlikely [tie * to $])
+(unlikely [give $ to *])
 
 %% BLROO
 #strange-passage
@@ -34,7 +42,6 @@
 	You are in a long passage. To the south is one entrance. On the east
 	there is an old wooden door, with a large hole in it \(about cyclops
 	sized\).
-%% TODO: room action routine TIME
 (from * go #south to #cyclops-room)
 (from * go #east to #living-room)
 
@@ -48,7 +55,7 @@
 	This is a large room, whose north wall is solid granite. A number of
 	discarded bags, which crumble at your touch, are scattered about on the
 	floor.
-%% TODO: room action routine TREASURE-ROOM
+%% Robbed by the thief's treasure-vanishing mechanic (see thief.dg).
 (from * go #down to #cyclops-room)
 
 %% CYCLO
@@ -61,15 +68,15 @@
 (dict *)	one-e monst cyclo cyclops
 (* capacity is 10000)
 (appearance *)
-	(* is asleep)
+	(cyclops-flag)
 	The cyclops, perhaps affected by a drug in your drink, is sleeping
 	blissfully at the foot of the stairs.
 (appearance *)
-	(* is thirsty)
+	(#cyclops is thirsty)
 	The cyclops, having eaten the hot peppers, appears to be gasping.
 	His enflamed tongue protrudes from his man-sized mouth.
 (appearance *)
-	(* is hungry)
+	(#cyclops is hungry)
 	The cyclops is standing in the corner, eyeing you closely.  I don't
 	think he likes you very much.  He looks extremely hungry even for a
 	cyclops.
@@ -78,7 +85,17 @@
 	adventurers\), blocks the staircase.  From his state of health, and
 	the bloodstains on the walls, you gather that he is not very
 	friendly, though he likes people.
-%% TODO: object action routine CYCLOPS
+(descr *)
+	(appearance *)
+
+%% A nameless, hidden stand-in for "his own two hands" so the shared
+%% melee code (which always attacks "with" a weapon) has something to
+%% point at when the cyclops counterattacks.
+#cyclops-fist
+(* is #heldby #cyclops)
+(* is hidden)
+(weapon *)
+(name *)	fists
 
 %% CHALI
 #chalice
@@ -94,7 +111,263 @@
 (* awards 10 points on return)
 (appearance *)
 	There is a silver chalice, intricately engraved, here.
-%% TODO: object action routine CHALICE
+
+%%%
+
+%% The cyclops's "temper": how many wrong moves he's tolerated since he
+%% last calmed down. It only climbs while he's awake; giving him the
+%% hot peppers flips him from "hungry" to "thirsty" without resetting
+%% it (a Dialog port of MDL's <MIN -1 <- .COUNT>>, which preserves
+%% magnitude while flipping sign - Dialog has no negative literals, so
+%% the sign becomes the separate (#cyclops is thirsty) fact instead).
+
+(#cyclops is hungry)
+	(cyclops temper is $n)
+	($n > 0)
+	~(#cyclops is thirsty)
+
+(global variable (cyclops combat strength is 6))
+(#cyclops maximum strength is 6)
+(#cyclops wields #cyclops-fist)
+
+(#cyclops combat strength is $result)
+	(cyclops combat strength is $result)
+(set #cyclops combat strength to $value)
+	(now)(cyclops combat strength is $value)
+
+%% The cyclops is far too strong to actually kill in melee: keep his
+%% strength pinned above 2 so the shared combat table (which only has
+%% "knocked out"/"dead" outcomes for a defender at strength 1 or 2)
+%% never produces them for him.
+(#cyclops loses $delta strength)
+	(cyclops combat strength is $strength)
+	($strength minus $delta into $newstrength)
+	(if) ($newstrength < 3) (then)
+		(set #cyclops combat strength to 3)
+	(else)
+		(set #cyclops combat strength to $newstrength)
+	(endif)
+
+%% Attacking an awake cyclops falls straight through to ordinary melee
+%% (handled generically by main.dg/melee.dg - no special-casing needed
+%% here). Burning him isn't a real attack (he's not flammable, and
+%% MDL never treats BURN as FIGHT) - awake, it's just one more thing
+%% that annoys him. Either way, while he's asleep, these verbs wake
+%% him up instead of doing anything else.
+(before [attack #cyclops with $])
+	(cyclops-flag)
+	(wake cyclops)
+	(stop)
+
+(before [burn #cyclops])
+	(cyclops-flag)
+	(wake cyclops)
+	(stop)
+
+(before [burn #cyclops with $])
+	(cyclops-flag)
+	(wake cyclops)
+	(stop)
+
+(before [burn #cyclops])
+	~(cyclops-flag)
+	(cyclops reacts badly)
+	(tick) (stop)
+
+(before [burn #cyclops with $])
+	~(cyclops-flag)
+	(cyclops reacts badly)
+	(tick) (stop)
+
+%% stdlib only has intransitive "wake up"; add the transitive form
+%% ("wake/awake the cyclops") since MDL's AWAKE!-WORDS took an object.
+(grammar [wake/awake/awaken [single]] for [wake $])
+
+(perform [wake $Obj])
+	(if) (animate $Obj) (then)
+		(The $Obj) (doesn't $Obj) seem to need waking.
+	(else)
+		You cannot wake (a $Obj) up.
+	(endif)
+
+(instead of [wake #cyclops])
+	(cyclops-flag)
+	(wake cyclops)
+
+(instead of [wake #cyclops])
+	~(cyclops-flag)
+	(cyclops reacts badly)
+
+(wake cyclops)
+	The cyclops yawns and stares at the thing that woke him up.
+	(now) ~(cyclops-flag)
+	(now) ~(#cyclops is thirsty)
+
+(on every tick in #cyclops-room)
+	(#cyclops is fighting)
+	~(cyclops-flag)
+	(#cyclops is #in #cyclops-room)
+	(#cyclops attacks #player with #cyclops-fist)
+
+%% GIVE - the only way past him without a fight.
+%% These use "before" (not "perform") so they run ahead of the
+%% standard library's "you're not holding that" check: the water is
+%% inside the (held, open) bottle rather than held directly, same as
+%% MDL's <FIND-OBJ "WATER"> didn't care where it physically was.
+(before [give #lunch to #cyclops])
+	~(cyclops-flag)
+	~(#cyclops is thirsty)
+	(#lunch has ancestor #player)
+	(now) (#lunch is nowhere)
+	(now) (#cyclops is thirsty)
+	The cyclops says 'Mmm Mmm.  I love hot peppers!  But oh, could I use
+	a drink.  Perhaps I could drink the blood of that thing'.  From the
+	gleam in his eye, it could be surmised that you are 'that thing'.
+	(tick) (stop)
+
+(before [give #water to #cyclops])
+	~(cyclops-flag)
+	(#cyclops is thirsty)
+	(#water has ancestor #player)
+	(now) (#water is nowhere)
+	(now) ~(#cyclops is thirsty)
+	(now) (cyclops-flag)
+	The cyclops looks tired and quickly falls fast asleep \(what did you
+	put in that drink, anyway?\).
+	(tick) (stop)
+
+(before [give #water to #cyclops])
+	~(cyclops-flag)
+	~(#cyclops is thirsty)
+	(#water has ancestor #player)
+	The cyclops apparently was not thirsty at the time and refuses your
+	generous gesture.
+	(tick) (stop)
+
+(before [give #garlic to #cyclops])
+	~(cyclops-flag)
+	(#garlic has ancestor #player)
+	The cyclops may be hungry, but there is a limit.
+	(cyclops reacts badly)
+	(tick) (stop)
+
+(before [give $Obj to #cyclops])
+	~(cyclops-flag)
+	($Obj has ancestor #player)
+	~($Obj = #lunch) ~($Obj = #water) ~($Obj = #garlic)
+	The cyclops is not so stupid as to eat THAT!
+	(cyclops reacts badly)
+	(tick) (stop)
+
+%% Everything else just makes him crosser
+(instead of [take #cyclops])
+	~(cyclops-flag)
+	The cyclops is rather heavy and doesn't take kindly to being grabbed.
+	(cyclops reacts badly)
+
+(instead of [tie #cyclops to $])
+	~(cyclops-flag)
+	You cannot tie the cyclops, although he is fit to be tied.
+	(cyclops reacts badly)
+
+(instead of [tie $ to #cyclops])
+	~(cyclops-flag)
+	You cannot tie the cyclops, although he is fit to be tied.
+	(cyclops reacts badly)
+
+(instead of [throw $ at #cyclops])
+	~(cyclops-flag)
+	(select)Your actions don't appear to be doing much harm to the cyclops, but they do not exactly lower your insurance premiums, either.
+	(or)The cyclops ignores all injury to his body with a shrug.
+	(at random)
+	(cyclops reacts badly)
+
+(cyclops reacts badly)
+	(cyclops temper is $n)
+	(if) ($n > 5) (then)
+		The cyclops, tired of all of your games and trickery, eats you.
+		The cyclops says 'Mmm.  Just like mom used to make 'em.'
+		(jigs up)
+	(else)
+		($n plus 1 into $newn)
+		(now) (cyclops temper is $newn)
+		(cyclops taunt $newn)
+	(endif)
+
+(cyclops taunt 1)
+	The cyclops seems somewhat agitated.
+(cyclops taunt 2)
+	The cyclops appears to be getting more agitated.
+(cyclops taunt 3)
+	The cyclops is moving about the room, looking for something.
+(cyclops taunt 4)
+	The cyclops was looking for salt and pepper.  I think he is gathering
+	condiments for his upcoming snack.
+(cyclops taunt 5)
+	The cyclops is moving toward you in an unfriendly manner.
+(cyclops taunt 6)
+	You have two choices: 1. Leave  2. Become dinner.
+
+%% Melee - The Cyclops's own attack narration (ported from CYCLOPS-MELEE)
+
+(narrate #cyclops attacking #player with outcome 0)
+	(select)The Cyclops misses, but the backwash almost knocks you over.
+	(or)The Cyclops rushes you, but runs into the wall.
+	(or)The Cyclops trips over his feet trying to get at you.
+	(or)The Cyclops unleashes a roundhouse punch, but you have time to dodge.
+	(at random)
+
+(narrate #cyclops attacking #player with outcome 1)
+	(select)The Cyclops knocks you unconscious.
+	(or)The Cyclops sends you crashing to the floor, unconscious.
+	(at random)
+
+(narrate #cyclops attacking #player with outcome 2)
+	(select)The Cyclops raises his arms and crushes your skull.
+	(or)The Cyclops has just essentially ripped you to shreds.
+	(or)The Cyclops decks you.  In fact, you are dead.
+	(or)The Cyclops breaks your neck with a massive smash.
+	(at random)
+
+(narrate #cyclops attacking #player with outcome 3)
+	(select)A quick punch, but it was only a glancing blow.
+	(or)The Cyclops grabs but you twist free, leaving part of your cloak.
+	(or)A glancing blow from the Cyclops' fist.
+	(or)The Cyclops chops at you with the side of his hand, and it connects, but not solidly.
+	(at random)
+
+(narrate #cyclops attacking #player with outcome 4)
+	(select)The Cyclops gets a good grip and breaks your arm.
+	(or)The monster smashes his huge fist into your chest, breaking several ribs.
+	(or)The Cyclops almost knocks the wind out of you with a quick punch.
+	(or)A flying drop kick breaks your jaw.
+	(or)The Cyclops breaks your leg with a staggering blow.
+	(at random)
+
+(narrate #cyclops attacking #player with outcome 5)
+	(select)The Cyclops knocks you silly, and you reel back.
+	(or)The Cyclops lands a punch that knocks the wind out of you.
+	(or)Heedless of your weapons, the Cyclops tosses you against the rock wall of the room.
+	(or)The Cyclops grabs you, and almost strangles you before you wiggle free, breathless.
+	(at random)
+
+(narrate #cyclops attacking #player with outcome 6)
+	(player wields $weapon)
+	(select)The Cyclops grabs you by the arm, and you drop your (name $weapon).
+	(or)The Cyclops kicks your (name $weapon) out of your hand.
+	(or)The Cyclops grabs your (name $weapon), tastes it, and throws it to the ground in disgust.
+	(or)The monster grabs you on the wrist, squeezes, and you drop your (name $weapon) in pain.
+	(at random)
+	~(narrate alternate player weapon besides $weapon)
+
+(narrate #cyclops attacking #player with outcome 7)
+	(select)The Cyclops is so excited by his success that he neglects to kill you.
+	(or)The Cyclops, momentarily overcome by remorse, holds back.
+	(or)The Cyclops seems unable to decide whether to broil or stew his dinner.
+	(at random)
+
+(narrate #cyclops attacking #player with outcome 8)
+	The Cyclops, no sportsman, dispatches his unconscious victim.
 
 %%%
 
@@ -102,8 +375,7 @@
 (topic keyword @ulysses implies @odysseus)
 
 (instead of [talk to #player/#cyclops about @odysseus])
-	(current room #cyclops-room)
-	~(cyclops-flag)
+	(#cyclops is #in #cyclops-room)
 	The cyclops, hearing the name of his deadly nemesis, flees the room
 	by knocking down the wall on the north of the room.
 	(now)(cyclops-flag)
@@ -113,4 +385,3 @@
 
 (instead of [talk to $ about @odysseus])
 	Wasn't he a sailor?
-
