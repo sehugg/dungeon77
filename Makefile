@@ -29,13 +29,17 @@ GAME_SOURCES := $(ROOMS) $(CORE)
 
 OUT := out
 
-.PHONY: all build z5 zblorb test unit-tests skein-diff skein-bless play clean
+.PHONY: all build aa z5 zblorb test unit-tests skein-diff skein-bless play clean
 
 all: build
-build: z5 zblorb
+build: aa z5 zblorb
 
 z5: $(OUT)/dungeon.z5
 zblorb: $(OUT)/dungeon.zblorb
+aa: $(OUT)/dungeon.aastory
+
+$(OUT)/dungeon.aastory: $(GAME_SOURCES) $(STDLIB) | $(OUT)
+	$(DIALOGC) -t aa -o $@ $(GAME_SOURCES) $(STDLIB)
 
 $(OUT)/dungeon.z5: $(GAME_SOURCES) $(STDLIB) | $(OUT)
 	$(DIALOGC) -t z5 -o $@ $(GAME_SOURCES) $(STDLIB)
