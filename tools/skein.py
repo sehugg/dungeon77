@@ -6,6 +6,8 @@ Designed to be easy for an LLM (or a human) to call and read:
     tools/skein.py play n e "open window" w        # ad-hoc transcript
     tools/skein.py diff                            # check every branch
     tools/skein.py diff 1785098749839              # ...just the path to one node
+    tools/skein.py diff kitchen.skein#3            # ...by fragment file + id
+    tools/skein.py diff kitchen.skein              # ...path to the end of a fragment
     tools/skein.py bless --dry-run                 # preview what blessing changes
     tools/skein.py bless                           # accept live output as the recording
     tools/skein.py bless 1785098749839             # ...just the path to one node
@@ -45,7 +47,14 @@ must hold, and which together must match exactly one node:
     parent-path:     the whole command chain from the root, "n,e,open window"
 
 Zero matches, or more than one, is a fatal error naming the candidates, so a
-selector never silently drifts onto the wrong node.  Fragments may attach to
+selector never silently drifts onto the wrong node.
+
+Any command that takes a node id also accepts fragment-file targets:
+`FILE#ID` names one node by its file plus local id (FILE may be the path
+under the --skein directory or any unambiguous suffix, e.g.
+`kitchen.skein#3`), and a bare `FILE` means the end of that fragment --
+its deepest node -- so `diff kitchen.skein` checks the path down to the
+last turn recorded in it.  Fragments may attach to
 nodes supplied by other fragments; placement iterates to a fixpoint and then
 re-checks every selector against the finished tree, so file order can never
 change the result.  Inside a fragment `id:` and `parent-id:` are optional --
@@ -367,11 +376,61 @@ def find_leaves(nodes):
     return [n for n in nodes if n.id not in parents]
 
 
+def origin_matches(origin, fname):
+    """Does a fragment's origin (its path under the --skein directory)
+    match a file name given on the command line?  Exact path, bare
+    basename, or a path suffix on a directory boundary all count."""
+    if not origin:
+        return False
+    if origin == fname or os.path.basename(origin) == os.path.basename(fname):
+        return True
+    return origin.endswith("/" + fname) or origin.endswith("\\" + fname)
+
+
+def nodes_from_file(nodes, fname):
+    """Every node that was read from the fragment named by `fname`."""
+    return [n for n in nodes if origin_matches(n.origin, fname)]
+
+
+def deepest_in_file(fnodes, by_id):
+    """The end of a fragment: a node of the file with no in-file children
+    (the deepest one if the fragment itself forks)."""
+    in_file = {n.id for n in fnodes}
+
+    def depth(n):
+        d, seen = 0, set()
+        while n is not None and n.id not in seen:
+            seen.add(n.id)
+            d += 1
+            n = by_id.get(n.parent) if n.parent else None
+        return d
+
+    ends = [n for n in fnodes
+            if not any(c.parent == n.id and c.id in in_file for c in fnodes)]
+    ends = ends or list(fnodes)
+    return max(ends, key=lambda n: (depth(n), fnodes.index(n)))
+
+
 def resolve(nodes, target):
-    """A node by qualified id, file-local id, or label."""
+    """A node by qualified id, file-local id, or label.
+
+    FILE#ID narrows the lookup to one fragment file: nodes from that file
+    whose local id (or label) is ID.  FILE may be the fragment's path under
+    the --skein directory or any unambiguous suffix of it
+    ("puzzles/kitchen.skein" or just "kitchen.skein").  A bare FILE name
+    resolves to the end of that fragment -- its deepest node -- so
+    `diff kitchen.skein` replays the path down to the last thing recorded
+    in it.
+    """
     by_id = {n.id: n for n in nodes}
     if target in by_id:
         return by_id[target]
+    if "#" in target:
+        fname, _, ident = target.rpartition("#")
+        cands = nodes_from_file(nodes, fname)
+        if not cands:
+            sys.exit("no skein file matches %r" % fname)
+        return _resolve_among(cands, ident, target)
     for attr in ("local_id", "label"):
         matches = [n for n in nodes if getattr(n, attr) == target]
         if len(matches) == 1:
@@ -379,7 +438,21 @@ def resolve(nodes, target):
         if len(matches) > 1:
             sys.exit("%r is ambiguous (%s); use a full id"
                      % (target, ", ".join(n.id for n in matches)))
-    sys.exit("no node with id or label %r" % target)
+    cands = nodes_from_file(nodes, target)
+    if cands:
+        return deepest_in_file(cands, by_id)
+    sys.exit("no node with id, label, or fragment file %r" % target)
+
+
+def _resolve_among(nodes, target, shown):
+    for attr in ("local_id", "label"):
+        matches = [n for n in nodes if getattr(n, attr) == target]
+        if len(matches) == 1:
+            return matches[0]
+        if len(matches) > 1:
+            sys.exit("%r is ambiguous in this fragment (%s); use a full id"
+                     % (shown, ", ".join(n.id for n in matches)))
+    sys.exit("no node with id or label %r" % shown)
 
 
 def all_paths(nodes, target=None):
@@ -974,7 +1047,8 @@ def main():
 
     p = sub.add_parser("diff", help="replay and diff against the recording")
     p.add_argument("node", nargs="?",
-                   help="node id or label (default: every branch of the tree)")
+                   help="node id or label, FILE#ID, or FILE for the end of "
+                        "a fragment (default: every branch of the tree)")
     p.add_argument("--full", action="store_true",
                    help="include full live text in --json output")
     common(p, sub=True)
@@ -986,21 +1060,26 @@ def main():
     p.set_defaults(func=cmd_play)
 
     p = sub.add_parser("replay", help="replay a recorded path")
-    p.add_argument("node", nargs="?", help="node id or label (default: leaf)")
+    p.add_argument("node", nargs="?",
+                   help="node id or label, FILE#ID, or FILE for the end of "
+                        "a fragment (default: leaf)")
     common(p, sub=True)
     p.set_defaults(func=cmd_replay)
 
     p = sub.add_parser("bless",
                        help="accept live output as the new recording")
     p.add_argument("node", nargs="?",
-                   help="node id or label (default: every branch of the tree)")
+                   help="node id or label, FILE#ID, or FILE for the end of "
+                        "a fragment (default: every branch of the tree)")
     p.add_argument("--dry-run", action="store_true",
                    help="list what would change without writing any file")
     common(p, sub=True)
     p.set_defaults(func=cmd_bless)
 
     p = sub.add_parser("list", help="list nodes along a path, or the whole tree")
-    p.add_argument("node", nargs="?")
+    p.add_argument("node", nargs="?",
+                   help="node id or label, FILE#ID, or FILE for the end of "
+                        "a fragment")
     p.add_argument("--tree", action="store_true",
                    help="always render as a tree, even for a linear skein")
     common(p, sub=True)
@@ -1021,7 +1100,7 @@ def main():
     p.set_defaults(func=cmd_record)
 
     p = sub.add_parser("show", help="show one node's recorded output")
-    p.add_argument("node")
+    p.add_argument("node", help="node id or label, or FILE#ID")
     common(p, sub=True)
     p.set_defaults(func=cmd_show)
 
@@ -1035,7 +1114,7 @@ def main():
 
     p = sub.add_parser("path",
                        help="print a node's command chain as a parent-path: selector")
-    p.add_argument("node", help="node id or label")
+    p.add_argument("node", help="node id or label, or FILE#ID")
     common(p, sub=True)
     p.set_defaults(func=cmd_path)
 
