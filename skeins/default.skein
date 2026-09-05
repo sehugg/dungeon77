@@ -3504,7 +3504,6 @@ You are in a narrow tunnel with large wooden beams running across the ceiling an
 Northeast: You walk northeast.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are here.
 
 --------------------------------------------------------------------------------
 id: 1785508581899
@@ -3515,17 +3514,14 @@ command: n,ne,nw
 North: You walk north.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are here.
 
 Northeast: You walk northeast.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are here.
 
 Northwest: You walk northwest.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are here.
 
 --------------------------------------------------------------------------------
 id: 1785508581900
@@ -3577,7 +3573,6 @@ You are in a very small room. In the corner is a rickety wooden ladder, leading 
 Up: You climb up.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are here.
 
 --------------------------------------------------------------------------------
 id: 1785508581903
@@ -3588,7 +3583,6 @@ command: e,e,s
 East: You walk east.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are here.
 
 East: You walk east.
 
@@ -3897,7 +3891,6 @@ You are in a very small room. In the corner is a rickety wooden ladder, leading 
 Up: You climb up.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are here.
 
 --------------------------------------------------------------------------------
 id: 1785508581951
@@ -3908,7 +3901,6 @@ command: e,e,s
 East: You walk east.
 
 [0m[1mYou are in a non-descript part of a coal mine.[0m
-You are here.
 
 East: You walk east.
 

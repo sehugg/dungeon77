@@ -239,6 +239,8 @@
 	from his belfry and lifts you away....
 	(randomly select $Room from [#coalmine1 #coalmine2 #coalmine3 #coalmine4 #coalmine5 #coalmine6 #coalmine7 #ladder-top #ladder-bottom])
 	(move player to #in $Room)
+	(par)
+	(try [look])
 
 %% DOME
 #dome-room
