@@ -250,7 +250,7 @@ STRING: "   BOOOOOOOOOOOM      "
   NOT FOUND in any .dg file
 
 STRING: "  His booty remains."
-  NOT FOUND in any .dg file
+  ADDED in src/rooms/thief.dg
 
 STRING: " Amid the desolation, you spot what
 appears to be your head, at the end of a long pole."
@@ -1789,7 +1789,7 @@ STRING: "On the two ends of the altar are burning candles."
     - src/rooms/temple.dg
 
 STRING: "Once you got him, what would you do with him?"
-  NOT FOUND in any .dg file
+  ADDED in src/rooms/thief.dg
 
 STRING: "One of the matches starts to burn."
   FOUND in 1 file(s):
@@ -2641,7 +2641,7 @@ area of beach can also be seen below the Cliffs."
 
 STRING: "The robber revives, briefly feigning continued unconsciousness, and
 when he sees his moment, scrambles away from you."
-  NOT FOUND in any .dg file
+  ADDED in src/rooms/thief.dg
 
 STRING: "The robber, rummaging through his bag, dropped a few items he found
 valueless."
@@ -2649,7 +2649,7 @@ valueless."
 
 STRING: "The robber, somewhat surprised at this turn of events, nimbly
 retrieves his stilletto."
-  NOT FOUND in any .dg file
+  ADDED in src/rooms/thief.dg (reworded: "The thief, somewhat surprised...")
 
 STRING: "The robot gladly takes the "
   NOT FOUND in any .dg file
@@ -2739,11 +2739,11 @@ suddenly vanish."
     - src/rooms/thief.dg
 
 STRING: "The thief places the "
-  NOT FOUND in any .dg file
+  ADDED in src/rooms/thief.dg
 
 STRING: "The thief seems rather offended by your offer.  Do you think he's as
 stupid as you are?"
-  NOT FOUND in any .dg file
+  ADDED in src/rooms/thief.dg
 
 STRING: "The torch hits the glacier and explodes into a great ball of flame,
 devouring the glacier.  The water from the melting glacier rushes
@@ -3188,7 +3188,7 @@ STRING: "There is a square brick here which feels like clay."
 
 STRING: "There is a suspicious-looking individual lying unconscious on the
 ground.  His bag and stilletto seem to have vanished."
-  NOT FOUND in any .dg file
+  ADDED in src/rooms/thief.dg
 
 STRING: "There is a suspicious-looking individual, holding a bag, leaning
 against one wall.  He is armed with a vicious-looking stilletto."
@@ -4405,7 +4405,7 @@ STRING: "You don't really want to hold a burning "
 
 STRING: "You evidently frightened the robber, though you didn't hit him.  He
 flees"
-  NOT FOUND in any .dg file
+  ADDED in src/rooms/thief.dg
 
 STRING: "You have a light wound,"
   FOUND in 1 file(s):
@@ -4483,7 +4483,7 @@ dungeon had collapsed."
 STRING: "You missed.  The thief makes no attempt to take the knife, though it
 would be a fine addition to the collection in his bag.  He does seem
 angered by your attempt."
-  NOT FOUND in any .dg file
+  ADDED in src/rooms/thief.dg
 
 STRING: "You must tell me how to do that to a "
   NOT FOUND in any .dg file
@@ -4559,7 +4559,7 @@ nod of his head, he steps backward into the gloom and disappears."
   NOT FOUND in any .dg file
 
 STRING: "Your proposed victim suddenly recovers consciousness."
-  NOT FOUND in any .dg file
+  ADDED in src/rooms/thief.dg
 
 STRING: "Your score is "
   NOT FOUND in any .dg file

@@ -154,14 +154,21 @@
     (jigs up)
 
 ($defender gets knocked out)
+    ~($defender = #thief)   %% the thief has his own OUT!! handling
     (now) ($defender is asleep)
     (now) (#player timer is 2)
+
+%% Hook (no-op by default): a specific villain can put gear that was
+%% hidden while he was unconscious (e.g. the thief's stilletto) back into
+%% his grasp before the death drop scatters his belongings.
+($defender retrieves hidden possessions)
 
 ($defender gets killed)
     Almost as soon as (the $defender) breathes his last breath, a cloud
     of sinister black fog envelops (them $defender), and when the fog lifts, the
     carcass has disappeared.
     ($defender is #in $room)
+    ($defender retrieves hidden possessions)
     (collect $item)
         *($item is #heldby $defender)
         (now)($item is #in $room)

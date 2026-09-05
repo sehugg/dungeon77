@@ -1,4 +1,11 @@
 %% THIEF
+%% Object action routine ROBBER-FUNCTION (77act1.mud:1472) is ported below.
+%% Still missing: the ROBBER daemon's wandering/robbing branches (the thief
+%% never roams on his own; he only acts when the player co-locates with him
+%% or defends his lair).
+(interface (thief accepts $>Obj))
+(interface (thief offended by $>Obj))
+
 #thief
 (* is #in #round-room)
 (name *)	thief
@@ -8,11 +15,17 @@
 (* weakness is #knife)
 (dict *)	robber crook crime criminal bandit man shady thug bagman mafia suspicious
 (* capacity is 4)
+%% ROBBER-C-DESC (77dung.mud:1448)
 (appearance *)
-    %%TODO
+	~(#thief is asleep)
 	There is a suspicious-looking individual, holding a bag, leaning against
 	one wall. He is armed with a vicious-looking stilletto.
-%% TODO: object action routine ROBBER-FUNCTION
+
+%% ROBBER-U-DESC (77dung.mud:1452)
+(appearance *)
+	(#thief is asleep)
+	There is a suspicious-looking individual lying unconscious on the
+	ground. His bag and stilletto seem to have vanished.
 
 %% STILL
 #stilletto
@@ -30,7 +43,9 @@
 
 (global variable (thief combat strength is 4))
 (#thief maximum strength is 4)
-(#thief wields #stilletto)
+%% He wields the stilletto -- see the (#thief wields $weapon) rules below:
+%% when it lies in the room he grabs it, when it is truly gone he slips
+%% away; while he holds it the melee fall-through applies.
 
 (#thief combat strength is $result)
     (thief combat strength is $result)
@@ -46,6 +61,7 @@
 %% CHALICE (77act1.mud:1587) blocks taking it mid-fight
 (prevent [take #chalice])
     (#thief is fighting)
+    ~(#thief is asleep)
     (current room #treasure-room)
     (#thief is #in #treasure-room)
     Realizing just in time that you'd be stabbed in the back if you
@@ -76,6 +92,16 @@
 %%  lair, he doesn't wander off.
 (robber and player interact in $room)
     ($room = #treasure-room)
+
+%% FIGHT!-WORDS is dispatched every round the thief stands in the player's
+%% room (the FIGHTING loop in 78melee.mud), so a disarmed thief retrieves
+%% his stilletto -- or, if it is truly gone, slips away.
+(robber daemon)
+    (#thief is fighting)
+    ~(#thief is asleep)
+    (current room $room)
+    (#thief is #in $room)
+    (#thief wields #stilletto)
 
 %% TREASURE-ROOM (77act1.mud:623)
 (robber daemon)
@@ -144,7 +170,7 @@
     ($weapon is #in $room)
     (now) ($weapon is #heldby #thief)
     (player can see #thief)
-    The thief, somewhat surprised at this turn of events, nimbly retrieves (its $weapon).
+    The thief, somewhat surprised at this turn of events, nimbly retrieves (its #thief) (name $weapon).
 
 %% If the stilletto is truly gone, the thief slips away.
 (#thief wields $weapon)
@@ -153,6 +179,117 @@
     (thief moves to new room)
     (player can see #thief)
     Annoyed to be left unarmed in such an obviously dangerous neighborhood, the thief slips off into the shadows.
+
+%% OUT!! -- knocked out in melee (77act1.mud:1519).  His daemon halts and
+%% the stilletto is hidden from view; the chalice becomes takable (the
+%% guard above checks ~(asleep)).  In the original he revives on a 10%
+%% melee-round roll; here the recovery is a fixed 2-tick timer so that
+%% transcripts stay deterministic.
+(#thief gets knocked out)
+    (now) (#thief is asleep)
+    (now) (#thief timer is 2)
+    (now) (#thief timer running)
+    (now) (#stilletto is #in #hidden-treasures)
+
+%% IN!! -- revives (77act1.mud:1524).  Daemon resumes, stilletto back in
+%% his grasp, chalice guarded again.
+(on #thief timeout)
+    (#thief is asleep)
+    (now) ~(#thief is asleep)
+    (now) ~(#thief timer running)
+    (now) (#thief timer is 0)
+    (now) (#stilletto is #heldby #thief)
+    (player can see #thief)
+    The robber revives, briefly feigning continued unconsciousness, and
+    when he sees his moment, scrambles away from you.
+
+%% On death, hidden gear must be back in his grasp so the death drop
+%% scatters it with the rest of his booty (DEAD!! drops all of HOBJS).
+(#thief retrieves hidden possessions)
+    (now) (#stilletto is #heldby #thief)
+
+%% DEAD!! -- his booty scatters where he fell (77act1.mud:1531).  The
+%% treasure-reappearance line is only spoken in his lair.  (The treasure
+%% check is wrapped in (if) so this clause can never fail and fall through
+%% to the generic leaving-behind narration.)
+(narrate #thief leaving behind $items)
+    His booty remains.
+    (if) (current room #treasure-room) (then)
+        (collect $Obj)
+            *($Obj is one of $items)
+            (treasure $Obj)
+        (into $list)
+        (if) (nonempty $list) (then)
+            As the thief dies, the power of his magic decreases, and his
+            treasures reappear: (a $list).
+        (endif)
+    (endif)
+
+%% GIVE/THROW something to the thief (77act1.mud:1566).  He accepts
+%% anything (even mid-fight, even his own doom): an unconscious thief
+%% revives first, then a lighted bomb offends him, otherwise it goes
+%% straight into his bag.
+(perform [give $Obj to #thief])
+    (thief accepts $Obj)
+
+%% THROW the knife AT the thief while not fighting (77act1.mud:1545):
+%% 10% he is frightened and flees, dropping his bag contents; otherwise
+%% he is angered and the fight is on.  While fighting, the generic clause
+%% below applies instead (he just pockets the knife).
+(perform [throw #knife at #thief])
+    ~(#thief is fighting)
+    (current room $room)
+    (random from 1 to 10 into $rnd)
+    (now) (#knife is #in $room)
+    (if) ($rnd = 1) (then)
+        (collect $item)
+            *($item is #heldby #thief)
+            (now) ($item is #in $room)
+        (into $items)
+        (now) (#thief is nowhere)
+        (now) ~(#thief is fighting)
+        You evidently frightened the robber, though you didn't hit
+        him.
+        (if) (nonempty $items) (then)
+            He flees, but the contents of his bag fall on the floor.
+        (else)
+            He flees.
+        (endif)
+    (else)
+        (now) (#thief is fighting)
+        You missed.  The thief makes no attempt to take the knife, though
+        it would be a fine addition to the collection in his bag.  He does
+        seem angered by your attempt.
+    (endif)
+
+(perform [throw $Obj at #thief])
+    (thief accepts $Obj)
+
+(thief accepts $Obj)
+    (if) (#thief is asleep) (then)
+        (now) ~(#thief is asleep)
+        (now) ~(#thief timer running)
+        (now) (#thief timer is 0)
+        (now) (#stilletto is #heldby #thief)
+        Your proposed victim suddenly recovers consciousness.
+    (endif)
+    (if) (thief offended by $Obj) (then)
+        The thief seems rather offended by your offer.  Do you think he's
+        as stupid as you are?
+    (else)
+        (now) ($Obj is #heldby #thief)
+        The thief places the (name $Obj) in his bag and thanks you politely.
+    (endif)
+
+%% Giving him a brick with a lighted fuse tied to it (FUSE-FUNCTION's
+%% ORAND check): he is not falling for that one.
+(thief offended by #brick)
+    (#wire-coil is #tiedto #brick)
+    (#wire-coil timer running)
+
+%% TAKE thief (77act1.mud:1592)
+(instead of [take #thief])
+    Once you got him, what would you do with him?
 
 %% Outcome 0 -- missed
 (narrate #thief attacking #player with outcome 0)
