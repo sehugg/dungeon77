@@ -1,0 +1,50 @@
+parent-id: default.skein#1785508581889
+
+--------------------------------------------------------------------------------
+command: purloin garlic
+--------------------------------------------------------------------------------
+> purloin garlic
+
+
+--------------------------------------------------------------------------------
+command: teleport bat room
+--------------------------------------------------------------------------------
+> teleport bat room
+
+Bat Room
+You are in a small room which has only one door, to the east. In the corner of the room on the ceiling is a large vampire bat who is obviously deranged and holding his nose. A foul odor emanates from the bat, no doubt as a result of his dietary indiscretions.
+
+There is an exquisite jade figurine here.
+
+There is a clove of garlic here.
+
+
+--------------------------------------------------------------------------------
+command: take jade figurine
+--------------------------------------------------------------------------------
+> take jade figurine
+You take the jade figurine.
+
+(Your score has gone up by five points.)
+
+
+--------------------------------------------------------------------------------
+command: take garlic
+--------------------------------------------------------------------------------
+> take garlic
+You take the clove of garlic.
+
+
+--------------------------------------------------------------------------------
+command: drop garlic
+--------------------------------------------------------------------------------
+> drop garlic
+You drop the clove of garlic.
+
+
+--------------------------------------------------------------------------------
+command: z
+--------------------------------------------------------------------------------
+> z
+A moment slips away.
+

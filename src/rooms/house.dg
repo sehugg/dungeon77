@@ -9,7 +9,8 @@
 #west-of-house
 (name *)        West of House
 (room *)
-(look *)        You are in an open field west of a big white house, with a boarded front door.
+(look *)
+    You are in an open field west of a big white house, with a boarded front door.
 (notice #front-door)
 (* is sacred)
 (from * go #north to #north-of-house)

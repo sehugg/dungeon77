@@ -8,21 +8,6 @@
 %% 1 14 6 20 0
 %% light case-score score size capacity
 
-(style class @headline)
-	margin-top: 1em;
-	margin-bottom: 1em;
-	text-align: center;
-    font-style: bold;
-(style class @para)
-	margin-top: 1em;
-	margin-bottom: 1em;
-    text-indent: 2em;
-	text-align: left;
-(style class @right)
-	margin-top: 1em;
-	margin-bottom: 1em;
-	text-align: right;
-
 (interface (flammable $>Thing))
 (interface (tool $>Thing))
 (interface (weapon $>Thing))
@@ -132,6 +117,7 @@
 
 (narrate entering $)
     ~(player can see)
+    (body style @bodydarkness)
     (dark-count $dc)
     ($dc plus 1 into $newdc)
     (now) (dark-count $newdc)
@@ -139,8 +125,13 @@
     Oh, no!  You walked into the slavering fangs of a lurking grue.
     (jigs up)
 
-(narrate entering $)
+(narrate entering $room)
     (player can see)
+    (if) (inherently dark $room) (then)
+        (body style @bodydungeon)
+    (else)
+        (body style @bodyoutside)
+    (endif)
     (now) (dark-count 0)
     (fail)
 

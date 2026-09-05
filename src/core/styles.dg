@@ -1,0 +1,40 @@
+
+(style class @headline)
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+    font-weight: bold;
+
+(style class @para)
+	margin-top: 1em;
+	margin-bottom: 1em;
+    text-indent: 2em;
+	text-align: left;
+
+(style class @right)
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: right;
+
+(style class @bodydarkness)
+    -iftf-sys-c64-background-color: black;
+    -iftf-sys-c64-border-color: black;
+    -iftf-sys-c64-normal-color: grey;
+    -iftf-sys-c64-cursor-color: red;
+
+(style class @bodydungeon)
+    -iftf-sys-c64-background-color: black;
+    -iftf-sys-c64-border-color: darkgrey;
+    -iftf-sys-c64-normal-color: grey;
+    -iftf-sys-c64-cursor-color: orange;
+
+(style class @bodyoutside)
+    -iftf-sys-c64-background-color: lightgrey;
+    -iftf-sys-c64-border-color: blue;
+    -iftf-sys-c64-normal-color: black;
+    -iftf-sys-c64-cursor-color: yellow;
+
+(intro)
+    (body style @bodyoutside)
+    (fail)
+
