@@ -98,3 +98,10 @@
     This boat is made of plastic.                Good Luck!
 
 %% TODO: "hello, sailor" with the comma
+
+(prevent [leave $Room $Dir])
+    { ($Dir = #launch) (or) ($Dir = #land) }
+    ~(#player has parent #magic-boat)
+    ~(#player has parent #basket2)
+    You can't do that on foot.
+
