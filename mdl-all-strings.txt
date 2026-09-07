@@ -348,7 +348,7 @@ you politely."
   NOT FOUND in any .dg file
 
 STRING: " in his rock-hard hands."
-  NOT FOUND in any .dg file
+  TESTED in skeins/edges/gnome-treasure.skein
 
 STRING: " is carrying:"
   NOT FOUND in any .dg file
@@ -506,7 +506,7 @@ STRING: ""My vision is not that good without eyes.""
 
 STRING: "'That wasn't quite what I had in mind', he says, crunching the
 "
-  NOT FOUND in any .dg file
+  TESTED in skeins/edges/gnome-treasure.skein
 
 STRING: ", but the contents of his bag fall on the floor."
   NOT FOUND in any .dg file
@@ -527,7 +527,7 @@ STRING: ".  I don't believe
 I've ever seen one as beautiful. 'Follow me', he says, and a door 
 appears on the west end of the ledge.  Through the door, you can see
 a narrow chimney sloping steeply downward."
-  NOT FOUND in any .dg file
+  TESTED in skeins/edges/gnome-treasure.skein
 
 STRING: ". Died."
   NOT FOUND in any .dg file
@@ -673,7 +673,9 @@ STRING: "A volcano gnome seems to walk straight out of the wall and says
 'I have a very busy appointment schedule and little time to waste on
 tresspassers, but for a small fee, I'll show you the way out.'  You
 notice the gnome nervously glancing at his watch."
-  NOT FOUND in any .dg file
+  TESTED in 2 file(s):
+    - skeins/edges/gnome-departs.skein
+    - skeins/edges/gnome-treasure.skein
 
 STRING: "Aaaarrrrrrrrgggggggggggggghhhhhhhhhhhhhh!"
   FOUND in 1 file(s):
@@ -2085,7 +2087,7 @@ STRING: "Temple"
     - src/rooms/temple.dg
 
 STRING: "Thank you very much for the "
-  NOT FOUND in any .dg file
+  TESTED in skeins/edges/gnome-treasure.skein
 
 STRING: "Thank you very much.  I was rather thirsty (from all this talking,
 probably)."
@@ -2291,7 +2293,7 @@ generous gesture."
   NOT FOUND in any .dg file
 
 STRING: "The cyclops appears to be getting more agitated."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/cyclops.skein
 
 STRING: "The cyclops doesn't look like he'll let you past."
   FOUND in 1 file(s):
@@ -2301,16 +2303,16 @@ STRING: "The cyclops ignores all injury to his body with a shrug."
   NOT FOUND in any .dg file
 
 STRING: "The cyclops is moving about the room, looking for something."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/cyclops.skein
 
 STRING: "The cyclops is moving toward you in an unfriendly manner."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/cyclops.skein
 
 STRING: "The cyclops is not so stupid as to eat THAT!"
   NOT FOUND in any .dg file
 
 STRING: "The cyclops is rather heavy and doesn't take kindly to being grabbed."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/cyclops.skein
 
 STRING: "The cyclops is standing in the corner, eyeing you closely.  I don't
 think he likes you very much.  He looks extremely hungry even for a
@@ -2320,7 +2322,9 @@ cyclops."
 
 STRING: "The cyclops looks tired and quickly falls fast asleep (what did you
 put in that drink, anyway?)."
-  NOT FOUND in any .dg file
+  TESTED in 2 file(s):
+    - skeins/edges/cyclops-feeding.skein
+    - skeins/edges/cyclops-wake.skein
 
 STRING: "The cyclops may be hungry, but there is a limit."
   NOT FOUND in any .dg file
@@ -2328,17 +2332,19 @@ STRING: "The cyclops may be hungry, but there is a limit."
 STRING: "The cyclops says 'Mmm Mmm.  I love hot peppers!  But oh, could I use
 a drink.  Perhaps I could drink the blood of that thing'.  From the
 gleam in his eye, it could be surmised that you are 'that thing'."
-  NOT FOUND in any .dg file
+  TESTED in 2 file(s):
+    - skeins/edges/cyclops-feeding.skein
+    - skeins/edges/cyclops-wake.skein
 
 STRING: "The cyclops seems somewhat agitated."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/cyclops.skein
 
 STRING: "The cyclops was looking for salt and pepper.  I think he is gathering
 condiments for his upcoming snack."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/cyclops.skein
 
 STRING: "The cyclops yawns and stares at the thing that woke him up."
-  NOT FOUND in any .dg file
+  TESTED in skeins/edges/cyclops-wake.skein
 
 STRING: "The cyclops, having eaten the hot peppers, appears to be gasping.
 His enflamed tongue protrudes from his man-sized mouth."
@@ -2357,7 +2363,7 @@ blissfully at the foot of the stairs."
 
 STRING: "The cyclops, tired of all of your games and trickery, eats you.
 The cyclops says 'Mmm.  Just like mom used to make 'em.'"
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/cyclops.skein
 
 STRING: "The deceased adventurer's useless lantern is here."
   FOUND in 1 file(s):
@@ -2429,11 +2435,11 @@ STRING: "The glacier is unmoved by your ridiculous attempt."
     - src/rooms/glacier.dg
 
 STRING: "The gnome appears increasingly nervous."
-  NOT FOUND in any .dg file
+  TESTED in skeins/edges/gnome-departs.skein
 
 STRING: "The gnome glances at his watch.  'Oops.  I'm late for an
 appointment!' He disappears, leaving you alone on the ledge."
-  NOT FOUND in any .dg file
+  TESTED in skeins/edges/gnome-departs.skein
 
 STRING: "The grate is closed."
   NOT FOUND in any .dg file
@@ -2502,13 +2508,15 @@ STRING: "The icing, now visible, says '"
     - src/rooms/tearoom.dg
 
 STRING: "The lamp appears to be getting dimmer."
-  NOT FOUND in any .dg file
+  TESTED in 2 file(s):
+    - skeins/default.skein
+    - skeins/edges/lamp-dimming.skein
 
 STRING: "The lamp has smashed into the floor and the light has gone out."
   NOT FOUND in any .dg file
 
 STRING: "The lamp is dying."
-  NOT FOUND in any .dg file
+  TESTED in skeins/edges/lamp-dimming.skein
 
 STRING: "The leak has submerged the depressed area in a pool of sewage."
   FOUND in 1 file(s):
@@ -2540,7 +2548,7 @@ STRING: "The lid closes."
   NOT FOUND in any .dg file
 
 STRING: "The lid on the machine is closed."
-  NOT FOUND in any .dg file
+  TESTED in skeins/default.skein
 
 STRING: "The lid on the machine is open."
   NOT FOUND in any .dg file
@@ -2823,7 +2831,7 @@ STRING: "The water splashes on the walls, and evaporates immediately."
   NOT FOUND in any .dg file
 
 STRING: "The way is blocked by debris from an explosion."
-  NOT FOUND in any .dg file
+  TESTED in skeins/edges/brick-safe-leave.skein
 
 STRING: "The way through the gate is barred by evil spirits, who jeer at your
 attempts to pass."
@@ -3208,7 +3216,9 @@ for four headless corpses.  On one end is the cryptic inscription:
                     
                       "Feel Free."
 "
-  NOT FOUND in any .dg file
+  TESTED in 2 file(s):
+    - skeins/deaths/tomb.skein
+    - skeins/default.skein
 
 STRING: "There is a trophy case here."
   FOUND in 1 file(s):
@@ -3376,7 +3386,7 @@ solving this riddle:
   What is tall as a house,
           round as a cup, 
           and all the king's horses can't draw it up?'"
-  NOT FOUND in any .dg file
+  TESTED in skeins/default.skein
 
 STRING: "This is getting you nowhere."
   NOT FOUND in any .dg file
@@ -4461,7 +4471,7 @@ STRING: "You have to light them with something that's burning, you know."
   NOT FOUND in any .dg file
 
 STRING: "You have two choices: 1. Leave  2. Become dinner."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/cyclops.skein
 
 STRING: "You hear a boom and notice that the balloon is falling to the ground."
   NOT FOUND in any .dg file
@@ -4478,7 +4488,9 @@ this fine "
 STRING: "You may recall your recent explosion.  Well, probably as a result of
 that, you hear an ominous rumbling, as if one of the rooms in the
 dungeon had collapsed."
-  NOT FOUND in any .dg file
+  TESTED in 2 file(s):
+    - skeins/default.skein
+    - skeins/edges/brick-safe-leave.skein
 
 STRING: "You missed.  The thief makes no attempt to take the knife, though it
 would be a fine addition to the collection in his bag.  He does seem
@@ -4524,7 +4536,9 @@ STRING: "You think it isn't?"
   NOT FOUND in any .dg file
 
 STRING: "You watch as the balloon slowly "
-  NOT FOUND in any .dg file
+  TESTED in 2 file(s):
+    - skeins/edges/gnome-departs.skein
+    - skeins/edges/gnome-treasure.skein
 
 STRING: "You would inflate it with that?"
   FOUND in 1 file(s):
@@ -4877,7 +4891,9 @@ STRING: "fancy violin"
 
 STRING: "floats away.  It seems to be ascending,
 due to its light load."
-  NOT FOUND in any .dg file
+  TESTED in 2 file(s):
+    - skeins/edges/gnome-departs.skein
+    - skeins/edges/gnome-treasure.skein
 
 STRING: "flyer"
   FOUND in 2 file(s):
@@ -4930,7 +4946,7 @@ STRING: "head on a pole"
     - src/rooms/autogen.dg
 
 STRING: "high in your lungs."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/leak.skein
 
 STRING: "hole"
   FOUND in 10 file(s):
@@ -5073,14 +5089,14 @@ STRING: "open."
     - src/rooms/brick.dg
 
 STRING: "over your head."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/leak.skein
 
 STRING: "painting"
   FOUND in 1 file(s):
     - src/rooms/autogen.dg
 
 STRING: "pair of candles"
-  NOT FOUND in any .dg file
+  TESTED in skeins/default.skein
 
 STRING: "pair of hands"
   NOT FOUND in any .dg file
@@ -5400,22 +5416,29 @@ STRING: "up to your ankles."
   NOT FOUND in any .dg file
 
 STRING: "up to your chest."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/leak.skein
 
 STRING: "up to your hips."
-  NOT FOUND in any .dg file
+  TESTED in 2 file(s):
+    - skeins/deaths/leak.skein
+    - skeins/edges/blue-leak.skein
 
 STRING: "up to your knees."
-  NOT FOUND in any .dg file
+  TESTED in 2 file(s):
+    - skeins/deaths/leak.skein
+    - skeins/edges/blue-leak.skein
 
 STRING: "up to your neck."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/leak.skein
 
 STRING: "up to your shin."
-  NOT FOUND in any .dg file
+  TESTED in 3 file(s):
+    - skeins/deaths/leak.skein
+    - skeins/edges/blue-leak.skein
+    - skeins/edges/leak-munged.skein
 
 STRING: "up to your waist."
-  NOT FOUND in any .dg file
+  TESTED in skeins/deaths/leak.skein
 
 STRING: "valuables"
   FOUND in 3 file(s):

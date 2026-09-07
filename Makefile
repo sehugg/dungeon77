@@ -39,7 +39,7 @@ zblorb: $(OUT)/dungeon.zblorb
 aa: $(OUT)/dungeon.aastory
 
 $(OUT)/dungeon.aastory: $(GAME_SOURCES) $(STDLIB) | $(OUT)
-	$(DIALOGC) -t aa -o $@ $(GAME_SOURCES) $(STDLIB)
+	$(DIALOGC) -s -t aa -o $@ $(GAME_SOURCES) $(STDLIB)
 
 $(OUT)/dungeon.z5: $(GAME_SOURCES) $(STDLIB) | $(OUT)
 	$(DIALOGC) -t z5 -o $@ $(GAME_SOURCES) $(STDLIB)
@@ -78,4 +78,4 @@ play:
 	$(DGDEBUG) $(GAME_SOURCES) $(DEBUGLIB) $(STDLIB)
 
 clean:
-	rm -f $(OUT)/dungeon.z5 $(OUT)/dungeon.zblorb $(OUT)/unit-tests.log
+	rm -f $(OUT)/dungeon.z5 $(OUT)/dungeon.zblorb $(OUT)/dungeon.aastory $(OUT)/unit-tests.log
