@@ -308,66 +308,66 @@
 (cyclops taunt 6)
 	You have two choices: 1. Leave  2. Become dinner.
 
-%% Melee - The Cyclops's own attack narration (ported from CYCLOPS-MELEE)
+%% Melee - The cyclops's own attack narration (ported from CYCLOPS-MELEE)
 
 (narrate #cyclops attacking #player with outcome 0)
-	(select)The Cyclops misses, but the backwash almost knocks you over.
-	(or)The Cyclops rushes you, but runs into the wall.
-	(or)The Cyclops trips over his feet trying to get at you.
-	(or)The Cyclops unleashes a roundhouse punch, but you have time to dodge.
+	(select)The cyclops misses, but the backwash almost knocks you over.
+	(or)The cyclops rushes you, but runs into the wall.
+	(or)The cyclops trips over his feet trying to get at you.
+	(or)The cyclops unleashes a roundhouse punch, but you have time to dodge.
 	(at random)
 
 (narrate #cyclops attacking #player with outcome 1)
-	(select)The Cyclops knocks you unconscious.
-	(or)The Cyclops sends you crashing to the floor, unconscious.
+	(select)The cyclops knocks you unconscious.
+	(or)The cyclops sends you crashing to the floor, unconscious.
 	(at random)
 
 (narrate #cyclops attacking #player with outcome 2)
-	(select)The Cyclops raises his arms and crushes your skull.
-	(or)The Cyclops has just essentially ripped you to shreds.
-	(or)The Cyclops decks you.  In fact, you are dead.
-	(or)The Cyclops breaks your neck with a massive smash.
+	(select)The cyclops raises his arms and crushes your skull.
+	(or)The cyclops has just essentially ripped you to shreds.
+	(or)The cyclops decks you.  In fact, you are dead.
+	(or)The cyclops breaks your neck with a massive smash.
 	(at random)
 
 (narrate #cyclops attacking #player with outcome 3)
 	(select)A quick punch, but it was only a glancing blow.
-	(or)The Cyclops grabs but you twist free, leaving part of your cloak.
+	(or)The cyclops grabs but you twist free, leaving part of your cloak.
 	(or)A glancing blow from the Cyclops' fist.
-	(or)The Cyclops chops at you with the side of his hand, and it connects, but not solidly.
+	(or)The cyclops chops at you with the side of his hand, and it connects, but not solidly.
 	(at random)
 
 (narrate #cyclops attacking #player with outcome 4)
-	(select)The Cyclops gets a good grip and breaks your arm.
+	(select)The cyclops gets a good grip and breaks your arm.
 	(or)The monster smashes his huge fist into your chest, breaking several ribs.
-	(or)The Cyclops almost knocks the wind out of you with a quick punch.
+	(or)The cyclops almost knocks the wind out of you with a quick punch.
 	(or)A flying drop kick breaks your jaw.
-	(or)The Cyclops breaks your leg with a staggering blow.
+	(or)The cyclops breaks your leg with a staggering blow.
 	(at random)
 
 (narrate #cyclops attacking #player with outcome 5)
-	(select)The Cyclops knocks you silly, and you reel back.
-	(or)The Cyclops lands a punch that knocks the wind out of you.
+	(select)The cyclops knocks you silly, and you reel back.
+	(or)The cyclops lands a punch that knocks the wind out of you.
 	(or)Heedless of your weapons, the Cyclops tosses you against the rock wall of the room.
-	(or)The Cyclops grabs you, and almost strangles you before you wiggle free, breathless.
+	(or)The cyclops grabs you, and almost strangles you before you wiggle free, breathless.
 	(at random)
 
 (narrate #cyclops attacking #player with outcome 6)
 	(player wields $weapon)
-	(select)The Cyclops grabs you by the arm, and you drop your (name $weapon).
-	(or)The Cyclops kicks your (name $weapon) out of your hand.
-	(or)The Cyclops grabs your (name $weapon), tastes it, and throws it to the ground in disgust.
+	(select)The cyclops grabs you by the arm, and you drop your (name $weapon).
+	(or)The cyclops kicks your (name $weapon) out of your hand.
+	(or)The cyclops grabs your (name $weapon), tastes it, and throws it to the ground in disgust.
 	(or)The monster grabs you on the wrist, squeezes, and you drop your (name $weapon) in pain.
 	(at random)
 	~(narrate alternate player weapon besides $weapon)
 
 (narrate #cyclops attacking #player with outcome 7)
-	(select)The Cyclops is so excited by his success that he neglects to kill you.
-	(or)The Cyclops, momentarily overcome by remorse, holds back.
-	(or)The Cyclops seems unable to decide whether to broil or stew his dinner.
+	(select)The cyclops is so excited by his success that he neglects to kill you.
+	(or)The cyclops, momentarily overcome by remorse, holds back.
+	(or)The cyclops seems unable to decide whether to broil or stew his dinner.
 	(at random)
 
 (narrate #cyclops attacking #player with outcome 8)
-	The Cyclops, no sportsman, dispatches his unconscious victim.
+	The cyclops, no sportsman, dispatches his unconscious victim.
 
 %%%
 
