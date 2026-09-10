@@ -222,7 +222,7 @@
 	(endif)
 %% TODO: room action routine LEDGE-FUNCTION
 (narrate failing to leave * #down)
-	It's a long way down.
+	It's a long way down!
 (from * go #launch to #volcano-core4)
 (from * go #west to #volcano-bottom)
 (prevent [leave * #west])

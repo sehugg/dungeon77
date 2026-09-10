@@ -332,29 +332,22 @@
 %% DROWNINGS table, indexed by 1 + count/2 (MDL integer division), so
 %% each level is shown for two consecutive ticks.
 (narrate water level $count)
-	($count < 4)
-	The water level here is now up to your shin.
-(narrate water level $count)
-	($count < 6)
-	The water level here is now up to your knees.
-(narrate water level $count)
-	($count < 8)
-	The water level here is now up to your hips.
-(narrate water level $count)
-	($count < 10)
-	The water level here is now up to your waist.
-(narrate water level $count)
-	($count < 12)
-	The water level here is now up to your chest.
-(narrate water level $count)
-	($count < 14)
-	The water level here is now up to your neck.
-(narrate water level $count)
-	($count < 16)
-	The water level here is now over your head.
-(narrate water level 16)
-	The water level here is now high in your lungs.
-
+	The water level here is now
+	(if)($count < 14)(then)
+		up to your
+		(if)($count < 4)(then)shin.
+		(elseif)($count < 6)(then)knees.
+		(elseif)($count < 8)(then)hips.
+		(elseif)($count < 10)(then)waist.
+		(elseif)($count < 12)(then)chest.
+		(else)neck.
+		(endif)
+	(elseif)($count < 16)(then)
+		over your head.
+	(else)
+		high in your lungs.
+	(endif)
+	
 %% MUNG-ROOM: the flooded room can't be re-entered.
 (prevent [leave #dam-lobby #north])
 	(#maintenance-room has been munged)
