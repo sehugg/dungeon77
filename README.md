@@ -1,6 +1,6 @@
 # Dungeon '77
 
-This is a hand-ported version of *Dungeon* (aka *Zork*) to
+This is a mostly hand-ported version of *Dungeon* (aka *Zork*) to
 [Dialog](https://github.com/Dialog-IF/dialog/)
 from the MDL source backed up on 1977-12-12.
 
@@ -10,37 +10,32 @@ just walk west through the window (actually I guess this should be fixed)
 
 ## How to Build Locally
 
-Install the [https://github.com/hlship/dialog-tool](Dialog tool).
-
-Run:
-```
-dgt build
-dgt test
-dgt debug
-```
+Just type "make".
 
 For more, see the
-[https://dialog-if.github.io/manual/dialog/1c03-dev/software.html](Dialog docs).
+[https://dialog-if.github.io/manual/dialog/](Dialog docs).
+
+## Tools
+
+`tools/skein.py` -- A Python CLI version of the Dialog skein tool, with lots
+of features.
+
+`tools/ascii2dlg.py` -- Dialog doesn't support fixed-width text or
+`<pre>` so this is a workaround.
 
 
 ## Not yet implemented / TODO
 
-* Lots of things off of the main happy path.
-
-* I could only get 460 points out of 500, so some points may be missing.
+* Lots of things off of the main happy path. I could only get 460 points out of 500.
 
 * Container capacity and inventory load.
 
-* Light source dimming warnings.
-
-* Thief logic is simplified, he doesn't round-robin every non-sacred room
-  like in the original. There are also some behaviors not implemented
-  like throwing (btw there's no egg in the 1977 version)
-
-* Cyclops also has lots of missing behaviors.
+* Thief logic is simplified.
 
 * In Dialog you `TELL SOMEONE TO DO SOMETHING` instead of `TELL SOMEONE "DO SOMETHING"`.
   It would be nice to support both ways.
 
 * Each dynamic attribute uses 2 bytes of heap per object, bad on 8-bit
   platforms.  The timer feature is sparsely used and could be optimized.
+  (Better yet, the Dialog compiler could have a more efficient representation for 
+  sparse attributes)
