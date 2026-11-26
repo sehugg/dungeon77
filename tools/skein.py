@@ -102,6 +102,17 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
+def default_dgdebug():
+    """Locate dgdebug: $DGDEBUG, else $DIALOG_DIR/src/dgdebug, else PATH."""
+    env = os.environ.get("DGDEBUG")
+    if env:
+        return env
+    dialog_dir = os.environ.get("DIALOG_DIR")
+    if dialog_dir:
+        return os.path.join(dialog_dir, "src", "dgdebug")
+    return "dgdebug"
+
 SEPARATOR = "-" * 80
 
 # Lines that legitimately vary between runs / tool versions and must not
@@ -522,20 +533,26 @@ def expand_sources(entries):
 
 # ------------------------------------------------------------------- dgdebug
 
-def run_dgdebug(commands, seed, sources, dgdebug="dgdebug"):
+def run_dgdebug(commands, seed, sources, dgdebug=None):
     """Feed `commands` to a fresh dgdebug.  Returns (preamble, [(cmd, out)]).
 
     `preamble` is everything printed before the first command echo: compiler
     warnings, the banner and the opening room description.
     """
+    dgdebug = dgdebug or default_dgdebug()
     argv = [dgdebug, "--unit-test", "--width", "-1", "--formatting", "none",
             "--no-links", "--tag-lines", "--seed", str(seed)] + sources
-    proc = subprocess.run(
-        argv,
-        input="".join(c + "\n" for c in commands),
-        stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-        encoding="utf-8", errors="replace", cwd=ROOT,
-    )
+    try:
+        proc = subprocess.run(
+            argv,
+            input="".join(c + "\n" for c in commands),
+            stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+            encoding="utf-8", errors="replace", cwd=ROOT,
+        )
+    except FileNotFoundError:
+        sys.exit("skein.py: cannot find dgdebug (%s).\n"
+                 "         Put dialogc/dgdebug on PATH, set DIALOG_DIR to your "
+                 "Dialog checkout,\n         or pass --dgdebug PATH / set $DGDEBUG." % dgdebug)
 
     segments = []          # [(command, [line, ...])]
     preamble = []
@@ -1033,7 +1050,9 @@ def main():
         parser.add_argument("--skein", default=d(os.path.join(ROOT, "skeins/")),
                             help="a .skein file, or a directory tree of them")
         parser.add_argument("--seed", type=int, default=d(None))
-        parser.add_argument("--dgdebug", default=d("dgdebug"))
+        parser.add_argument("--dgdebug", default=d(default_dgdebug()),
+                            help="dgdebug binary (default: $DGDEBUG, then "
+                                 "$DIALOG_DIR/src/dgdebug, then PATH)")
         parser.add_argument("--source", action="append", default=d([]),
                             help="source file or directory (repeatable); "
                                  "defaults to the :sources in dialog.edn")

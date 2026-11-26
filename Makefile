@@ -5,6 +5,10 @@
 #   dgdebug       the Dialog debugger; also runs unit tests with -u
 #   tools/skein.py  regression tests (replays skeins/, diffs against recordings)
 #
+# dialogc and dgdebug are taken from PATH; if you keep a local Dialog build,
+# point at it with DIALOG_DIR=/path/to/dialog (its src/ is used), or override
+# DIALOGC / DGDEBUG directly.
+#
 # Targets:
 #   make / make build   out/dungeon.z5 + out/dungeon.zblorb
 #   make test           unit tests (dgdebug -u) + skein regression diff
@@ -14,8 +18,10 @@
 #   make play           interactive dgdebug session (teleport/purloin available)
 #   make clean
 
-DIALOGC := dialogc
-DGDEBUG := dgdebug
+# Toolchain: PATH by default.  DIALOG_DIR=/path/to/dialog switches to that
+# checkout's src/ binaries; DIALOGC / DGDEBUG override each tool directly.
+DIALOGC ?= $(if $(DIALOG_DIR),$(DIALOG_DIR)/src/dialogc,dialogc)
+DGDEBUG ?= $(if $(DIALOG_DIR),$(DIALOG_DIR)/src/dgdebug,dgdebug)
 SKEIN   := tools/skein.py
 
 ROOMS    := $(wildcard src/rooms/*.dg)
